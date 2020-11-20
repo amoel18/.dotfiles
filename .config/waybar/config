@@ -1,0 +1,247 @@
+[{
+  // PRIMARY TOP
+  "output": "eDP-1",
+  "layer": "top",
+  "position": "top",
+  "modules-left": ["sway/workspaces"],
+  "modules-center": ["sway/window", "sway/mode", "custom/media"],
+  "modules-right": ["custom/mail", "custom/arch", "network", "backlight", "pulseaudio", "battery", "clock", "custom/power"],
+   "sway/window": {
+        "max-length": 50,
+    },
+    "pulseaudio": {
+        "format": "{icon}",
+        "format-alt": "{volume} {icon}",
+        "format-alt-click": "click-right",
+        "format-muted": "婢",
+        "format-icons": {
+            "phone": [" ", " ", " "],
+            "default": ["", "", ""]
+        },
+        "scroll-step": 10,
+        "on-click": "pavucontrol",
+        "tooltip": false
+    },
+   "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+            },
+    },
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+      },
+
+    "battery": {
+        "bat": "BAT0",
+        "interval": 60,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-icons": ["", "", "", "", ""],
+        "max-length": 25
+    },
+    "temperature": {
+        // "thermal-zone": 2,
+        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        // "format-critical": "{temperatureC}°C ",
+        "format": "{temperatureC}°C "
+    },
+    "custom/power": {
+    "format": "  ",
+    "on-click": "wlogout",
+    "tooltip": false
+},
+    "backlight": {
+        "device": "edp-backlight",
+        "format": "{percent}% {icon}",
+        "format-icons": [""],
+        "on-scroll-down": "brightnessctl set 2%-",
+        "on-scroll-up": "brightnessctl set 2%+"
+    },
+    "battery#BAT0": {
+        "bat": "cw2015-battery",
+        "adapter": "dc-charger",
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% {icon}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["", "", "", "", ""],
+        "on-click": "gnome-power-statistics"
+    },
+    "battery#wacom": {
+        "bat": "wacom_battery_0",
+        "format": "{capacity}% ",
+        "format-charging": "{capacity}% "
+    },
+    "network": {
+        // "interface": "wlan0", // (Optional) To force the use of this interface
+        "interval": 5,
+        "format-wifi": " {essid}",
+        "format-ethernet": " {ifname}",
+        "format-ethernet": "  {ifname}: {ipaddr}/{cidr}", // Icon: ethernet
+        "format-disconnected": "⚠ Disconnected",
+        "on-click-right": "nmcli",
+        "on-click-left": "rofi-wifi-menu"
+    },
+    "custom/netinfo": {
+        "format": "{}",
+        "return-type": "json",
+        "exec": "$HOME/.config/wabar/waybar_netinfo",
+        "on-click": "killall -USR1 waybar_netinfo",
+        "on-click-right": "nmcli"
+    },
+    "mpd": {
+        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ",
+        "format-disconnected": "Disconnected ",
+        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+        "interval": 2,
+        "consume-icons": {
+            "on": " "
+        },
+        "random-icons": {
+            "off": "<span color=\"#f53c3c\"></span> ",
+            "on": " "
+        },
+        "repeat-icons": {
+            "on": " "
+        },
+        "single-icons": {
+            "on": "1 "
+        },
+        "state-icons": {
+            "paused": "",
+            "playing": ""
+        },
+        "tooltip-format": "MPD (connected)",
+        "tooltip-format-disconnected": "MPD (disconnected)"
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": "婢 {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["墳"]
+        },
+        "on-click": "pavucontrol"
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": "婢 {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["墳"]
+        },
+        "on-click": "pavucontrol"
+    },
+    },
+    "custom/media": {
+        "format": "{icon} {}",
+        "return-type": "json",
+        "max-length": 40,
+        "format-icons": {
+            "spotify": "",
+            "default": "🎶"
+        },
+        "escape": true,
+        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+
+
+
+    },
+    "custom/camera": {
+        "interval": 1,
+        "exec": "/home/i/PycharmProjects/swayinfo/camera.sh"
+    },
+    "custom/battery-warning": {
+    "interval": 5,
+    "exec": "/home/i/PycharmProjects/swayinfo/battery_warning.py"
+    },
+    "clock": {
+        "interval": 1,
+        "format": "{:%H:%M}",
+        "on-click": "exec /home/i/PycharmProjects/swayinfo/calendar.py",
+        "tooltip": false
+    },
+    "tray": {
+	    "icon-size": 20,
+	    "spacing": 4
+	},
+    "custom/arch": {
+        "interval": 1800,
+        "return-type": "json",
+        "exec": "/home/i/.config/waybar/PycharmProjects/swayinfo/config/waybar/modules/arch-update.py",
+        "on-click": "lxterminal -t \"Arch-update\" -e \"/home/i/PycharmProjects/swayinfo/au.sh\"",
+        "escape": true
+    },
+    "custom/mail": {
+        "format": "",
+        "format-alt": "{alt} ",
+        "format-alt-click": "click-right",
+        "interval": 60,
+        "return-type": "json",
+        "exec": "~/.config/waybar/mail.py",
+        "tooltip": false
+    },
+    "custom/scratchpad": {
+        "interval": 1,
+        "return-type": "json",
+        "exec": "/home/i/PycharmProjects/swayinfo/config/waybar/modules/scratchpad.py",
+        "on-click": "swaymsg scratchpad show",
+        "escape": true
+    },
+	"custom/myweather": {
+        "interval": 1800,
+        "return-type": "text",
+        "exec": "/home/i/PycharmProjects/swayinfo/weather.py -IdtS",
+        "on-click": "/home/i/PycharmProjects/swayinfo/weather.py -D",
+        "escape": true,
+        "tooltip": false
+    },
+    "backlight": {
+		"device": "amdgpu_bl0",
+		"format": "{icon} {percent}%",
+		"format-icons": ["", ""],
+		"on-scroll-up": "light -A 1",
+		"on-scroll-down": "light -U 1"
+	},
+}]
