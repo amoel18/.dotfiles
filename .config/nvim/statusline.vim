@@ -1,4 +1,6 @@
-hi User1 ctermfg=none ctermbg=0
+ Userctermfg=none ctermbg=0
+~/.config/nvim/snips
+~/.config/nvim/snips
 hi User2 ctermfg=5 ctermbg=none
 hi User3 ctermfg=0 ctermbg=5
 hi User4 ctermfg=5 ctermbg=0

@@ -26,8 +26,8 @@ set $screenshot grim ~/Images/screenshots/scrn-$(date +"%Y-%m-%d-%H-%M-%S").png
 set $screenclip slurp | grim -g - ~/Images/screenshots/scrn-$(date +"%Y-%m-%d-%H-%M-%S").png
 
 input * {
-    xkb_layout "dk"
-    xkb_variant "mac"
+    xkb_layout "us"
+    #xkb_variant "pc105"
     #xkb_options "altwin:swap_lalt_lwin"
 }
 
@@ -194,11 +194,11 @@ bindsym $mod+t layout tabbed
 bindsym $mod+n layout toggle split
 #quick_back_and_forth_work_space
 workspace_auto_back_and_forth yes
-bindsym $mod+z workspace back_and_forth
+bindsym $mod+z workspace prev_on_output
 
-bindsym $mod+Tab workspace prev_on_output
-
-bindsym $mod+Shift+Tab workspace next_on_output
+bindsym $mod+Tab workspace back_and_forth
+  
+#bindsym $mod+Shift+Tab workspace next_on_output
 
 #bindsym $mod+c exec clipman pick -t wofi
 
@@ -344,20 +344,6 @@ bindsym $mod+a focus parent
 
 set $ws_presAud "aud"
 set $ws_presOwn "notes"
-
-# Window classes
-set $mail "Thunderbird"
-set $music "Spotify"
-set $messaging "Rambox"
-set $mattermost "Mattermost"
-set $xmpp "Psi-plus"
-set $chromium "Chromium"
-set $chrome "Google-chrome"
-set $terminal "Termite"
-set $sublime "Subl3"
-set $clion "jetbrains-clion"
-set $nautilus "Nautilus"
-set $vscode "Visual Studio Code"
 
 # Assign applications to specific workspaces
 #ssign [class=$mail] $ws_mail

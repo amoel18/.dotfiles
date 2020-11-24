@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+##!/bin/bash
 
 # auto start tmux
 if [ "$TMUX" = "" ]; then
@@ -8,17 +8,43 @@ if [ "$TMUX" = "" ]; then
         tmux a -t "$(tmux ls | grep -v attached | cut -d ":" -f1 | head -n 1)"
     else
         # start new session - dont use exec so it's possible to run without tmux
-        tmux
+        tmux 
     fi
 fi
 
+if [ -t 0 ] && [[ -z $TMUX ]] && [[ $- = *i* ]]; then exec tmux; fi
+
+
+
+
 autoload -U compinit
-compinit -d ~/.zsh/.zcompdump
+compinit -d ~/.zcompdump
 unsetopt menu_complete   # do not autoselect the first completion entry
 unsetopt flowcontrol
 setopt auto_menu         # show completion menu on succesive tab press
 setopt complete_in_word
 setopt always_to_end
+
+setopt appendhistory
+setopt COMPLETE_IN_WORD    # Complete from both ends of a word.
+setopt ALWAYS_TO_END       # Move cursor to the end of a completed word.
+setopt PATH_DIRS           # Perform path search even on command names with slashes.
+setopt AUTO_MENU           # Show completion menu on a succesive tab press.
+setopt AUTO_LIST           # Automatically list choices on ambiguous completion.
+setopt AUTO_PARAM_SLASH    # If completed parameter is a directory, add a trailing slash.
+unsetopt MENU_COMPLETE     # Do not autoselect the first completion entry.
+unsetopt FLOW_CONTROL      # Disable start/stop characters in shell editor.
+
+# This lets me have a colorful man page :)
+export LESS_TERMCAP_mb=$(printf '\e[01;31m') # enter blinking mode - red
+export LESS_TERMCAP_md=$(printf '\e[01;35m') # enter double-bright mode - bold, magenta
+export LESS_TERMCAP_me=$(printf '\e[0m')     # turn off all appearance modes (mb, md, so, us)
+export LESS_TERMCAP_se=$(printf '\e[0m')     # leave standout mode
+export LESS_TERMCAP_so=$(printf '\e[01;33m') # enter standout mode - yellow
+export LESS_TERMCAP_ue=$(printf '\e[0m')     # leave underline mode
+export LESS_TERMCAP_us=$(printf '\e[04;36m') # enter underline mode - cyan
+export SUDO_ASKPASS=~/bin/utils/rofi-askpass
+export FZF_DEFAULT_COMMAND='rg --hidden  --ignore .git -g ""'
 
 autoload -U promptinit; promptinit
 # yarn
@@ -32,21 +58,14 @@ export GOPATH=$HOME/WorkSpaces/go
 # path
 [[ $PATH =~ $HOME/.local/bin ]] || PATH=$HOME/.local/bin:$PATH
 export PATH
+export PATH=$PATH:/home/i/.gem/ruby/2.7.0/bin:$PATH
 
 export JDK_HOME=/usr/lib/jvm/default
 
 # emacs mode
 bindkey -v
 
-FAST_ALIAS_TIPS_PREFIX=" ¡ $(tput bold)"
-
-# tabs size
-tabs 4
-
-zmodload -i zsh/complist
-zstyle ':completion:*' menu select
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-
+FAST_ALIAS_TIPS_PREFIX="  $(tput bold)"
 
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
     print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager \
@@ -57,8 +76,8 @@ if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
         print -P "%F{160}▓▒░ The clone has failed.%f%b"
 fi
 
-ZSH_LPLUG_DIR=${XDG_CONFIG_HOME:-$HOME/.config}/zsh/lplug
-source ~/.zinit/bin/zinit.zsh
+#ZSH_LPLUG_DIR=${XDG_CONFIG_HOME:-$HOME/.config}/zsh/lplug
+ source ~/.zinit/bin/zinit.zsh
 
 ZSH_AUTOSUGGEST_USE_ASYNC=1
 ZSH_AUTOSUGGEST_MANUAL_REBIND=1
@@ -73,35 +92,31 @@ zinit lucid wait for \
     hlissner/zsh-autopair
 
 zinit light-mode for \
-    kutsan/zsh-system-clipboard \
     skywind3000/z.lua \
     aloxaf/fzf-tab \
     zpm-zsh/clipboard \
+    kutsan/zsh-system-clipboard \
     mafredri/zsh-async \
     kevinhwang91/zsh-tmux-capture \
     junegunn/fzf-bin \
-    junegunn/fzf
 
 
-zinit light zsh-users/zsh-completions
+zinit load zsh-users/zsh-completions
 zinit ice from'gh-r' as'program'
-zinit light sei40kr/fast-alias-tips-bin
-zinit light sei40kr/zsh-fast-alias-tips
-zinit light MichaelAquilina/zsh-emojis
-#zinit light marlonrichert/zsh-autocomplete
-
+zinit load sei40kr/fast-alias-tips-bin
+zinit load sei40kr/zsh-fast-alias-tips
+zinit load MichaelAquilina/zsh-emojis
 #zstyle ':autocomplete:tab:*' fzf-completion yes
 #zinit light djui/alias-tips
 
 
-zinit light zsh-users/zsh-history-substring-search
-zinit light zsh-users/zsh-autosuggestions
+zinit load zsh-users/zsh-history-substring-search
+#zinit light zsh-users/zsh-autosuggestions
 
 #export ZSH_HIGHLIGHT_HIGHLIGHTERS=( main brackets )
 #zinit light zdharma/fast-syntax-highlighting
 
 
-#bindkey '^ ' autosuggest-accept
 
 
 
@@ -109,19 +124,27 @@ omz_plugins=(
     git
     thefuck
     yarn
+    archlinux
+    tmux
+    vi-mode
+    command-not-found
+    history   
+    docker-compose
+    fzf
 )
 for plugin in ${omz_plugins[@]}; do
     zinit snippet OMZ::plugins/$plugin/$plugin.plugin.zsh
 done
-source $ZSH_LPLUG_DIR/completion.zsh
-source $ZSH_LPLUG_DIR/misc.zsh
-source $ZSH_LPLUG_DIR/color.zsh
-source $ZSH_LPLUG_DIR/history.zsh
-source $ZSH_LPLUG_DIR/alias-function.zsh
-source $ZSH_LPLUG_DIR/theme.zsh
-source $ZSH_LPLUG_DIR/git-prompt.zsh
-source $ZSH_LPLUG_DIR/tmux.zsh
-source $ZSH_LPLUG_DIR/fzf-plugin.zsh
+
+##source $ZSH_LPLUG_DIR/completion.zsh
+##source $ZSH_LPLUG_DIR/misc.zsh
+##source $ZSH_LPLUG_DIR/color.zsh
+#source $ZSH_LPLUG_DIR/history.zsh
+##source $ZSH_LPLUG_DIR/alias-function.zsh
+#source $ZSH_LPLUG_DIR/theme.zsh
+#source $ZSH_LPLUG_DIR/git-prompt.zsh
+#source $ZSH_LPLUG_DIR/tmux.zsh
+#source $ZSH_LPLUG_DIR/fzf-plugin.zsh
 
 
 # python prompt toolkit color depth
@@ -163,7 +186,7 @@ function open_command() {
     darwin*)  open_cmd='open' ;;
     cygwin*)  open_cmd='cygstart' ;;
     linux*)   open_cmd='xdg-open' ;;
-    msys*)    open_cmd='start ""' ;;
+    sys*)    open_cmd='start ""' ;;
     *)        echo "Platform $OSTYPE not supported"
               return 1
               ;;
@@ -348,11 +371,26 @@ alias cake="cmake"
 # My pdf reader
 alias pdf="zathura"
 
+alias mv="mv -f"           # -i prompts before overwrite
+alias rm="rm -f"           # -i prompts before overwrite
+alias x="sudo chmod +x"
+
+
 # Show local ip:
 
 setopt histignorespace
 setopt autopushd
 setopt extendedhistory
+
+zstyle ':completion:*:cd:*' tag-order local-directories directory-stack path-directories
+cdpath=(.)
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
+zstyle ':fzf-tab:complete:*' fzf-preview 'exa -1 --color=always $realpath'
+zstyle ':fzf-tab:*' fzf-preview 'exa -1 --color=always $realpath'
+#source fzf.zsh
+## case-insensitive (all),partial-word and then substring completion
+zstyle ':completion:*' matcher-list 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+zstyle ':completion:*' list-colors ''
 
 # Autocorrection
 setopt correct
@@ -383,179 +421,73 @@ cursor_mode() {
     zle -N zle-line-init
 }
 
+
 cursor_mode
+
 HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
+prompt_newline='%666v'
+PROMPT=" $PROMPT"
 
-# Save history immediately
-setopt incappendhistory
-# Share history accross terms
-setopt sharehistory
-# Append history instead of overwriting
-setopt appendhistory
-setopt COMPLETE_IN_WORD    # Complete from both ends of a word.
-setopt ALWAYS_TO_END       # Move cursor to the end of a completed word.
-setopt PATH_DIRS           # Perform path search even on command names with slashes.
-setopt AUTO_MENU           # Show completion menu on a succesive tab press.
-setopt AUTO_LIST           # Automatically list choices on ambiguous completion.
-setopt AUTO_PARAM_SLASH    # If completed parameter is a directory, add a trailing slash.
-unsetopt MENU_COMPLETE     # Do not autoselect the first completion entry.
-unsetopt FLOW_CONTROL      # Disable start/stop characters in shell editor.
-
-
-#-----------------------------
-# Colors
-#-----------------------------
-[[ -r $XDG_CONFIG_HOME/LS_COLORS/LS_COLORS ]] && {
-    eval $(dircolors -b $XDG_CONFIG_HOME/LS_COLORS/LS_COLORS)
+session() {
+  echo "%F{blue}%f "
 }
 
-#------------------------------
+path() {
+  echo '%F{white}%B%c%b%f '
+}
+
+git_current_branch() {
+  local ref
+  ref=$(command git symbolic-ref --quiet HEAD 2> /dev/null)
+  local ret=$?
+  if [[ $ret != 0 ]]; then
+    [[ $ret == 128 ]] && return  # no git repo.
+    ref=$(command git rev-parse --short HEAD 2> /dev/null) || return
+  fi
+  echo ${ref#refs/heads/}
+}
+
+git_status() {
+  BRANCH=`git_current_branch`
+  if [ ! -z $BRANCH ]; then
+    if [ ! -z "$(git status --short)" ]; then
+      echo -n "[%F{red}%B$BRANCH%b"
+    else
+      echo -n "[%F{green}%B$BRANCH%b"
+    fi
+    echo -n '%F{white}]%f '
+  fi
+}
+prompt() {
+  echo ' '
+}
 zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
-zinit light sindresorhus/pure
-
-#prompt_newline='%666v'
-#PROMPT="$PROMPT"
 
 
+PS1=' $(session)$(path)$(git_status)'
+
+zinit load sindresorhus/pure
+
+
+autoload edit-command-line
+zle -N edit-command-line
+bindkey '\C-x\C-e' edit-command-line
 bindkey -r "^S"
 bindkey -r "^D"
 bindkey -r "^E"
+bindkey -r "^ "
 bindkey "^S" backward-word
 bindkey "^D" forward-word
 zle -N autosuggest-execute
 bindkey "^E" autosuggest-execute
-bindkey "^ " end-of-line
-#export $ZINIT=home/i/.zinit/plugins
+bindkey '^ ' autosuggest-accept
+bindkey "^?" backward-delete-char
+bindkey "^W" backward-kill-word
 
-#export FZF_DEFAULT_COMMAND='fd --hidden --type file --no-ignore --exclude --color=always "/.git/"'
-#export FZF_DEFAULT_OPTS='--ansi --height 40% --reverse --no-border --multi --color=always'
-
-#export FZF_DEFAULT_OPTS='--ansi --multi'
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-
-
-source $HOME/.zinit/plugins/junegunn---fzf/shell/key-bindings.zsh
-source $HOME/.zinit/plugins/junegunn---fzf/shell/completion.zsh
-#zstyle ":completion:*:git-checkout:*" sort false
-#zstyle ':completion:*:descriptions' format '[%d]'
-#zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
-zstyle ':fzf-tab:complete:*' fzf-preview 'exa -1 --color=always $realpath'
-zstyle ':fzf-tab:*' fzf-preview 'exa -1 --color=always $realpath'
-#source fzf.zsh
-## case-insensitive (all),partial-word and then substring completion
-zstyle ':completion:*' matcher-list 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-zstyle ':completion:*' list-colors ''
-
-# should this be in keybindings?
-bindkey -M menuselect '^o' accept-and-infer-next-history
-
-zstyle ':completion:*:*:*:*:*' menu select
-zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01'
-zstyle ':completion:*:*:*:*:processes' command "ps -u `whoami` -o pid,user,comm -w -w"
-
-# Ignore this shit
-zstyle ':completion:*' ignored-patterns 'DevToolsSecurity|dev_mkdb'
-
-# disable named-directories autocompletion
-zstyle ':completion:*:cd:*' tag-order local-directories directory-stack path-directories
-cdpath=(.)
-
-#source fzf-tmux
-enable-fzf-tab
-
-
-# Use caching to make completion for cammands such as dpkg and apt usable.
-zstyle ':completion::complete:*' use-cache on
-zstyle ':completion::complete:*' cache-path "${ZDOTDIR:-$HOME}/.zcompcache"
-
-# Case-insensitive (all), partial-word, and then substring completion.
-if zstyle -t ':prezto:module:completion:*' case-sensitive; then
-  zstyle ':completion:*' matcher-list 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-  setopt CASE_GLOB
-else
-  zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-  unsetopt CASE_GLOB
-fi
-
-# Group matches and describe.
- zstyle ':completion:*:*:*:*:*' menu select
- zstyle ':completion:*:matches' group 'yes'
- zstyle ':completion:*:options' description 'yes'
- zstyle ':completion:*:options' auto-description '%d'
- zstyle ':completion:*:corrections' format ' %F{green}-- %d (errors: %e) --%f'
-# zstyle ':completion:*:descriptions' format ' %F{yellow}-- %d --%f'
- zstyle ':completion:*:messages' format ' %F{purple} -- %d --%f'
- zstyle ':completion:*:warnings' format ' %F{red}-- no matches found --%f'
- zstyle ':completion:*:default' list-prompt '%S%M matches%s'
-# zstyle ':completion:*' format ' %F{yellow}-- %d --%f'
- zstyle ':completion:*' group-name ''
- zstyle ':completion:*' verbose yes
-PURE_PROMPT_SYMBOL=" "
-PURE_PROMPT_VICMD_SYMBOL=" "
-# Fuzzy match mistyped completions.
-zstyle ':completion:*' completer _complete _match _approximate
-zstyle ':completion:*:match:*' original only
-zstyle ':completion:*:approximate:*' max-errors 1 numeric
-
-# Increase the number of errors based on the length of the typed word.
-zstyle -e ':completion:*:approximate:*' max-errors 'reply=($((($#PREFIX+$#SUFFIX)/3))numeric)'
-
-# Don't complete unavailable commands.
-zstyle ':completion:*:functions' ignored-patterns '(_*|pre(cmd|exec))'
-
-# Array completion element sorting.
-zstyle ':completion:*:*:-subscript-:*' tag-order local-directories directory-stack path-directories
-
-# Directories
-zstyle ':completion:*:default' tag-order local-directories directory-stack path-directories
-zstyle ':completion:*:*:cd:*' tag-order local-directories directory-stack path-directories
-zstyle ':completion:*:*:cd:*:directory-stack' menu yes select
-zstyle ':completion:*:-tilde-:*' group-order 'named-directories' 'path-directories' 'users' 'expand'
-zstyle ':completion:*' squeeze-slashes true
-
-# History
-zstyle ':completion:*:history-words' stop yes
-zstyle ':completion:*:history-words' remove-all-dups yes
-zstyle ':completion:*:history-words' list false
-zstyle ':completion:*:history-words' menu yes
-
-# Environmental Variables
-zstyle ':completion::*:(-command-|export):*' fake-parameters ${${${_comps[(I)-value-*]#*,}%%,*}:#-*-}
-
-# Populate hostname completion.
-zstyle -e ':completion:*:hosts' hosts 'reply=(
-  ${=${=${=${${(f)"$(cat {/etc/ssh_,~/.ssh/known_}hosts(|2)(N) 2>/dev/null)"}%%[#| ]*}//\]:[0-9]*/ }//,/ }//\[/ }
-  ${=${(f)"$(cat /etc/hosts(|)(N) <<(ypcat hosts 2>/dev/null))"}%%\#*}
-  ${=${${${${(@M)${(f)"$(cat ~/.ssh/config 2>/dev/null)"}:#Host *}#Host }:#*\**}:#*\?*}}
-)'
-
-# Don't complete uninteresting users...
-zstyle ':completion:*:*:*:users' ignored-patterns \
-  adm amanda apache avahi beaglidx bin cacti canna clamav daemon \
-  dbus distcache dovecot fax ftp games gdm gkrellmd gopher \
-  hacluster haldaemon halt hsqldb ident junkbust ldap lp mail \
-  mailman mailnull mldonkey mysql nagios \
-  named netdump news nfsnobody nobody nscd ntp nut nx openvpn \
-  operator pcap postfix postgres privoxy pulse pvm quagga radvd \
-  rpc rpcuser rpm shutdown squid sshd sync uucp vcsa xfs '_*'
-
-# ... unless we really want to.
-zstyle '*' single-ignored show
-
-# Ignore multiple entries.
-zstyle ':completion:*:(rm|kill|diff):*' ignore-line other
-zstyle ':completion:*:rm:*' file-patterns '*:all-files'
-
-# Kill
-zstyle ':completion:*:*:*:*:processes' command 'ps -u $USER -o pid,user,comm -w'
-zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;36=0=01'
-zstyle ':completion:*:*:kill:*' menu yes select
-zstyle ':completion:*:*:kill:*' force-list always
-zstyle ':completion:*:*:kill:*' insert-ids single
-
+PURE_PROMPT_VICMD_SYMBOL="  "
+PURE_PROMPT_SYMBOL="  "
 
 # This lets me have a colorful man page :)
 export LESS_TERMCAP_mb=$(printf '\e[01;31m') # enter blinking mode - red
@@ -570,10 +502,10 @@ export FZF_DEFAULT_COMMAND='rg --hidden  --ignore .git -g ""'
 
 
 # Use vim keys in tab complete menu:
-bindkey -M menuselect 'h' vi-backward-char
-bindkey -M menuselect 'k' vi-up-line-or-history
-bindkey -M menuselect 'l' vi-forward-char
-bindkey -M menuselect 'j' vi-down-line-or-history
+# bindkey -M menuselect 'h' vi-backward-char
+# bindkey -M menuselect 'k' vi-up-line-or-history
+# bindkey -M menuselect 'l' vi-forward-char
+# bindkey -M menuselect 'j' vi-down-line-or-history
 
 # Jump to beginning using H and the end using L in NORMAL mode
 bindkey -M vicmd 'H' beginning-of-line
@@ -582,199 +514,6 @@ bindkey -M vicmd 'L' end-of-line
 # Open current command line in vim
 autoload edit-command-line; zle -N edit-command-line
 bindkey -M vicmd ' ' edit-command-line
-
-if (( $+commands[yaourt] )); then
-  alias yaconf='yaourt -C'
-  alias yaupg='yaourt -Syua'
-  alias yasu='yaourt -Syua --noconfirm'
-  alias yain='yaourt -S'
-  alias yains='yaourt -U'
-  alias yare='yaourt -R'
-  alias yarem='yaourt -Rns'
-  alias yarep='yaourt -Si'
-  alias yareps='yaourt -Ss'
-  alias yaloc='yaourt -Qi'
-  alias yalocs='yaourt -Qs'
-  alias yalst='yaourt -Qe'
-  alias yaorph='yaourt -Qtd'
-  alias yainsd='yaourt -S --asdeps'
-  alias yamir='yaourt -Syy'
-
-
-  if (( $+commands[abs] && $+commands[aur] )); then
-    alias yaupd='yaourt -Sy && sudo abs && sudo aur'
-  elif (( $+commands[abs] )); then
-    alias yaupd='yaourt -Sy && sudo abs'
-  elif (( $+commands[aur] )); then
-    alias yaupd='yaourt -Sy && sudo aur'
-  else
-    alias yaupd='yaourt -Sy'
-  fi
-fi
-
-if (( $+commands[yay] )); then
-  alias yaconf='yay -Pg'
-  alias yaupg='yay -Syu'
-  alias yasu='yay -Syu --noconfirm'
-  alias yain='yay -S'
-  alias yains='yay -U'
-  alias yare='yay -R'
-  alias yarem='yay -Rns'
-  alias yarep='yay -Si'
-  alias yareps='yay -Ss'
-  alias yaloc='yay -Qi'
-  alias yalocs='yay -Qs'
-  alias yalst='yay -Qe'
-  alias yaorph='yay -Qtd'
-  alias yainsd='yay -S --asdeps'
-  alias yamir='yay -Syy'
-
-
-  if (( $+commands[abs] && $+commands[aur] )); then
-    alias yaupd='yay -Sy && sudo abs && sudo aur'
-  elif (( $+commands[abs] )); then
-
-    alias yaupd='yay -Sy && sudo abs'
-  elif (( $+commands[aur] )); then
-    alias yaupd='yay -Sy && sudo aur'
-  else
-    alias yaupd='yay -Sy'
-  fi
-fi
-
-if (( $+commands[pacaur] )); then
-  alias paupg='pacaur -Syu'
-  alias pasu='pacaur -Syu --noconfirm'
-  alias pain='pacaur -S'
-  alias pains='pacaur -U'
-  alias pare='pacaur -R'
-  alias parem='pacaur -Rns'
-  alias parep='pacaur -Si'
-  alias pareps='pacaur -Ss'
-  alias paloc='pacaur -Qi'
-  alias palocs='pacaur -Qs'
-  alias palst='pacaur -Qe'
-  alias paorph='pacaur -Qtd'
-  alias painsd='pacaur -S --asdeps'
-  alias pamir='pacaur -Syy'
-
-  if (( $+commands[abs] && $+commands[aur] )); then
-    alias paupd='pacaur -Sy && sudo abs && sudo aur'
-  elif (( $+commands[abs] )); then
-    alias paupd='pacaur -Sy && sudo abs'
-  elif (( $+commands[aur] )); then
-    alias paupd='pacaur -Sy && sudo aur'
-  else
-    alias paupd='pacaur -Sy'
-  fi
-fi
-
-if (( $+commands[trizen] )); then
-  function upgrade() {
-    trizen -Syu
-  }
-elif (( $+commands[pacaur] )); then
-  function upgrade() {
-    pacaur -Syu
-  }
-elif (( $+commands[yaourt] )); then
-  function upgrade() {
-    yaourt -Syu
-  }
-elif (( $+commands[yay] )); then
-  function upgrade() {
-    yay -Syu
-  }
-else
-  function upgrade() {
-    sudo pacman -Syu
-  }
-fi
-
-# Pacman - https://wiki.archlinux.org/index.php/Pacman_Tips
-alias pacupg='sudo pacman -Syu'
-alias pacin='sudo pacman -S'
-alias pacins='sudo pacman -U'
-alias pacre='sudo pacman -R'
-alias pacrem='sudo pacman -Rns'
-alias pacrep='pacman -Si'
-alias pacreps='pacman -Ss'
-alias pacloc='pacman -Qi'
-alias paclocs='pacman -Qs'
-alias pacinsd='sudo pacman -S --asdeps'
-alias pacmir='sudo pacman -Syy'
-alias paclsorphans='sudo pacman -Qdt'
-alias pacrmorphans='sudo pacman -Rs $(pacman -Qtdq)'
-alias pacfileupg='sudo pacman -Fy'
-alias pacfiles='pacman -F'
-alias pacls='pacman -Ql'
-alias pacown='pacman -Qo'
-
-
-if (( $+commands[abs] && $+commands[aur] )); then
-  alias pacupd='sudo pacman -Sy && sudo abs && sudo aur'
-elif (( $+commands[abs] )); then
-  alias pacupd='sudo pacman -Sy && sudo abs'
-elif (( $+commands[aur] )); then
-  alias pacupd='sudo pacman -Sy && sudo aur'
-else
-  alias pacupd='sudo pacman -Sy'
-fi
-
-function paclist() {
-  # Source: https://bbs.archlinux.org/viewtopic.php?id=93683
-  LC_ALL=C pacman -Qei $(pacman -Qu | cut -d " " -f 1) | \
-    awk 'BEGIN {FS=":"} /^Name/{printf("\033[1;36m%s\033[1;37m", $2)} /^Description/{print $2}'
-}
-
-function pacdisowned() {
-  emulate -L zsh
-
-  tmp=${TMPDIR-/tmp}/pacman-disowned-$UID-$$
-  db=$tmp/db
-  fs=$tmp/fs
-
-  mkdir "$tmp"
-  trap  'rm -rf "$tmp"' EXIT
-
-  pacman -Qlq | sort -u > "$db"
-
-  find /bin /etc /lib /sbin /usr ! -name lost+found \
-    \( -type d -printf '%p/\n' -o -print \) | sort > "$fs"
-
-  comm -23 "$fs" "$db"
-}
-
-function pacmanallkeys() {
-  emulate -L zsh
-  curl -s https://www.archlinux.org/people/{developers,trustedusers}/ | \
-    awk -F\" '(/pgp.mit.edu/) { sub(/.*search=0x/,""); print $1}' | \
-    xargs sudo pacman-key --recv-keys
-}
-
-function pacmansignkeys() {
-  emulate -L zsh
-  for key in $*; do
-    sudo pacman-key --recv-keys $key
-    sudo pacman-key --lsign-key $key
-    printf 'trust\n3\n' | sudo gpg --homedir /etc/pacman.d/gnupg \
-      --no-permission-warning --command-fd 0 --edit-key $key
-  done
-}
-
-if (( $+commands[xdg-open] )); then
-  function pacweb() {
-    pkg="$1"
-    infos="$(LANG=C pacman -Si "$pkg")"
-    if [[ -z "$infos" ]]; then
-      return
-    fi
-    repo="$(grep -m 1 '^Repo' <<< "$infos" | grep -oP '[^ ]+$')"
-    arch="$(grep -m 1 '^Arch' <<< "$infos" | grep -oP '[^ ]+$')"
-    xdg-open "https://www.archlinux.org/packages/$repo/$arch/$pkg/" &>/dev/null
-  }
-fi
-alias conf='/usr/bin/git --git-dir=/home/i/.cfg/ --work-tree=/home/i'
 
 ex ()
 {
@@ -813,152 +552,31 @@ if [[ "$TERM" == 'dumb' ]]; then
   return 1
 fi
 
-# Add zsh-completions to $fpath.
-fpath=("${0:h}/completion/src" $fpath)
-
 # Load and initialize the completion system ignoring insecure directories.
-autoload -Uz compinit && compinit -i
 
 #
 # Options
 #
 
-setopt COMPLETE_IN_WORD    # Complete from both ends of a word.
-setopt ALWAYS_TO_END       # Move cursor to the end of a completed word.
-setopt PATH_DIRS           # Perform path search even on command names with slashes.
-setopt AUTO_MENU           # Show completion menu on a succesive tab press.
-setopt AUTO_LIST           # Automatically list choices on ambiguous completion.
-setopt AUTO_PARAM_SLASH    # If completed parameter is a directory, add a trailing slash.
-unsetopt MENU_COMPLETE     # Do not autoselect the first completion entry.
-unsetopt FLOW_CONTROL      # Disable start/stop characters in shell editor.
-
-#
-# Styles
-#
-
-# Use caching to make completion for cammands such as dpkg and apt usable.
-zstyle ':completion::complete:*' use-cache on
-zstyle ':completion::complete:*' cache-path "${ZDOTDIR:-$HOME}/.zcompcache"
-
-# Case-insensitive (all), partial-word, and then substring completion.
-if zstyle -t ':prezto:module:completion:*' case-sensitive; then
-  zstyle ':completion:*' matcher-list 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-  setopt CASE_GLOB
-else
-  zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-  unsetopt CASE_GLOB
-fi
-
-# Group matches and describe.
-zstyle ':completion:*:*:*:*:*' menu select
-zstyle ':completion:*:matches' group 'yes'
-zstyle ':completion:*:options' description 'yes'
-zstyle ':completion:*:options' auto-description '%d'
-zstyle ':completion:*:corrections' format ' %F{green}-- %d (errors: %e) --%f'
-#zstyle ':completion:*:descriptions' format ' %F{yellow}-- %d --%f'
-zstyle ':completion:*:messages' format ' %F{purple} -- %d --%f'
-zstyle ':completion:*:warnings' format ' %F{red}-- no matches found --%f'
-zstyle ':completion:*:default' list-prompt '%S%M matches%s'
-#zstyle ':completion:*' format ' %F{yellow}-- %d --%f'
-zstyle ':completion:*' group-name ''
-zstyle ':completion:*' verbose yes
-
-# Fuzzy match mistyped completions.
-zstyle ':completion:*' completer _complete _match _approximate
-zstyle ':completion:*:match:*' original only
-zstyle ':completion:*:approximate:*' max-errors 1 numeric
-
-# Increase the number of errors based on the length of the typed word.
-zstyle -e ':completion:*:approximate:*' max-errors 'reply=($((($#PREFIX+$#SUFFIX)/3))numeric)'
-
-# Don't complete unavailable commands.
-zstyle ':completion:*:functions' ignored-patterns '(_*|pre(cmd|exec))'
-
-# Array completion element sorting.
-zstyle ':completion:*:*:-subscript-:*' tag-order indexes parameters
-
-# Directories
-zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
-zstyle ':completion:*:*:cd:*' tag-order local-directories directory-stack path-directories
-zstyle ':completion:*:*:cd:*:directory-stack' menu yes select
-zstyle ':completion:*:-tilde-:*' group-order 'named-directories' 'path-directories' 'users' 'expand'
-zstyle ':completion:*' squeeze-slashes true
-
-# History
-zstyle ':completion:*:history-words' stop yes
-zstyle ':completion:*:history-words' remove-all-dups yes
-zstyle ':completion:*:history-words' list false
-zstyle ':completion:*:history-words' menu yes
-
-# Environmental Variables
-zstyle ':completion::*:(-command-|export):*' fake-parameters ${${${_comps[(I)-value-*]#*,}%%,*}:#-*-}
-
-# Populate hostname completion.
-zstyle -e ':completion:*:hosts' hosts 'reply=(
-  ${=${=${=${${(f)"$(cat {/etc/ssh_,~/.ssh/known_}hosts(|2)(N) 2>/dev/null)"}%%[#| ]*}//\]:[0-9]*/ }//,/ }//\[/ }
-  ${=${(f)"$(cat /etc/hosts(|)(N) <<(ypcat hosts 2>/dev/null))"}%%\#*}
-  ${=${${${${(@M)${(f)"$(cat ~/.ssh/config 2>/dev/null)"}:#Host *}#Host }:#*\**}:#*\?*}}
-)'
-
-# Don't complete uninteresting users...
-zstyle ':completion:*:*:*:users' ignored-patterns \
-  adm amanda apache avahi beaglidx bin cacti canna clamav daemon \
-  dbus distcache dovecot fax ftp games gdm gkrellmd gopher \
-  hacluster haldaemon halt hsqldb ident junkbust ldap lp mail \
-  mailman mailnull mldonkey mysql nagios \
-  named netdump news nfsnobody nobody nscd ntp nut nx openvpn \
-  operator pcap postfix postgres privoxy pulse pvm quagga radvd \
-  rpc rpcuser rpm shutdown squid sshd sync uucp vcsa xfs '_*'
-
-# ... unless we really want to.
-zstyle '*' single-ignored show
-
-# Ignore multiple entries.
-zstyle ':completion:*:(rm|kill|diff):*' ignore-line other
-zstyle ':completion:*:rm:*' file-patterns '*:all-files'
-
-# Kill
-zstyle ':completion:*:*:*:*:processes' command 'ps -u $USER -o pid,user,comm -w'
-zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;36=0=01'
-zstyle ':completion:*:*:kill:*' menu yes select
-zstyle ':completion:*:*:kill:*' force-list always
-zstyle ':completion:*:*:kill:*' insert-ids single
-
-# Man
-zstyle ':completion:*:manuals' separate-sections true
-zstyle ':completion:*:manuals.(^1*)' insert-sections true
-
-# Media Players
-zstyle ':completion:*:*:mpg123:*' file-patterns '*.(mp3|MP3):mp3\ files *(-/):directories'
-zstyle ':completion:*:*:mpg321:*' file-patterns '*.(mp3|MP3):mp3\ files *(-/):directories'
-zstyle ':completion:*:*:ogg123:*' file-patterns '*.(ogg|OGG|flac):ogg\ files *(-/):directories'
-zstyle ':completion:*:*:mocp:*' file-patterns '*.(wav|WAV|mp3|MP3|ogg|OGG|flac):ogg\ files *(-/):directories'
-
-# Mutt
-if [[ -s "$HOME/.mutt/aliases" ]]; then
-  zstyle ':completion:*:*:mutt:*' menu yes select
-  zstyle ':completion:*:mutt:*' users ${${${(f)"$(<"$HOME/.mutt/aliases")"}#alias[[:space:]]}%%[[:space:]]*}
-fi
-
-# SSH/SCP/RSYNC
-zstyle ':completion:*:(scp|rsync):*' tag-order 'hosts:-host:host hosts:-domain:domain hosts:-ipaddr:ip\ address *'
-zstyle ':completion:*:(scp|rsync):*' group-order users files all-files hosts-domain hosts-host hosts-ipaddr
-zstyle ':completion:*:ssh:*' tag-order 'hosts:-host:host hosts:-domain:domain hosts:-ipaddr:ip\ address *'
-zstyle ':completion:*:ssh:*' group-order users hosts-domain hosts-host users hosts-ipaddr
-zstyle ':completion:*:(ssh|scp|rsync):*:hosts-host' ignored-patterns '*(.|:)*' loopback ip6-loopback localhost ip6-localhost broadcasthost
-zstyle ':completion:*:(ssh|scp|rsync):*:hosts-domain' ignored-patterns '<->.<->.<->.<->' '^[-[:alnum:]]##(.[-[:alnum:]]##)##' '*@*'
-zstyle ':completion:*:(ssh|scp|rsync):*:hosts-ipaddr' ignored-patterns '^(<->.<->.<->.<->|(|::)([[:xdigit:].]##:(#c,2))##(|%*))' '127.0.0.<->' '255.255.255.255' '::1' 'fe80::*'
+# Setopts
+setopt AUTO_CD
+setopt BANG_HIST
+setopt EXTENDED_HISTORY
+setopt HIST_FIND_NO_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_NO_FUNCTIONS
+setopt HIST_REDUCE_BLANKS
+setopt HIST_SAVE_NO_DUPS
+setopt HIST_VERIFY
+setopt SHARE_HISTORY
+setopt PROMPT_SUBST
 
 alias vii="tmux new-session \; \
   split-window -v -p 25 \; \
   select-pane -t 2 \; \
   send-keys a C-m \;"
 
-
-function ts {
-  args=$@
-  tmux send-keys -t top "$args" C-m
-}
 alias vh="tmux split-window -h -p 75 nvim"
 alias vv="tmux split-window -v -p 75 nvim"
 alias t="tmux"
@@ -991,3 +609,104 @@ ctrlp() {
 zle -N ctrlp
 bindkey $CTRLP_KEYBIND ctrlp
 #alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+pv () {
+    tmux respawn-pane -k -t1 -c "#{pane_current_path}" nvim "$1"
+}
+wv () {
+    tmux respawn-window -k -t1 -c "#{pane_current_path}" nvim "$1"
+}
+tv () {
+  args=$@
+  CDD=$(tmux display -p -F "#{pane_current_path}")
+  tmux send-keys -t1 :tabnew\ $CDD/"$args" C-m
+  tmux select-pane -t1
+  # tmux send-keys -t1 :tabnew\ $args C-m
+}
+
+function ts {
+  args=$@
+
+  tmux send-keys -t top "$args" C-m
+}
+
+alias vp="pv"
+alias vw="wv"
+alias vt="tv"
+
+alias ev='$EDITOR ~/.config/nvim/init.vim'
+function tss {
+tmux send-keys -l 'cmd (tmux display -p -F "#{pane_current_path}" -t0)/build' \; send-keys 'C-m' 'C-l'
+}
+# Completion and ls colors
+zstyle ':completion:*' menu select
+zstyle ':completion:*:*:*:*:*' menu yes select
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z-_}={A-Za-z_-}' 'r:|=*' 'l:|=* r:|=*'
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+# Use caching to make completion for cammands such as dpkg and apt usable.
+zstyle ':completion::complete:*' use-cache on
+
+# Autoload
+autoload -Uz compinit
+if [[ -n /.zcompdump(#qN.mh+24) ]]; then
+  compinit;
+else
+  compinit -C;
+fi;
+autoload -Uz colors && colors
+zmodload -i zsh/complist
+
+# Zinit
+source ~/.zinit/bin/zinit.zsh
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+
+# Load plugins
+zinit load zsh-users/zsh-autosuggestions
+zinit load zsh-users/zsh-completions
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#4b4b4b'
+# zinit load marlonrichert/zsh-autocomplete
+
+# zstyle ':completion:*' extra-verbose no
+
+# zstyle ':completion:list-expand:*' extra-verbose no
+
+# zstyle ':completion:*' verbose no
+
+# zstyle ':autocomplete:*' min-input 3
+
+# zstyle ':autocomplete:*' max-lines 3
+
+# zstyle ':autocomplete:*' config off
+
+#ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='#g=#d4c3c3'
+#zinit load zdharma/history-search-#ulti-word
+#zinit snippet OMZ::plugins/git/git#plugin.zsh
+##zinit snippet OMZ::plugins/docker-#ompose/docker-compose.plugin.zsh
+
+# Z.lua
+[ -f $HOME/.zsh/z.lua/z.lua ] && eval "$(lua $HOME/.zsh/z.lua/z.lua --init zsh enhanced once fzf)"
+
+# FZF
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --smart-case --glob "!{.git,node_modules,flow-typed}"'
+export FZF_DEFAULT_OPTS='--height 40% --layout=reverse'
+
+# Rbenv
+if [[ -s ~/.rbenv/shims/ruby ]]; then
+  PATH=$HOME/.rbenv/shims:$PATH
+fi
+rbenv() {
+  eval "$(command rbenv init - --no-rehash)"
+  rbenv "$@"
+}
+
+# NVM
+export NVM_DIR=$HOME/.nvm
+if [ -f $HOME/.nvm/alias/default ]; then
+  PATH=${PATH}:${HOME}/.nvm/versions/node/$(cat ~/.nvm/alias/default)/bin
+fi
+nvm() {
+  [ -s $NVM_DIR/nvm.sh ] && source $NVM_DIR/nvm.sh
+  nvm "$@"
+}
+
