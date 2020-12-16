@@ -1,0 +1,546 @@
+: 1606467932:0;.zplug
+: 1606468011:0;zi
+: 1606468014:0;zplug
+: 1606468050:0;cd pure
+: 1606468058:0;cd autosuggestions
+: 1606468060:0;.
+: 1606469368:0;v .vim
+: 1606469377:0;rm .vim
+: 1606469585:0;v .editorconfig
+: 1606469790:0;exti
+: 1606470568:0;\
+$(which zsh) -lxv
+: 1606470798:0;v prompt.zsh
+: 1606471717:0;v config/exports.zsh
+: 1606471927:0;v .tmux
+: 1606471945:0;rm .tmux
+: 1606471983:0;v .bash_history
+: 1606471989:0;v bashrc
+: 1606471996:0;\
+bash> tmux show-environment
+: 1606472141:0;mv .tmux ttmux
+: 1606472164:0;mv .tmux ../
+: 1606472201:0;tmux show-environment
+: 1606472214:0;tmux set-environment
+: 1606472327:0;v .zlogin
+: 1606472529:0;$TMUX
+: 1606472532:0;echo $TMUX
+: 1606472596:0;mv .tmux.conf tmucconf
+: 1606472615:0;mv tmucconf .tmux.conf
+: 1606472652:0;mv .tmux.conf tmuxbac
+: 1606472660:0;echo $PATH
+: 1606472694:0;mv .tmux/tmux.conf .tmux.conf
+: 1606472739:0;rm .tmux.conf
+: 1606472746:0;trash .tmux.conf
+: 1606472757:0;mv .tmux.conf tmc
+: 1606472765:0;mv tmuxbac .tmux.conf
+: 1606472814:0;git clone https://github.com/kutsan/dotfiles
+: 1606472850:0;cp .tmux $home/.tmux
+: 1606472855:0;cp -r .tmux $home/.tmux
+: 1606472864:0;cp -r .tmux $HOME/.tmux
+: 1606472896:0;rm -r .tmux
+: 1606472907:0;mv .tmux tmux
+: 1606472911:0;mv .tmux tmuxax
+: 1606472920:0;cd dotfiles
+: 1606472933:0;cp -r .tmux $HOME/
+: 1606473013:0;mv .tmux.conf tmuxba
+: 1606473045:0;cp tmux.conf $HOME/.tmux.conf
+: 1606473084:0;v mappings
+: 1606473248:0;cd cache
+: 1606473473:0;rm -r kitty
+: 1606473481:0;mv kitty kity
+: 1606473495:0;cd .ddd
+: 1606473516:0;cp -r .termux $HOME/
+: 1606473567:0;cp -r kitty $HOME/.config/
+: 1606473572:0;kitty
+: 1606473613:0;top
+: 1606473670:0;neomutt
+: 1606473702:0;n
+: 1606473723:0;sudo pacman -S gnuplot imagemagick
+: 1606473895:0;cd plugin
+: 1606473926:0;nvim _treesitter.lua
+: 1606474225:0;make -h
+: 1606474353:0;v neovim.sh
+: 1606474393:0;sudo yay -Rns neovim-nightly-git
+: 1606474575:0;neovim
+: 1606474602:0;cd .scripts
+: 1606474632:0;sudo pacman -S unzip
+: 1606474638:0;sudo pacman -S ninja
+: 1606474647:0;./neovim.sh
+: 1606475017:0;cd config/mappings
+: 1606475033:0;vim root.tmux
+: 1606475255:0;v _ctags.lua
+: 1606475313:0;pacman -S ctags
+: 1606475356:0;cd plugin/
+: 1606475359:0;v packer_compiled.vim
+: 1606475392:0;rm packer_compiled.vim
+: 1606475402:0;mv packer_compiled.vim $HOME/
+: 1606475763:0;iiik-e
+: 1606476366:0;vim
+: 1606476435:0;.config/nvim
+: 1606476817:0;cd /usr/local/opt
+: 1606477145:0;v tmuxax
+: 1606477269:0;cd .config
+: 1606477538:0;\
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+: 1606477618:0;\
+tmux source ~/.tmux/tmux.conf
+: 1606477686:0;v tmux.conf
+: 1606477801:0;cd .tmux
+: 1606477807:0;cd tpm
+: 1606477816:0;v plugins.tmux
+: 1606478469:0;vp _plugins.lua
+: 1606478983:0;cd .config/nvin
+: 1606478987:0;cd .config/nvim
+: 1606479063:0;cd .tmux/config/
+: 1606479114:0;tn settings.tmux
+: 1606479122:0;vt settings.tmux
+: 1606479149:0;vt style.tmux
+: 1606479216:0;vt root.tmux
+: 1606479315:0;vt prefix.tmux
+: 1606480254:0;take ctags
+: 1606480717:0;cd .tmux/config/mappings
+: 1606482456:0;start
+: 1606482982:0;cd /usr/share/
+: 1606483059:0;cd /usr/share
+: 1606483098:0;yay -S fzf-extras
+: 1606483483:0;pacman -S ripgrep
+: 1606483788:0;pwd
+: 1606483827:0;cp .fzf .local/share/nvim/site/pack/packer
+: 1606483831:0;cp -r .fzf .local/share/nvim/site/pack/packer
+: 1606483919:0;mv .fzf fzf
+: 1606483923:0;mv .fzf fzff
+: 1606483932:0;sudo cp -r .fzf /start
+: 1606483953:0;sudo cp -r .fzf /start/
+: 1606483991:0;sudo cp -r .fzf start/
+: 1606485223:0;v _utils.lua
+: 1606485468:0;v _git.lua
+: 1606485567:0;vnim
+: 1606486049:0;vp _functools.lua
+: 1606486121:0;vp _statusline.lua
+: 1606486337:0;v _start.lua
+: 1606486668:0;lua require(start)
+: 1606486682:0;cd .config/nvim/lua
+: 1606487981:0;nvim _start.lua
+: 1606488040:0;.config
+: 1606488046:0;nvim/lua
+: 1606489099:0;v _statusline.lua
+: 1606489323:0;rm _utils.lua _lsp.lua _statusline.lua
+: 1606489332:0;pacman -S trash
+: 1606489337:0;yay -S trash
+: 1606489634:0;v prefix.tmux
+: 1606490284:0;v copy-mode-vi.tmux
+: 1606490893:0;vp layouts.tmux
+: 1606491680:0;v _autocmd.lua
+: 1606492280:0;cd .config/nvimbackup
+: 1606492283:0;cd nvim
+: 1606492783:0;v layouts.tmux
+: 1606492873:338;v tmuxba
+: 1606493328:0;v plugins
+: 1606493342:0;cd plugins
+: 1606493381:0;git clone https://github.com/Aloxaf/fzf-tab fzf-tab
+: 1606493387:0;cd fzf-tab
+: 1606493570:0;echo $realpath
+: 1606494342:0;v style.tmux
+: 1606494390:0;cd lua
+: 1606494399:0;vp _options.lua
+: 1606494423:0;v _dirvish.lua
+: 1606495106:0;v _colorizer.lua
+: 1606495275:0;cp -r .fzf /opt
+: 1606495296:0;sudo cp -r .fzf /opt
+: 1606495340:0;cp -r .fzf opt/
+: 1606495486:0;cd .fzf
+: 1606495491:0;cd opt
+: 1606495563:0;cp -r .fzf opt/fzf
+: 1606495585:0;cd
+: 1606495599:0;cd site/pack/packer
+: 1606495611:0;mv fzf fzff
+: 1606495623:0;cp -r .fzf start/fzf\
+
+: 1606495860:0;cd .config/nvim/
+: 1606497511:0;cd .tmux/config
+: 1606497514:0;cd mappings
+: 1606497517:0;v root.tmux
+: 1606497782:0;cd .local/share/nvim
+: 1606497785:0;cd site
+: 1606497797:0;cd pack
+: 1606497799:0;cd packer
+: 1606497803:0;cd start
+: 1606497859:0;cd fzf
+: 1606499213:0;v main.py
+: 1606499226:0;cd py
+: 1606499490:0;vp in.py
+: 1606500200:0;cd mm552
+: 1606500218:0;open document.pdf
+: 1606500290:0;cd .zsh
+: 1606500297:0;cd config
+: 1606500343:0;sudo pacman -S trash-cli
+: 1606500359:0;rm .cfg
+: 1606500558:0;ctrlp
+: 1606500624:0;..
+: 1606500649:0;fzf-enable
+: 1606500653:0;enable-fzf
+: 1606500663:0;fzf-tmux
+: 1606500736:0;v README.md
+: 1606500773:0;FZF
+: 1606500862:0;vp exports.zsh
+: 1606501213:0;man fzf
+: 1606502007:0;\
+ fzf --bind 'ctrl-a:select-all+accept'
+: 1606502406:0;a
+: 1606502433:0;export $FZF_DEFAULT_OPTS
+: 1606502438:0;echo $FZF_DEFAULT_OPTS
+: 1606502446:0;echo $FZF_DEFAULT_COMMAND
+: 1606502477:0;fzf --bind 'ctrl-a:select-all'
+: 1606502499:0;fzf --bind 'tab:down'
+: 1606502743:0;source .fzf/
+: 1606502760:0;.fzf
+: 1606503527:0;v fzf.vim
+: 1606503669:0;v _fzf.lua
+: 1606504613:0;vt ma.py
+: 1606504944:0;weblogo -h
+: 1606505401:0;weblogo human.aln
+: 1606505407:0;weblogo
+: 1606505676:0;python3
+: 1606510887:0;cluwstalw2 -infile=mouse.fa
+: 1606510889:0;clustalw2 -infile=mouse.fa
+: 1606514664:0;v mouse.fa
+: 1606515025:0;\
+weblogo --help
+: 1606518574:0;weblogo < mouse.fa
+: 1606529393:0;mkdir test
+: 1606529403:0;mv in.py test/
+: 1606529413:0;cp mouse.fa test/
+: 1606529420:0;v in.py
+: 1606529481:0;nvim mouse.aln
+: 1606529689:0;vt mouse.fa
+: 1606529879:0;cat mouse.dnd
+: 1606529884:0;cat mouse.aln
+: 1606532267:0;python3 in.py
+: 1606532739:0;v human.aln
+: 1606533300:0;rm mouse.aln mouse.dnd
+: 1606533311:0;clustalw2 mouse.fa
+: 1606533323:0;vt mouse.aln
+: 1606533491:0;v out.py
+: 1606533625:0;python3 out.py
+: 1606534670:0;vt in.py
+: 1606534670:0;:tabnew /home/i/mm552/py/test/in.py
+: 1606534852:0;weblogo < mouse.fa > out.png
+: 1606534874:0;v logo.py
+: 1606536872:0;take latexfiles
+: 1606536961:0;v _vimtex.lua
+: 1606537036:0;v document.pdf
+: 1606538401:0;vp init.vim
+: 1606538439:0;v ka
+: 1606538548:0;.config/nvim/lua
+: 1606539489:0;UltiSnips
+: 1606540378:0;v a
+: 1606540435:0;nvim .zshrc
+: 1606540821:0;v _treesitter.lua
+: 1606541235:0;lua
+: 1606541649:0;mv UltiSnips mysnips
+: 1606542211:0;mv tex.snippets ../
+: 1606542237:0;v all.snippets
+: 1606542517:0;v latexfiles/klade.tex
+: 1606544007:0;v init.lua
+: 1606544651:0;v _plugins.lua
+: 1606544780:0;v _theme.lua
+: 1606545780:0;v _options.lua
+: 1606546503:0;v _providers.lua
+: 1606546523:0;v _lsp.lua
+: 1606548033:0;v mysnips/tex.snippets
+: 1606548123:0;v mm553/latexfiles/klade.tex
+: 1606548339:0;v _ncm2.lua
+: 1606548887:0;document.pdf
+: 1606548895:0;document.pdf &
+: 1606549006:0;assignment_3.pdf
+: 1606578714:0;mv Downloads/Anagnostopolous.pdf mm553/
+: 1606581670:0;v lua
+: 1606582181:0;nvim
+: 1606582370:0;mkdir thefuck
+: 1606582387:0;git clone https://github.com/nvbn/thefuck thefuck
+: 1606582620:0;./setup.py
+: 1606582672:0;sudo rm -r thefuck
+: 1606582997:0;pacin
+: 1606583005:0;j
+: 1606583041:0;v settings.py
+: 1606583324:0;sudo pacmna -S weblogo
+: 1606583362:0;v rules
+: 1606583459:0;fuck
+: 1606583474:0;thefuck
+: 1606583493:0;pacin thefuck
+: 1606584572:0;v tex.snippets
+: 1606588245:0;v .config/nvim/tex.snippets
+: 1606588637:0;v .config/nvim/
+: 1606588675:0;v .config/nvimbackup
+: 1606588775:0;v .config/nvim/lua
+: 1606588783:0;v .config/nvim/lua/_plugins.lua
+: 1606588973:0;v .config/nvim/lua/init.lua
+: 1606592506:0;v .config/nvim/mysnips/tex.snippets
+: 1606592514:0;v .config/nvim/init.vim
+: 1606592532:0;v .config/nvim/lua/_mapping.lua
+: 1606592729:0;v as.tex
+: 1606592905:0;v lua/_mapping.lua
+: 1606592929:0;u
+: 1606801488:0;Bacheloroplaeg-20.pdf
+: 1606802119:0;Anagnostopolous.pdf ^
+: 1606802125:0;Anagnostopolous.pdf %
+: 1606832307:0;.config/nvim/
+: 1606832350:0;ld
+: 1606832364:0;cat _mapping.lua
+: 1606845148:0;Anagnostopolous.pdf &
+: 1606857946:0;v noter4\1
+: 1606857970:0;v noter11.3.tex
+: 1606859602:0;v _mapping.lua
+: 1606859975:0;vp _mapping.lua
+: 1606860353:0;exit
+: 1606860583:0;v plugins.zsh
+: 1606864414:0;cat wsdnames.py
+: 1606864463:0;v wsdnames.sh
+: 1606864556:0;x wsdnames.sh
+: 1606864569:0;chmod wsdnames.sh
+: 1606864578:0;sudo chmod x wsdnames.sh
+: 1606864598:0;x+
+: 1606864607:0;+x
+: 1606864622:0;sudo chmod +x wsdnames.sh
+: 1606864635:0;sudo ./wsdnames.sh
+: 1606864914:0;sudo chmod +x wsdnames.py
+: 1606865094:0;v .dircolors
+: 1606865211:0;v wsdnames.py
+: 1606866085:0;./wsdnames.sh
+: 1606866156:0;./wsdnames.py
+: 1606866195:0;ee
+: 1606866235:0;reboot
+: 1606867377:0;la
+: 1606868960:0;.config/waybar
+: 1606870475:0;mv sort1.jpg sortarch.jpg
+: 1606870497:0;mv 512679.jpg sort1.jpg
+: 1606870543:0;v style.css
+: 1606870824:0;swaylock -h
+: 1606932044:0;pavucontrol
+: 1606932217:0;bluetoothctl
+: 1607231985:0;v klade.tex
+: 1607232543:0;take cpp
+: 1607232559:0;v ising_metro.cc
+: 1607232805:0;assignment_3.pdf &
+: 1607232816:0;Anagnostopolous.pdf&
+: 1607233827:0;pins wine
+: 1607234047:0;ex Warcraft_III_1.28.zip
+: 1607234075:4;yay -S wine
+: 1607234105:0;yay -S wine-stable
+: 1607234146:0;sudo pacman -S wine
+: 1607234165:0;sudo pacman -S lutris
+: 1607234210:0;sudo vim pacman.conf
+: 1607234270:0;pacman -Sl multilib
+: 1607234395:0;./Warcraft\ III.exe
+: 1607234787:0;wine Warcraft\ III.exe
+: 1607247403:0;wine vc_redist.x86.exe
+: 1607247428:0;wine vcredist_x86.exe
+: 1607248173:0;bat
+: 1607248254:0;./w3l.exe
+: 1607248280:0;./Launcher.db
+: 1607248360:0;wine Launcher.db
+: 1607248420:0;Launcher.db
+: 1607248427:0;wine .product.db
+: 1607248437:0;de AI\ Scripts
+: 1607248707:0;v alacritty.yml
+: 1607248779:0;unzip Warcraft_III_1.28\(1\).zip
+: 1607248838:0;mkdir wc3
+: 1607248856:0;mv Warcraft_III_1.28.zip wc3
+: 1607249033:0;mv installer.exe wc3
+: 1607249251:0;sudo wine installer.exe
+: 1607249396:0;wine --help
+: 1607249410:0;wineskine
+: 1607249412:0;wineskin
+: 1607249438:0;wine
+: 1607249444:0;wine --version
+: 1607249455:0;winepath
+: 1607249504:0;v New\ Tab.html
+: 1607249540:0;wine .patch.result
+: 1607249624:0;mv Warcraft_III_1.28.zip ../
+: 1607249731:0;wine War3Patch.mpq
+: 1607249761:0;wine Warcraft\ III\ Launcher.exe
+: 1607250087:0;lutris installer.exe
+: 1607250487:0;Warcraft\ III\ 1.28.5
+: 1607251012:0;playonlinux
+: 1607251609:0;w3l.exe
+: 1607251745:0;winecfg
+: 1607251794:0;mv installer.exe Warcraft\ III\ 1.28.5
+: 1607252041:0;mv installer.exe Warcraft\ III\ 1.28.5/
+: 1607252142:0;q4wine
+: 1607252195:0;lutris w3l.exe
+: 1607252388:0;q4wine-helper
+: 1607252445:0;sudo rm -r Warcraft\ III\ 1.28.5
+: 1607252452:0;unzip Warcraft_III_1.28.zip
+: 1607252500:0;mv installer_v11.zip ../Warcraft\ III\ 1.28.5
+: 1607252510:0;unzip installer_v11.zip
+: 1607252524:0;q4wine installer.exe
+: 1607252546:0;q4wine-cli installer.exe
+: 1607252565:0;wine installer.exe
+: 1607252644:0;playonlinux installer.exe
+: 1607252679:0;installer.exe
+: 1607252828:0;c
+: 1607252859:0;sl
+: 1607252872:0;bneptest
+: 1607252901:0;playonlinux w3l.exe
+: 1607252973:0;q4wine w3l.exe
+: 1607253094:0;v Eurobattle.net\ Client.lnk
+: 1607253104:0;./Eurobattle.net\ Client.lnk
+: 1607253115:0;playonlinux Eurobattle.net\ Client.lnk
+: 1607253208:0;./xpam.exe
+: 1607263839:0;mv SHDR_twrpgv0.40e_eng.w3x Warcraft\ III\ 1.28.5/Maps/
+: 1607264166:0;cp SHDR_twrpgv0.40e_eng.w3x wc3/Warcraft\ III\ 1.28.5/Maps
+: 1607264179:0;cp SHDR_twrpgv0.40e_eng.w3x Warcraft\ III\ 1.28.5/Maps
+: 1607264291:0;cp SHDR_twrpgv0.40e_eng.w3x ../Warcraft\ III\ 1.28.5/Maps/FrozenThrone/
+: 1607277797:0;v SaveFile4767.txt
+: 1607277803:0;v SaveFile6023.txt
+: 1607279357:0;v SaveFile1167.txt
+: 1607279362:0;v SaveFile3785.txt
+: 1607279372:0;v SaveFile9652.txt
+: 1607279423:0;exa
+: 1607279429:0;ls -h
+: 1607279540:0;ls SaveFile8595.txt
+: 1607279545:0;v SaveFile8595.txt
+: 1607285853:0;v SaveFile5199.txt
+: 1607285931:0;v SaveFile3190.txt
+: 1607287354:0;v SaveFile8203.txt
+: 1607289442:0;v SaveFile9141.txt
+: 1607295143:0;v SaveFile9206.txt
+: 1607304479:0;v SaveFile5943.txt
+: 1607316800:0;pins golang
+: 1607317070:0;pins grep
+: 1607317118:0;sudo pacman -S ag
+: 1607317170:0;ag
+: 1607317458:0;f cd
+: 1607317481:0;f vim
+: 1607317815:0;cf .con
+: 1607318244:0;.tmux/config
+: 1607318247:0;v settings.tmux
+: 1607318375:0;v ftwind
+: 1607318392:0;v .tmux.conf
+: 1607318459:0;+x ftwind
+: 1607318468:0;sudo chmod +x ftwind
+: 1607318472:0;ftwind
+: 1607318475:0;./ftwind
+: 1607318579:0;tm jj
+: 1607318585:0;tm mm552
+: 1607318597:0;tm mm553
+: 1607318607:0;l
+: 1607318659:0;tm zsh
+: 1607318662:0;tm kk
+: 1607319188:0;fif
+: 1607319191:0;tmux
+: 1607319196:0;fif assign2-mm553
+: 1607319205:0;fif monte
+: 1607319269:0;pins poppler
+: 1607319274:0;pacman -Syu
+: 1607319396:0;grep --help
+: 1607319609:0;ripgrep
+: 1607319630:0;rg
+: 1607319637:0;cf create-domain
+: 1607319861:0;grep
+: 1607320033:0;fastp
+: 1607320045:0;fastp assign2-mm553
+: 1607320049:0;sudo fastp assign2-mm553
+: 1607320055:0;fastp -h
+: 1607320058:0;sudo fastp -h
+: 1607320059:0;123
+: 1607320157:0;fast-p
+: 1607320458:0;cf
+: 1607320463:0;cf nvim
+: 1607320774:0;sudo chmod +x launcher.sh
+: 1607320789:0;v launcher.sh
+: 1607320830:0;sudo chmod +x fuzzyf.sh rofi-wifi-menu.sh
+: 1607320837:0;./fuzzyf.sh
+: 1607321244:0;git clone https://github.com/scaryrawr/tofi
+: 1607321275:0;export CC=clang
+: 1607321291:0;export CXX=clang++
+: 1607321308:0;cmake ..
+: 1607321327:0;make
+: 1607321401:0;.PlayOnLinux
+: 1607321542:0;sudo make install
+: 1607321567:0;cf sway
+: 1607321570:0;z sway
+: 1607321606:0;.config/sway
+: 1607321608:0;v config
+: 1607322090:0;v SaveFile3645.txt
+: 1607324647:0;tofi
+: 1607327572:0;.zsh
+: 1607327685:0;v settings.zsh
+: 1607327753:0;\
+ echo -e {1}"\n"{2} | grep -E "^|$v" -i --color=always;
+: 1607327791:0;ag -U
+: 1607327886:0;bash
+: 1607328383:0;fe init.vim
+: 1607328395:0;fp
+: 1607328402:0;fe
+: 1607328553:0;v .zsh
+: 1607328611:0;xdg-open
+: 1607328621:0;xdg-open --help
+: 1607328748:0;zsh
+: 1607328854:0;zathura
+: 1607328860:0;okular
+: 1607328925:0;v config/functions.zsh
+: 1607329059:0;v SaveFile6811.txt
+: 1607329090:0;v SaveFile4430.txt
+: 1607331993:0;xdg-mime default Zathura.desktop application/pdf
+: 1607332013:0;xdg-mime default zathura.desktop application/pdf
+: 1607332064:0;mm553
+: 1607332067:0;Anagnostopolous.pdf
+: 1607332089:0;v functions.zsh
+: 1607332100:0;v aliases.zsh
+: 1607332131:0;v mappings.zsh
+: 1607332138:0;v widgets.zsh
+: 1607332147:0;v exports.zsh
+: 1607332154:0;v .zshrc
+: 1607332305:0;v .bashrc
+: 1607332391:0;v .zsh/config/functions.zsh
+: 1607333551:0;zathura &|
+: 1607333903:0;v .zsh/.zshrc
+: 1607340610:0;wine xpam.exe
+: 1607343042:0;pins
+: 1607348529:0;v note2,13.tex
+: 1607348979:0;v ajsld.tex
+: 1607349076:0;v noter2,31.tex
+: 1607349235:0;v fjkasdfnoter,23,4.tex
+: 1607349332:0;v
+: 1607349806:0;v init.vim
+: 1607356219:0;fzf
+: 1607356408:0;v SaveFile9437.txt
+: 1607360470:0;ls --full-time
+: 1607360478:0;v SaveFile9945.txt
+: 1607363236:0;lutris
+: 1607377114:17978;p
+: 1607395098:1;wine w3l.exe
+: 1607395158:0;./install.sh
+: 1607395172:0;wineskine w3l.exe
+: 1607436164:0;sway
+: 1607787277:0;ls
+: 1607788462:0;nmtui-hostname
+: 1607788465:0;e
+: 1607788479:0;v klade.tex
+: 1607801813:0;discord
+: 1607909020:0;sway
+: 1607910569:0;hydra
+: 1608081636:0;sway
+: 1608146845:0;ls
+: 1608147192:0;v aliases.zsh
+: 1608147220:0;dot status
+: 1608147260:0;dot add .
+: 1608147345:0;dot add -u
+: 1608147350:0;dot status
+: 1608147385:0;dot push
+: 1608147425:0;dot commit -m "hey"
+: 1608147428:0;dot push
+: 1608147447:0;ls
+: 1608147525:0;v .zshenv
+: 1608147545:0;v .zsh/.zshrc
+: 1608147565:0;v .zshenv
+: 1608147577:0;dot add .zshenv
+: 1608147590:0;dot remove .zshrc
+: 1608147601:0;dot --help
+: 1608147608:0;dot rm .zshrc
+: 1608147611:0;dot status
+: 1608147622:0;dot add .zsh
+: 1608147658:0;dot status
+: 1608147683:0;dot add -u
