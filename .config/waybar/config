@@ -4,7 +4,7 @@
   "layer": "top",
   "position": "top",
   "modules-left": ["sway/workspaces"],
-  "modules-center": ["sway/window", "sway/mode", "custom/media"],
+  // "modules-center": ["sway/window", "sway/mode", "custom/media"],
   "modules-right": ["custom/mail", "custom/arch", "network", "backlight", "pulseaudio", "battery", "clock", "custom/power"],
    "sway/window": {
         "max-length": 50,
@@ -44,7 +44,7 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity}% {icon}",
+        "format": "{icon}",
         "format-icons": ["", "", "", "", ""],
         "max-length": 25
     },
@@ -239,7 +239,7 @@
     },
     "backlight": {
 		"device": "amdgpu_bl0",
-		"format": "{icon} {percent}%",
+		"format": "{icon}",
 		"format-icons": ["", ""],
 		"on-scroll-up": "light -A 1",
 		"on-scroll-down": "light -U 1"

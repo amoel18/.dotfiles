@@ -14,24 +14,11 @@ local plugins = {
     only_setup = false,
     path = "/home/i/.local/share/nvim/site/pack/packer/opt/ale"
   },
-  ["completion-nvim"] = {
-    config = { "\27LJ\2\2·\2\0\0\5\0\f\0\0296\0\0\0'\1\1\0B\0\2\0029\1\2\0'\2\3\0006\3\0\0'\4\3\0B\3\2\0029\3\4\3B\1\3\0016\1\5\0009\1\6\1'\2\a\0B\1\2\0016\1\5\0009\1\6\1'\2\b\0B\1\2\0016\1\5\0009\1\6\1'\2\t\0B\1\2\0019\1\n\0B\1\1\0016\1\5\0009\1\6\1'\2\v\0B\1\2\1K\0\1\0\25 doautoall FileType \14on_attach\18 augroup END : au BufEnter * lua require('completion').on_attach() \25 augroup lsp_aucmds \bcmd\bvim\18complete_item\vvimtex\24addCompletionSource\15completion\frequire\0" },
+  ["nvim-tree.lua"] = {
     loaded = false,
     only_sequence = false,
     only_setup = false,
-    path = "/home/i/.local/share/nvim/site/pack/packer/opt/completion-nvim"
-  },
-  ["completion-treesitter"] = {
-    loaded = false,
-    only_sequence = false,
-    only_setup = false,
-    path = "/home/i/.local/share/nvim/site/pack/packer/opt/completion-treesitter"
-  },
-  ["nvim-dap"] = {
-    loaded = false,
-    only_sequence = false,
-    only_setup = false,
-    path = "/home/i/.local/share/nvim/site/pack/packer/opt/nvim-dap"
+    path = "/home/i/.local/share/nvim/site/pack/packer/opt/nvim-tree.lua"
   },
   ["packer.nvim"] = {
     loaded = false,
@@ -39,19 +26,35 @@ local plugins = {
     only_setup = false,
     path = "/home/i/.local/share/nvim/site/pack/packer/opt/packer.nvim"
   },
-  undotree = {
-    commands = { "UndotreeToggle" },
+  ["vim-dispatch"] = {
+    commands = { "Dispatch", "Make", "Focus", "Start" },
     loaded = false,
     only_sequence = false,
     only_setup = false,
-    path = "/home/i/.local/share/nvim/site/pack/packer/opt/undotree"
+    path = "/home/i/.local/share/nvim/site/pack/packer/opt/vim-dispatch"
   },
   ["vim-go"] = {
-    commands = { "GoUpdateBinaries" },
     loaded = false,
     only_sequence = false,
     only_setup = false,
     path = "/home/i/.local/share/nvim/site/pack/packer/opt/vim-go"
+  },
+  ["vim-obsession"] = {
+    after = { "vim-prosession" },
+    commands = { "Prosession" },
+    loaded = false,
+    only_sequence = false,
+    only_setup = false,
+    path = "/home/i/.local/share/nvim/site/pack/packer/opt/vim-obsession"
+  },
+  ["vim-prosession"] = {
+    load_after = {
+      ["vim-obsession"] = true
+    },
+    loaded = false,
+    only_sequence = false,
+    only_setup = false,
+    path = "/home/i/.local/share/nvim/site/pack/packer/opt/vim-prosession"
   },
   ["vim-ruby"] = {
     loaded = false,
@@ -66,11 +69,12 @@ local plugins = {
     only_setup = false,
     path = "/home/i/.local/share/nvim/site/pack/packer/opt/vim-sayonara"
   },
-  vimspector = {
+  ["vim-startuptime"] = {
+    commands = { "StartupTime" },
     loaded = false,
     only_sequence = false,
     only_setup = false,
-    path = "/home/i/.local/share/nvim/site/pack/packer/opt/vimspector"
+    path = "/home/i/.local/share/nvim/site/pack/packer/opt/vim-startuptime"
   }
 }
 
@@ -194,8 +198,6 @@ end
 -- Runtimepath customization
 
 -- Pre-load configuration
--- Setup for: vimspector
-loadstring("\27LJ\2\2B\0\0\2\0\4\0\0056\0\0\0009\0\1\0'\1\3\0=\1\2\0K\0\1\0\nHUMAN\31vimspector_enable_mappings\6g\bvim\0")()
 -- Post-load configuration
 -- Conditional loads
 -- Load plugins in order defined by `after`
@@ -207,10 +209,14 @@ endfunction
 
 
 " Command lazy-loads
-command! -nargs=* -range -bang -complete=file UndotreeToggle call s:load(['undotree'], { "cmd": "UndotreeToggle", "l1": <line1>, "l2": <line2>, "bang": <q-bang>, "args": <q-args> })
+command! -nargs=* -range -bang -complete=file Make call s:load(['vim-dispatch'], { "cmd": "Make", "l1": <line1>, "l2": <line2>, "bang": <q-bang>, "args": <q-args> })
+command! -nargs=* -range -bang -complete=file Focus call s:load(['vim-dispatch'], { "cmd": "Focus", "l1": <line1>, "l2": <line2>, "bang": <q-bang>, "args": <q-args> })
+command! -nargs=* -range -bang -complete=file StartupTime call s:load(['vim-startuptime'], { "cmd": "StartupTime", "l1": <line1>, "l2": <line2>, "bang": <q-bang>, "args": <q-args> })
 command! -nargs=* -range -bang -complete=file Sayonara call s:load(['vim-sayonara'], { "cmd": "Sayonara", "l1": <line1>, "l2": <line2>, "bang": <q-bang>, "args": <q-args> })
+command! -nargs=* -range -bang -complete=file Start call s:load(['vim-dispatch'], { "cmd": "Start", "l1": <line1>, "l2": <line2>, "bang": <q-bang>, "args": <q-args> })
 command! -nargs=* -range -bang -complete=file ALEEnable call s:load(['ale'], { "cmd": "ALEEnable", "l1": <line1>, "l2": <line2>, "bang": <q-bang>, "args": <q-args> })
-command! -nargs=* -range -bang -complete=file GoUpdateBinaries call s:load(['vim-go'], { "cmd": "GoUpdateBinaries", "l1": <line1>, "l2": <line2>, "bang": <q-bang>, "args": <q-args> })
+command! -nargs=* -range -bang -complete=file Dispatch call s:load(['vim-dispatch'], { "cmd": "Dispatch", "l1": <line1>, "l2": <line2>, "bang": <q-bang>, "args": <q-args> })
+command! -nargs=* -range -bang -complete=file Prosession call s:load(['vim-obsession'], { "cmd": "Prosession", "l1": <line1>, "l2": <line2>, "bang": <q-bang>, "args": <q-args> })
 
 " Keymap lazy-loads
 
@@ -218,8 +224,8 @@ augroup packer_load_aucmds
   au!
   " Filetype lazy-loads
   au FileType js ++once call s:load(['ale'], { "ft": "js" })
-  au FileType rb ++once call s:load(['ale', 'vim-ruby'], { "ft": "rb" })
-  au FileType go ++once call s:load(['ale', 'vim-go'], { "ft": "go" })
+  au FileType ruby ++once call s:load(['vim-ruby'], { "ft": "ruby" })
+  au FileType rb ++once call s:load(['ale'], { "ft": "rb" })
+  au FileType go ++once call s:load(['vim-go', 'ale'], { "ft": "go" })
   " Event lazy-loads
-  au InsertEnter * ++once call s:load(['completion-nvim'], { "event": "InsertEnter *" })
 augroup END

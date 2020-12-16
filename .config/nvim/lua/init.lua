@@ -40,14 +40,17 @@ function M.setup()
   
 
   -- Other settings
-  -- require'_treesitter'
+  require'_treesitter'
+  require'_statusline'
   require'_colorizer'
   require'_sneak'
-  require'_tree'
+  --require'_tree'
   require'_fzf'
+  --require'_start'
   require'_fugitive'
+  require'_dirvish'
   --require'_utils'
-  --require'_vimtex'
+  require'_vimtex'
   require'_signify'
   require'_ncm2'
   require'_ale'

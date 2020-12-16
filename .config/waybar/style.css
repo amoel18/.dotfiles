@@ -35,13 +35,13 @@
 
 * {
   border: none;
-  border-radius: 5px;
+  border-radius: 0px;
   /* `otf-font-awesome` is required to be installed for icons */
   font-family: Hack;
-  font-size: 16px;
-  min-height: 16px;
-  padding-left: 2px;
-  padding-right: 4px;
+  font-size: 14px;
+  min-height: 14px;
+  padding-left: 1px;
+  padding-right: 1px;
 }
 
 window#waybar {
@@ -55,7 +55,7 @@ window#waybar.waybar-bottom {
   background-color: #000302;
   color: #b47474;
   font-family: Hack;
-  font-size: 12px;
+  font-size: 14px;
   transition-property: background-color;
   transition-duration: 0.5s;
 }
@@ -92,8 +92,8 @@ window#waybar.chromium {
 #workspaces button.focused {
   background-color: #ffffff;
   color: lightpink;
-  border-bottom: 3px solid transparent;
-  border-top: 3px solid transparent;
+  border-bottom: 0px solid transparent;
+  border-top: 1px solid transparent;
 }
 
 #workspaces button.urgent {
@@ -147,7 +147,7 @@ window#waybar.chromium {
   border-style: solid;
   border-width: 3px;
   border-color: #111;
-  padding: 0 6px;
+  padding: 0 10px;
   color: #eee;
   background-color: #333;
   font-family: "Hack";
@@ -186,9 +186,7 @@ window#waybar.chromium {
   color: #eee;
 }
 
-#battery.charging {
-  border-bottom: 2px solid #a8bcba;
-}
+
 
 @keyframes blink {
   to {
@@ -198,7 +196,7 @@ window#waybar.chromium {
 }
 
 #battery.critical:not(.charging) {
-  background-color: #f53c3c;
+  background-color: #AC8A8C;
   color: #ffffff;
   animation-name: blink;
   animation-duration: 0.5s;
@@ -225,7 +223,7 @@ label:focus {
 }
 
 #network.disconnected {
-  background-color: #f53c3c;
+  background-color: #AC8A8C;
 }
 
 #pulseaudio {
@@ -285,7 +283,7 @@ label:focus {
 }
 
 #mpd.disconnected {
-  background-color: #f53c3c;
+  background-color: #AC8A8C;
 }
 
 #mpd.stopped {
@@ -296,7 +294,6 @@ label:focus {
   background-color: #51a37a;
 }
 #clock {
-  font-weight: Bold;
 }
 
 #cpu {
@@ -368,7 +365,6 @@ label:focus {
 }
 
 #window {
-  font-weight: bold;
   padding-left: 10px;
   padding-right: 10px;
 }
@@ -386,9 +382,9 @@ label:focus {
 
 #workspaces button.focused {
   font-family: Hack;
-  font-weight: bold;
   font-size: 25px;
-  border-color: pink;
+  border-color: #936893;
+  /* eller brug #8F8AAC */
   color: #e5e5e5;
   background-color: black;
 }

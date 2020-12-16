@@ -1,5 +1,5 @@
 ##!/bin/bash
-
+zmodload zsh/zprof
 # auto start tmux
 if [ "$TMUX" = "" ]; then
     # check for old session
@@ -213,6 +213,7 @@ alias lsport="sudo lsof -i"
 alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 alias {yaourt,yay}="yay"
 alias open="xdg-open"
+alias pins="paru -Slq | fzf -m --preview 'cat <(paru -Si {1}) <(paru -Fi {1} | awk \"{print \$2}\")' | xargs -ro paru -S"
 
 #alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
@@ -253,10 +254,10 @@ alias cd..='..'
 alias cd...='...'
 alias cd....='....'
 alias -g G='| grep '
-alias -s PDF="okular"
+alias -s PDF="zathura"
 alias -s epub="open"
 alias -s djuv="open"
-alias -s pdf="okular"
+alias -s pdf="zathura"
 alias -s md=" nvim"
 alias -s markdown="nvim"
 alias -s htm="$BROWSER"
@@ -709,4 +710,4 @@ nvm() {
   [ -s $NVM_DIR/nvm.sh ] && source $NVM_DIR/nvm.sh
   nvm "$@"
 }
-
+zprof

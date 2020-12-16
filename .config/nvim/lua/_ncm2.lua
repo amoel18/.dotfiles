@@ -2,6 +2,8 @@ local api = vim.api
 
 api.nvim_set_keymap('i', '<Tab>', 'pumvisible() ? "<C-N>" : "<Tab>"', { expr = true })
 api.nvim_set_keymap('i', '<S-Tab>', 'pumvisible() ? "<C-P>" : "<S-Tab>"', { expr = true })
+--api.nvim_set_keymap('i', '<CR>', 'ncm2_ultisnips#expand-or("\<CR>", 'n')'
+
 
 api.nvim_exec([[
 augroup ncm2
