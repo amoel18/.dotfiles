@@ -1,4 +1,4 @@
-#files: 939	version: 5.8
+#files: 940	version: 5.8
 
 _comps=(
 '-' '_precommand'
@@ -26,7 +26,6 @@ _comps=(
 'add-zsh-hook' '_add-zsh-hook'
 'admin' '_sccs'
 'afew' '_afew'
-'ag' '_the_silver_searcher'
 'alacritty' '_alacritty'
 'ali' '_mh'
 'alias' '_alias'
@@ -1325,6 +1324,7 @@ _comps=(
 'systemd-machine-id-setup' '_systemd'
 'systemd-notify' '_systemd'
 'systemd-nspawn' '_systemd-nspawn'
+'systemd-path' '_systemd-path'
 'systemd-resolve' '_resolvectl'
 'systemd-run' '_systemd-run'
 'systemd-tmpfiles' '_systemd-tmpfiles'
@@ -1823,8 +1823,8 @@ autoload -Uz _afew _alacritty _android _archlinux-java _artisan \
             _srm _stack _subl _subliminal _supervisorctl \
             _svm _sway _swayidle _swaylock _swaymsg \
             _systemctl _systemd _systemd-analyze _systemd-delta _systemd-inhibit \
-            _systemd-nspawn _systemd-run _systemd-tmpfiles _tarsnap _teamocil \
-            _the_silver_searcher _thor _timedatectl _tmuxinator _tmuxp \
+            _systemd-nspawn _systemd-path _systemd-run _systemd-tmpfiles _tarsnap \
+            _teamocil _thor _timedatectl _tmuxinator _tmuxp \
             _tox _trash-empty _trash-list _trash-put _trash-restore \
             _trizen _udevadm _udisksctl _ufw _vagrant \
             _virtualbox _vnstat _wemux _wg-quick _wl-copy \

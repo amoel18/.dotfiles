@@ -11,7 +11,8 @@ foreach piece (
 ) {
 	source $ZDOTDIR/config/$piece
 }
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+
 p () {
     open=zathura # this will open pdf file withthe default PDF viewer on KDE, xfce, LXDE and perhaps on other desktops.
 
@@ -24,3 +25,8 @@ p () {
         ' \
     | cut -z -f 1 -d $'\t' | tr -d '\n' | xargs -r --null $open &> /dev/null 2> /dev/null
 }
+[[ -e "/usr/share/fzf/fzf-extras.zsh" ]] \
+  && source /usr/share/fzf/fzf-extras.zsh
+
+
+

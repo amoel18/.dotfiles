@@ -52,3 +52,31 @@ fe() {
   IFS=$'\n' files=($(fzf-tmux --query="$1" --multi --select-1 --exit-0))
   [[ -n "$files" ]] && ${EDITOR:-nvim} "${files[@]}"
 }
+
+
+
+# ee - open 'frecency' files in $VISUAL editor
+ee() {
+  local files
+
+  files="$(
+    fasd -fl \
+      | fzf \
+          --tac \
+          --reverse -1 \
+          --no-sort \
+          --multi \
+          --tiebreak=index \
+          --bind=ctrl-x:toggle-sort \
+          --query "$*" \
+      | grep -o "/.*"
+  )" || echo 'No file selected'; return
+
+  "${VISUAL:-vim}" "$files"
+}
+
+# source relevant env files via fzf
+# note that sf() can also be used without Kubectl
+sf() {
+    find ~/.envs -type f | fzf | while read filename; do source $filename; done
+}

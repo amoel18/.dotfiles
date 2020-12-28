@@ -182,7 +182,6 @@ tmux source ~/.tmux/tmux.conf
 : 1606500653:0;enable-fzf
 : 1606500663:0;fzf-tmux
 : 1606500736:0;v README.md
-: 1606500773:0;FZF
 : 1606500862:0;vp exports.zsh
 : 1606501213:0;man fzf
 : 1606502007:0;\
@@ -305,11 +304,9 @@ weblogo --help
 : 1606864622:0;sudo chmod +x wsdnames.sh
 : 1606864635:0;sudo ./wsdnames.sh
 : 1606864914:0;sudo chmod +x wsdnames.py
-: 1606865094:0;v .dircolors
 : 1606865211:0;v wsdnames.py
 : 1606866085:0;./wsdnames.sh
 : 1606866156:0;./wsdnames.py
-: 1606866195:0;ee
 : 1606866235:0;reboot
 : 1606867377:0;la
 : 1606868960:0;.config/waybar
@@ -317,9 +314,6 @@ weblogo --help
 : 1606870497:0;mv 512679.jpg sort1.jpg
 : 1606870543:0;v style.css
 : 1606870824:0;swaylock -h
-: 1606932044:0;pavucontrol
-: 1606932217:0;bluetoothctl
-: 1607231985:0;v klade.tex
 : 1607232543:0;take cpp
 : 1607232559:0;v ising_metro.cc
 : 1607232805:0;assignment_3.pdf &
@@ -380,7 +374,6 @@ weblogo --help
 : 1607252644:0;playonlinux installer.exe
 : 1607252679:0;installer.exe
 : 1607252828:0;c
-: 1607252859:0;sl
 : 1607252872:0;bneptest
 : 1607252901:0;playonlinux w3l.exe
 : 1607252973:0;q4wine w3l.exe
@@ -429,11 +422,9 @@ weblogo --help
 : 1607318659:0;tm zsh
 : 1607318662:0;tm kk
 : 1607319188:0;fif
-: 1607319191:0;tmux
 : 1607319196:0;fif assign2-mm553
 : 1607319205:0;fif monte
 : 1607319269:0;pins poppler
-: 1607319274:0;pacman -Syu
 : 1607319396:0;grep --help
 : 1607319609:0;ripgrep
 : 1607319630:0;rg
@@ -465,15 +456,11 @@ weblogo --help
 : 1607321608:0;v config
 : 1607322090:0;v SaveFile3645.txt
 : 1607324647:0;tofi
-: 1607327572:0;.zsh
 : 1607327685:0;v settings.zsh
 : 1607327753:0;\
  echo -e {1}"\n"{2} | grep -E "^|$v" -i --color=always;
 : 1607327791:0;ag -U
-: 1607327886:0;bash
 : 1607328383:0;fe init.vim
-: 1607328395:0;fp
-: 1607328402:0;fe
 : 1607328553:0;v .zsh
 : 1607328611:0;xdg-open
 : 1607328621:0;xdg-open --help
@@ -487,60 +474,119 @@ weblogo --help
 : 1607332013:0;xdg-mime default zathura.desktop application/pdf
 : 1607332064:0;mm553
 : 1607332067:0;Anagnostopolous.pdf
-: 1607332089:0;v functions.zsh
-: 1607332100:0;v aliases.zsh
-: 1607332131:0;v mappings.zsh
 : 1607332138:0;v widgets.zsh
-: 1607332147:0;v exports.zsh
-: 1607332154:0;v .zshrc
-: 1607332305:0;v .bashrc
 : 1607332391:0;v .zsh/config/functions.zsh
 : 1607333551:0;zathura &|
-: 1607333903:0;v .zsh/.zshrc
 : 1607340610:0;wine xpam.exe
-: 1607343042:0;pins
 : 1607348529:0;v note2,13.tex
 : 1607348979:0;v ajsld.tex
 : 1607349076:0;v noter2,31.tex
 : 1607349235:0;v fjkasdfnoter,23,4.tex
 : 1607349332:0;v
 : 1607349806:0;v init.vim
-: 1607356219:0;fzf
 : 1607356408:0;v SaveFile9437.txt
 : 1607360470:0;ls --full-time
 : 1607360478:0;v SaveFile9945.txt
 : 1607363236:0;lutris
-: 1607377114:17978;p
 : 1607395098:1;wine w3l.exe
 : 1607395158:0;./install.sh
 : 1607395172:0;wineskine w3l.exe
-: 1607436164:0;sway
-: 1607787277:0;ls
-: 1607788462:0;nmtui-hostname
-: 1607788465:0;e
 : 1607788479:0;v klade.tex
 : 1607801813:0;discord
-: 1607909020:0;sway
 : 1607910569:0;hydra
-: 1608081636:0;sway
-: 1608146845:0;ls
-: 1608147192:0;v aliases.zsh
-: 1608147220:0;dot status
 : 1608147260:0;dot add .
-: 1608147345:0;dot add -u
-: 1608147350:0;dot status
-: 1608147385:0;dot push
-: 1608147425:0;dot commit -m "hey"
-: 1608147428:0;dot push
-: 1608147447:0;ls
-: 1608147525:0;v .zshenv
 : 1608147545:0;v .zsh/.zshrc
-: 1608147565:0;v .zshenv
 : 1608147577:0;dot add .zshenv
 : 1608147590:0;dot remove .zshrc
 : 1608147601:0;dot --help
 : 1608147608:0;dot rm .zshrc
-: 1608147611:0;dot status
 : 1608147622:0;dot add .zsh
-: 1608147658:0;dot status
 : 1608147683:0;dot add -u
+: 1608147687:0;dot commit -m "hey"
+: 1608147690:0;dot push
+: 1608147866:0;v aliases.zsh
+: 1608148044:0;v .dircolors
+: 1608148087:0;dot status
+: 1608148123:0;FZF
+: 1608148246:0;fzf-open
+: 1608148276:0;fzf-open -h
+: 1608148424:0;$PATH
+: 1608148453:0;bash
+: 1608148499:0;$OPENER
+: 1608148521:0;cat >> ~/.bashrc <<'EOF'\
+OPENER=mimeo\
+EOF
+: 1608148524:0;.zsh
+: 1608148540:0;go
+: 1608148568:0;# zsh users only\
+cat >> ~/.zshrc <<'EOF'\
+[[ -e "/usr/share/fzf/fzf-extras.zsh" ]] \\
+  && source /usr/share/fzf/fzf-extras.zsh\
+EOF
+: 1608148599:0;# zsh users only\
+cat >> ~/.zsh/.zshrc <<'EOF'\
+[[ -e "/usr/share/fzf/fzf-extras.zsh" ]] \\
+  && source /usr/share/fzf/fzf-extras.zsh\
+EOF
+: 1608148602:0;fo
+: 1608148646:0;file
+: 1608148653:0;o
+: 1608148667:0;zdd
+: 1608149018:0;ls -a
+: 1608149042:0;v .fzf
+: 1608149212:0;v fzf-extras.zsh
+: 1608149249:0;whereis fzf
+: 1608149329:0;v fzf
+: 1608149334:0;fzf
+: 1608149568:0;v .fzf.zsh
+: 1608149629:0;v fzf-extras.bash
+: 1608149634:0;v .bashrc
+: 1608149655:0;fd
+: 1608149683:0;fs
+: 1608149741:0;ls | fzf
+: 1608149972:0;fp
+: 1608149993:0;whereis fzf-extra
+: 1608150049:0;ee
+: 1608150090:0;p
+: 1608150093:0;fe
+: 1608150209:0;sf
+: 1608150235:0;sl
+: 1608150290:0;\
+tmux show -g | cat > ~/.tmux.conf
+: 1608150302:0;\
+tmux show -g | sed 's/^/set -g /' > ~/.tmux.conf
+: 1608150321:0;v .zshenv
+: 1608150540:0;set -h
+: 1608150542:0;set
+: 1608150576:0;tmux
+: 1608150589:0;set | grep tmux
+: 1608150601:0;v .zshrc
+: 1608150614:0;v exports.zsh
+: 1608150693:0;v load.zsh
+: 1608150714:0;v functions.zsh
+: 1608150778:0;zd
+: 1608150821:0;v mappings.zsh
+: 1608150951:0;bindkey
+: 1608150963:0;bindkey viins
+: 1608150970:0;bindkey viins -l viins
+: 1608151033:0;zshzle
+: 1608151037:0;zle
+: 1608151044:0;bindkey -l
+: 1608151054:0;zle -a;
+: 1608151057:0;zle -al
+: 1609082502:0;pavucontrol
+: 1609082531:0;bluetoothctl
+: 1609180688:0;ls
+: 1609180717:0;ip link
+: 1609182062:0;nmtui-hostname
+: 1609182087:0;nm-connection-editor
+: 1609182271:0;Thunar
+: 1609182394:0;pins
+: 1609182427:0;pacman -Syu
+: 1609182445:0;pacman -S thunar-volman
+: 1609182490:0;thunar
+: 1609182529:0;kill 9 -1
+: 1609182639:0;sway
+: 1609182734:0;e
+: 1609182906:0;dot status
+: 1609182935:0;dot add .zsh/
