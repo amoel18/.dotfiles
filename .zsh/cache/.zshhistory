@@ -590,3 +590,11 @@ tmux show -g | sed 's/^/set -g /' > ~/.tmux.conf
 : 1609182734:0;e
 : 1609182906:0;dot status
 : 1609182935:0;dot add .zsh/
+: 1609182947:0;dot commit -m "hey"
+: 1609182950:0;dot push
+: 1609183419:0;ls
+: 1609183421:0;v config
+: 1609183498:0;dot status
+: 1609183506:0;dot add .
+: 1609183519:0;dot add .config/sway/config
+: 1609183534:0;dot add .zsh/cache/.zshhistory

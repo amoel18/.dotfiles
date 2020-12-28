@@ -154,7 +154,7 @@ exec /usr/lib/kdeconnectd
 #exec_always /home/i/.scripts/swayinfo/wsdnames.sh
 exec kdeconnect-indicator
 exec syncthing -no-browser
-exec autotiling
+exec ~/.scripts/autotiling.py
 #exec ulauncher --hide-window
 exec ~/.azotebg
 # Output configuration:
