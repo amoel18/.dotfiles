@@ -54,7 +54,6 @@ bash> tmux show-environment
 : 1606473567:0;cp -r kitty $HOME/.config/
 : 1606473572:0;kitty
 : 1606473613:0;top
-: 1606473670:0;neomutt
 : 1606473702:0;n
 : 1606473723:0;sudo pacman -S gnuplot imagemagick
 : 1606473895:0;cd plugin
@@ -307,12 +306,10 @@ weblogo --help
 : 1606865211:0;v wsdnames.py
 : 1606866085:0;./wsdnames.sh
 : 1606866156:0;./wsdnames.py
-: 1606866235:0;reboot
 : 1606867377:0;la
 : 1606868960:0;.config/waybar
 : 1606870475:0;mv sort1.jpg sortarch.jpg
 : 1606870497:0;mv 512679.jpg sort1.jpg
-: 1606870543:0;v style.css
 : 1606870824:0;swaylock -h
 : 1607232543:0;take cpp
 : 1607232559:0;v ising_metro.cc
@@ -331,7 +328,6 @@ weblogo --help
 : 1607247403:0;wine vc_redist.x86.exe
 : 1607247428:0;wine vcredist_x86.exe
 : 1607248173:0;bat
-: 1607248254:0;./w3l.exe
 : 1607248280:0;./Launcher.db
 : 1607248360:0;wine Launcher.db
 : 1607248420:0;Launcher.db
@@ -435,7 +431,6 @@ weblogo --help
 : 1607320049:0;sudo fastp assign2-mm553
 : 1607320055:0;fastp -h
 : 1607320058:0;sudo fastp -h
-: 1607320059:0;123
 : 1607320157:0;fast-p
 : 1607320458:0;cf
 : 1607320463:0;cf nvim
@@ -453,7 +448,6 @@ weblogo --help
 : 1607321567:0;cf sway
 : 1607321570:0;z sway
 : 1607321606:0;.config/sway
-: 1607321608:0;v config
 : 1607322090:0;v SaveFile3645.txt
 : 1607324647:0;tofi
 : 1607327685:0;v settings.zsh
@@ -461,7 +455,6 @@ weblogo --help
  echo -e {1}"\n"{2} | grep -E "^|$v" -i --color=always;
 : 1607327791:0;ag -U
 : 1607328383:0;fe init.vim
-: 1607328553:0;v .zsh
 : 1607328611:0;xdg-open
 : 1607328621:0;xdg-open --help
 : 1607328748:0;zsh
@@ -488,13 +481,10 @@ weblogo --help
 : 1607360470:0;ls --full-time
 : 1607360478:0;v SaveFile9945.txt
 : 1607363236:0;lutris
-: 1607395098:1;wine w3l.exe
 : 1607395158:0;./install.sh
 : 1607395172:0;wineskine w3l.exe
 : 1607788479:0;v klade.tex
-: 1607801813:0;discord
 : 1607910569:0;hydra
-: 1608147260:0;dot add .
 : 1608147545:0;v .zsh/.zshrc
 : 1608147577:0;dot add .zshenv
 : 1608147590:0;dot remove .zshrc
@@ -502,16 +492,12 @@ weblogo --help
 : 1608147608:0;dot rm .zshrc
 : 1608147622:0;dot add .zsh
 : 1608147683:0;dot add -u
-: 1608147687:0;dot commit -m "hey"
-: 1608147690:0;dot push
 : 1608147866:0;v aliases.zsh
 : 1608148044:0;v .dircolors
-: 1608148087:0;dot status
 : 1608148123:0;FZF
 : 1608148246:0;fzf-open
 : 1608148276:0;fzf-open -h
 : 1608148424:0;$PATH
-: 1608148453:0;bash
 : 1608148499:0;$OPENER
 : 1608148521:0;cat >> ~/.bashrc <<'EOF'\
 OPENER=mimeo\
@@ -532,15 +518,12 @@ EOF
 : 1608148646:0;file
 : 1608148653:0;o
 : 1608148667:0;zdd
-: 1608149018:0;ls -a
 : 1608149042:0;v .fzf
 : 1608149212:0;v fzf-extras.zsh
 : 1608149249:0;whereis fzf
 : 1608149329:0;v fzf
-: 1608149334:0;fzf
 : 1608149568:0;v .fzf.zsh
 : 1608149629:0;v fzf-extras.bash
-: 1608149634:0;v .bashrc
 : 1608149655:0;fd
 : 1608149683:0;fs
 : 1608149741:0;ls | fzf
@@ -558,10 +541,7 @@ tmux show -g | sed 's/^/set -g /' > ~/.tmux.conf
 : 1608150321:0;v .zshenv
 : 1608150540:0;set -h
 : 1608150542:0;set
-: 1608150576:0;tmux
 : 1608150589:0;set | grep tmux
-: 1608150601:0;v .zshrc
-: 1608150614:0;v exports.zsh
 : 1608150693:0;v load.zsh
 : 1608150714:0;v functions.zsh
 : 1608150778:0;zd
@@ -576,25 +556,302 @@ tmux show -g | sed 's/^/set -g /' > ~/.tmux.conf
 : 1608151057:0;zle -al
 : 1609082502:0;pavucontrol
 : 1609082531:0;bluetoothctl
-: 1609180688:0;ls
-: 1609180717:0;ip link
 : 1609182062:0;nmtui-hostname
-: 1609182087:0;nm-connection-editor
 : 1609182271:0;Thunar
-: 1609182394:0;pins
 : 1609182427:0;pacman -Syu
 : 1609182445:0;pacman -S thunar-volman
-: 1609182490:0;thunar
-: 1609182529:0;kill 9 -1
-: 1609182639:0;sway
-: 1609182734:0;e
-: 1609182906:0;dot status
 : 1609182935:0;dot add .zsh/
-: 1609182947:0;dot commit -m "hey"
-: 1609182950:0;dot push
-: 1609183419:0;ls
-: 1609183421:0;v config
 : 1609183498:0;dot status
 : 1609183506:0;dot add .
 : 1609183519:0;dot add .config/sway/config
 : 1609183534:0;dot add .zsh/cache/.zshhistory
+: 1609183541:0;dot commit -m "hey"
+: 1609183557:0;dot push
+: 1609184303:0;nm
+: 1609184308:0;nm-applet
+: 1609184639:0;ssh
+: 1609185999:0;systemctl list-unit-files --state=enabled
+: 1609186678:0;nm-connection-editor
+: 1609187425:0;NetworkManager --print-config
+: 1609188745:0;sudo systemctl start iwctl
+: 1609188753:0;sudo systemctl start iwd
+: 1609188757:0;iwctl
+: 1609188812:0;ip linik
+: 1609188847:0;sudo rmmod wl
+: 1609188878:0;sudo modprobe wl
+: 1609188888:0;ip link
+: 1609234668:0;spotify
+: 1609241733:0;_mutt
+: 1609241736:0;mutt
+: 1609241746:0;neomutt
+: 1609241876:0;pacman -S thunderbird
+: 1609241881:0;pacman -S thunderbird-git
+: 1609241929:0;pacman -S thunderbird-i18n-da
+: 1609241944:0;pacman -Sy thunderbird thunderbird-i18n-da
+: 1609241965:0;paru thunderbird
+: 1609242072:0;yay -S thunderbird-beta-i18n-da
+: 1609242091:0;paru -S thunderbird-beta-i18n-da
+: 1609242275:0;v style.css
+: 1609242484:0;sudo chmod +x autotiling.py
+: 1609242510:0;python3 autotiling.py
+: 1609242529:0;./autotiling.py
+: 1609242539:0;v autotiling.py
+: 1609242961:0;bin/neomutt
+: 1609243490:0;sudo pacman -Rns i3ipc-glib-git
+: 1609243506:0;autotiling
+: 1609243511:0;sudo autotiling
+: 1609245071:0;alsamixer
+: 1609246198:0;lsblk | disk
+: 1609246204:0;lsblk disk
+: 1609246313:0;\
+ dd if=/dev/sda of=/dev/sdb bs=64K conv=noerror,sync status=progress
+: 1609246318:0;\
+sudo dd if=/dev/sda of=/dev/sdb bs=64K conv=noerror,sync status=progress
+: 1609248357:0;lspci
+: 1609252109:0;nvim studievejleder
+: 1609252319:0;xkbset
+: 1609252349:0;v config
+: 1609252377:0;setxkbmap dk
+: 1609252387:0;setxkbmap
+: 1609252392:0;setxkb -h
+: 1609266772:0;byzanz-record
+: 1609266780:0;byzanz-record --help
+: 1609266842:0;byzanz-record -d 10
+: 1609266848:0;byzanz-record -d 10 wow
+: 1609266884:0;wf-recorder -o recording.mp4\
+
+: 1609266919:0;wf-recorder -o wow.mp4
+: 1609266933:0;wf-recorder -g "$(slurp)"\
+
+: 1609266980:0;tmux
+: 1609267002:0;M
+: 1609267066:0;./w3l.exe
+: 1609267107:0;wf-recorder -g "$(slurp)"
+: 1609267182:0;wf-recorder -o re
+: 1609267312:0;Hwf-recorder -f recording.mp4
+: 1609267337:0;wf-recorder -f wowdud\
+
+: 1609267350:0;wf-recorder -h
+: 1609267423:0;wf-recorder -a -f bobo.ext
+: 1609267439:0;wf-recorder -f
+: 1609267604:0;wlroots
+: 1609267768:0;wf-recorder -f <bobo>
+: 1609267784:0;wf-recorder -f bobo
+: 1609267808:0;wf-recorder -f ./bobo
+: 1609267814:0;wf-recorder -o bobo
+: 1609267848:0;wf-recorder -a -f lars.ext
+: 1609267933:0;HKJwf-recorder -a -f <filename>.ext
+: 1609267941:0;wf-recorder -a -f <fia>.ext
+: 1609267970:0;wf-recorder -a -f .config/ext.ext
+: 1609267985:39;wf-recorder
+: 1609268474:0;thumbpdf
+: 1609269314:0;simplescreenrecorder -j
+: 1609269352:0;simplescreenrecorder record-start
+: 1609269360:0;record-start
+: 1609269509:0;x11
+: 1609269761:0;wf-recorder -o recording.mp4
+: 1609269771:0;wf-recorder -o recordin.mp4
+: 1609269880:0;simplescreenrecorder
+: 1609269941:0;simplescreenrecorder &
+: 1609270030:0;kill 9 -1
+: 1609270084:0;m
+: 1609270184:0;123
+: 1609270216:0;grim
+: 1609270222:0;grim -h
+: 1609270250:0;grim 1.png
+: 1609270265:0;grim 2.png
+: 1609270293:0;grim 3.png
+: 1609270317:0;grim 4.png
+: 1609270335:0;wine w3l.exe
+: 1609270380:0;grim 5.png
+: 1609270446:0;discord
+: 1609270480:0;discord &
+: 1609774344:0;i
+: 1609774359:0;v studievejleder
+: 1609796157:0;cgdisk
+: 1609796421:0;sudo mkfs.vfat /dev/sdb1
+: 1609796620:0;mount /dev/sdb1 /home/i/Desktop
+: 1609796624:0;sudo mount /dev/sdb1 /home/i/Desktop
+: 1609796631:0;ls +a
+: 1609796649:0;æs -a
+: 1609796717:0;sudo mkfs.fat -F32 /dev/sdb1
+: 1609796726:0;sudo unmount /dev/sdb1 /home/i/Desktop
+: 1609801078:0;sudo fdisk
+: 1609801559:0;gdisk /dev/sdb1
+: 1609801562:0;sudo gdisk /dev/sdb1
+: 1609801956:0;fdist -l
+: 1609802118:0;\
+sudo dd if=/dev/zero of=/dev/sdb1
+: 1609802649:0;sudo fdisk /dev/sdb1
+: 1609802701:0;sudo fdisk /dev/sdb
+: 1609802926:0;gdisk
+: 1609802960:0;sudo gdisk
+: 1609803049:0;termite
+: 1609803068:0;sudo shred /dev/sdb1
+: 1609803588:0;lsplk
+: 1609803645:0;fdisk
+: 1609803649:0;fdisk --help
+: 1609804057:0;cgdisk /dev/sdb
+: 1609804796:0;cgdisk /dev/sdb1
+: 1609804803:0;sudo cgdisk /dev/sdb1
+: 1609805658:0;sudo cgdisk /dev/sdb
+: 1609805799:0;\
+mkfs.ext4 -L BOOT -b 4096 -E stride=128,stripe-width=128 /dev/sdb1
+: 1609805804:0;\
+sudo mkfs.ext4 -L BOOT -b 4096 -E stride=128,stripe-width=128 /dev/sdb1
+: 1609805925:0;\
+mkfs.ext4 -L ROOT -b 4096 -E stride=128,stripe-width=128 /dev/sdb2
+: 1609805929:0;\
+sudo mkfs.ext4 -L ROOT -b 4096 -E stride=128,stripe-width=128 /dev/sdb2
+: 1609805974:0;mkdir /mnt/sda
+: 1609805977:0;sudo mkdir /mnt/sda
+: 1609805985:0;sudo mkdir /mnt/sdb
+: 1609806142:0;mount /dev/sda3 /mnt/sda/root
+: 1609806163:0;mount /dev/sda3 /mnt
+: 1609806170:0;sudo mount /dev/sda3 /mnt
+: 1609806227:0;mount /dev/sda1 /mnt/boot
+: 1609806231:0;sudo mount /dev/sda1 /mnt/boot
+: 1609806310:0;mount /dev/sdb2 /mnt
+: 1609806314:0;sudo mount /dev/sdb2 /mnt
+: 1609806386:0;mkdir /mnt/boot
+: 1609806389:0;sudo mkdir /mnt/boot
+: 1609806395:0;sudo mount /dev/sdb1 /mnt/boot
+: 1609806518:0;\
+tar -C /mnt/sda3 -cpf - $i | tar -C /mnt/sdb2 -xpf -
+: 1609806532:0;\
+tar -C /mnt/sda3 -cpf - $i | tar -C /mnt/sdb2 -xpf -done
+: 1609806542:0;tar
+: 1609806644:0;\
+sudo tar -C /mnt -cpf - $i | tar -C /mnt/sdb2 -xpf -done
+: 1609806650:0;\
+sudo tar -C /mnt -cpf - $i | tar -C /mnt -xpf -done
+: 1609806708:0;\
+sudo tar -C /mnt/sda3 -cpf - $i | tar -C /mnt/sbd2 -xpf
+: 1609806767:0;ls /mnt/sda
+: 1609806770:0;ls /mnt/sda3
+: 1609806793:0;for i in `ls /mnt/sda`\
+do\
+tar -C /mnt/sda -cpf - $i | tar -C /mnt/sdb -xpf -\
+done
+: 1609806823:0;for i in `ls /mnt`\
+do\
+tar -C /mnt -cpf - $i | tar -C /mnt -xpf -\
+done
+: 1609806914:0;sudo cd lost+found
+: 1609806919:0;sudo -s
+: 1609807134:0;reboot
+: 1609807340:0;arch-install-scripts
+: 1609807370:0;install
+: 1609807646:0;e2image
+: 1609807696:0;e2image -ra -p /dev/sda3 /dev/sdb2
+: 1609807705:0;sudo e2image -ra -p /dev/sda3 /dev/sdb2
+: 1609807716:0;sudo e2image -ra -p -f /dev/sda3 /dev/sdb2
+: 1609807815:0;genfstab -h
+: 1609807865:0;fstap
+: 1609807868:0;fstab
+: 1609807962:0;sudo arch-chroot
+: 1609808019:0;poweroff
+: 1609808250:0;pins
+: 1609808303:0;udisksctl
+: 1609808323:0;udiskie-info
+: 1609808328:0;udiskie-info -h
+: 1609808334:0;udiskie-info -a
+: 1609808344:0;udiskie-info /dev/sdb
+: 1609808374:0;udiskie
+: 1609808382:0;udiskie /dev/sdb
+: 1609808387:0;udiskie --help
+: 1609808444:0;dolphin
+: 1609808520:0;sudo shred /dev/sdb
+: 1609808905:0;sway
+: 1609808978:0;fdisk -l
+: 1609808982:0;sudo fdisk -l
+: 1609809140:0;thunar
+: 1609809218:0;ls /mnt
+: 1609809357:0;vim .bashrc
+: 1609809620:0;loadkeys us
+: 1609809656:0;xkbset us
+: 1609809678:0;xkbset dk
+: 1609809693:0;loadkeys -h
+: 1609809705:0;loadkeys -d
+: 1609809724:0;zle-keymap-select
+: 1609809748:0;xkbset -h
+: 1609809759:0;xkb -g
+: 1609809760:0;xkb -h
+: 1609809763:0;xkb
+: 1609809901:0;nano -w /mnt/etc/fstab
+: 1609809912:0;vim -w /mnt/etc/fstab
+: 1609809974:0;setlocale
+: 1609809981:0;localectl
+: 1609810110:0;locale-gen
+: 1609810169:0;v .Xresources
+: 1609810206:0;v .zsh
+: 1609810261:0;fzf
+: 1609810286:0;locale -h
+: 1609810291:0;locale --help
+: 1609810331:0;timedatectl list-timezones
+: 1609810356:0;vim /etc/locale.conf
+: 1609810444:0;vim /etc/locale.gen
+: 1609810523:0;echo KEYMAP=dk >> /etc/vconsole.conf
+: 1609810607:0;locale
+: 1609810633:0;v .zshrc
+: 1609810651:0;v exports.zsh
+: 1609810751:0;v .bashrc
+: 1609811000:0;umount /dev/sdb1
+: 1609811004:0;sudo umount /dev/sdb1
+: 1609811009:0;\
+genfstab -U /mnt >> /mnt/etc/fstab
+: 1609811069:0;\
+wipefs -a /dev/sdb
+: 1609811075:0;\
+fdisk /dev/sdb
+: 1609811151:0;\
+mkfs.ext4 -O "^has_journal" /dev/sdb1
+: 1609811173:0;\
+mount /dev/sdb1 /mnt
+: 1609811553:0;bash
+: 1609811566:0;lsblk
+: 1609811611:0;\
+pacstrap /mnt base base-devel
+: 1609811683:0;LC_ALL=C sudo genfstab -p /mnt >> /mnt/etc/fstab
+: 1609811710:0;\
+genfstab -p /run/media/foo/archstick/ | sudo tee -a /run/media/foo/archstick/etc/fstab >/dev/null
+: 1609811768:0;ls
+: 1609811784:0;ls -a
+: 1609811799:0;\
+sudo genfstab -U /mnt >> /mnt/etc/fstab
+: 1609811823:0;\
+genfstab -U -p /mnt >> /mnt/etc/fstab
+: 1609811859:0;\
+genfstab -p /mnt | sudo tee -a /mnt/etc/fstab
+: 1609811902:0;\
+sudo bash -c 'genfstab -p /mnt >> /mnt/etc/fstab'
+: 1609811966:0;\
+sudo LC_ALL=C genfstab -p /run/media/foo/archstick/ >> /run/media/foo/archstick/etc/fstab
+: 1609812002:0;\
+sudo LC_ALL=C genfstab -p /mnt >> /mnt/etc/fstab
+: 1609812021:0;\
+LC_ALL=C genfstab -p /mnt >> /mnt/etc/fstab
+: 1609812030:0;\
+sudo sudo LC_ALL=C genfstab -p /mnt >> /mnt/etc/fstab
+: 1609812062:0;arch-chroot
+: 1609812096:0;export LC_ALL=en_US.UTF-8
+: 1609812102:0;\
+genfstab -p /mnt | sudo tee -a /mnt/etc/fstab >/dev/null
+: 1609812141:0;su
+: 1609812143:0;\
+echo "LC_ALL=en_US.UTF-8" >> /etc/environment
+: 1609812149:0;\
+echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
+: 1609812153:0;\
+echo "LANG=en_US.UTF-8" > /etc/locale.conf
+: 1609812168:0;\
+echo "LANG=en_US.UTF-8" >> /etc/locale.conf
+: 1609812198:0;sudo pacman -S locales
+: 1609812211:0;sudo pacman -S perl-locale-codes
+: 1609812223:0;\
+locale-gen en_US.UTF-8
+: 1609812235:0;arch-chroot /mnt
+: 1609812238:0;sudo arch-chroot /mnt
+: 1609812253:0;e
+: 1609818753:0;dot status
+: 1609818797:0;dot add .config/sway/config .scripts/autotiling.py .zsh/cache/.zshhistory .zsh/config/exports.zsh

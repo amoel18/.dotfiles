@@ -26,7 +26,7 @@ set $screenshot grim ~/Images/screenshots/scrn-$(date +"%Y-%m-%d-%H-%M-%S").png
 set $screenclip slurp | grim -g - ~/Images/screenshots/scrn-$(date +"%Y-%m-%d-%H-%M-%S").png
 
 input * {
-    xkb_layout "us"
+    xkb_layout "dk"
     #xkb_variant "pc105"
     #xkb_options "altwin:swap_lalt_lwin"
 }
@@ -211,7 +211,7 @@ exec clipman pick --print0 --tool=CUSTOM --tool-args="fzf --prompt 'pick > ' --b
 bindsym $mod+f fullscreen
 
 # Toggle the current focus between tiling and floating mode
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+Ctrl+space floating toggle
 
 # Swap focus between the tiling area and the floating area
 #bindsym $mod+space focus mode_toggle
@@ -249,7 +249,7 @@ bindsym $mod+a focus parent
 # Basics:
 #
     bindsym $mod+Print exec $screenshot
-    bindsym $mod+Shift+Print exec $screenclip
+    bindsym $mod+Ctrl+Print exec $screenclip
     # Start a terminal
     bindsym $mod+m exec $term
     bindsym $mod+return exec $spotlight
