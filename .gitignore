@@ -1,5 +1,6 @@
 .dotfiles/
 .dotfiles-local-settings/
+.zsh/cache/**
 **/.DS_Store
 *.sw[nop]
 .Trashes
