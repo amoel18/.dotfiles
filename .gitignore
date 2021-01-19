@@ -16,3 +16,6 @@ tags.temp
 tmp/**/*
 !tmp/cache/.keep
 *.pyc
+mm547/
+.zsh/cache/.zshhistory
+.cache/

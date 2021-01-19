@@ -1,6 +1,9 @@
 " Automatically generated packer.nvim plugin loader code
 
-if !has('nvim')
+if !has('nvim-0.5')
+  echohl WarningMsg
+  echom "Invalid Neovim version for packer.nvim!"
+  echohl None
   finish
 endif
 
@@ -171,7 +174,7 @@ _packer_load = function(names, cause)
     end
 
     if cause.prefix then
-      local prefix = vim.v.count and vim.v.count or ''
+      local prefix = vim.v.count ~= 0 and vim.v.count or ''
       prefix = prefix .. '"' .. vim.v.register .. cause.prefix
       if vim.fn.mode('full') == 'no' then
         if vim.v.operator == 'c' then
@@ -184,9 +187,10 @@ _packer_load = function(names, cause)
       vim.fn.feedkeys(prefix, 'n')
     end
 
-    -- NOTE: I'm not sure if the below substitution is correct; it might correspond to the literal
-    -- characters \<Plug> rather than the special <Plug> key.
-    vim.fn.feedkeys(string.gsub(string.gsub(cause.keys, '^<Plug>', '\\<Plug>') .. extra, '<[cC][rR]>', '\r'))
+    local formatted_plug_key = string.format('%c%c%c', 0x80, 253, 83)
+    local keys = string.gsub(cause.keys, '^<Plug>', formatted_plug_key) .. extra
+    local escaped_keys = string.gsub(keys, '<[cC][rR]>', '\r')
+    vim.fn.feedkeys(escaped_keys)
   elseif cause.event then
     vim.cmd(fmt('doautocmd <nomodeline> %s', cause.event))
   elseif cause.ft then
@@ -228,4 +232,5 @@ augroup packer_load_aucmds
   au FileType rb ++once call s:load(['ale'], { "ft": "rb" })
   au FileType go ++once call s:load(['vim-go', 'ale'], { "ft": "go" })
   " Event lazy-loads
+  " Function lazy-loads
 augroup END

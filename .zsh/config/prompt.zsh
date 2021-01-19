@@ -1,6 +1,6 @@
 # Add prompt to fpath.
-if [[ -d "$ZDOTDIR/plugins/pure" ]] {
-	fpath=($fpath "$ZDOTDIR/plugins/pure")
+if [[ -d ".zsh/plugins/pure" ]] {
+	fpath=($fpath ".zsh/plugins/pure")
 } else {
 	return 1
 }
@@ -15,7 +15,7 @@ prompt_newline='%666v'
 # Prompt styles.
 zstyle :prompt:pure:prompt:error color 1
 zstyle :prompt:pure:prompt:success color 15
+PURE_PROMPT_VICMD_SYMBOL=" "
+# PURE_PROMPT_SYMBOL=" "
 
-PURE_PROMPT_VICMD_SYMBOL="  "
-PURE_PROMPT_SYMBOL="  "
-
+PURE_PROMPT_SYMBOL=" "
