@@ -10,7 +10,7 @@ alias df='df --all --si --print-type' # Display all disk usage statistics with S
 alias ls='ls --almost-all --classify --color=always --group-directories-first --literal' # List name of nodes.
 alias la='ls -l --almost-all --si' # List nodes with their details.
 
-alias open="xdg-open"
+#alias open="xdg-open"
 alias pins="paru -Slq | fzf -m --preview 'cat <(paru -Si {1}) <(paru -Fi {1} | awk \"{print \$2}\")' | xargs -ro paru -S"
 
 alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
@@ -39,17 +39,17 @@ alias -g G='| grep'
 
 alias cd=' cd'
 alias .=' cd'
-alias ..=' cd ..; ls'
-alias ...=' cd ..; cd ..; ls'
-alias ....=' cd ..; cd ..; cd ..; ls'
+alias ..=' cd ..;'
+alias ...=' cd ..; cd ..;'
+alias ....=' cd ..; cd ..; cd ..;'
 alias cd..='..'
 alias cd...='...'
 alias cd....='....'
 alias -g G='| grep '
-alias -s PDF="zathura"
+#alias -s PDF="zathura &"
 alias -s epub="open"
 alias -s djuv="open"
-alias -s pdf="zathura"
+#alias -s pdf="zathura &"
 alias -s md=" nvim"
 alias -s markdown="nvim"
 alias -s htm="$BROWSER"

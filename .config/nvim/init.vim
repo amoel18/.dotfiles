@@ -42,6 +42,7 @@ let g:tex_conceal='abdmg'
 hi Conceal ctermbg=none
 let g:Tex_ViewRule_pdf = 'zathura'
 let g:livepreview_previewer = 'zathura'
+set noswapfile 
 
 let g:UltiSnipsEditSplit="vertical"
 let g:UltiSnipsJumpForwardTrigger = '<tab>'

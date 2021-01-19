@@ -106,7 +106,7 @@ return require('packer').startup(function()
 
   -- Simple plugins can be specified as strings
   --use 'fzf'
-  use '.local/share/nvim/site/pack/packer/fzf'
+  --use '.local/share/nvim/site/pack/packer/fzf'
   use 'junegunn/fzf.vim'
   use {'chaoren/vim-wordmotion', 'justinmk/vim-sneak'}
   use { 'unblevable/quick-scope'}
@@ -142,6 +142,7 @@ return require('packer').startup(function()
   use 'nvim-treesitter/completion-treesitter'
   use 'nvim-treesitter/nvim-treesitter-textobjects'
   use 'lervag/vimtex'
+  use 'lambdalisue/suda.vim'
   use 'SirVer/ultisnips'
   use 'honza/vim-snippets'
   use 'KeitaNakamura/tex-conceal.vim'
