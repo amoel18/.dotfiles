@@ -59,6 +59,7 @@ export BROWSER='xdg-open'
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
+#export XDG_RUNTIM_DIR="/run/user/1000"
 
 # Mailcap
 export MAILCAPS="$HOME/.mutt/mailcap"
@@ -102,6 +103,7 @@ export FZF_DEFAULT_OPTS="$FZF_DEFAULT_COLORS \
 	--height='40%' \
 	--layout='reverse' \
 	--inline-info \
+        --bind='tab:down,btab:up' \
 	--no-bold"
 
 #export FZF_DEFAULT_COMMAND="$FZF_DEFAULT_COMMAND fzf --bind 'tab:down'"
@@ -138,6 +140,8 @@ export LESS_TERMCAP_se=$'\e[27;0m' # Exit standout mode.
 export LESS_TERMCAP_so=$'\e[1;33m' # Begin standout mode.
 export LESS_TERMCAP_ue=$'\e[24;0m' # Exit underline mode.
 export LESS_TERMCAP_us=$'\e[4;1;38;5;250m' # Begin underline mode.
+
+#export DBUS_SESSION_BUS_ADDRESS=/run/user/1000/bus
 
 # ls
 export LS_COLORS="no=0:fi=0:di=38;5;110:ex=38;5;78;1:ca=38;5;17:ln=target:mh=38;\
