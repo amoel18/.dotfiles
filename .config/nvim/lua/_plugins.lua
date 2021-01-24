@@ -106,14 +106,16 @@ return require('packer').startup(function()
 
   -- Simple plugins can be specified as strings
   --use 'fzf'
-  use '.local/share/nvim/site/pack/packer/fzf'
+  --use '.local/share/nvim/site/pack/packer/fzf'
   use 'junegunn/fzf.vim'
   use {'chaoren/vim-wordmotion', 'justinmk/vim-sneak'}
   use { 'unblevable/quick-scope'}
   use 'mhinz/vim-signify'
   use 'tomtom/tcomment_vim'
+
   use 'tpope/vim-endwise'
   use 'tpope/vim-fugitive'
+  use 'airblade/vim-gitgutter'
   use 'tpope/vim-rails'
   use 'tpope/vim-repeat'
   use 'tpope/vim-rhubarb'
@@ -126,7 +128,6 @@ return require('packer').startup(function()
   use 'ncm2/ncm2-path'
   use 'ncm2/ncm2-ultisnips'
   use 'roxma/nvim-yarp'
-  use 'ap/vim-buftabline'
   use 'christoomey/vim-tmux-navigator'
   use 'tmsvg/pear-tree'
   use 'co1ncidence/mountaineer'
@@ -134,14 +135,15 @@ return require('packer').startup(function()
   use 'kristijanhusak/defx-icons'
   use 'romainl/vim-cool'
   use 'machakann/vim-highlightedyank'
-  --use 'ap/vim-buftabline'
-  --use 'zefei/vim-wintabs'
+  use 'ap/vim-buftabline'
+  use 'zefei/vim-wintabs'
   use 'nvim-treesitter/nvim-treesitter'
   use 'nvim-treesitter/playground'
   use 'nvim-treesitter/nvim-treesitter-refactor'
   use 'nvim-treesitter/completion-treesitter'
   use 'nvim-treesitter/nvim-treesitter-textobjects'
   use 'lervag/vimtex'
+  use 'lambdalisue/suda.vim'
   use 'SirVer/ultisnips'
   use 'honza/vim-snippets'
   use 'KeitaNakamura/tex-conceal.vim'
@@ -149,7 +151,6 @@ return require('packer').startup(function()
   use 'nvim-lua/completion-nvim'
   use {'dstein64/vim-startuptime', cmd = 'StartupTime'}
   use 'norcalli/nvim-colorizer.lua'
-
   use {'mhinz/vim-sayonara', cmd = 'Sayonara'}
   use {'tpope/vim-dispatch', cmd = {'Dispatch', 'Make', 'Focus', 'Start'}}
   use {

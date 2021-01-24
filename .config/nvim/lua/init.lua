@@ -41,7 +41,7 @@ function M.setup()
 
   -- Other settings
   require'_treesitter'
-  require'_statusline'
+  --require'_statusline'
   require'_colorizer'
   require'_sneak'
   --require'_tree'

@@ -6,6 +6,12 @@ function M.setup()
     clipboard = 'unnamedplus';
     completeopt = 'noinsert,menuone,noselect';
     hidden = true;
+    backspace=indent,eol,start;
+    gdefault;
+    virtualedit = block;
+    wildmode=longest,list
+    splitbelow;
+    splitright;
     incsearch = true;
     hlsearch = true;
     ignorecase = true;
@@ -44,7 +50,8 @@ function M.setup()
     signcolumn = 'yes';
     linebreak = true;
   }
-
+ 
+  --set visualbell t_vb=
   for name, value in pairs(global_local) do
     vim.o[name] = value
   end

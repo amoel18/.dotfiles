@@ -1,5 +1,6 @@
 .dotfiles/
 .dotfiles-local-settings/
+.zsh/cache/**
 **/.DS_Store
 *.sw[nop]
 .Trashes
@@ -17,3 +18,6 @@ tmp/**/*
 !tmp/cache/.keep
 *.pyc
 .zsh/cache
+mm547/
+.zsh/cache/.zshhistory
+.cache/

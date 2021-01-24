@@ -17,57 +17,72 @@ set $right l
 set $term alacritty
 set $editor nvim
 set $browser chromium
-set $fuzz ~/.scripts/fuzzyf.sh
-set $lock ~/.local/bin/scripts/lock.sh
-set $power ~/.config/rofi/modi/power
-set $wifi ~/.config/rofi/modi/nmcli
-set $wifi-connect exec bash wofi-wifi-menu
-set $screenshot grim ~/Images/screenshots/scrn-$(date +"%Y-%m-%d-%H-%M-%S").png
-set $screenclip slurp | grim -g - ~/Images/screenshots/scrn-$(date +"%Y-%m-%d-%H-%M-%S").png
+set $files thunar
+set $volumeup amixer sset Master 5%+
+set $volumedown amixer sset Master 5%-
+
+for_window [app_id="^launcher$"] floating enable, sticky enable, resize set 30 ppt 60 ppt, border pixel 10
+set $menuu exec $term --class=launcher -e sway-launcher-desktop
+bindsym $mod+space exec $menuu
+
+#set $fuzz ~/.scripts/fuzzyf.sh
+#set $lock ~/.local/bin/scripts/lock.sh
+#set $power ~/.config/rofi/modi/power
+#set $wifi ~/.config/rofi/modi/nmcli
+#set $wifi-connect exec bash wofi-wifi-menu
+#set $screenshot grim ~/Images/screenshots/scrn-$(date +"%Y-%m-%d-%H-%M-%S").png
+#set $screenclip slurp | grim -g - ~/Images/screenshots/scrn-$(date +"%Y-%m-%d-%H-%M-%S").png
 
 input * {
-    xkb_layout "dk"
-    #xkb_variant "pc105"
-    #xkb_options "altwin:swap_lalt_lwin"
+    xkb_layout "us,dk"
+    #xkb_variant "hhk"
+    #xkb_options "ctrl:nocaps"
+    xkb_options "grp:alt_shift_toggle,caps:none,eurosign:4"
+}
+
+input * {
+  natural_scroll enabled
+  pointer_accel -1
 }
 
 #input <identifier> xkb_model "macintosh79"
 
-input <identifier> repeat_delay 300
-input <identifier> repeat_rate 30
+#input <identifier> repeat_delay 300
+#input <identifier> repeat_rate 30
 # On start
-exec_always mako
-exec_always kanshi
-set $SWAYSOCK.wob "/tmp/wobpipe"
-exec_always tail -f $SWAYSOCK.wob | wob -a center -a bottom -H 45 -W 300 -M 50 -o 4
-exec mkfifo $SWAYSOCK.wob
-exec wl-paste -t text --watch clipman store
-exec wl-paste -p -t text --watch clipman store -P --histpath="~/.local/share/clipman-primary.json"
-exec wl-paste -w 'wl-paste >> ~/.clipboard'
-bindsym $mod+y exec tac ~/.clipboard | bemenu | wl-copy -n
-set $term alacritty
+#exec_always mako
+#exec_always kanshi
+#set $SWAYSOCK.wob "/tmp/wobpipe"
+#exec_always tail -f $SWAYSOCK.wob | wob -a center -a bottom -H 45 -W 300 -M 50 -o 4
+#exec mkfifo $SWAYSOCK.wob
+#exec wl-paste -t text --watch clipman store
+#exec wl-paste -p -t text --watch clipman store -P --histpath="~/.local/share/clipman-primary.json"
+#exec wl-paste -w 'wl-paste >> ~/.clipboard'
+#bindsym $mod+y exec tac ~/.clipboard | bemenu | wl-copy -n
+#set $term alacritty
 #set $spotlight wofi --dmenu
 #set $bar waybar
 #set $launcher "wofi --show drun"
 #set $menu exec alacritty --class tofi -d 80 10 -e sh -c '$HOME/.config/sway/scripts/tofi | sort -u -r | fzf | $HOME/.config/sway/scripts/tofi'
 set $menu2 dmenu_path | wofi --show drun -i | xargs swaymsg exec --
-set $menu3 bemenu-run | xargs swaymsg exec --
+#set $menu3 bemenu-run | xargs swaymsg exec --
 #set $pass "~/dotfiles/wofi/passwofi.sh"
 #set $lock "swaylock -c 000000"
 
 #include workspaces
-include color_vars
-include colors
-include window_placement
-include key_bindings
-include inputs
-include bar
-include gtk_config
+# include color_vars
+# include colors
+# include window_placement
+# include key_bindings
+# include inputs
+# include bar
+# include gtk_config
 
 
 
 #include config.d/common.conf
-set $backlight 'intel_backlight'
+#set $backlight 'intel_backlight'
+
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -83,13 +98,14 @@ set $menu exec alacritty --class tofi -d 80 10 -e sh -c '$HOME/.scripts/launcher
 
 
 
-#bindsym $mod+f1 exec ~/.config/sway/lockman.sh
+bindsym $mod+f1 exec ~/.config/sway/lockman.sh
 #bindsym $mod+f12 exec ~/.config/sway/lockman.sh
+#bindsym $mod+ctrl+d input * {xkb_layout "dk"} 
 
 # Screenshot with grim and swappy
-bindsym print exec grim -g "$(slurp)" - | swappy -f -
-bindsym Shift+print exec grim - | swappy -f -
-
+#bindsym $mod+u exec grim -g "$(slurp)" - | swappy -f -
+bindsym print exec --no-startup-id slurp | grim -g - $(xdg-user-dir PICTURES)/$(date +'screenshot_%Y-%m-%d-%H%M%S.png')
+bindsym $mod+ctrl+u exec grim - | swappy -f -
 
 #exec ~/.local/bin/smartfloat tofi
 #exec ~/.config/sway/scripts/wsdnames.py
@@ -135,45 +151,57 @@ client.background       #ffffff
 #
 # Example configuration:
 #
-#   exec swayidle -w \
-#            timeout 1800 'media pause' \
-#            timeout 1800 'swaylock -f -c 000000' \
-#            timeout 900 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-#            timeout 15 'if pgrep -x swaylock; then swaymsg "output * dpms off"; fi' \
-#            resume 'swaymsg "output * dpms on"' \
-#            before-sleep 'swaylock -f -c 000000'
-#  #
+exec swayidle -w \
+         timeout 1200 'swaylock-fancy' \
+         timeout 1200 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+         before-sleep 'swaylock-fancy'
+  #
 font pango:Fira Code 18
 # Autostart
-exec mako --icons 1 --markup 1 --actions 1 --padding 10 --background-color "#81a1c1" --default-timeout 10000
+#exec mako --icons 1 --markup 1 --actions 1 --padding 10 --background-color "#81a1c1" --default-timeout 10000
 exec light -S 20
 exec amixer sset 'Master' 40%
-exec nm-applet
-exec nm-applet --indicator
-exec /usr/lib/kdeconnectd
+#exec nm-applet
+#exec nm-applet --indicator
+#exec /usr/lib/kdeconnectd
 #exec_always /home/i/.scripts/swayinfo/wsdnames.sh
-exec kdeconnect-indicator
-exec syncthing -no-browser
-exec ~/.scripts/autotiling.py
+#exec kdeconnect-indicator
+#exec syncthing -no-browser
+#exec ~/.scripts/autotiling.py
 #exec ulauncher --hide-window
-exec ~/.azotebg
+#exec ~/.azotebg
 # Output configuration:
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
-	output eDP-1 resolution 1920x1080 position 0,0
-	output HDMI-A-1 resolution 1920x1080 position 1920,0
+#	output eDP-1 resolution 1920x1080 position 0,0
+#	output HDMI-A-1 resolution 1920x1080 position 1920,0
 
 	# Turn off screen on lid closed
 		set $laptop eDP-1
 		bindswitch lid:on output $laptop disable
 		bindswitch lid:off output $laptop enable
 
+	
 
-### Idle configuration
+# ### Idle configuration
 
-#set $menu nwggrid -o 0.9 -b 434c5e
-bindsym $mod+backspace exec /bin/zsh -i -c wofer
-# Fn key
+# #set $menu nwggrid -o 0.9 -b 434c5e
+#   bindsym $mod+backspace exec /bin/zsh -i -c wofer
+#   # Fn key
+#   bindsym XF86AudioRaiseVolume exec "pactl set-sink-volume @DEFAULT_SINK@ +5% ; zsh -c wob_volume > $SWAYSOCK.wob"
+#     bindsym XF86AudioLowerVolume exec "pactl set-sink-volume @DEFAULT_SINK@ -5%; zsh -c wob_volume > $SWAYSOCK.wob"
+#     bindsym XF86AudioMute exec "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+#     bindsym XF86MonBrightnessUp exec "brightnessctl set +10%"
+#     bindsym XF86MonBrightnessDown exec "brightnessctl set 10%-"
+
+#   exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
+#  bindsym XF86AudioRaiseVolume exec amixer sset Master 5%+ | sed -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > $SWAYSOCK.wob
+   #bindsym XF86AudioLowerVolume exec amixer sset Master 5%- | sed -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > $SWAYSOCK.wob
+#   bindsym XF86AudioMute exec amixer sset Master toggle | sed -En '/\[on\]/ s/.*\[([0-9]+)%\].*/\1/ p; /\[off\]/ s/.*/0/p' | head -1 > $SWAYSOCK.wob
+
+#   bindsym XF86MonBrightnessUp exec light -A 5 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
+#   bindsym XF86MonBrightnessDown exec light -U 5 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
+#
 bindsym XF86AudioRaiseVolume exec "pactl set-sink-volume @DEFAULT_SINK@ +5% ; zsh -c wob_volume > $SWAYSOCK.wob"
 bindsym XF86AudioLowerVolume exec "pactl set-sink-volume @DEFAULT_SINK@ -5%; zsh -c wob_volume > $SWAYSOCK.wob"
 bindsym XF86AudioMute exec "pactl set-sink-mute @DEFAULT_SINK@ toggle"
@@ -188,12 +216,18 @@ bindsym --release Shift+Print exec zsh -c fullscreenshot
 bindsym $mod+b splith
 bindsym $mod+v splitv
 
+#bindsym f12 
+
 # Switch the current container between different layout styles
 bindsym $mod+s layout stacking
+#bindsym $mod+ctrl+s exec ~/.scripts/sway-session save
+#bindsym $mod+ctrl+r exec ~/.scripts/sway-session restore
 bindsym $mod+t layout tabbed
 bindsym $mod+n layout toggle split
+#exec sway-session restore
+
 #quick_back_and_forth_work_space
-workspace_auto_back_and_forth yes
+#workspace_auto_back_and_forth yes
 bindsym $mod+z workspace prev_on_output
 
 bindsym $mod+Tab workspace back_and_forth
@@ -252,10 +286,13 @@ bindsym $mod+a focus parent
     bindsym $mod+Ctrl+Print exec $screenclip
     # Start a terminal
     bindsym $mod+m exec $term
+    bindsym f12 exec $volumeup
+    bindsym f11 exec $volumedown
     bindsym $mod+return exec $spotlight
     bindsym $mod+p exec $browser
+    bindsym $mod+i exec $files
     bindsym $mod+o exec $menu2
-    bindsym $mod+space exec $menu
+    #bindsym $mod+space exec $menu
     bindsym space+return exec $menu2
     # Kill focused window
     bindsym $mod+Ctrl+q kill
@@ -282,10 +319,10 @@ bindsym $mod+a focus parent
 # Moving around:
 #
     # Move your focus around
-    bindsym $mod+$left focus left
-    bindsym $mod+$down focus down
-    bindsym $mod+$up focus up
-    bindsym $mod+$right focus right
+    bindsym $mod+$left focus_wrapping no, focus left
+    bindsym $mod+$down focus_wrapping no, focus down
+    bindsym $mod+$up focus_wrapping no, focus up
+    bindsym $mod+$right focus_wrapping no, focus right
     # Or use $mod+[up|down|left|right]
     #bindsym $mod+Left focus left
     #bindsym $mod+Down focus down
@@ -408,6 +445,7 @@ set $ws_presOwn "notes"
 # switch to workspace
 #bindsym $mod+1 workspace $ws_mail
 #rename workspace [$ws_mail] to $ws1
+#
 
 # Workspaces:
 #
@@ -430,19 +468,20 @@ set $ws_presOwn "notes"
 		bindsym $mod+6 workspace number 6
 		bindsym $mod+7 workspace number 7
 		bindsym $mod+8 workspace number 8
+                
+                workspace back_and_forth no
 
 	# move focused container to workspace
-		bindsym $mod+Shift+1 move container to workspace number 1; workspace number 1
-		bindsym $mod+Shift+2 move container to workspace number 2; workspace number 2
-		bindsym $mod+Shift+3 move container to workspace number 3; workspace number 3
-		bindsym $mod+Shift+4 move container to workspace number 4; workspace number 4
-		bindsym $mod+Shift+5 move container to workspace number 5; workspace number 5
-		bindsym $mod+Shift+6 move container to workspace number 6; workspace number 6
-		bindsym $mod+Shift+7 move container to workspace number 7; workspace number 7
-		bindsym $mod+Shift+8 move container to workspace number 8; workspace number 8
+		bindsym $mod+Ctrl+1 move container to workspace number 1; workspace number 1
+		bindsym $mod+Ctrl+2 move container to workspace number 2; workspace number 2
+		bindsym $mod+Ctrl+3 move container to workspace number 3; workspace number 3
+		bindsym $mod+Ctrl+4 move container to workspace number 4; workspace number 4
+		bindsym $mod+Ctrl+5 move container to workspace number 5; workspace number 5
+		bindsym $mod+Ctrl+6 move container to workspace number 6; workspace number 6
+		bindsym $mod+Ctrl+7 move container to workspace number 7; workspace number 7
+		bindsym $mod+Ctrl+8 move container to workspace number 8; workspace number 8
 
 # bindsym $mod+1 workspace $ws_mail
-
 # #########bindsym $mod+1 workspace $ws1
 # #rename workspace [<old name>] to <new name>
 # #swaymsg rename workspace 1 to firefox
@@ -538,30 +577,30 @@ set $ws_presOwn "notes"
     # Show the next scratchpad window or hide the focused scratchpad window.
     # If there are multiple scratchpad windows, this command cycles through them.
     #bindsym $mod+z scratchpad show
-#
-# Resizing containers:
-#
-#mode "resize" {
-    # left will shrink the containers width
-    # right will grow the containers width
-    # up will shrink the containers height
-    # down will grow the containers height
-#     bindsym $left resize shrink width 10px
-#     bindsym $down resize grow height 10px
-#     bindsym $up resize shrink height 10px
-#     bindsym $right resize grow width 10px
-#     # Ditto, with arrow keys
-#     bindsym Left resize shrink width 10px
-#     bindsym Down resize grow height 10px
-#     bindsym Up resize shrink height 10px
-#     bindsym Right resize grow width 10px
-#     # Return to default mode
-#     bindsym Return mode "default"
-#     bindsym Escape mode "default"
-# }
-# bindsym $mod+r mode "resize"
 
-#bindsym $mod+n exec --no-startup-id flash_window
+# Resizing containers:
+
+ mode "resize" {
+     # left will shrink the containers width
+     # right will grow the containers width
+     # up will shrink the containers height
+     # down will grow the containers height
+      bindsym $left resize shrink width 30px
+      bindsym $down resize grow height 30px
+      bindsym $up resize shrink height 30px
+      bindsym $right resize grow width 30px
+      # Ditto, with arrow keys
+      bindsym Left resize shrink width 30px
+      bindsym Down resize grow height 30px
+      bindsym Up resize shrink height 30px
+      bindsym Right resize grow width 30px
+      # Return to default mode
+      bindsym Return mode "default"
+      bindsym Escape mode "default"
+  }
+  bindsym $mod+r mode "resize"
+
+#########bindsym $mod+n exec --no-startup-id flash_window
 #
 # Status Bar:
 #
@@ -635,9 +674,13 @@ xwayland enable
 
 
 
+
 #
 # application settings
 #
+for_window [app_id="zathura"] resize set width 40 ppt
+for_window [app_id="okular"] resize set width 90 ppt 
+#for_window [app_id=""] resize set width 80 ppt
        #for_window [class="(?i)(?:Steam|pavucontrol)"] floating enable, focus
        #for_window [class="(?i)(?:tilix|thunar|alacritty)"] focus
        ## for_window [class="(?i)(?:MellowPlayer)"] move scratchpad
@@ -701,12 +744,12 @@ xwayland enable
 
 for_window [instance="Godot_Engine"] floating enable
 
-include config.d/style.conf
-include config.d/autostart.conf
+#include config.d/style.conf
+#include config.d/autostart.conf
 #exec_always ~/.config/waybar/waybar.sh
-exec light -S 20
-exec amixer sset 'Master' 40%
-exec obhud --touchpad off -c sway.conf
+#exec light -S 20
+#exec amixer sset 'Master' 40%
+#exec obhud --touchpad off -c sway.conf
 
 set $gnome-schema org.gnome.desktop.interface
 exec_always {
@@ -715,13 +758,25 @@ exec_always {
     gsettings set org.gnome.desktop.interface gtk-theme "Nordic"
     gsettings set org.gnome.desktop.wm.preferences theme "Nordic"
 }
-#exec autotiling
+exec autotiling
 #exec_always ~/.scripts/swayinfo/wsdnames.sh
-exec_always ~/.scripts/swayinfo/scratchpad_indicator.py 500
+#exec_always ~/.scripts/swayinfo/scratchpad_indicator.py 500
 #exec_always flashfocus-git
-exec redshift -m wayland
-exec_always ~/.config/sway/scripts/compact-workspaces.py
-exec_always ~/.scripts/wsdnames.sh
+#exec redshift -m wayland
+#exec_always ~/.config/sway/scripts/compact-workspaces.py
+exec_always ~/.scripts/gammastep.sh
 exec_always autotiling
+#exec_always gammastep
+exec_always caps2esc
 exec clipman restore
+
+exec_always --no-startup-id ~/.cargo/bin/workstyle &> /tmp/workstyle.log
+#exec gammastep
+exec caps2esc
+#exec flashfocus 
+#exec ~/.scripts/gammastep.sh
 #include ~/.config/sway/$(hostname)/*
+#
+#exec sway-session restore && sway-session save-loop
+
+#exec ~/.scripts/sway-session restore && ~/.scripts/sway-session save-loop

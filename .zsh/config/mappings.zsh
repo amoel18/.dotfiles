@@ -1,7 +1,8 @@
 # Insert Mode
+
 bindkey -M viins '^K' up-history # ^K to previous command.
 bindkey -M viins '^J' down-history # ^J to next command.
-bindkey -M viins '^F' vi-forward-char # Go forward char or complete current completion.
+
 bindkey -M viins '^U' backward-kill-line # Kill line backwards.
 bindkey -M viins '^?' backward-delete-char # Delete left char with backspace key.
 bindkey -M viins '^B' backward-kill-word # Delete a WORD backward.
@@ -9,7 +10,8 @@ bindkey -M viins '^[[3~' delete-char # Ensure delete key always delete forward.
 bindkey -M viins ' ' custom-expand-global-alias # Space key to expand global aliases.
 bindkey -M viins '^Y' custom-insert-last-typed-word # Insert last typed word for quick copy-paste.
 bindkey -M viins '^R' custom-fzf-launch-from-history # Select command from history into the command line.
-bindkey -M viins '^P' custom-fzf-select # Paste the selected files and directories into the command-line.
+#bindkey -M viins '^P' custom-fzf-select # Paste the selected files and directories into the command-line.
+#bindkey -M viins '^F' 
 
 # Normal Mode
 bindkey -M vicmd 'j' down-line # Override down-line-or-history.
@@ -75,4 +77,12 @@ function ts {
 alias vp="pv"
 alias vw="wv"
 alias vt="tv"
+zle -N p
+zle -N vi-kill-eol
+bindkey -M vicmd 'Y' vi-kill-eol
+bindkey '^P' p
 
+zle -N fzf-file-widget
+bindkey '^F' fzf-file-widget # Go forward char or complete current completion.
+
+bindkey -rpM viins '^[^['
