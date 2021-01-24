@@ -1,4 +1,5 @@
 # Insert Mode
+
 bindkey -M viins '^K' up-history # ^K to previous command.
 bindkey -M viins '^J' down-history # ^J to next command.
 
@@ -77,7 +78,11 @@ alias vp="pv"
 alias vw="wv"
 alias vt="tv"
 zle -N p
+zle -N vi-kill-eol
+bindkey -M vicmd 'Y' vi-kill-eol
 bindkey '^P' p
 
 zle -N fzf-file-widget
 bindkey '^F' fzf-file-widget # Go forward char or complete current completion.
+
+bindkey -rpM viins '^[^['

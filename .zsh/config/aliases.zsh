@@ -4,7 +4,7 @@ alias mv='mv --interactive --verbose' # Move nodes with interactive mode and ext
 alias cp='cp --interactive --verbose' # Copy nodes with interactive mode and extra verbosity.
 alias ln='ln --interactive --verbose' # Link nodes with interactive mode and extra verbosity.
 alias mkdir='mkdir --parents' # Make missing parent directories when creating folders.
-#alias grep='grep --color=auto --exclude-dir=".git" --exclude-dir="node_modules"' # Grep with colors and ignore common directories.
+alias grep='grep --color=auto --exclude-dir=".git" --exclude-dir="node_modules"' # Grep with colors and ignore common directories.
 alias du='du --max-depth=1 --si' # Display size of files and folders under current directory.
 alias df='df --all --si --print-type' # Display all disk usage statistics with SI units and FS types.
 alias ls='ls --almost-all --classify --color=always --group-directories-first --literal' # List name of nodes.
@@ -18,7 +18,7 @@ alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 alias pa=' ps aux | grep'
 
 # Custom Shortcuts
-alias v='nvim'
+alias v='$HOME/Downloads/nvim.appimage'
 alias g='git'
 alias e='exit'
 alias tmux='tmux -f "$HOME/.tmux/tmux.conf"'
@@ -50,8 +50,8 @@ alias -s PDF="zathura &"
 alias -s epub="open"
 alias -s djuv="open"
 alias -s pdf="zathura &"
-alias -s md=" nvim"
-alias -s markdown="nvim"
+alias -s md=" v"
+alias -s markdown="v"
 alias -s htm="$BROWSER"
 alias -s html="$BROWSER"
 alias -s jar="java -jar"
@@ -138,3 +138,6 @@ foreach aliaskey (a b bl c co d ds dt dts f l r s sm w) {
 }
 unset aliaskey
 
+
+alias diff='diff --color=auto'
+ alias ip='ip -color=auto'

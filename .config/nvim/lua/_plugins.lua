@@ -112,8 +112,10 @@ return require('packer').startup(function()
   use { 'unblevable/quick-scope'}
   use 'mhinz/vim-signify'
   use 'tomtom/tcomment_vim'
+
   use 'tpope/vim-endwise'
   use 'tpope/vim-fugitive'
+  use 'airblade/vim-gitgutter'
   use 'tpope/vim-rails'
   use 'tpope/vim-repeat'
   use 'tpope/vim-rhubarb'
@@ -126,7 +128,6 @@ return require('packer').startup(function()
   use 'ncm2/ncm2-path'
   use 'ncm2/ncm2-ultisnips'
   use 'roxma/nvim-yarp'
-  use 'ap/vim-buftabline'
   use 'christoomey/vim-tmux-navigator'
   use 'tmsvg/pear-tree'
   use 'co1ncidence/mountaineer'
@@ -134,8 +135,8 @@ return require('packer').startup(function()
   use 'kristijanhusak/defx-icons'
   use 'romainl/vim-cool'
   use 'machakann/vim-highlightedyank'
-  --use 'ap/vim-buftabline'
-  --use 'zefei/vim-wintabs'
+  use 'ap/vim-buftabline'
+  use 'zefei/vim-wintabs'
   use 'nvim-treesitter/nvim-treesitter'
   use 'nvim-treesitter/playground'
   use 'nvim-treesitter/nvim-treesitter-refactor'
@@ -150,7 +151,6 @@ return require('packer').startup(function()
   use 'nvim-lua/completion-nvim'
   use {'dstein64/vim-startuptime', cmd = 'StartupTime'}
   use 'norcalli/nvim-colorizer.lua'
-
   use {'mhinz/vim-sayonara', cmd = 'Sayonara'}
   use {'tpope/vim-dispatch', cmd = {'Dispatch', 'Make', 'Focus', 'Start'}}
   use {

@@ -30,7 +30,8 @@ function M.setup()
   api.nvim_set_keymap('i', '<C-g>', '<C-g>u<Esc>[s1z=`]a<C-g>u', {noremap=true})
   api.nvim_set_keymap('n', '<C-g>', '<C-g>u<Esc>[s1z=`]a<C-g>u', {noremap=true})
   api.nvim_set_keymap('v', '<C-r>', '"_dP', {noremap = true})
-  api.nvim_set_keymap('n', 'shift-y', 'y$', {noremap = true})
+  api.nvim_set_keymap('n', '<S-Y>', 'y$', {noremap = true})
+  api.nvim_set_keymap('n', '<Leader-Y>', 'y$', {noremap = true})
   --api.nvim_set_keymap('n', '')
 
 

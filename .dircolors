@@ -2,19 +2,32 @@
 
   NORMAL                0 # Global default
   FILE                  0 # Global file default
-  DIR                   38;5;110 # Global directory default
-  EXEC                  38;5;78;1 # Executable
-  CAPABILITY            38;5;17
-  LINK                  target # Symbolic link
-  MULTIHARDLINK         38;5;222;1
-  ORPHAN                48;5;196;38;5;232;1 # Orphaned symbolic link
-  OTHER_WRITABLE        38;5;220;1
-  SETGID                48;5;3;38;5;0
-  SETUID                38;5;220;1;3;100;1
-  STICKY                38;5;86;48;5;234
-  STICKY_OTHER_WRITABLE 48;5;235;38;5;139;3
-  BLK                   38;5;68 # Block device
-  SOCK                  38;5;197 # Socket
+  DIR                    # Global directory default
+  cyan
+  EXEC                  #38;5;78;1 # Executable
+  green
+  CAPABILITY            #38;5;17
+  yellow
+  LINK                  #target # Symbolic link
+  red
+  MULTIHARDLINK         #38;5;222;1
+  red
+  ORPHAN                #48;5;196;38;5;232;1 # Orphaned symbolic link
+  black
+  OTHER_WRITABLE        #38;5;220;1
+  white
+  SETGID                #48;5;3;38;5;0
+  cyan
+  SETUID                #38;5;220;1;3;100;1
+  cyan
+  STICKY                #38;5;86;48;5;234
+  blue
+  STICKY_OTHER_WRITABLE #48;5;235;38;5;139;3
+  blue
+  BLK                   #38;5;68 # Block device
+  magenta
+  SOCK                  #38;5;197 # Socket
+  white
   CHR                   38;5;113;1 # Character device
   FIFO                  38;5;126 # Named pipe
   DOOR                  38;5;127 # Solaris door
