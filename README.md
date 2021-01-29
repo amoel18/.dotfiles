@@ -1,4 +1,4 @@
-Adding to a new system:
+Adding dotfiles to a new system:
 
 1) git clone --separate-git-dir=$HOME/.dots https://github.com/amoel18/.dots.git tmpdotfiles
 
