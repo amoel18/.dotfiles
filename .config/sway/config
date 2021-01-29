@@ -61,7 +61,7 @@ input * {
 #bindsym $mod+y exec tac ~/.clipboard | bemenu | wl-copy -n
 #set $term alacritty
 #set $spotlight wofi --dmenu
-#set $bar waybar
+set $bar waybar
 #set $launcher "wofi --show drun"
 #set $menu exec alacritty --class tofi -d 80 10 -e sh -c '$HOME/.config/sway/scripts/tofi | sort -u -r | fzf | $HOME/.config/sway/scripts/tofi'
 set $menu2 dmenu_path | wofi --show drun -i | xargs swaymsg exec --

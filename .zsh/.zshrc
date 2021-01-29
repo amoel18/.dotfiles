@@ -45,3 +45,6 @@ export FZF_DEFAULT_OPTS="$FZF_DEFAULT_COLORS \
         --bind='tab:down,btab:up' \
 	--no-bold"
 
+#eval `dircolors ~/color/bliss-dircolors/bliss.dircolors`
+
+#eval `dircolors ~/color/bliss-dircolors/bliss.dircolors/bliss-test/+t-o+w-directory-1`

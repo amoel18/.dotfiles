@@ -24,7 +24,7 @@ case $OSTYPE {
 		export NCURSES_HOME='/usr/local/opt/ncurses/bin'
 		export OPENSSL_HOME='/usr/local/opt/openssl/bin'
 		export OPENSSL_MAN_HOME='/usr/local/opt/openssl/man'
-		export PYTHON_SYMLINKS_HOME='/usr/local/opt/python/libexec/bin'
+		export PYTHON_S218INKS_HOME='/usr/local/opt/python/libexec/bin'
 		export PYTHONUSERBASE="$HOME/.local/"
 
 		path=(
@@ -143,22 +143,21 @@ export LESS_TERMCAP_us=$'\e[4;1;38;5;250m' # Begin underline mode.
 
 #export DBUS_SESSION_BUS_ADDRESS=/run/user/1000/bus
 
-# ls
-export LS_COLORS="no=0:fi=0:di=38;5;110:ex=38;5;78;1:ca=38;5;17:ln=target:mh=38;\
+export LS_COLORS="no=0:fi=0:di=38;5;153:ex=38;5;78;1:ca=38;5;17:ln=target:mh=38;\
 5;222;1:or=48;5;196;38;5;232;1:ow=38;5;220;1:sg=48;5;3;38;5;0:su=38;5;220;1;3;10\
 0;1:st=38;5;86;48;5;234:tw=48;5;235;38;5;139;3:bd=38;5;68:so=38;5;197:cd=38;5;11\
 3;1:pi=38;5;126:do=38;5;127:*README=38;5;220;1:*README.rst=38;5;220;1:*LICENSE=3\
 8;5;220;1:*COPYING=38;5;220;1:*INSTALL=38;5;220;1:*COPYRIGHT=38;5;220;1:*AUTHORS\
-=38;5;220;1:*HISTORY=38;5;220;1:*CONTRIBUTORS=38;5;220;1:*PATENTS=38;5;220;1:*VE\
+=38;5;220;1:*HISTORY=38;5;180;1:*CONTRIBUTORS=38;5;220;1:*PATENTS=38;5;220;1:*VE\
 RSION=38;5;220;1:*NOTICE=38;5;220;1:*CHANGES=38;5;220;1:*.log=38;5;190:*.txt=38;\
-5;253:*.etx=38;5;184:*.info=38;5;184:*.markdown=38;5;184:*.md=38;5;184:*.mkd=38;\
-5;184:*.nfo=38;5;184:*.pod=38;5;184:*.rst=38;5;184:*.tex=38;5;184:*.textile=38;5\
-;184:*.json=38;5;178:*.msg=38;5;178:*.pgn=38;5;178:*.rss=38;5;178:*.xml=38;5;178\
+5;253:*.etx=38;5;184:*.info=38;5;222:*.markdown=38;5;222:*.md=38;5;222:*.mkd=38;\
+5;184:*.nfo=38;5;184:*.pod=38;5;184:*.rst=38218222:*.tex=38;5;222:*.textile=38;5\
+;184:*.json=38;5;178:*.msg=38;5;178:*.pgn=38;5;178:*.rss=38;5;178:*.xml=38;5;1222
 :*.yaml=38;5;178:*.yml=38;5;178:*.RData=38;5;178:*.rdata=38;5;178:*.cbr=38;5;141\
 :*.cbz=38;5;141:*.chm=38;5;141:*.djvu=38;5;141:*.pdf=38;5;141:*.PDF=38;5;141:*.d\
 ocm=38;5;111;4:*.doc=38;5;111:*.docx=38;5;111:*.eps=38;5;111:*.ps=38;5;111:*.odb\
 =38;5;111:*.odt=38;5;111:*.rtf=38;5;111:*.odp=38;5;166:*.pps=38;5;166:*.csv=38;5\
-;78:*.ods=38;5;112:*cfg=1:*conf=1:*rc=1:*.ini=1:*.plist=1:*.viminfo=1:*.pcf=1:*.\
+;78:*.ods=38;5;112:*cfg=38;5;218:*conf=38;5;218:*rc=38;5;218:*.ini=38;5;218:*.plist=38;5;218:*.viminfo=38;5;218:*.pcf=1:*.\
 psf=1:*.git=38;5;197:*.gitignore=38;5;240:*.gitattributes=38;5;240:*.gitmodules=\
 38;5;240:*.awk=38;5;172:*.bash=38;5;172:*.bat=38;5;172:*.BAT=38;5;172:*.sed=38;5\
 ;172:*.sh=38;5;172:*.zsh=38;5;172:*.vim=38;5;172:*.ahk=38;5;41:*.py=38;5;41:*.pl\
@@ -179,8 +178,8 @@ dockerignore=38;5;240:*Makefile=38;5;155:*MANIFEST=38;5;243:*pm_to_blib=38;5;240
 :*.am=38;5;242:*.in=38;5;242:*.hin=38;5;242:*.scan=38;5;242:*.m4=38;5;242:*.old=\
 38;5;242:*.out=38;5;242:*.SKIP=38;5;244:*.diff=38;5;229:*.patch=48;5;197;38;5;23\
 2;1:*.bmp=38;5;97:*.tiff=38;5;97:*.tif=38;5;97:*.TIFF=38;5;97:*.cdr=38;5;97:*.gi\
-f=38;5;97:*.ico=38;5;97:*.jpeg=38;5;97:*.JPG=38;5;97:*.jpg=38;5;97:*.nth=38;5;97\
-:*.png=38;5;97:*.psd=38;5;97:*.xpm=38;5;97:*.ai=38;5;99:*.eps=38;5;99:*.epsf=38;\
+f=38;5;97:*.ico=38;5;168:*.jpeg=38;5;168:*.JPG=38;5;168:*.jpg=38;5;168:*.nth=38;5;97\
+:*.png=38;5;168:*.psd=38;5;97:*.xpm=38;5;97:*.ai=38;5;99:*.eps=38;5;99:*.epsf=38;\
 5;99:*.drw=38;5;99:*.ps=38;5;99:*.svg=38;5;99:*.avi=38;5;114:*.divx=38;5;114:*.I\
 FO=38;5;114:*.m2v=38;5;114:*.m4v=38;5;114:*.mkv=38;5;114:*.MOV=38;5;114:*.mov=38\
 ;5;114:*.mp4=38;5;114:*.mpeg=38;5;114:*.mpg=38;5;114:*.ogm=38;5;114:*.rmvb=38;5;\
@@ -215,7 +214,7 @@ p=38;5;29:*.DS_Store=38;5;239:*.localized=38;5;239:*.CFUserTextEncoding=38;5;239
 :*.service=38;5;45:*@.service=38;5;45:*.socket=38;5;45:*.swap=38;5;45:*.device=3\
 8;5;45:*.mount=38;5;45:*.automount=38;5;45:*.target=38;5;45:*.path=38;5;45:*.tim\
 er=38;5;45:*.snapshot=38;5;45:*.allow=38;5;112:*.deny=38;5;196:*.application=38;\
-5;116:*.cue=38;5;116:*.description=38;5;116:*.directory=38;5;116:*.m3u=38;5;116:\
+5;116:*.cue=38;5;116:*.description=38;5;116:*.directory=38;5;218:*.m3u=38;5;116:\
 *.m3u8=38;5;116:*.md5=38;5;116:*.properties=38;5;116:*.sfv=38;5;116:*.srt=38;5;1\
 16:*.theme=38;5;116:*.torrent=38;5;116:*.urlview=38;5;116:*.asc=38;5;192;3:*.bfe\
 =38;5;192;3:*.enc=38;5;192;3:*.gpg=38;5;192;3:*.signature=38;5;192;3:*.sig=38;5;\
@@ -233,3 +232,5 @@ mfasl=38;5;7:*.mi=38;5;7:*.mtx=38;5;7:*.pc=38;5;7:*.pi=38;5;7:*.plt=38;5;7:*.pm=
 ;7:*.sug=38;5;7:*.t=38;5;7:*.tdy=38;5;7:*.tfm=38;5;7:*.tfnt=38;5;7:*.tg=38;5;7:*\
 .vcard=38;5;7:*.vcf=38;5;7:*.xln=38;5;7:*.iml=38;5;166:*.xcconfig=1:*.entitlemen\
 ts=1:*.strings=1:*.storyboard=38;5;196:*.xcsettings=1:*.xib=38;5;208:"
+
+

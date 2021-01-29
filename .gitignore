@@ -21,3 +21,5 @@ tmp/**/*
 mm547/
 .zsh/cache/.zshhistory
 .cache/
+.config/nvim/plugin/packer_compiled.vim
+

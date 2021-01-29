@@ -6,10 +6,11 @@ function M.setup()
     clipboard = 'unnamedplus';
     completeopt = 'noinsert,menuone,noselect';
     hidden = true;
-    backspace=indent,eol,start;
+    conceallevel = 1; 
+    backspace = indent,eol,start;
     gdefault;
     virtualedit = block;
-    wildmode=longest,list
+    wildmode=longest,list;
     splitbelow;
     splitright;
     incsearch = true;
@@ -66,5 +67,10 @@ function M.setup()
     vim.api.nvim_command('syntax enable')
   end
 end
+   
+    tex_conceal = abdmg;
+    UltiSnipsExpandTrigger = '<tab>';
+    UltiSnipsJumpForwardTrigger = '<tab>';
+    UltiSnipsJumpBackwardTrigger = '<s-tab>';
 
 return M
