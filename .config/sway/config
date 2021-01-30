@@ -205,8 +205,10 @@ exec amixer sset 'Master' 40%
 bindsym XF86AudioRaiseVolume exec "pactl set-sink-volume @DEFAULT_SINK@ +5% ; zsh -c wob_volume > $SWAYSOCK.wob"
 bindsym XF86AudioLowerVolume exec "pactl set-sink-volume @DEFAULT_SINK@ -5%; zsh -c wob_volume > $SWAYSOCK.wob"
 bindsym XF86AudioMute exec "pactl set-sink-mute @DEFAULT_SINK@ toggle"
-bindsym XF86MonBrightnessUp exec "brightnessctl set +10%"
-bindsym XF86MonBrightnessDown exec "brightnessctl set 10%-"
+#bindsym XF86MonBrightnessUp exec "brightnessctl set +10%"
+#bindsym XF86MonBrightnessDown exec "brightnessctl set 10%-"
+bindsym --locked XF86MonBrightnessUp exec --no-startup-id light -A 10
+bindsym --locked XF86MonBrightnessDown exec --no-startup-id light -U 10
 
 ## Screenshots
 bindsym --release Print exec zsh -c screenshot
@@ -743,6 +745,10 @@ for_window [app_id="okular"] resize set width 90 ppt
 
 
 for_window [instance="Godot_Engine"] floating enable
+bindsym $mod+Shift+$left resize shrink width 50px
+bindsym $mod+Shift+$right resize grow width 50px
+bindsym $mod+Shift+$up resize shrink height 50px
+bindsym $mod+Shift+$down resize grow height 50px
 
 #include config.d/style.conf
 #include config.d/autostart.conf

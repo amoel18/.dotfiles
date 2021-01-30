@@ -29,6 +29,7 @@ source "$ZDOTDIR/plugins/system-clipboard/zsh-system-clipboard.zsh"
 
 # zsh-autosuggestions: Fish-like auto-suggestions.
 source "$ZDOTDIR/plugins/autosuggestions/zsh-autosuggestions.zsh"
+source "$ZDOTDIR/plugins/zsh-z/zsh-z.plugin.zsh"
 
 source "$ZDOTDIR/plugins/fzf-tab/fzf-tab.zsh"
 

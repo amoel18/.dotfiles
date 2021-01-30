@@ -37,7 +37,6 @@ p () {
 #export FZF_DEFAULT_OPTIONS=$FZF_DEFAULT_OPTS
 #
 export FZF_DEFAULT_OPTS="$FZF_DEFAULT_COLORS \
-	--exact \
 	--no-multi \
 	--height='40%' \
 	--layout='reverse' \
@@ -45,6 +44,7 @@ export FZF_DEFAULT_OPTS="$FZF_DEFAULT_COLORS \
         --bind='tab:down,btab:up' \
 	--no-bold"
 
+#export FZF_DEFAULT_COMMAND='rg --hidden --column '
 #eval `dircolors ~/color/bliss-dircolors/bliss.dircolors`
 
 #eval `dircolors ~/color/bliss-dircolors/bliss.dircolors/bliss-test/+t-o+w-directory-1`

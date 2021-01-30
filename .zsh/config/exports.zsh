@@ -100,6 +100,8 @@ export FZF_DEFAULT_COLORS='--color=dark,fg:-1,bg:-1,hl:4,fg+:7,bg+:8,gutter:-1,h
 export FZF_DEFAULT_OPTS="$FZF_DEFAULT_COLORS \
 	--exact \
 	--no-multi \
+	--color=always \
+	--smart-case \
 	--height='40%' \
 	--layout='reverse' \
 	--inline-info \
