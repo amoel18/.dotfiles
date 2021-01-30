@@ -18,7 +18,7 @@ alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 alias pa=' ps aux | grep'
 
 # Custom Shortcuts
-alias v='nvim'
+alias v='~/Downloads/nvim.appimage'
 alias g='git'
 alias e='exit'
 alias tmux='tmux -f "$HOME/.tmux/tmux.conf"'
