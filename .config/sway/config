@@ -22,7 +22,7 @@ set $volumeup amixer sset Master 5%+
 set $volumedown amixer sset Master 5%-
 
 for_window [app_id="^launcher$"] floating enable, sticky enable, resize set 30 ppt 60 ppt, border pixel 10
-set $menuu exec $term --class=launcher -e sway-launcher-desktop
+set $menuu exec $term --class=launcher -e ~/.scripts/sway-launcher-desktop.sh
 bindsym $mod+space exec $menuu
 
 #set $fuzz ~/.scripts/fuzzyf.sh
