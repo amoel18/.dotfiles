@@ -23,7 +23,7 @@ p () {
             v=$(echo {q} | tr " " "|"); 
             echo -e {1}"\n"{2} | grep -E "^|$v" -i --color=always;
         ' \
-    | cut -z -f 1 -d $'\t' | tr -d '\n' | xargs -r --null okular  &> /dev/null 2> /dev/null 
+    | cut -z -f 1 -d $'\t'  | tr -d '\n'  | xargs -r --null zathura &> /dev/null 2> /dev/null 
 } 
 
 [[ -e "/usr/share/fzf/fzf-extras.zsh" ]] \
