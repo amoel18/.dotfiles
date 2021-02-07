@@ -108,14 +108,18 @@ return require('packer').startup(function()
   --use 'fzf'
   --use '.local/share/nvim/site/pack/packer/fzf'
   use 'junegunn/fzf.vim'
-  use {'chaoren/vim-wordmotion', 'justinmk/vim-sneak'}
-  use { 'unblevable/quick-scope'}
+  use 'junegunn/gv.vim'
+--use 'Shougo/defx.nvim'
+  use 'chaoren/vim-wordmotion'
+  use 'justinmk/vim-sneak'
+  use 'unblevable/quick-scope'
   use 'mhinz/vim-signify'
-  use 'tomtom/tcomment_vim'
-
+  use 'ebranlard/vim-matlab-behave'
+  --use 'tomtom/tcomment_vim'
+  use 'slarwise/vim-tmux-send'
   use 'tpope/vim-endwise'
   use 'tpope/vim-fugitive'
-  use 'airblade/vim-gitgutter'
+  --use 'airblade/vim-gitgutter'
   use 'tpope/vim-rails'
   use 'tpope/vim-repeat'
   use 'tpope/vim-rhubarb'
@@ -123,29 +127,39 @@ return require('packer').startup(function()
   use 'wellle/targets.vim'
   use 'rstacruz/vim-closer'
   use 'ncm2/ncm2'
+  use 'daeyun/vim-matlab'
   use 'ncm2/ncm2-bufword'
   use 'ncm2/ncm2-tagprefix'
   use 'ncm2/ncm2-path'
+  use 'kevinhwang91/rnvimr'
+  use 'MortenStabenau/matlab-vim'
   use 'ncm2/ncm2-ultisnips'
   use 'roxma/nvim-yarp'
   use 'christoomey/vim-tmux-navigator'
   use 'tmsvg/pear-tree'
   use 'co1ncidence/mountaineer'
-  use 'Shougo/defx.nvim'
+  --use 'Shougo/defx.nvim'
   use 'kristijanhusak/defx-icons'
   use 'romainl/vim-cool'
   use 'machakann/vim-highlightedyank'
-  use 'ap/vim-buftabline'
-  use 'zefei/vim-wintabs'
+  --use 'ap/vim-buftabline'
+  use 'romgrk/barbar.nvim'
+  use 'kyazdani42/nvim-web-devicons'
+  --use 'pacha/vem-tabline'
+  use 'ryanoasis/vim-devicons'
+
+  --use 'zefei/vim-wintabs'
   use 'nvim-treesitter/nvim-treesitter'
-  use 'nvim-treesitter/playground'
-  use 'nvim-treesitter/nvim-treesitter-refactor'
-  use 'nvim-treesitter/completion-treesitter'
-  use 'nvim-treesitter/nvim-treesitter-textobjects'
+  --use 'nvim-treesitter/playground'
+  --use 'nvim-treesitter/nvim-treesitter-refactor'
+  --use 'nvim-treesitter/completion-treesitter'
+  --use 'nvim-treesitter/nvim-treesitter-textobjects'
   use 'lervag/vimtex'
   use 'lambdalisue/suda.vim'
   use 'SirVer/ultisnips'
   use 'honza/vim-snippets'
+  use 'farmergreg/vim-lastplace'
+  use 'jpalardy/vim-slime'
   use 'KeitaNakamura/tex-conceal.vim'
   use 'neovim/nvim-lspconfig'
   use 'nvim-lua/completion-nvim'
@@ -168,12 +182,12 @@ return require('packer').startup(function()
 
   -- Load on a combination of conditions: specific filetypes or commands
   -- Also run code after load (see the "config" key)
-  use {
-    'w0rp/ale',
-    ft = {'rb', 'js', 'go'},
-    cmd = 'ALEEnable',
-    config = 'vim.cmd[[ALEEnable]]'
-  }
+  --use {
+  --  'w0rp/ale',
+  --  ft = {'rb', 'js', 'go'},
+  --  cmd = 'ALEEnable',
+  --  config = 'vim.cmd[[ALEEnable]]'
+  --}
 
   use {
     'vim-ruby/vim-ruby',

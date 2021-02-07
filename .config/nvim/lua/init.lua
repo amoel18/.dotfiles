@@ -1,5 +1,6 @@
 local M = {}
 
+
 function M.setup()
  -- Skip providers
   require'_providers'
@@ -25,10 +26,9 @@ function M.setup()
 
   -- Load plugins
   require'_plugins'
-
-  -- Load options
+	
   require'_options'.setup()
-
+  --require'_bufferline'.setup()
   -- Load mapping
   require'_mapping'.setup()
 
@@ -58,3 +58,5 @@ function M.setup()
 end
 
 M.setup()
+
+

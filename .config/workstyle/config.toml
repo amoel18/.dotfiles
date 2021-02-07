@@ -1,0 +1,56 @@
+# Config for workstyle
+#
+# Format:
+# "pattern" = "icon"
+#
+# The pattern will be used to match against the application name.
+# The icon will be used to represent that application.
+#
+# Note if multiple patterns are present in the same application name,
+# precedence is given in order of apparition in this file.
+
+#"termite" = ""
+"alacritty" = ""
+"Alacritty" = ""
+"~" = ""
+#"~" = " "
+#"terminal" = ""
+"zathura" = ""
+"okular" = ""
+"github" = ""
+".tex" = "TeX"
+"MyPaint" = ""
+#"Alacritty" = ""
+"archlinux" = ""
+#"reddit" "LE REDDITPEPEGAXDDDDDDDDDDD"
+#"rust" = ""
+"google" = ""
+"spotify" = ""
+"signal" = ""
+"discord" = ""
+"private browsing" = ""
+"firefox" = ""
+"alsamixer" = ""
+"soundcloud" = ""
+"chrome" = ""
+"browser" = ""
+"chromium" = ""
+"google" = ""
+"file manager" = ""
+"Thunar" = ""
+"libreoffice calc" = ""
+#"libreoffice writer" = ""
+#"libreoffice" = ""
+#"nvim" = ""
+"neovim" = ""
+"reddit" = ""
+"nvim" = ""
+"gthumb" = ""
+#"menu" = ""
+"calculator" = ""
+"transmission" = ""
+#"videostream" = ""
+#"mpv" = ""
+#"music" = ""
+"disk usage" = ""
+".pdf" = ""

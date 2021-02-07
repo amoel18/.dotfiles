@@ -1,9 +1,9 @@
 [Added Associations]
 text/plain=org.pwmt.zathura-pdf-mupdf.desktop;gcr-prompter.desktop;termite.desktop;vim.desktop;
-application/x-shellscript=termite.desktop;gcr-prompter.desktop;
-x-scheme-handler/http=xfce4-web-browser.desktop;
-x-scheme-handler/https=xfce4-web-browser.desktop;
+application/x-shellscript=alacritty.desktop;gcr-prompter.desktop;
 application/vnd.openxmlformats-officedocument.wordprocessingml.document=chromium.desktop;libreoffice-calc.desktop;
+video/mp4=vlc.desktop;
+image/vnd.djvu+multipage=org.pwmt.zathura-djvu.desktop;
 
 [Default Applications]
 application/pdf=zathura.desktop
@@ -12,3 +12,4 @@ x-scheme-handler/https=chromium.desktop
 text/html=chromium.desktop
 x-scheme-handler/about=chromium.desktop
 x-scheme-handler/unknown=chromium.desktop
+image/png=mirage.desktop

@@ -14,6 +14,7 @@ path=(
 case $OSTYPE {
 	darwin*)
 		export GNU_COREUTILS_HOME='/usr/local/opt/coreutils/libexec/gnubin'
+		export MATLAB='/home/i/.matlab/MATLAB/R2020b/bin'
 		export GNU_COREUTILS_MAN_HOME='/usr/local/opt/coreutils/libexec/gnuman'
 		export GNU_FINDUTILS_HOME='/usr/local/opt/findutils/libexec/gnubin'
 		export GNU_FINDUTILS_MAN_HOME='/usr/local/opt/findutils/libexec/gnuman'
@@ -24,6 +25,7 @@ case $OSTYPE {
 		export NCURSES_HOME='/usr/local/opt/ncurses/bin'
 		export OPENSSL_HOME='/usr/local/opt/openssl/bin'
 		export OPENSSL_MAN_HOME='/usr/local/opt/openssl/man'
+		export PACKER='/home/i/.local/share/nvim/site/pack/packer/'
 		export PYTHON_S218INKS_HOME='/usr/local/opt/python/libexec/bin'
 		export PYTHONUSERBASE="$HOME/.local/"
 

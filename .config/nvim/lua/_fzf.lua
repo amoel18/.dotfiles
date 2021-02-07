@@ -32,6 +32,4 @@ command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 api.nvim_set_keymap('n', '<Leader>h', ':History<CR>', { noremap = true })
 api.nvim_set_keymap('n', '<Leader>b', ':Buffers<CR>', { noremap = true })
 api.nvim_set_keymap('n', '<Leader>t', ':Files<CR>', { noremap = true })
-api.nvim_set_keymap('n', '<Leader>rg', '<ESC>:RG<Space>', { noremap = true, silent = false })
-api.nvim_set_keymap('n', '<Leader>rw', '<ESC>:RG <C-R><C-W>', { noremap = true, silent = false })
-api.nvim_set_keymap('n', '<Leader>rh', '<ESC>:RG<UP><CR>', { noremap = true, silent = false })
+

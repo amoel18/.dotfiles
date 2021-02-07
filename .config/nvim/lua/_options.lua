@@ -1,5 +1,4 @@
 local M = setmetatable({}, { __index = { global_local = {}, buffer_local = {}, window_local = {} } })
-
 function M.setup()
   -- Global
   global_local = {
@@ -15,8 +14,10 @@ function M.setup()
     splitright;
     incsearch = true;
     hlsearch = true;
+    nohlsearch;
     ignorecase = true;
     smartcase = true;
+
     lazyredraw = true;
     list = true;
     listchars = 'tab:>·,nbsp:+,trail:·,extends:→,precedes:←';

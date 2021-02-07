@@ -5,8 +5,8 @@
 # These configuration files will be loaded in order, replacing values in files
 # loaded earlier with those loaded later in the chain. The file itself will
 # always be loaded last.
-#import:
-#  - /path/to/alacritty.yml
+import:
+  - /path/to/color.yml
 
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
@@ -147,7 +147,7 @@ font:
     #style: Bold Italic
 
   # Point size
-  size: 16.0
+  size: 12.0
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacig, and `offset.x` as modifying the letter spacing.
@@ -199,7 +199,9 @@ schemes:
      cyan:    '#9ec3c4'
      white:   '#f5f5f5'
 
+
 colors: *mountaineer
+
 
 # Bell
 #
@@ -382,6 +384,8 @@ live_config_reload: true
 #
 # `- { key: V, mods: Control|Shift, action: Paste }`
 #
+
+#
 # Each key binding will specify a:
 #
 # - `key`: Identifier of the key pressed
@@ -557,6 +561,7 @@ live_config_reload: true
 # If the same trigger is assigned to multiple actions, all of them are executed
 # in the order they were defined in.
 key_bindings:
+  - { key: M,         mods: Control,             action: SpawnNewInstance}
   - { key: Paste,                                action: Paste          }
   - { key: Copy,                                 action: Copy           }
   - { key: L,         mods: Control,             action: ClearLogNotice }
@@ -651,3 +656,7 @@ key_bindings:
 
   # Print all received window events.
   #print_events: falsen
+import:
+  - '/path/to/color.yml'
+
+

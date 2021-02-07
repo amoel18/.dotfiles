@@ -14,17 +14,21 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term alacritty
+set $term alacritty #--working-directory="$(swaymsg -t get_tree | jq '.. | (.nodes? // empty)[] | select(.focused == true).pid? // empty' | xargs pstree -p | grep "\<tmux\>\|\<fish\>\|\<bash\>\|\<zsh\>\|\<sh\>" | grep -o '[0-9]*' | xargs pwdx 2> /dev/null | cut -f2- -d' ' | sort | tail -n 1 | tr -d '\n')"
 set $editor nvim
 set $browser chromium
 set $files thunar
 set $volumeup amixer sset Master 5%+
 set $volumedown amixer sset Master 5%-
 
-for_window [app_id="^launcher$"] floating enable, sticky enable, resize set 30 ppt 60 ppt, border pixel 10
-set $menuu exec $term --class=launcher -e ~/.scripts/sway-launcher-desktop.sh
+for_window [app_id="^launcher$"] floating enable, sticky disable, resize set 30 ppt 60 ppt, border pixel 10
+set $menuu exec alacritty --class=launcher -e ~/.scripts/sway-launcher-desktop.sh
 bindsym $mod+space exec $menuu
+bindsym $mod+g exec gammastep
 
+#set $menu2u exec $term --class=launcher -e ~/.scripts/pdf.sh &
+set $menu2u exec alacritty -e ~/.scripts/pdf.sh
+bindsym $mod+return exec $menu2u
 #set $fuzz ~/.scripts/fuzzyf.sh
 #set $lock ~/.local/bin/scripts/lock.sh
 #set $power ~/.config/rofi/modi/power
@@ -42,7 +46,7 @@ input * {
 
 input * {
   natural_scroll enabled
-  pointer_accel -1
+  pointer_accel 0
 }
 
 #input <identifier> xkb_model "macintosh79"
@@ -100,7 +104,7 @@ set $menu exec alacritty --class tofi -d 80 10 -e sh -c '$HOME/.scripts/launcher
 
 bindsym $mod+f1 exec ~/.config/sway/lockman.sh
 #bindsym $mod+f12 exec ~/.config/sway/lockman.sh
-#bindsym $mod+ctrl+d input * {xkb_layout "dk"} 
+#bindsym $mod+ctrl+d input * {xkb_layout "dk"}
 
 # Screenshot with grim and swappy
 #bindsym $mod+u exec grim -g "$(slurp)" - | swappy -f -
@@ -126,6 +130,9 @@ hide_edge_borders smart
 # Example configuration:
 #
    output eDP-1 resolution 2560x1440 position 2560,0
+   output HDMI-A-3 resolution 2560x1440 pos 2560,0
+   output HDMI-A-1 resolution 2560x1440 pos 2560,0
+   output HDMI-A-2 resolution 2560x1440 pos 2560,0
 
    for_window [title="^.*"] border pixel 1, title_format "%class >> %title"
 #
@@ -146,6 +153,7 @@ client.background       #ffffff
 
 # monitors
 	set $Mon1 eDP-1
+	set $Mon2 HDMI-3
 
 ### Idle configuration
 #
@@ -181,7 +189,7 @@ exec amixer sset 'Master' 40%
 		bindswitch lid:on output $laptop disable
 		bindswitch lid:off output $laptop enable
 
-	
+
 
 # ### Idle configuration
 
@@ -218,7 +226,7 @@ bindsym --release Shift+Print exec zsh -c fullscreenshot
 bindsym $mod+b splith
 bindsym $mod+v splitv
 
-#bindsym f12 
+#bindsym f12
 
 # Switch the current container between different layout styles
 bindsym $mod+s layout stacking
@@ -233,7 +241,7 @@ bindsym $mod+n layout toggle split
 bindsym $mod+z workspace prev_on_output
 
 bindsym $mod+Tab workspace back_and_forth
-  
+
 #bindsym $mod+Shift+Tab workspace next_on_output
 
 #bindsym $mod+c exec clipman pick -t wofi
@@ -290,7 +298,7 @@ bindsym $mod+a focus parent
     bindsym $mod+m exec $term
     bindsym f12 exec $volumeup
     bindsym f11 exec $volumedown
-    bindsym $mod+return exec $spotlight
+    #bindsym $mod+return exec $spotlight
     bindsym $mod+p exec $browser
     bindsym $mod+i exec $files
     bindsym $mod+o exec $menu2
@@ -452,7 +460,7 @@ set $ws_presOwn "notes"
 # Workspaces:
 #
   # workspace assignment
-    workspace 1 output $Mon1
+    workspace 1 output $Mon2
     workspace 2 output $Mon1
     workspace 3 output $Mon1
     workspace 4 output $Mon1
@@ -470,7 +478,7 @@ set $ws_presOwn "notes"
 		bindsym $mod+6 workspace number 6
 		bindsym $mod+7 workspace number 7
 		bindsym $mod+8 workspace number 8
-                
+
                 workspace back_and_forth no
 
 	# move focused container to workspace
@@ -516,7 +524,7 @@ set $ws_presOwn "notes"
 # smart_borders on
 # gaps inner 8
 # default_border pixel 2
-# #focus_follows_mouse no
+focus_follows_mouse no
 #     # Switch to workspace
 #     bindsym $mod+1 workspace number 1
 #     bindsym $mod+2 workspace number 2
@@ -681,7 +689,7 @@ xwayland enable
 # application settings
 #
 for_window [app_id="zathura"] resize set width 40 ppt
-for_window [app_id="okular"] resize set width 90 ppt 
+for_window [app_id="okular"] resize set width 90 ppt
 #for_window [app_id=""] resize set width 80 ppt
        #for_window [class="(?i)(?:Steam|pavucontrol)"] floating enable, focus
        #for_window [class="(?i)(?:tilix|thunar|alacritty)"] focus
@@ -745,11 +753,15 @@ for_window [app_id="okular"] resize set width 90 ppt
 
 
 for_window [instance="Godot_Engine"] floating enable
-bindsym $mod+Shift+$left resize shrink width 50px
+bindsym $mod+Shift+$left resize grow width 50px
 bindsym $mod+Shift+$right resize grow width 50px
-bindsym $mod+Shift+$up resize shrink height 50px
+bindsym $mod+Shift+$up resize grow height 50px
 bindsym $mod+Shift+$down resize grow height 50px
 
+bindsym $mod+Alt+$left resize shrink width 50px
+bindsym $mod+Alt+$right resize shrink width 50px
+bindsym $mod+Alt+$up resize shrink height 50px
+bindsym $mod+Alt+$down resize shrink height 50px
 #include config.d/style.conf
 #include config.d/autostart.conf
 #exec_always ~/.config/waybar/waybar.sh
@@ -770,17 +782,18 @@ exec autotiling
 #exec_always flashfocus-git
 #exec redshift -m wayland
 #exec_always ~/.config/sway/scripts/compact-workspaces.py
-exec_always ~/.scripts/gammastep.sh
+#exec_always ~/.scripts/gammastep.sh
 exec_always autotiling
 #exec_always gammastep
+
 exec_always caps2esc
-exec clipman restore
+#exec clipman restore
 
 exec_always --no-startup-id ~/.cargo/bin/workstyle &> /tmp/workstyle.log
 #exec gammastep
 exec caps2esc
-#exec flashfocus 
-#exec ~/.scripts/gammastep.sh
+#exec flashfocus
+#exec_always ~/.scripts/gammastep.sh
 #include ~/.config/sway/$(hostname)/*
 #
 #exec sway-session restore && sway-session save-loop
