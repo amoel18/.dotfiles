@@ -1,0 +1,46 @@
+\documentclass[danish,a4paper,11pt]{article}
+\usepackage{lmodern}
+% Some basic packages
+\makeatletter
+\def\input@path{{../../../}}
+\makeatother
+\input{Preamble.tex}
+\title{Non-linear parabolic pdes in mathematical finance (Black Scholes)}
+\author{Anders Kinch Møller}
+\date{}
+\begin{document}
+\maketitle
+  Relaxing the assumptions of the BS-model results in a non-linear BS equation. \\
+  For example we could look at the volatility \( \sigma \) and the drift \( \mu  \) depending on time \( t \) or the transaction cost not being \( 0 \). In the case of transaction cost, we would need to relax the hedging condition. This can be done by trading at discrete times, as we see in the Leland's model.\\
+
+  stochastic volatility (Heston model)\\
+  stochastic interest rates \\
+  increase number of underlying assets\\
+  look at different payoff functions (like options on the maximum or average)\\
+  \\
+  Hamilton-Jacobi-Bellman equations \\
+  allowing for jumps in the development of the assets (integro PDE's) \\
+
+  A pde is said to be parabolic if \( B^{2} -4AC = 0 \) \\
+  considering stability we find a more telling constraint on the size of \( \delta t  \). Heat conduction is said to be stable if the \( u_{j}^{n}  \) do not grow in magnitude with \( n \) . \\
+In general, the PDEs of relevance are of theconvection-di usion-reactiontype innspace variables and one time variable.\\
+Look at a generalized model, we relax the assumptions of the BS-model: we now model a multi=asset environment with dividend \( D \). \\
+We want to find a numerical scheme which produce accurate results. \\
+In order to reduce the number of solutions for the pde, we define the initial condition and boundary conditions. These are:
+\begin{itemize}
+  \item First boundary value problem (Dirchlet problem)
+  \item Second boundary value problem (Neumann, robin problems).
+  \item Cauchy problem.
+
+\end{itemize}
+
+Assumptions:
+\begin{enumerate}
+  \item The underlying stock \( S(t) \) follows a geometric brownian motion.
+\end{enumerate}
+\begin{align*}
+  dS  &= \mu S dt  + \sigma S dW && \text{(geometric brownian motion)}  \\
+  V & = V(T-t,S_t;r, \sigma, K) \\
+  dV    & = \frac{\partial V}{\partial t} dt  + \frac{\partial V}{\partial S} dS  + \frac{1}{2} \frac{\partial^{2} V}{\partial S^{2}} dS^{2} \text{By Itos lemma}
+\end{align*}
+\end{document}
