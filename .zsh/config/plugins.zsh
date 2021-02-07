@@ -31,7 +31,6 @@ source "$ZDOTDIR/plugins/system-clipboard/zsh-system-clipboard.zsh"
 source "$ZDOTDIR/plugins/autosuggestions/zsh-autosuggestions.zsh"
 source "$ZDOTDIR/plugins/zsh-z/zsh-z.plugin.zsh"
 
-source "$ZDOTDIR/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh"
 
 
 source "$ZDOTDIR/plugins/zsh-thefuck/zsh-thefuck.plugin.zsh"
