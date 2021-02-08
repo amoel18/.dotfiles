@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+
+swaymsg -t get_tree | jq -r '
+        # descend to workspace or scratchpad
+        .nodes[].nodes[] |
+        # save workspace name as .w
+        {"w": .name} + (
+                if .nodes then # workspace
+                        [recurse(.nodes[])]
+                else # scratchpad
+                        []
+                end
+                + .floating_nodes |
+                .[] |
+                # select nodes with no children (windows)
+                select(.nodes==[]) |
+                select(.type != "workspace")
+        ) |
+        ((.id | tostring) + " "
+        # remove markup from workspace name, replace scratch with "[S]"
+        + (.w | gsub("<[^>]*>"; "") | sub("__i3_scratch"; "[S]")) + " " 
+        + (.app_id // .window_properties.class) + " "  
+        +  .name)' | # jq is crap at formatting text, so use bash:
+while read id workspace app_id rest; do
+    printf "%-4s %-10s %-30s %s\n" "$id" "$workspace" "$app_id" "$rest"
+done |
+# or use bemenu -l 20
+myrofi -dmenu -p 'Focus a window' | {
+    read -r id name
+
+    [[ "$id" ]] && swaymsg "[con_id=$id]" focus &> /dev/null
+    exit 0
+}
+
