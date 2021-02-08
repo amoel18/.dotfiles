@@ -17,10 +17,16 @@ au VimEnter * set cmdheight=2
 autocmd VimEnter * :highlight BufferCurrentMod guifg=#efefef gui=NONE
 autocmd VimEnter * :highlight TabLineSel guifg=#efefef gui=NONE
 autocmd VimEnter * :highlight BufferVisibleMod guifg=#efefef gui=NONE
-autocmd VimEnter * :highlight BufferInactiveMod guifg=#efefef gui=NONE
+autocmd VimEnter * :highlight BufferInactiveMod guifg=#191919 gui=NONE
+autocmd VimEnter * :highlight TabLineFill guibg=#000000 gui=NONE
+let fg_target = '#8F8AAC'
 
 autocmd VimEnter * :highlight BufferVisibleSign guifg=#efefef gui=NONE
-autocmd VimEnter * :highlight BufferCurrentSign guifg=#000000 gui=NONE
+autocmd VimEnter * :highlight BufferCurrentSign guifg=#8F8AAC gui=NONE
+"let g:bufferline.icons="both"
+"let g:bufferline.icon_close_tab =''
+"let g:bufferline.icon_close_tab_modified='+'
+set mouse=a
 "map <C-H> <Plug>(wintabs_previous)
 "map <C-L> <Plug>(wintabs_next)
 fun! TrimWhitespace()
@@ -51,6 +57,14 @@ nnoremap <leader>9 :BufferLast<CR>
 " nnoremap <silent> t :tabnew<CR>
 nnoremap <leader>j :AleNext<CR>
 nnoremap <leader>k :AlePrevious<CR>
+
+autocmd VimEnter * :let bufferline.icons='both'
+autocmd VimEnter * :let bufferline.icon_close_tab=' '
+autocmd VimEnter * :let bufferline.icon_close_tab_modified='+'
+
+"let g:bufferline.icons='both'
+"let g:bufferline.icon_close_tab=' '
+"let g:bufferline.icon_close_tab_modified='+'
 let g:bufferline = {}
 let g:modified_icon = '+'
 let g:bufferline.animation = v:false

@@ -67,8 +67,8 @@ snippet template "template" b
 \documentclass[danish,a4paper,11pt]{article}
 \usepackage{lmodern}
 % Some basic packages
-\makeatletter 
-\def\input@path{{../}} 
+\makeatletter
+\def\input@path{{../}}
 \makeatother
 \input{Preamble.tex}
 \title{$1}
@@ -334,9 +334,22 @@ snippet == "equals" iA
 &= $1 \\\\
 endsnippet
 
+
 context "math()"
-snippet = "equal" Ai
- = $0
+snippet != "equals" iA
+\neq $0
+endsnippet
+
+
+context "math()"
+snippet qq "equals" iA
+\, \quad \, $0
+endsnippet
+
+
+context "math()"
+snippet QQ "equals" iA
+\, \qquad \, $0
 endsnippet
 
 
@@ -416,7 +429,7 @@ snippet conj "conjugate" iA
 endsnippet
 
 context "math()"
-snippet sum "sum" w
+snippet sum "sum" iA
 \sum_{i=${1:1}}^{${2:\infty}} ${3:a_i} $0
 endsnippet
 
@@ -432,7 +445,7 @@ endsnippet
 
 context "math()"
 snippet limsup "limsup" w
-\limsup_{${1:n} \to ${2:\infty}} 
+\limsup_{${1:n} \to ${2:\infty}}
 endsnippet
 
 context "math()"
@@ -447,7 +460,7 @@ endsnippet
 
 
 context "math()"
-snippet part "d/dx" w
+snippet pdv "d/dx" iA
 \frac{\partial ${1:V}}{\partial ${2:x}} $0
 endsnippet
 
@@ -467,9 +480,10 @@ snippet fe "to the ... power" iA
 _{$1}$0
 endsnippet
 
+
 context "math()"
-snippet __ "_{ }" iA
-_{$1}$0
+snippet -= "_{ }" iA
+\equiv $0
 endsnippet
 
 # context "math()"
@@ -490,19 +504,19 @@ snippet rij "mrij" i
 endsnippet
 
 snippet <= "leq" iA
-\le 
+\le
 endsnippet
 
 snippet >= "geq" iA
-\ge 
+\ge
 endsnippet
 
 snippet EE "geq" iA
-\exists 
+\exists
 endsnippet
 
 snippet AA "forall" iA
-\forall 
+\forall
 endsnippet
 
 context "math()"
@@ -588,18 +602,18 @@ endsnippet
 
 context "math()"
 snippet nabl "nabla" iA
-\nabla 
+\nabla
 endsnippet
 
 context "math()"
 snippet xx "cross" iA
-\times 
+\times
 endsnippet
 
 context "math()"
 priority 100
 snippet * "cdot" iA
-\cdot 
+\cdot
 endsnippet
 
 context "math()"
@@ -637,7 +651,7 @@ endsnippet
 
 context "math()"
 snippet invs "inverse" iA
-^{-1} 
+^{-1}
 endsnippet
 
 
@@ -659,7 +673,7 @@ endsnippet
 
 context "math()"
 snippet || "mid" iA
-\mid $0 
+\mid $0
 endsnippet
 
 
@@ -675,12 +689,12 @@ endsnippet
 
 context "math()"
 snippet Nn "cap" iA
-\cap 
+\cap
 endsnippet
 
 context "math()"
 snippet UU "cup" iA
-\cup 
+\cup
 endsnippet
 
 context "math()"
@@ -715,19 +729,13 @@ endsnippet
 
 context "math()"
 snippet <! "normal" iA
-\triangleleft 
+\triangleleft
 endsnippet
 
 
 context "math()"
 snippet <> "hokje" iA
-\diamond 
-endsnippet
-
-snippet case "cases" wA
-\begin{cases}
-	$1
-\end{cases}
+\diamond
 endsnippet
 
 context "math()"

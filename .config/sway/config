@@ -71,7 +71,7 @@ set $bar waybar
 set $menu2 dmenu_path | wofi --show drun -i | xargs swaymsg exec --
 #set $menu3 bemenu-run | xargs swaymsg exec --
 #set $pass "~/dotfiles/wofi/passwofi.sh"
-#set $lock "swaylock -c 000000"
+set $lock "swaylock -c 000000"
 
 #include workspaces
 # include color_vars
@@ -102,13 +102,13 @@ set $menu exec alacritty --class tofi -d 80 10 -e sh -c '$HOME/.scripts/launcher
 
 
 
-bindsym $mod+f1 exec ~/.config/sway/lockman.sh
+bindsym $mod+f1 exec $lock
 #bindsym $mod+f12 exec ~/.config/sway/lockman.sh
 #bindsym $mod+ctrl+d input * {xkb_layout "dk"}
 
 # Screenshot with grim and swappy
 #bindsym $mod+u exec grim -g "$(slurp)" - | swappy -f -
-bindsym print exec --no-startup-id slurp | grim -g - $(xdg-user-dir PICTURES)/$(date +'screenshot_%Y-%m-%d-%H%M%S.png')
+bindsym $mod+f2 exec --no-startup-id slurp | grim -g - $(xdg-user-dir PICTURES)/$(date +'screenshot_%Y-%m-%d-%H%M%S.png')
 bindsym $mod+ctrl+u exec grim - | swappy -f -
 
 #exec ~/.local/bin/smartfloat tofi
@@ -524,7 +524,7 @@ set $ws_presOwn "notes"
 # smart_borders on
 # gaps inner 8
 # default_border pixel 2
-focus_follows_mouse no
+focus_follows_mouse yes
 #     # Switch to workspace
 #     bindsym $mod+1 workspace number 1
 #     bindsym $mod+2 workspace number 2

@@ -8,15 +8,19 @@ function M.setup()
   api.nvim_set_keymap('n', '<Leader>k', ':SendKeys<CR>', {noremap = true, silent = false})
   api.nvim_set_keymap('n', '<Leader>j', ':SendSelection<CR>', {noremap = true, silent = false})
   api.nvim_set_keymap('n', '<Leader>h', ':SendKeys<CR>', {noremap = true, silent = false})
-  api.nvim_set_keymap('n', '=', ':RnvimrToggle<CR>', {noremap = true, silent = false})
+  --api.nvim_set_keymap('n', '=', ':RnvimrToggle<CR>', {noremap = true, silent = false})
   api.nvim_set_keymap('n', '<Leader>q', ':q!<CR>', {noremap = true, silent = false})
-  api.nvim_set_keymap('n', 'x', ':BufferClose!<CR>', {noremap = true, silent = false})
+  api.nvim_set_keymap('n', '<Leader>x', ':BufferClose!<CR>', {noremap = true, silent = false})
   api.nvim_set_keymap('n', '<Leader><TAB>', ':BufferPrevious<CR>', {noremap = true, silent = false})
   api.nvim_set_keymap('v', '<Leader><TAB>', ':BufferPrevious<CR>', {noremap = true, silent = false})
   --api.nvim_set_keymap('n', '<Leader><TAB>', '%', {noremap = true, silent = false})
   api.nvim_set_keymap('n', '<C-<>', ':BufferCloseBuffersLeft<CR>', {noremap = true, silent = false})
+  api.nvim_set_keymap('n', '<', ':BufferMovePrevious<CR>', {noremap = true, silent = false})
+  api.nvim_set_keymap('n', '>', ':BufferMoveNext<CR>', {noremap = true, silent = false})
   api.nvim_set_keymap('n', '<C->>', ':BufferCloseBuffersRight<CR>', {noremap = true, silent = false})
-  api.nvim_set_keymap('n', '<C-x>', ':BufferCloseAllBufCurrent<CR>', {noremap = true, silent = false})
+  api.nvim_set_keymap('n', '<C->>', ':BufferCloseBuffersRight<CR>', {noremap = true, silent = false})
+  api.nvim_set_keymap('n', '<C-x>', ':BufferCloseAllButCurrent<CR>', {noremap = true, silent = false})
+  api.nvim_set_keymap('n', 'p', ':pu<CR>', {noremap = true, silent = false})
   api.nvim_set_keymap('n', '<Leader>s', '<C-W>w', {noremap = true, silent = false})
   api.nvim_set_keymap('n', '<Leader>r', ':source /home/i/.config/nvim/init.vim<CR>', {noremap = true, silent = false})
   api.nvim_set_keymap('n', '<C-t>', ':tabnew<CR>', {noremap = true, silent = true})
@@ -44,6 +48,7 @@ function M.setup()
   api.nvim_set_keymap('n', '<C-g>', '<C-g>u<Esc>[s1z=`]a<C-g>u', {noremap=true})
   api.nvim_set_keymap('v', '<C-r>', '"_dP', {noremap = true})
   api.nvim_set_keymap('n', '<S-Y>', 'y$', {noremap = true})
+  api.nvim_set_keymap('n', '<C-Y>', 'y^', {noremap = true})
   api.nvim_set_keymap('n', '<Leader-Y>', 'y$', {noremap = true})
   --api.nvim_set_keymap('n', '')
 
@@ -52,7 +57,7 @@ function M.setup()
 
   api.nvim_set_keymap('n', '<C-w>', ':SudaWrite<CR>', { noremap = true })
 
-     
+
   --api.nvim_set_keymap('n', 'q', ':<C-u>exec "normal i".RepeatChar(nr2char(getchar()), v:count1)<CR>', {noremap = true})
 
 
@@ -63,7 +68,7 @@ function M.setup()
   api.nvim_set_keymap('n', '<C-q>', ':wqa!<CR>', {noremap = true})
 
   api.nvim_set_keymap('n', '<Leader>c', ':copen<CR>', {noremap = true})
-  
+
 
 
 
@@ -76,7 +81,7 @@ function M.setup()
   api.nvim_set_keymap('i', '<C-f>', ':Files<CR>', {noremap = true})
 
   --api.nvim_set_keymap('n', '<Leader>dq', ':Bclose<CR>:tabclose<CR>gT', {noremap = true})
- 
+
 
   api.nvim_set_keymap('n', '<Tab>', '%', {noremap = true})
   api.nvim_set_keymap('v', '<TAB>', '%', {noremap = true})
@@ -87,7 +92,7 @@ function M.setup()
   api.nvim_set_keymap('c', 'wQ', 'wq', {noremap = true})
   api.nvim_set_keymap('c', 'WQ', 'wq', {noremap = true})
   api.nvim_set_keymap('c', 'Wa', 'wa', {noremap = true})
-  
+
 
 end
 
