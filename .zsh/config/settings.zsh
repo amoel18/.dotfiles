@@ -5,7 +5,7 @@
 #        tmux a -t "$(tmux ls | grep -v attached | cut -d ":" -f1 | head -n 1)"
 #    else
         # start new session - dont use exec so it's possible to run without tmux
-#        tmux 
+#        tmux
 #   fi
 #fi
 

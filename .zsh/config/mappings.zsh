@@ -11,7 +11,7 @@ bindkey -M viins ' ' custom-expand-global-alias # Space key to expand global ali
 bindkey -M viins '^Y' custom-insert-last-typed-word # Insert last typed word for quick copy-paste.
 bindkey -M viins '^R' custom-fzf-launch-from-history # Select command from history into the command line.
 #bindkey -M viins '^P' custom-fzf-select # Paste the selected files and directories into the command-line.
-#bindkey -M viins '^F' 
+#bindkey -M viins '^F'
 
 # Normal Mode
 bindkey -M vicmd 'j' down-line # Override down-line-or-history.
@@ -78,9 +78,14 @@ alias vp="pv"
 alias vw="wv"
 alias vt="tv"
 zle -N p
-zle -N vi-kill-eol
-bindkey -M vicmd 'Y' vi-kill-eol
+#zle -N zsh-system-clipboard-vicmd-kill-eol
+#zle -N vi-backward-kill-line
+
+
+#bindkey -M vicmd '^D' vi-kill-eol
+#bindkey -M vicmd '^A' backward-kill-line
 bindkey '^P' p
+#bindkey 'D' zsh-system-clipboard-vicmd-kill-eol
 
 zle -N fzf-file-widget
 bindkey '^F' fzf-file-widget # Go forward char or complete current completion.

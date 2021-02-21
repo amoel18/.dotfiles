@@ -4,12 +4,14 @@ application/x-shellscript=alacritty.desktop;gcr-prompter.desktop;
 application/vnd.openxmlformats-officedocument.wordprocessingml.document=chromium.desktop;libreoffice-calc.desktop;
 video/mp4=vlc.desktop;
 image/vnd.djvu+multipage=org.pwmt.zathura-djvu.desktop;
+application/vnd.ms-htmlhelp=kchmviewer.desktop;okularApplication_chm.desktop;
 
 [Default Applications]
-application/pdf=zathura.desktop
+application/pdf=org.pwmt.zathura-pdf-poppler.desktop
 x-scheme-handler/http=chromium.desktop
 x-scheme-handler/https=chromium.desktop
 text/html=chromium.desktop
 x-scheme-handler/about=chromium.desktop
 x-scheme-handler/unknown=chromium.desktop
 image/png=mirage.desktop
+x-scheme-handler/postman=Postman.desktop

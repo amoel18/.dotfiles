@@ -1,8 +1,8 @@
 # Initialize $PATH with system binaries.
 path=(
-	/usr/local/bin
 	/usr/local/sbin
 	/usr/bin
+	/usr/local/bin
 	/bin
 	/usr/sbin
 	/sbin
@@ -65,6 +65,7 @@ export XDG_CACHE_HOME="$HOME/.cache"
 
 # Mailcap
 export MAILCAPS="$HOME/.mutt/mailcap"
+export LATEX="$HOME/latex"
 
 # Locale
 export LANG='en_US.UTF-8'

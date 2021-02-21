@@ -5,7 +5,7 @@
 --   vim.cmd [[packadd packer.nvim]]
 
 --   return require('packer').startup(function()
---    -- Packer can manage itself as an optional plugin 
+--    -- Packer can manage itself as an optional plugin
 --    use {'wbthomason/packer.nvim', opt = true}
 
 --    -- Simple plugins can be specified as strings
@@ -140,6 +140,9 @@ return require('packer').startup(function()
   use 'co1ncidence/mountaineer'
   --use 'Shougo/defx.nvim'
   use 'kristijanhusak/defx-icons'
+  use 'cocopon/iceberg.vim'
+  use 'brauner/vimtux'
+  use 'benknoble/vim-simpl'
   use 'romainl/vim-cool'
   use 'machakann/vim-highlightedyank'
   --use 'ap/vim-buftabline'
@@ -150,17 +153,35 @@ return require('packer').startup(function()
 
   --use 'zefei/vim-wintabs'
   use 'nvim-treesitter/nvim-treesitter'
-  --use 'nvim-treesitter/playground'
-  --use 'nvim-treesitter/nvim-treesitter-refactor'
-  --use 'nvim-treesitter/completion-treesitter'
-  --use 'nvim-treesitter/nvim-treesitter-textobjects'
+  use 'gkeep/iceberg-dark'
+  use 'nvim-treesitter/playground'
+  use 'liuchengxu/vim-which-key'
+  use 'nvim-treesitter/nvim-treesitter-refactor'
+  use 'nvim-treesitter/completion-treesitter'
+  use 'cocopon/pgmnt.vim'
+  use 'nvim-treesitter/nvim-treesitter-textobjects'
   use 'lervag/vimtex'
   use 'lambdalisue/suda.vim'
   use 'SirVer/ultisnips'
   use 'honza/vim-snippets'
   use 'farmergreg/vim-lastplace'
+  use 'sonph/onehalf'
+  --use 'sonph/onehalf', {'rtp': 'vim/'}
+  use 'co1ncidence/bliss'
   use 'jpalardy/vim-slime'
+  use 'Shougo/defx.nvim'
   use 'KeitaNakamura/tex-conceal.vim'
+  use 'xuhdev/vim-latex-live-preview'
+  use 'preservim/vimux'
+  use 'thoughtbot/vim-rspec'
+  use 'julienr/vim-cellmode'
+  use 'hanschen/vim-ipython-cell'
+  use 'tpope/vim-abolish'
+  use 'tpope/vim-unimpaired'
+  use 'tpope/vim-sleuth'
+  use 'sickill/vim-pasta'
+  use 'gagoar/StripWhiteSpaces'
+  use 'dracula/vim'
   use 'neovim/nvim-lspconfig'
   use 'nvim-lua/completion-nvim'
   use {'dstein64/vim-startuptime', cmd = 'StartupTime'}
@@ -177,7 +198,7 @@ return require('packer').startup(function()
     'kyazdani42/nvim-tree.lua',
     opt = true
   }
-  use 'justinmk/vim-dirvish'
+  --use 'justinmk/vim-dirvish'
 
 
   -- Load on a combination of conditions: specific filetypes or commands
