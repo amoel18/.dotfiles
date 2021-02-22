@@ -44,6 +44,13 @@ function M.setup()
   api.nvim_set_keymap('n', '<Leader>8', ':b8<CR>', {noremap = true})
   api.nvim_set_keymap('n', '<Leader>9', ':b9<CR>', {noremap = true})
   --api.nvim_set_keymap('n', '<Leader>v', ':VimtexCompile<CR>', {noremap=true})
+  --
+  api.nvim_set_keymap('n', '<Leader>f', ':FZF ~/<CR>', {noremap = true})
+  api.nvim_set_keymap('i', '<Leader>f', ':FZF ~/<CR>', {noremap = true})
+
+  api.nvim_set_keymap('n', '<Leader>r', ':Replace ', {noremap = true})
+  api.nvim_set_keymap('v', '<Leader>r', ':Replace ', {noremap = true})
+
   api.nvim_set_keymap('n', '<Leader>h', ':History<CR>', {noremap=true})
   api.nvim_set_keymap('i', '<C-g>', '<C-g>u<Esc>[s1z=`]a<C-g>u', {noremap=true})
   api.nvim_set_keymap('n', '<C-g>', '<C-g>u<Esc>[s1z=`]a<C-g>u', {noremap=true})

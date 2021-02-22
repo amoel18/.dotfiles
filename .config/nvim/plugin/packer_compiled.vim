@@ -36,6 +36,14 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/i/.local/share/nvim/site/pack/packer/start/StripWhiteSpaces"
   },
+  ["ack.vim"] = {
+    loaded = true,
+    path = "/home/i/.local/share/nvim/site/pack/packer/start/ack.vim"
+  },
+  ["ayu-vim"] = {
+    loaded = true,
+    path = "/home/i/.local/share/nvim/site/pack/packer/start/ayu-vim"
+  },
   ["barbar.nvim"] = {
     loaded = true,
     path = "/home/i/.local/share/nvim/site/pack/packer/start/barbar.nvim"
@@ -43,6 +51,10 @@ _G.packer_plugins = {
   bliss = {
     loaded = true,
     path = "/home/i/.local/share/nvim/site/pack/packer/start/bliss"
+  },
+  ["calendar.vim"] = {
+    loaded = true,
+    path = "/home/i/.local/share/nvim/site/pack/packer/start/calendar.vim"
   },
   ["completion-nvim"] = {
     loaded = true,
@@ -59,6 +71,10 @@ _G.packer_plugins = {
   ["defx.nvim"] = {
     loaded = true,
     path = "/home/i/.local/share/nvim/site/pack/packer/start/defx.nvim"
+  },
+  ["far.vim"] = {
+    loaded = true,
+    path = "/home/i/.local/share/nvim/site/pack/packer/start/far.vim"
   },
   ["fzf.vim"] = {
     loaded = true,
@@ -80,9 +96,21 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/i/.local/share/nvim/site/pack/packer/start/indentLine"
   },
+  ["iris.vim"] = {
+    loaded = true,
+    path = "/home/i/.local/share/nvim/site/pack/packer/start/iris.vim"
+  },
+  ["kuroi.vim"] = {
+    loaded = true,
+    path = "/home/i/.local/share/nvim/site/pack/packer/start/kuroi.vim"
+  },
   ["matlab-vim"] = {
     loaded = true,
     path = "/home/i/.local/share/nvim/site/pack/packer/start/matlab-vim"
+  },
+  minimalist = {
+    loaded = true,
+    path = "/home/i/.local/share/nvim/site/pack/packer/start/minimalist"
   },
   mountaineer = {
     loaded = true,
@@ -107,6 +135,18 @@ _G.packer_plugins = {
   ["ncm2-ultisnips"] = {
     loaded = true,
     path = "/home/i/.local/share/nvim/site/pack/packer/start/ncm2-ultisnips"
+  },
+  ["neomutt.vim"] = {
+    loaded = true,
+    path = "/home/i/.local/share/nvim/site/pack/packer/start/neomutt.vim"
+  },
+  ["night-owl.vim"] = {
+    loaded = true,
+    path = "/home/i/.local/share/nvim/site/pack/packer/start/night-owl.vim"
+  },
+  ["notmuch-vim"] = {
+    loaded = true,
+    path = "/home/i/.local/share/nvim/site/pack/packer/start/notmuch-vim"
   },
   ["nvim-colorizer.lua"] = {
     loaded = true,
@@ -141,6 +181,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/i/.local/share/nvim/site/pack/packer/start/nvim-yarp"
   },
+  ["onedark.vim"] = {
+    loaded = true,
+    path = "/home/i/.local/share/nvim/site/pack/packer/start/onedark.vim"
+  },
   onehalf = {
     loaded = true,
     path = "/home/i/.local/share/nvim/site/pack/packer/start/onehalf"
@@ -149,6 +193,10 @@ _G.packer_plugins = {
     loaded = false,
     needs_bufread = false,
     path = "/home/i/.local/share/nvim/site/pack/packer/opt/packer.nvim"
+  },
+  ["palenight.vim"] = {
+    loaded = true,
+    path = "/home/i/.local/share/nvim/site/pack/packer/start/palenight.vim"
   },
   ["pear-tree"] = {
     loaded = true,
@@ -161,6 +209,10 @@ _G.packer_plugins = {
   playground = {
     loaded = true,
     path = "/home/i/.local/share/nvim/site/pack/packer/start/playground"
+  },
+  ["quantum.vim"] = {
+    loaded = true,
+    path = "/home/i/.local/share/nvim/site/pack/packer/start/quantum.vim"
   },
   ["quick-scope"] = {
     loaded = true,
@@ -185,6 +237,10 @@ _G.packer_plugins = {
   ultisnips = {
     loaded = true,
     path = "/home/i/.local/share/nvim/site/pack/packer/start/ultisnips"
+  },
+  ["vifm.vim"] = {
+    loaded = true,
+    path = "/home/i/.local/share/nvim/site/pack/packer/start/vifm.vim"
   },
   vim = {
     loaded = true,
@@ -215,6 +271,10 @@ _G.packer_plugins = {
     loaded = false,
     needs_bufread = false,
     path = "/home/i/.local/share/nvim/site/pack/packer/opt/vim-dispatch"
+  },
+  ["vim-easygrep"] = {
+    loaded = true,
+    path = "/home/i/.local/share/nvim/site/pack/packer/start/vim-easygrep"
   },
   ["vim-endwise"] = {
     loaded = true,
@@ -252,6 +312,10 @@ _G.packer_plugins = {
   ["vim-matlab-behave"] = {
     loaded = true,
     path = "/home/i/.local/share/nvim/site/pack/packer/start/vim-matlab-behave"
+  },
+  ["vim-monokai"] = {
+    loaded = true,
+    path = "/home/i/.local/share/nvim/site/pack/packer/start/vim-monokai"
   },
   ["vim-obsession"] = {
     after = { "vim-prosession" },
@@ -353,6 +417,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/i/.local/share/nvim/site/pack/packer/start/vim-wordmotion"
   },
+  vimtemplate = {
+    loaded = true,
+    path = "/home/i/.local/share/nvim/site/pack/packer/start/vimtemplate"
+  },
   vimtex = {
     loaded = true,
     path = "/home/i/.local/share/nvim/site/pack/packer/start/vimtex"
@@ -369,19 +437,19 @@ _G.packer_plugins = {
 
 
 -- Command lazy-loads
-vim.cmd [[command! -nargs=* -range -bang -complete=file Prosession lua require("packer.load")({'vim-obsession'}, { cmd = "Prosession", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
-vim.cmd [[command! -nargs=* -range -bang -complete=file Focus lua require("packer.load")({'vim-dispatch'}, { cmd = "Focus", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
-vim.cmd [[command! -nargs=* -range -bang -complete=file StartupTime lua require("packer.load")({'vim-startuptime'}, { cmd = "StartupTime", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
 vim.cmd [[command! -nargs=* -range -bang -complete=file Start lua require("packer.load")({'vim-dispatch'}, { cmd = "Start", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
 vim.cmd [[command! -nargs=* -range -bang -complete=file Sayonara lua require("packer.load")({'vim-sayonara'}, { cmd = "Sayonara", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
-vim.cmd [[command! -nargs=* -range -bang -complete=file Make lua require("packer.load")({'vim-dispatch'}, { cmd = "Make", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
+vim.cmd [[command! -nargs=* -range -bang -complete=file Prosession lua require("packer.load")({'vim-obsession'}, { cmd = "Prosession", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
 vim.cmd [[command! -nargs=* -range -bang -complete=file Dispatch lua require("packer.load")({'vim-dispatch'}, { cmd = "Dispatch", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
+vim.cmd [[command! -nargs=* -range -bang -complete=file Make lua require("packer.load")({'vim-dispatch'}, { cmd = "Make", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
+vim.cmd [[command! -nargs=* -range -bang -complete=file Focus lua require("packer.load")({'vim-dispatch'}, { cmd = "Focus", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
+vim.cmd [[command! -nargs=* -range -bang -complete=file StartupTime lua require("packer.load")({'vim-startuptime'}, { cmd = "StartupTime", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
 
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
-vim.cmd [[au FileType go ++once lua require("packer.load")({'vim-go'}, { ft = "go" }, _G.packer_plugins)]]
 vim.cmd [[au FileType ruby ++once lua require("packer.load")({'vim-ruby'}, { ft = "ruby" }, _G.packer_plugins)]]
+vim.cmd [[au FileType go ++once lua require("packer.load")({'vim-go'}, { ft = "go" }, _G.packer_plugins)]]
 vim.cmd("augroup END")
 vim.cmd [[augroup filetypedetect]]
 vim.cmd [[source /home/i/.local/share/nvim/site/pack/packer/opt/vim-ruby/ftdetect/ruby.vim]]

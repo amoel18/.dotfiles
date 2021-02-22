@@ -32,7 +32,7 @@ bindsym $mod+g exec gammastep
 #set $menu2u exec $term --class=launcher -e ~/.scripts/pdf.sh &
 set $menu2u exec alacritty -e ~/.scripts/pdf.sh
 
-bindsym $mod+return exec $menu2u
+bindsym $mod+return exec $browser
 
 
 #set $fuzz ~/.scripts/fuzzyf.sh
@@ -73,12 +73,14 @@ input * {
 #set $spotlight wofi --dmenu
 set $bar waybar
 #set $launcher "wofi --show drun"
-#set $menu exec alacritty --class tofi -d 80 10 -e sh -c '$HOME/.config/sway/scripts/tofi | sort -u -r | fzf | $HOME/.config/sway/scripts/tofi'
-set $menu2 yofi
+#set $menu2 exec alacritty --class tofi -d 80 10 -e sh -c '$HOME/.config/sway/scripts/tofi | sort -u -r | fzf | $HOME/.config/sway/scripts/tofi'
+set $menu2 rofi -show run -show-icons
+
 set $menu9 exec alacritty -e /home/i/.scripts/dedit
+set $menucd exec alacritty -e /home/i/.scripts/cd
 set $menu8 exec alacritty --class=launcher -e /home/i/.scripts/focus_window.py
-set $menu7 exec alacritty -e nnn /home/i/skole
-set $menu5 exec alacritty -e tmux new-session \; send-keys nnn\ /home/i/skole C-m \; split-window -h -p 50\; send-keys python C-m \; split-window -v -p 35 \; send-keys /home/i/python C-m \; select-pane -t 1 \;
+set $menu7 exec alacritty -e vifm /home/i/skole
+set $menu5 exec alacritty -e tmux new-session \; send-keys vifm\ /home/i/skole C-m \; split-window -h -p 50\; send-keys python C-m \; split-window -v -p 35 \; send-keys /home/i/python C-m \; select-pane -t 1 \;
 set $binds exec alacritty --class=launcher -e ~/.scripts/showhelp.sh
 set $nls exec alacritty --class=launcher -e ~/.scripts/nls
 #set $bindss cat ~/.scripts/showhelp
@@ -89,9 +91,10 @@ bindsym $mod+z exec $nls
 #set $note exec alacritty --class=launcherr -e ~/.scripts/note
 set $note exec alacritty --class=launcher -e ~/.scripts/note
 bindsym $mod+a exec $menu6
+bindsym $mod+c exec $menucd
 bindsym $mod+r exec $note
 #bindsym $mod+f11 exec $bindss
-#new-session \; send-keys nnn\ /home/i/skole C-m \; split-window -h -p 50\; send-keys python C-m \; split-window -v -p 35 \; send-keys /home/i/python C-m \; select-pane -t 1 \;
+#new-session \; send-keys vifm\ /home/i/skole C-m \; split-window -h -p 50\; send-keys python C-m \; split-window -v -p 35 \; send-keys /home/i/python C-m \; select-pane -t 1 \;
 #set $menu3 bemenu-run | xargs swaymsg exec --
 #set $pass "~/dotfiles/wofi/passwofi.sh"
 #set $lock "swaylock -c ffffff"
@@ -326,7 +329,7 @@ bindsym $mod+Ctrl+space floating toggle
     bindsym f12 exec $volumeup
     bindsym f11 exec $volumedown
     #bindsym $mod+return exec $spotlight
-    bindsym $mod+p exec $browser
+    bindsym $mod+p exec $menu2u
     bindsym $mod+i exec $files
     bindsym $mod+o exec $menu2
     bindsym $mod+d exec $pyt

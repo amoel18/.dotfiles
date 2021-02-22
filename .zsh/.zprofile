@@ -16,3 +16,5 @@
 #        STARTUP="env LD_PRELOAD=/path/to/libgtk3-nocsd.so.0 $STARTUP"
 #      fi
 #    fi
+#
+export NNN_FIFO=/tmp/nnn.fifo

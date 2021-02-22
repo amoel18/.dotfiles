@@ -41,7 +41,7 @@ export FZF_DEFAULT_OPTS="$FZF_DEFAULT_COLORS \
 	--height='80%' \
 	--layout='reverse' \
 	--inline-info \
-        --bind='tab:down,btab:up,ctrl-d:half-page-down,ctrl-u:half-page-up' \
+        --bind='tab:down,btab:up,ctrl-d:half-page-down,ctrl-u:half-page-up,esc:abort' \
 	--no-bold"
 
 #export FZF_DEFAULT_COMMAND='rg --hidden --column '
@@ -63,6 +63,9 @@ note() {
 nls() { cat ~/README.md}
 nrm() {head -n -1 README.md > temp.txt ; mv -f temp.txt README.md ; nls}
 
+c() {
+  cd $(fd --type directory | fzf)
+}
 
 #s() { yes '' | head -"${1:-5}"; }    # Use as "sl 10" or "sl"
 

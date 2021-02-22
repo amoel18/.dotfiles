@@ -3,6 +3,15 @@ lua require('init')
 let g:indentLine_char = '│'
 let g:indentLine_faster = 1
 let g:indentLine_fileTypeExclude = ['tex', 'markdown', 'txt', 'startify', 'clap_input', 'clap_display', 'clap_spinner', 'clap_grep', 'packer']
+let g:notmuch_folders = [
+      \ [ 'new', 'tag:inbox and tag:unread' ],
+      \ [ 'inbox', 'tag:inbox' ],
+      \ [ 'unread', 'tag:unread' ],
+      \ [ 'News', 'tag:@sanenews' ],
+      \ [ 'Later', 'tag:@sanelater' ],
+      \ [ 'Patreon', 'tag:@patreon' ],
+      \ [ 'LivestockConservancy', 'tag:livestock-conservancy' ],
+    \ ]
 " au VimEnter * ++once lua statusline = require('_statusline')
 " au VimEnter * ++once lua vim.o.statusline = '%!v:lua.statusline.status()'
 
@@ -14,6 +23,7 @@ let g:indentLine_fileTypeExclude = ['tex', 'markdown', 'txt', 'startify', 'clap_
 au VimEnter * set laststatus=0
 au VimEnter * set concealcursor=
 au VimEnter * set cmdheight=2
+au BufRead /tmp/mutt-* set tw=72
 autocmd VimEnter * :highlight BufferCurrentMod guifg=#efefef gui=NONE
 autocmd VimEnter * :highlight TabLineSel guifg=#efefef gui=NONE
 autocmd VimEnter * :highlight BufferVisibleMod guifg=#efefef gui=NONE
@@ -23,6 +33,19 @@ autocmd VimEnter * :highlight TabLineFill guibg=#000000 gui=NONE
 
 autocmd VimEnter * :highlight BufferVisibleSign guifg=#efefef gui=NONE
 autocmd VimEnter * :highlight BufferCurrentSign guifg=#000000 gui=NONE
+autocmd BufWritePre,FileWritePre *.html   ks|call LastMod()|'s
+  :fun LastMod()
+  :  if line("$") > 20
+  :    let l = 20
+  :  else
+  :    let l = line("$")
+  :  endif
+  :  exe "1," . l . "g/Last modified: /s/Last modified: .*/Last modified: " .
+  :  \ strftime("%Y %b %d")
+  :endfun
+
+
+
 "let g:bufferline.icons="both"
 "let g:bufferline.icon_close_tab =''
 "let g:bufferline.icon_close_tab_modified='+'
@@ -138,17 +161,7 @@ let g:signify_sign_show_count = 0
 let g:signify_sign_show_text = 1
 "nnoremap <C-v> :call Synctex()<cr>
 let g:sneak#label = 1
-function! Synctex()
-    let vimura_param = " --synctex-forward " . line('.') . ":" . col('.') . ":" . expand('%:p') . " " . substitute(expand('%:p'),"tex$","pdf", "")
-    if has('nvim')
-        call jobstart("vimura nvim" . vimura_param)
-    else
-        exe "silent !vimura vim" . vimura_param . "&"
-    endif
-    redraw!
-endfunction
-map <C-v> :call Synctex()<CR>
-" case insensitive sneak
+ "case insensitive sneak
 let g:sneak#use_ic_scs = 1
 
 function! ScrollOffToggle()
@@ -186,21 +199,6 @@ let g:vimtex_enabled=1
 let g:vimtex_fold_enabled =0
 "let g:vimtex_latexmk_continuous = 2
 let g:vimtex_compiler_progname = 'nvr'
-let g:vimtex_compiler_latexmk = {
-    \ 'backend' : 'jobs',
-    \ 'background' : 1,
-    \ 'build_dir' : '',
-    \ 'callback' : 1,
-    \ 'continuous' : 1,
-    \ 'executable' : 'latexmk',
-    \ 'options' : [
-    \   '-shell-escape',
-    \   '-verbose',
-    \   '-file-line-error',
-    \   '-synctex=1',
-    \   '-interaction=nonstopmode',
-    \ ],
-    \}
 let g:vimtex_view_method = 'zathura'
 let g:vimtex_latexmk_progname= '/usr/bin/nvr'
 let g:vimtex_quickfix_mode=0
@@ -222,8 +220,38 @@ let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 let g:UltiSnipsSnippetDirectories=["mysnips"]
 setlocal spell
 set spelllang=en_us
-inoremap <C-'> <c-g>u<Esc>[s1z=`]a<c-g>u
 
+inoremap <C-'> <c-g>u<Esc>[s1z=`]a<c-g>u
+" open new split panes to right and below
+set splitright
+set splitbelow
+" turn terminal to normal mode with escape
+tnoremap <Esc> <C-\><C-n>
+" start terminal in insert mode
+au BufEnter * if &buftype == 'terminal' | :startinsert | endif
+" open terminal on ctrl+n
+function! OpenTerminal()
+  split term://bash
+  resize 10
+endfunction
+nnoremap <leader>t :call OpenTerminal()<CR>
+function! OnTermClose()
+    " Try to move the cursor to the last line containing text
+    try
+        $;?.
+    catch
+        " The buffer is empty here. This shouldn't ever happen
+        return
+    endtry
+    " Is the last line an error message?
+    if match(getline('.'), 'make: \*\*\* \[[^\]]\+] Error ') == -1
+        call feedkeys('a ')
+    endif
+endfunction
+augroup MY_TERM_AUGROUP
+    autocmd!
+    au TermClose * silent call OnTermClose()
+augroup END
 let g:UltiSnipsExpandTrigger       = '<c-e>'
 let g:slime_target = "tmux"
 call defx#custom#option('_', {
@@ -304,3 +332,17 @@ function! s:defx_my_settings() abort
   nnoremap <silent><buffer><expr> cd
   \ defx#do_action('change_vim_cwd')
 endfunction
+
+let g:iris_name = "Anders Kinch Møller"
+let g:iris_mail = "alllllllllllllklllllllllllllm@gmail.com"
+let g:iris_imap_host = "imap.gmail.com"
+let g:iris_imap_port = 993
+let g:iris_smtp_host = "smtp.gmail.com"
+let g:iris_smtp_port  = 587
+let g:iris_imap_passwd_filepath = "ygvygv132132"
+let g:iris_smtp_passwd_filepath = "ygvygv132132"
+let g:iris_idle_enabled = 1
+let g:iris_idle_timeout = 15
+let g:iris_emails_chunk_size = 50
+let g:iris_download_dir = "~/Downloads"
+ab Mail alllllllllllllklllllllllllllm@gmail.com
