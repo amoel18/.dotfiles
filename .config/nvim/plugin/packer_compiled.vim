@@ -32,13 +32,29 @@ local function try_loadstring(s, component, name)
 end
 
 _G.packer_plugins = {
+  ["Spacegray.vim"] = {
+    loaded = true,
+    path = "/home/i/.local/share/nvim/site/pack/packer/start/Spacegray.vim"
+  },
   StripWhiteSpaces = {
     loaded = true,
     path = "/home/i/.local/share/nvim/site/pack/packer/start/StripWhiteSpaces"
   },
+  ["accelerated-jk"] = {
+    loaded = true,
+    path = "/home/i/.local/share/nvim/site/pack/packer/start/accelerated-jk"
+  },
   ["ack.vim"] = {
     loaded = true,
     path = "/home/i/.local/share/nvim/site/pack/packer/start/ack.vim"
+  },
+  ["asyncrun.vim"] = {
+    loaded = true,
+    path = "/home/i/.local/share/nvim/site/pack/packer/start/asyncrun.vim"
+  },
+  ["asynctasks.vim"] = {
+    loaded = true,
+    path = "/home/i/.local/share/nvim/site/pack/packer/start/asynctasks.vim"
   },
   ["ayu-vim"] = {
     loaded = true,
@@ -64,6 +80,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/i/.local/share/nvim/site/pack/packer/start/completion-treesitter"
   },
+  ["debug-adapter-protocol"] = {
+    loaded = true,
+    path = "/home/i/.local/share/nvim/site/pack/packer/start/debug-adapter-protocol"
+  },
   ["defx-icons"] = {
     loaded = true,
     path = "/home/i/.local/share/nvim/site/pack/packer/start/defx-icons"
@@ -72,13 +92,25 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/i/.local/share/nvim/site/pack/packer/start/defx.nvim"
   },
+  delimitMate = {
+    loaded = true,
+    path = "/home/i/.local/share/nvim/site/pack/packer/start/delimitMate"
+  },
   ["far.vim"] = {
     loaded = true,
     path = "/home/i/.local/share/nvim/site/pack/packer/start/far.vim"
   },
+  fzf = {
+    loaded = true,
+    path = "/home/i/.local/share/nvim/site/pack/packer/start/fzf"
+  },
   ["fzf.vim"] = {
     loaded = true,
     path = "/home/i/.local/share/nvim/site/pack/packer/start/fzf.vim"
+  },
+  ["galaxyline.nvim"] = {
+    loaded = true,
+    path = "/home/i/.local/share/nvim/site/pack/packer/start/galaxyline.nvim"
   },
   ["gv.vim"] = {
     loaded = true,
@@ -103,6 +135,14 @@ _G.packer_plugins = {
   ["kuroi.vim"] = {
     loaded = true,
     path = "/home/i/.local/share/nvim/site/pack/packer/start/kuroi.vim"
+  },
+  ["lspsaga.nvim"] = {
+    loaded = true,
+    path = "/home/i/.local/share/nvim/site/pack/packer/start/lspsaga.nvim"
+  },
+  ["material.vim"] = {
+    loaded = true,
+    path = "/home/i/.local/share/nvim/site/pack/packer/start/material.vim"
   },
   ["matlab-vim"] = {
     loaded = true,
@@ -144,6 +184,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/i/.local/share/nvim/site/pack/packer/start/night-owl.vim"
   },
+  nnn = {
+    loaded = true,
+    path = "/home/i/.local/share/nvim/site/pack/packer/start/nnn"
+  },
   ["notmuch-vim"] = {
     loaded = true,
     path = "/home/i/.local/share/nvim/site/pack/packer/start/notmuch-vim"
@@ -152,14 +196,29 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/i/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua"
   },
+  ["nvim-compe"] = {
+    loaded = true,
+    path = "/home/i/.local/share/nvim/site/pack/packer/start/nvim-compe"
+  },
+  ["nvim-dap"] = {
+    loaded = true,
+    path = "/home/i/.local/share/nvim/site/pack/packer/start/nvim-dap"
+  },
+  ["nvim-dap-python"] = {
+    loaded = true,
+    path = "/home/i/.local/share/nvim/site/pack/packer/start/nvim-dap-python"
+  },
+  ["nvim-lint"] = {
+    loaded = true,
+    path = "/home/i/.local/share/nvim/site/pack/packer/start/nvim-lint"
+  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/home/i/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
   },
-  ["nvim-tree.lua"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/i/.local/share/nvim/site/pack/packer/opt/nvim-tree.lua"
+  ["nvim-lua-debugger"] = {
+    loaded = true,
+    path = "/home/i/.local/share/nvim/site/pack/packer/start/nvim-lua-debugger"
   },
   ["nvim-treesitter"] = {
     loaded = true,
@@ -189,6 +248,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/i/.local/share/nvim/site/pack/packer/start/onehalf"
   },
+  ["open-browser.vim"] = {
+    loaded = true,
+    path = "/home/i/.local/share/nvim/site/pack/packer/start/open-browser.vim"
+  },
   ["packer.nvim"] = {
     loaded = false,
     needs_bufread = false,
@@ -210,6 +273,14 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/i/.local/share/nvim/site/pack/packer/start/playground"
   },
+  ["plenary.nvim"] = {
+    loaded = true,
+    path = "/home/i/.local/share/nvim/site/pack/packer/start/plenary.nvim"
+  },
+  ["popup.nvim"] = {
+    loaded = true,
+    path = "/home/i/.local/share/nvim/site/pack/packer/start/popup.nvim"
+  },
   ["quantum.vim"] = {
     loaded = true,
     path = "/home/i/.local/share/nvim/site/pack/packer/start/quantum.vim"
@@ -218,21 +289,45 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/i/.local/share/nvim/site/pack/packer/start/quick-scope"
   },
+  ["rainbow_parentheses.vim"] = {
+    loaded = true,
+    path = "/home/i/.local/share/nvim/site/pack/packer/start/rainbow_parentheses.vim"
+  },
   rnvimr = {
     loaded = true,
     path = "/home/i/.local/share/nvim/site/pack/packer/start/rnvimr"
+  },
+  slimux = {
+    loaded = true,
+    path = "/home/i/.local/share/nvim/site/pack/packer/start/slimux"
   },
   ["suda.vim"] = {
     loaded = true,
     path = "/home/i/.local/share/nvim/site/pack/packer/start/suda.vim"
   },
+  tagbar = {
+    loaded = true,
+    path = "/home/i/.local/share/nvim/site/pack/packer/start/tagbar"
+  },
   ["targets.vim"] = {
     loaded = true,
     path = "/home/i/.local/share/nvim/site/pack/packer/start/targets.vim"
   },
+  ["telescope.nvim"] = {
+    loaded = true,
+    path = "/home/i/.local/share/nvim/site/pack/packer/start/telescope.nvim"
+  },
+  terminus = {
+    loaded = true,
+    path = "/home/i/.local/share/nvim/site/pack/packer/start/terminus"
+  },
   ["tex-conceal.vim"] = {
     loaded = true,
     path = "/home/i/.local/share/nvim/site/pack/packer/start/tex-conceal.vim"
+  },
+  ["tmux-complete.vim"] = {
+    loaded = true,
+    path = "/home/i/.local/share/nvim/site/pack/packer/start/tmux-complete.vim"
   },
   ultisnips = {
     loaded = true,
@@ -254,6 +349,14 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/i/.local/share/nvim/site/pack/packer/start/vim-cellmode"
   },
+  ["vim-cinnabar"] = {
+    loaded = true,
+    path = "/home/i/.local/share/nvim/site/pack/packer/start/vim-cinnabar"
+  },
+  ["vim-clap"] = {
+    loaded = true,
+    path = "/home/i/.local/share/nvim/site/pack/packer/start/vim-clap"
+  },
   ["vim-closer"] = {
     loaded = true,
     path = "/home/i/.local/share/nvim/site/pack/packer/start/vim-closer"
@@ -262,23 +365,29 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/i/.local/share/nvim/site/pack/packer/start/vim-cool"
   },
+  ["vim-cpp-enhanced-highlight"] = {
+    loaded = true,
+    path = "/home/i/.local/share/nvim/site/pack/packer/start/vim-cpp-enhanced-highlight"
+  },
+  ["vim-cursorword"] = {
+    loaded = true,
+    path = "/home/i/.local/share/nvim/site/pack/packer/start/vim-cursorword"
+  },
   ["vim-devicons"] = {
     loaded = true,
     path = "/home/i/.local/share/nvim/site/pack/packer/start/vim-devicons"
   },
   ["vim-dispatch"] = {
-    commands = { "Dispatch", "Make", "Focus", "Start" },
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/i/.local/share/nvim/site/pack/packer/opt/vim-dispatch"
-  },
-  ["vim-easygrep"] = {
     loaded = true,
-    path = "/home/i/.local/share/nvim/site/pack/packer/start/vim-easygrep"
+    path = "/home/i/.local/share/nvim/site/pack/packer/start/vim-dispatch"
   },
   ["vim-endwise"] = {
     loaded = true,
     path = "/home/i/.local/share/nvim/site/pack/packer/start/vim-endwise"
+  },
+  ["vim-fswitch"] = {
+    loaded = true,
+    path = "/home/i/.local/share/nvim/site/pack/packer/start/vim-fswitch"
   },
   ["vim-fugitive"] = {
     loaded = true,
@@ -293,17 +402,13 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/i/.local/share/nvim/site/pack/packer/start/vim-highlightedyank"
   },
-  ["vim-ipython-cell"] = {
-    loaded = true,
-    path = "/home/i/.local/share/nvim/site/pack/packer/start/vim-ipython-cell"
-  },
   ["vim-lastplace"] = {
     loaded = true,
     path = "/home/i/.local/share/nvim/site/pack/packer/start/vim-lastplace"
   },
-  ["vim-latex-live-preview"] = {
+  ["vim-makefile-manager"] = {
     loaded = true,
-    path = "/home/i/.local/share/nvim/site/pack/packer/start/vim-latex-live-preview"
+    path = "/home/i/.local/share/nvim/site/pack/packer/start/vim-makefile-manager"
   },
   ["vim-matlab"] = {
     loaded = true,
@@ -317,6 +422,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/i/.local/share/nvim/site/pack/packer/start/vim-monokai"
   },
+  ["vim-niceblock"] = {
+    loaded = true,
+    path = "/home/i/.local/share/nvim/site/pack/packer/start/vim-niceblock"
+  },
   ["vim-obsession"] = {
     after = { "vim-prosession" },
     commands = { "Prosession" },
@@ -327,6 +436,14 @@ _G.packer_plugins = {
   ["vim-pasta"] = {
     loaded = true,
     path = "/home/i/.local/share/nvim/site/pack/packer/start/vim-pasta"
+  },
+  ["vim-peekaboo"] = {
+    loaded = true,
+    path = "/home/i/.local/share/nvim/site/pack/packer/start/vim-peekaboo"
+  },
+  ["vim-prism"] = {
+    loaded = true,
+    path = "/home/i/.local/share/nvim/site/pack/packer/start/vim-prism"
   },
   ["vim-prosession"] = {
     load_after = {
@@ -379,6 +496,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/i/.local/share/nvim/site/pack/packer/start/vim-slime"
   },
+  ["vim-smartchr"] = {
+    loaded = true,
+    path = "/home/i/.local/share/nvim/site/pack/packer/start/vim-smartchr"
+  },
   ["vim-sneak"] = {
     loaded = true,
     path = "/home/i/.local/share/nvim/site/pack/packer/start/vim-sneak"
@@ -397,17 +518,37 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/i/.local/share/nvim/site/pack/packer/start/vim-surround"
   },
+  ["vim-test"] = {
+    loaded = true,
+    path = "/home/i/.local/share/nvim/site/pack/packer/start/vim-test"
+  },
   ["vim-tmux-navigator"] = {
     loaded = true,
     path = "/home/i/.local/share/nvim/site/pack/packer/start/vim-tmux-navigator"
+  },
+  ["vim-tmux-runner"] = {
+    loaded = true,
+    path = "/home/i/.local/share/nvim/site/pack/packer/start/vim-tmux-runner"
   },
   ["vim-tmux-send"] = {
     loaded = true,
     path = "/home/i/.local/share/nvim/site/pack/packer/start/vim-tmux-send"
   },
+  ["vim-tmuxify"] = {
+    loaded = true,
+    path = "/home/i/.local/share/nvim/site/pack/packer/start/vim-tmuxify"
+  },
   ["vim-unimpaired"] = {
     loaded = true,
     path = "/home/i/.local/share/nvim/site/pack/packer/start/vim-unimpaired"
+  },
+  ["vim-visual-star-search"] = {
+    loaded = true,
+    path = "/home/i/.local/share/nvim/site/pack/packer/start/vim-visual-star-search"
+  },
+  ["vim-vsnip"] = {
+    loaded = true,
+    path = "/home/i/.local/share/nvim/site/pack/packer/start/vim-vsnip"
   },
   ["vim-which-key"] = {
     loaded = true,
@@ -417,9 +558,17 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/i/.local/share/nvim/site/pack/packer/start/vim-wordmotion"
   },
-  vimtemplate = {
+  vimcmdline = {
     loaded = true,
-    path = "/home/i/.local/share/nvim/site/pack/packer/start/vimtemplate"
+    path = "/home/i/.local/share/nvim/site/pack/packer/start/vimcmdline"
+  },
+  ["vimshell.vim"] = {
+    loaded = true,
+    path = "/home/i/.local/share/nvim/site/pack/packer/start/vimshell.vim"
+  },
+  vimspector = {
+    loaded = true,
+    path = "/home/i/.local/share/nvim/site/pack/packer/start/vimspector"
   },
   vimtex = {
     loaded = true,
@@ -432,18 +581,22 @@ _G.packer_plugins = {
   vimux = {
     loaded = true,
     path = "/home/i/.local/share/nvim/site/pack/packer/start/vimux"
+  },
+  ["vista.vim"] = {
+    loaded = true,
+    path = "/home/i/.local/share/nvim/site/pack/packer/start/vista.vim"
+  },
+  ["zephyr-nvim"] = {
+    loaded = true,
+    path = "/home/i/.local/share/nvim/site/pack/packer/start/zephyr-nvim"
   }
 }
 
 
 -- Command lazy-loads
-vim.cmd [[command! -nargs=* -range -bang -complete=file Start lua require("packer.load")({'vim-dispatch'}, { cmd = "Start", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
+vim.cmd [[command! -nargs=* -range -bang -complete=file StartupTime lua require("packer.load")({'vim-startuptime'}, { cmd = "StartupTime", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
 vim.cmd [[command! -nargs=* -range -bang -complete=file Sayonara lua require("packer.load")({'vim-sayonara'}, { cmd = "Sayonara", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
 vim.cmd [[command! -nargs=* -range -bang -complete=file Prosession lua require("packer.load")({'vim-obsession'}, { cmd = "Prosession", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
-vim.cmd [[command! -nargs=* -range -bang -complete=file Dispatch lua require("packer.load")({'vim-dispatch'}, { cmd = "Dispatch", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
-vim.cmd [[command! -nargs=* -range -bang -complete=file Make lua require("packer.load")({'vim-dispatch'}, { cmd = "Make", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
-vim.cmd [[command! -nargs=* -range -bang -complete=file Focus lua require("packer.load")({'vim-dispatch'}, { cmd = "Focus", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
-vim.cmd [[command! -nargs=* -range -bang -complete=file StartupTime lua require("packer.load")({'vim-startuptime'}, { cmd = "StartupTime", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
 
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]

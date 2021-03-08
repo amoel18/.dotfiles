@@ -3,7 +3,7 @@ local M = {}
 function M.setup()
   --vim.cmd('colorscheme mountaineer')
   --vim.cmd('colorscheme bliss')
-  vim.cmd('colorscheme onehalfdark')
+  --vim.cmd('colorscheme onehalfdark')
   vim.cmd('hi! Visual guibg=#9EC49F guifg=#050505')
   vim.cmd('hi! SignColumn guibg=NONE')
   vim.cmd('hi! StatusLine guifg=white')

@@ -220,14 +220,10 @@
         "on-click": "lxterminal -t \"Arch-update\" -e \"/home/i/PycharmProjects/swayinfo/au.sh\"",
         "escape": true
     },
-    "custom/mail": {
-        "format": "",
-        "format-alt": "{alt} ",
-        "format-alt-click": "click-right",
-        "interval": 60,
-        "return-type": "json",
-        "exec": "~/.config/waybar/mail.py",
-        "tooltip": false
+    "custom/stock": {
+        "format": "{output}$",
+        "interval": 15,
+        "exec": "~/.scripts/stocks.py",
     },
     "custom/scratchpad": {
         "interval": 1,

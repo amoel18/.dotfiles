@@ -50,6 +50,38 @@ if you want to change default application you have to edit /usr/share/applicatio
 jdownloader2      #Download manager, written in Java, for one-click hosting sites like Rapidshare and Megaupload. Uses its own updater.
 
 
-postman-bin        #api test build document
+postman-bin       #api test build document
 
-wlogout            #lougout menu
+wlogout           #lougout menu
+mod+b             #mail
+mod+n             #browse school files
+mod+c             #cd
+mod+w             #window browsr
+mod+return        #browser
+mod+o             #run application
+https://www.bankcheckingsavings.com/bitcoin-and-cryptocurrency-bonuses/
+nået
+https://etoro.tw/3dJde1P
+pei referral: o2zlay
+https://github.com/fmfn/BayesianOptimization
+getpei
+bondora invest 10euro 5 bonus (https://p2pinvesting.eu/p2p-bonus-offers/)
+brickstarter
+getpei.com
+debituum.network invest 250euro+
+HeavyFinance # not yet signed up.
+Kviku Finance invest 100euro+ for 20euro
+neofinance +10euro any amount # not yet signed
+nordstreet +15euro for 100  invested amount # not yet signed
+Rendity # not signed up
+Twino# not signed up
+Viainvest #not signed
+binance 10%commision
+celsius network network 30dollar in btc
+
+#zathura :
+c to copy link
+^o ^i Move backward and forward through jump list (use after following link)
+
+
+penge i: etoro, binance, crypterium, coinbase, celcius $40. # blockcard TERN

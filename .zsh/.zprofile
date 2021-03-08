@@ -17,4 +17,4 @@
 #      fi
 #    fi
 #
-export NNN_FIFO=/tmp/nnn.fifo
+#

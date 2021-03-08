@@ -30,7 +30,7 @@ p () {
   && source /usr/share/fzf/fzf-extras.zsh
 
 
-
+#if [ -t 0 ] && [[ -z $TMUX ]] && [[ $- = *i* ]]; then exec tmux; fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -41,7 +41,7 @@ export FZF_DEFAULT_OPTS="$FZF_DEFAULT_COLORS \
 	--height='80%' \
 	--layout='reverse' \
 	--inline-info \
-        --bind='tab:down,btab:up,ctrl-d:half-page-down,ctrl-u:half-page-up,esc:abort' \
+        --bind='tab:down,btab:up,ctrl-d:half-page-up,ctrl-u:half-page-up,esc:abort' \
 	--no-bold"
 
 #export FZF_DEFAULT_COMMAND='rg --hidden --column '
@@ -51,6 +51,7 @@ export FZF_DEFAULT_OPTS="$FZF_DEFAULT_COLORS \
 export _JAVA_AWT_WM_NONREPARENTING=1
 export WINEPREFIX=~/Games-Wine/LoL
 export WINEARCH=win32
+export PACKPATH=~/.local/share/nvim/site/pack/
 #export PYTHONPATH="/usr/bin/python"
 #export PATH="/home/i/.tmux/tmux.conf:/usr/bin/python:$PATH"
 export MATLAB="/home/i/matlab"
@@ -67,20 +68,5 @@ c() {
   cd $(fd --type directory | fzf)
 }
 
-#s() { yes '' | head -"${1:-5}"; }    # Use as "sl 10" or "sl"
 
-function run() {
-  cmd_output=$(eval $1)
-  return_value=$?
-  if [ $return_value != 0 ]; then
-    echo "Command $1 failed"
-    exit -1
-  else
-    echo "output: $cmd_output"
-    echo "Command succeeded."
-  fi
-  return $return_value
-}
-if [ -f /usr/share/nnn/quitcd/quitcd.bash_zsh ]; then
-    source /usr/share/nnn/quitcd/quitcd.bash_zsh
-fi
+if [ "$TMUX" = "" ]; then tmux; fi

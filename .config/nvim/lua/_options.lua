@@ -3,7 +3,7 @@ function M.setup()
   -- Global
   global_local = {
     clipboard = 'unnamedplus';
-    completeopt = 'noinsert,menuone,noselect';
+    completeopt = 'menuone,noselect';
     hidden = true;
     conceallevel = 1;
     backspace = indent,eol,start;
@@ -17,6 +17,9 @@ function M.setup()
     nohlsearch;
     ignorecase = true;
     smartcase = true;
+    smarttab = true;
+    shiftround = true;
+    infercase = true;
 
     lazyredraw = true;
     list = true;
@@ -26,7 +29,7 @@ function M.setup()
     writebackup = false;
     showmode = false;
     swapfile = false;
-    scrolloff = 5;
+    scrolloff = 8;
 
     shortmess = 'aoOTIcF';
     splitright = true;

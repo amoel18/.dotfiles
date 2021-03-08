@@ -11,7 +11,6 @@ function M.nvim_create_augroups(definitions)
     vim.api.nvim_command('augroup END')
   end
 end
-
 function M.setup()
   local definitions = {
     bufs = {
@@ -33,5 +32,4 @@ function M.setup()
 
   M.nvim_create_augroups(definitions)
 end
-
 return M
