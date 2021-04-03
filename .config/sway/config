@@ -16,7 +16,7 @@ set $right l
 # Your preferred terminal emulator
 set $term alacritty -e tmux #--working-directory="$(swaymsg -t get_tree | jq '.. | (.nodes? // empty)[] | select(.focused == true).pid? // empty' | xargs pstree -p | grep "\<tmux\>\|\<fish\>\|\<bash\>\|\<zsh\>\|\<sh\>" | grep -o '[0-9]*' | xargs pwdx 2> /dev/null | cut -f2- -d' ' | sort | tail -n 1 | tr -d '\n')"
 set $editor nvim
-set $browser chromium
+set $browser google-chrome-stable
 set $files thunar
 set $volumeup amixer sset Master 5%+
 set $volumedown amixer sset Master 5%-
@@ -43,11 +43,12 @@ bindsym $mod+return exec $browser
 #set $screenshot grim ~/Images/screenshots/scrn-$(date +"%Y-%m-%d-%H-%M-%S").png
 #set $screenclip slurp | grim -g - ~/Images/screenshots/scrn-$(date +"%Y-%m-%d-%H-%M-%S").png
 
+
 input * {
     xkb_layout "us,dk"
-    #xkb_variant "hhk"
+    xkb_variant "mac"
     #xkb_options "ctrl:nocaps"
-    xkb_options "grp:alt_shift_toggle,caps:none,eurosign:4"
+    xkb_options "grp:alt_shift_toggle,eurosign:4"
 }
 
 input * {
@@ -79,12 +80,12 @@ set $menu2 rofi -show run -show-icons
 #set $menu22 rofi -combi-modi window,drun -show combi -modi combi -show-icons
 set $menu22 rofi -show window,run
 
-set $menu9 exec alacritty -e /home/i/.scripts/dedit
-set $menucd exec alacritty -e /home/i/.scripts/cd
+set $menu9 exec alacritty -e /home/i/.scripts/edit.sh
+set $menuinfi exec alacritty -e /home/i/.scripts/infi.sh
 set $menu8 exec alacritty --class=launcher -e /home/i/.scripts/focus_window.py
-set $menu7 exec alacritty -e vifm /home/i/skole
+set $menu7 exec alacritty -e /home/i/skole
 set $mailen exec alacritty -e neomutt
-set $menu5 exec alacritty -e tmux new-session \; split-window -v -p 25\; send-keys vifm\ /home/i/skole C-m  \; select-pane -t 2 \;
+set $menu5 exec alacritty -e tmux new-session \; split-window -v -p 25\; send-keys ls \ /home/i/skole C-m  \; select-pane -t 2 \;
 set $binds exec alacritty --class=launcher -e ~/.scripts/showhelp.sh
 set $nls exec alacritty --class=launcher -e ~/.scripts/nls
 #set $bindss cat ~/.scripts/showhelp
@@ -95,7 +96,7 @@ bindsym $mod+z exec $nls
 #set $note exec alacritty --class=launcherr -e ~/.scripts/note
 set $note exec alacritty --class=launcher -e ~/.scripts/note
 bindsym $mod+a exec $menu6
-bindsym $mod+c exec $menucd
+bindsym $mod+c exec $menuinfi
 bindsym $mod+r exec $note
 #bindsym $mod+f11 exec $bindss
 #new-session \; send-keys vifm\ /home/i/skole C-m \; split-window -h -p 50\; send-keys python C-m \; split-window -v -p 35 \; send-keys /home/i/python C-m \; select-pane -t 1 \;
@@ -837,7 +838,6 @@ exec_always caps2esc
 
 exec_always --no-startup-id ~/.cargo/bin/workstyle &> /tmp/workstyle.log
 #exec gammastep
-exec caps2esc
 #exec flashfocus
 #exec_always ~/.scripts/gammastep.sh
 #include ~/.config/sway/$(hostname)/*

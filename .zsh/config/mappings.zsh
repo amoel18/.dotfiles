@@ -1,7 +1,7 @@
 # Insert Mode
 
-bindkey -M viins '^K' up-history # ^K to previous command.
-bindkey -M viins '^J' down-history # ^J to next command.
+#bindkey -M viins '^K' up-history # ^K to previous command.
+#bindkey -M viins '^J' down-history # ^J to next command.
 
 bindkey -M viins '^U' backward-kill-line # Kill line backwards.
 bindkey -M viins '^?' backward-delete-char # Delete left char with backspace key.
@@ -16,8 +16,6 @@ bindkey -M viins '^R' custom-fzf-launch-from-history # Select command from histo
 # Normal Mode
 bindkey -M vicmd 'j' down-line # Override down-line-or-history.
 bindkey -M vicmd 'k' up-line # Override up-line-or-history.
-bindkey -M vicmd '^K' up-history # ^K to previous command.
-bindkey -M vicmd '^J' down-history # ^J to next command.
 bindkey -M vicmd 'H' vi-beginning-of-line # Go beginning of line.
 bindkey -M vicmd 'L' vi-end-of-line # Go end of line.
 bindkey -M vicmd 'sr' change-surround # Change surround operator.
@@ -42,8 +40,6 @@ foreach char ({a,i}${(s..)^:-'()[]{}<>bB'}) { bindkey -M viopp $char select-brac
 # Completion Mode
 bindkey -M menuselect '^?' undo # Backspace for deleting suggesting completion as a whole.
 bindkey -M menuselect '+' accept-and-hold # Accept the selection but keep the completion list open.
-bindkey -M menuselect '^K' up-line-or-history # Navigate up completion.
-bindkey -M menuselect '^J' down-line-or-history # Navigate down completion.
 bindkey -M menuselect '^L' forward-char # Navigate right completion.
 bindkey -M menuselect '^H' backward-char # Navigate left completion.
 bindkey -M menuselect '^I' down-line-or-history # <Tab> to selection completion forward.

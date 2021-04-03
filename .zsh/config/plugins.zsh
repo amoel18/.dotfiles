@@ -21,11 +21,11 @@ if ! [[ -d "$ZDOTDIR/plugins/" ]] {
 #done
 
 # zsh-autopair: Insert or delete brackets, parens, quotes in pair.
-source "$ZDOTDIR/plugins/autopair/autopair.zsh"
+source "$ZDOTDIR/plugins/zsh-autopair/zsh-autopair.plugin.zsh"
 
 
 # zsh-system-clipboard: Synchronize system clipboard with ZLE registers.
-source "$ZDOTDIR/plugins/system-clipboard/zsh-system-clipboard.zsh"
+source "$ZDOTDIR/plugins/zsh-system-clipboard/zsh-system-clipboard.plugin.zsh"
 
 # zsh-autosuggestions: Fish-like auto-suggestions.
 source "$ZDOTDIR/plugins/autosuggestions/zsh-autosuggestions.zsh"
@@ -34,10 +34,10 @@ source "$ZDOTDIR/plugins/zsh-z/zsh-z.plugin.zsh"
 
 
 source "$ZDOTDIR/plugins/zsh-thefuck/zsh-thefuck.plugin.zsh"
-source "$ZDOTDIR/plugins/fzf-tab/fzf-tab.zsh"
+source "$ZDOTDIR/plugins/fzf-tab/fzf-tab.plugin.zsh"
 
 # zsh-syntax-highlighting: Syntax highlighting support.
-source "$ZDOTDIR/plugins/syntax-highlighting/zsh-syntax-highlighting.zsh"
+source "$ZDOTDIR/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 	typeset -ga ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 	typeset -gA ZSH_HIGHLIGHT_STYLES
 

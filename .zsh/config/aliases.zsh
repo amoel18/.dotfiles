@@ -3,6 +3,7 @@
 # alias py='python3'
 alias py='tmux new-session \; send-keys v C-m \; split-window -h -p 50\; send-keys python C-m \; split-window -v -p 35 \; send-keys /home/i/python C-m \; select-pane -t 1 \;'
 alias ma='tmux new-session \; send-keys  cd\ $MATLAB C-m \; split-window -h -p 50\; send-keys matlb C-m \; split-window -v -p 35 \; send-keys ls C-m \; select-pane -t 1 \;'
+alias r="R --quiet"
 alias s='signal-cli -u +4520605757 '
 alias sr='signal-cli receive'
 alias -g S='send -m " " '
@@ -25,6 +26,17 @@ alias df='df --all --si --print-type' # Display all disk usage statistics with S
 alias ls='ls --almost-all --classify --color=always --group-directories-first --literal -I "*.aux" -I "*.log" -I "*.fls" -I "*.fdb_latexmk" -I "*.synctex.gz"' # List name of nodes.
 alias la='ls -l --almost-all --si' # List nodes with their details.
 alias x='sudo chmod +x'
+alias lsxkbmodels="sed '/^! model$/,/^ *$/!d;//d' /usr/share/X11/xkb/rules/base.lst"
+alias lsxkblayouts="sed '/^! layout$/,/^ *$/!d;//d' /usr/share/X11/xkb/rules/base.lst"
+alias lsxkbvariants="sed '/^! variant$/,/^ *$/!d;//d' /usr/share/X11/xkb/rules/base.lst"
+alias lsxkboptions="sed '/^! option$/,/^ *$/!d;//d' /usr/share/X11/xkb/rules/base.lst"
+
+alias viewxkb="less -M '+/^\s*\!\s\w+$' /usr/share/X11/xkb/rules/base.lst"
+alias viewxkbmodels="lsxkbmodels | less -M"
+alias viewxkblayouts="lsxkblayouts | less -M"
+alias viewxkbvariants="lsxkbvariants | less -M"
+alias viewxkboptions="lsxkboptions | less -M"
+
 
 alias open="xdg-open"
 alias pins="paru -Slq | fzf -m --preview 'cat <(paru -Si {1}) <(paru -Fi {1} | awk \"{print \$2}\")' | xargs -ro paru -S"
@@ -34,7 +46,8 @@ alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 alias pa=' ps aux | grep'
 
 # Custom Shortcuts
-alias v='~/Downloads/nvim.appimage'
+# alias v="nvim -c 'startinsert'"
+alias v='nvim'
 alias g='git'
 alias e='exit'
 alias tmux='tmux -f "$HOME/.tmux/tmux.conf"'

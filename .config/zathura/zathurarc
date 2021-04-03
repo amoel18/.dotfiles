@@ -1,0 +1,25 @@
+map z zoom in
+map Z zoom out
+
+
+set pages-per-row 1
+
+#stop at page boundries
+set scroll-page-aware "true"
+set scroll-full-overlap 0.01
+set scroll-step 100
+
+
+
+unmap d 
+
+set adjust_open bestfit
+
+set completion_bgcolor = #1a1a1a
+set completion_fgcolor = #d6d6d6
+
+#zoom settings
+set zoom-min 10
+set guioptions ""
+
+# zathurarc-dark

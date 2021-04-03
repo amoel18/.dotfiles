@@ -1,13 +1,17 @@
 # Initialize $PATH with system binaries.
 path=(
+  ~/.config/nvim
+  ~/.config/nvim/lua
 	/usr/local/sbin
+	~/go/bin
 	/usr/bin
 	/usr/local/bin
+  /usr/local
 	/bin
+  /.local/share
 	/usr/sbin
 	/sbin
 	~/.local/bin
-	$path
 )
 
 # Platform specific variables.
@@ -18,6 +22,7 @@ case $OSTYPE {
 		export GNU_COREUTILS_MAN_HOME='/usr/local/opt/coreutils/libexec/gnuman'
 		export GNU_FINDUTILS_HOME='/usr/local/opt/findutils/libexec/gnubin'
 		export GNU_FINDUTILS_MAN_HOME='/usr/local/opt/findutils/libexec/gnuman'
+export ZIPLINE_TRADER_CONFIG=./zipline-trader.yaml
 		export GNU_SED_HOME='/usr/local/opt/gnu-sed/libexec/gnubin'
 		export GNU_SED_MAN_HOME='/usr/local/opt/gnu-sed/libexec/gnuman'
 		export CURL_HOME='/usr/local/opt/curl/bin'
@@ -58,9 +63,9 @@ export PAGER='less'
 export BROWSER='xdg-open'
 
 # Default Config and Cache Home
-export XDG_DATA_HOME="$HOME/.local/share"
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="/home/i/.local/share"
+export XDG_CONFIG_HOME="/home/i/.config"
+export XDG_CACHE_HOME="/home/i/.cache"
 #export XDG_RUNTIM_DIR="/run/user/1000"
 
 # Mailcap
@@ -94,9 +99,6 @@ export NPM_CONFIG_SIGN_GIT_TAG='true'
 # GnuPG
 export GPG_TTY=$(tty)
 
-# ranger
-export RANGER_LOAD_DEFAULT_RC='false'
-export RANGER_LAST_DIRECTORY_BUFFER="$XDG_DATA_HOME/ranger/last_directory"
 
 # fzf
 export FZF_DEFAULT_COLORS='--color=dark,fg:-1,bg:-1,hl:4,fg+:7,bg+:8,gutter:-1,hl+:4,info:8,border:8,prompt:4,pointer:3,marker:3,spinner:8,header:6'

@@ -6,6 +6,7 @@ video/mp4=vlc.desktop;
 image/vnd.djvu+multipage=org.pwmt.zathura-djvu.desktop;
 application/vnd.ms-htmlhelp=kchmviewer.desktop;okularApplication_chm.desktop;
 text/x-c++src=termite.desktop;
+text/csv=code-oss.desktop;
 
 [Default Applications]
 application/pdf=org.pwmt.zathura-pdf-poppler.desktop
@@ -16,3 +17,4 @@ x-scheme-handler/about=chromium.desktop
 x-scheme-handler/unknown=chromium.desktop
 image/png=mirage.desktop
 x-scheme-handler/postman=Postman.desktop
+x-scheme-handler/mailto=google-chrome.desktop
