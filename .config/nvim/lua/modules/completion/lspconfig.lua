@@ -9,7 +9,7 @@ end
 
 local saga = require 'lspsaga'
 saga.init_lsp_saga({
-  code_action_icon = '💡'
+  code_action_icon = ''
 })
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -70,42 +70,23 @@ lspconfig.texlab.setup{
   }
 }
 
-lspconfig.sumneko_lua.setup{
-      cmd = { '/start/lua-language-server/', '-E', '/start/lua-language-server/main.lua' }, 
-      on_attach = on_attach,
-      capabilities = {
-        textDocument = {
-          completion = {
-            completionItem = {
-              snippetSupport=true
-            }
-          }
-        }
+lspconfig.sumneko_lua.setup {
+  cmd = {
+    global.home.."/home/i/lua-language-server/bin/Linux/lua-language-server",
+    "-E",
+    global.home.."/home/i/lua-language-server/main.lua"
+  };
+  settings = {
+    Lua = {
+      diagnostics = {
+        enable = true,
+        globals = {"vim","packer_plugins"}
       },
-      settings = {
-        Lua = {
-          completion= {
-            keywordSnippet="Replace",
-            callSnippet="Replace"
-          },
-          runtime = {
-            -- Tell the language server which version of Lua you're using (LuaJIT in the case of Neovim)
-            version = 'LuaJIT',
-            -- Setup your lua path
-            -- path = vim.split(package.path, ';'),
-          },
-          diagnostics = {
-            -- Get the language server to recognize the `vim` global
-            globals = {'vim', 'use', 'love'},
-          },
-          workspace = {
-            -- Make the server aware of Neovim runtime files
-            library = {
-              [vim.fn.expand('$VIMRUNTIME/lua')] = true,
-              [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
-            },
-          },
-        }
+      runtime = {version = "LuaJIT"},
+      workspace = {
+        library = vim.list_extend({[vim.fn.expand("$MYVIMRC/lua")] = true},{}),
+      },
+    },
   }
 }
 

@@ -1,4 +1,4 @@
-if [ "$TMUX" = "" ]; then tmux; fi
+#if [ "$TMUX" = "" ]; then tmux; fi
 # # Asynchronously zcompile .zcompdump file.
 # {
 #         typeset -g zcompdump="$ZDOTDIR/cache/.zcompdump"

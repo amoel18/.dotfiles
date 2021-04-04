@@ -14,6 +14,18 @@ local function map(mode, lhs, rhs, opts)
   if opts then options = vim.tbl_extend('force', options, opts) end
   vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
+
+--local indent = 2
+
+--g.indentLine_enabled = 1
+--g.indent_blankline_char = "▏"
+
+--cmd("hi IndentBlanklineChar guifg=#373b43")
+
+--g.indent_blankline_filetype_exclude = {"help", "terminal"}
+--g.indent_blankline_show_trailing_blankline_indent = false
+--g.indent_blankline_show_first_indent_level = false
+
 opt('o', 'splitright', true)              --  opt('o', 'backspace', 'indent,eol,start')  --local indent = 4
 opt('o', 'splitbelow', true)              --  opt('o', 'conceallevel', 1)                
 opt('o', 'clipboard', 'unnamedplus')
@@ -54,9 +66,10 @@ map('n', '<Leader>q', ':q!<CR>', {noremap = true, silent = false})
 --<Plug>(Luadev-Run)
 --map('v', '<Leader>vl', '<Plug>(Luadev-Run)')
 map('n', '<Leader><TAB>', ':b#<CR>', {noremap = true, silent = true})
+map('n', '<LEADER>a', ':%s///g<LEFT><LEFT>',  {noremap = true})
 map('v', '<Leader><TAB>', ':b#<CR>', {noremap = true, silent = true})
-map('n', '<', ':BufferMovePrevious<CR>', {noremap = true, silent = false})
-map('n', '>', ':BufferMoveNext<CR>', {noremap = true, silent = false})
+map('n', '<', ':BufferLineCyclePrev<CR>', {noremap = true, silent = false})
+map('n', '>', ':BufferLineCycleNext<CR>', {noremap = true, silent = false})
 map('n', '<C-t>', ':tabnew<CR>', {noremap = true, silent = true})
 map('n', 't', ':tabnew<CR>', {noremap = true, silent = true})
 map('n', '<C-b>', ':Buffers<CR>', {noremap = true, silent = true})
@@ -73,29 +86,6 @@ map('n', 'n', 'nzz', {noremap = true})
 map('n', 'N', 'Nzz', {noremap = true})
 map('n', 'vA', 'ggVG', {noremap = true})
 map('n', '<Leader><CR>', ':noh<CR>', {noremap = true})
-map('n', '<Leader>1', ':BufferGoto1<CR>', {noremap = true})
-map('n', '<Leader>2', ':BufferGoto2<CR>', {noremap = true})
-map('n', '<Leader>3', ':BufferGoto3<CR>', {noremap = true})
-map('n', '<Leader>4', ':BufferGoto4<CR>', {noremap = true})
-map('n', '<Leader>5', ':BufferGoto5<CR>', {noremap = true})
-map('n', '<Leader>6', ':BufferGoto6<CR>', {noremap = true})
-map('n', '<Leader>7', ':BufferGoto7<CR>', {noremap = true})
-map('n', '<Leader>8', ':BufferGoto8<CR>', {noremap = true})
-map('n', '<Leader>9', ':BufferGoto9<CR>', {noremap = true})
-
-
-map('n', 'C-1', ':BufferGoto1<CR>', {noremap = true})
-map('n', 'C-2', ':BufferGoto2<CR>', {noremap = true})
-map('n', 'C-3', ':BufferGoto3<CR>', {noremap = true})
-map('n', 'C-4', ':BufferGoto4<CR>', {noremap = true})
-map('n', 'C-5', ':BufferGoto5<CR>', {noremap = true})
-map('n', 'C-6', ':BufferGoto6<CR>', {noremap = true})
-map('n', 'C-7', ':BufferGoto7<CR>', {noremap = true})
-map('n', 'C-8', ':BufferGoto8<CR>', {noremap = true})
-map('n', 'C-9', ':BufferGoto9<CR>', {noremap = true})
-
-
-
 --map('n', '<c-f>', ':FZF<cr>', {noremap = true})
 --map('n', '<leader>o', ':Telescope find_files<cr>', {noremap = true})
 --map('n', '<Leader>h', ':History<CR>', {noremap=true})
@@ -125,7 +115,7 @@ map('n', '<Leader>[', 'viw<esc>a]<esc>bi[<esc>lel', {noremap = true})
 map('n', '<Leader>{', 'viw<esc>a}<esc>bi{<esc>lel', {noremap = true})
 map('n', '<leader>f', ':Files<CR>', {noremap = true})
 --map('n', '<leader>f', ':Telescope find_files<CR>', {noremap = true})
-map('n', '<C-f>', ':Files ~/ <CR>', {noremap = true})
+map('n', '<C-f>', ':Files ~/<CR>', {noremap = true})
 map('c', 'Q!', 'q!', {noremap = true})
 map('c', 'Q', 'q', {noremap = true})
 map('c', 'W', 'w', {noremap = true})
@@ -161,6 +151,9 @@ map('c', '<C-n>', '<Right>', {noremap = true})
 map('c', '<C-a>', '<Home>', {noremap = true})
 map('c', '<C-e>', '<End>', {noremap = true})
 map('c', '<C-d>', '[[<C-R>=expand("%:p:h") . "/" <CR>]]', {noremap = true})
+map('n', '<C-n>', ':NnnPicker %<CR>', {noremap = true})
+map('n', '<C-p>', ':Rg!<CR>',    {noremap = true})
+
 map('v', '<leader>(', '<esc>`>a)<esc>`<i(<esc>', {noremap = true})
 map('v', '<leader>[', '<esc>`>a]<esc>`<i[<esc>', {noremap = true})
 map('v', '<leader>{', '<esc>`>a}<esc>`<i{<esc>', {noremap = true})
@@ -177,6 +170,7 @@ cmd 'set scrolloff=8'
 cmd 'set noswapfile'
 cmd 'set nonumber'
 cmd 'set nohls'
+cmd 'set textwidth =0'
 cmd 'set completeopt=menuone,noselect'
 cmd 'set autowriteall'
 cmd 'set copyindent'
@@ -202,6 +196,7 @@ cmd 'set autochdir'
 cmd 'let g:rg_command ="rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow" '
 cmd 'let g:sneak#use_ic_scs = 1'
 cmd 'let g:sneak#s_next = 1'
+cmd 'autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE'
 cmd 'map s <Plug>Sneak_s'
 cmd 'map S <Plug>Sneak_S'
 

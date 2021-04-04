@@ -50,6 +50,7 @@ local function load_options()
     smartcase      = true;
     infercase      = true;
     incsearch      = true;
+    hlsearch       = true;
     wrapscan       = true;
     complete       = ".,w,b,k";
     inccommand     = "nosplit";
@@ -93,7 +94,7 @@ local function load_options()
   local bw_local  = {
     synmaxcol      = 2500;
     formatoptions  = "1jcroql";
-    textwidth      = 80;
+    textwidth      = 0;
     expandtab      = true;
     autoindent     = true;
     tabstop        = 2;
@@ -103,7 +104,7 @@ local function load_options()
     wrap           = false;
     linebreak      = true;
     number         = true;
-    colorcolumn    = "80";
+    colorcolumn    = 0;
     foldenable     = true;
     signcolumn     = "yes";
     conceallevel   = 2;

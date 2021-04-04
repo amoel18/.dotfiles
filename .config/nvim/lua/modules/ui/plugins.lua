@@ -1,10 +1,18 @@
 local ui = {}
 local conf = require('modules.ui.config')
 
-ui['rakr/vim-one'] = {}
 
 ui['glepnir/zephyr-nvim'] = {
-  config = [[vim.cmd('colorscheme zephyr')]]
+  --config = [[vim.cmd('colorscheme zephyr')]]
+}
+
+ui['lukas-reineke/indent-blankline.nvim'] = {}
+
+ui['ayu-theme/ayu-vim'] = {
+ -- config = [[vim.cmd('colorscheme ayu')]]
+}
+ui['rakr/vim-one'] = {
+  config = [[vim.cmd('colorscheme one')]]
 }
 
 ui['danilo-augusto/vim-afterglow'] = {
@@ -47,13 +55,10 @@ ui['sickill/vim-pasta'] = {
   config = conf.vim_pasta
 }
 
-ui['glepnir/indent-guides.nvim'] = {
-  event = 'BufRead'
-}
 
 ui['akinsho/nvim-bufferline.lua'] = {
   config = conf.nvim_bufferline,
-  requires = {'kyazdani42/nvim-web-devicons'}
+  requires = {'kyazdani42/nvim-web-devicons'},
 }
 
 ui['kyazdani42/nvim-tree.lua'] = {

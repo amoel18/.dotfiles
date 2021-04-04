@@ -1,19 +1,35 @@
 local config = {}
 
 function config.delimimate()
-  vim.g.delimitMate_expand_cr = 0
-  vim.g.delimitMate_expand_space = 1
-  vim.g.delimitMate_smart_quotes = 1
-  vim.g.delimitMate_expand_inside_quotes = 0
-  vim.api.nvim_command('au FileType markdown let b:delimitMate_nesting_quotes = ["`"]')
+	require 'delimimate'.setup {
+  	delimitMate_expand_cr = 1;
+		delimitMate_expand_space = 1;
+		delimitMate_smart_quotes = 1;
+		delimitMate_autoclose = 1;
+		delimitMate_smart_matchpairs = 1;
+		delimitMate_expand_inside_quotes = 1;
+		delimitMate_matchpairs = "(:),[:],{:},<:>";
+		delimitMate_quotes = "\" ' ` *";
+		delimitMate_expand_space = 1;
+		delimitMate_jump_expansion = 1;
+		delimitMate_balance_matchpairs = 1;
+		delimitMate_excluded_regions = "Comment,String";
+		delimitMate_excluded_ft = "mail,txt";
+  	vim.api.nvim_command('au FileType c,perl let b:delimitMate_insert_eol_marker = 2');
+  	vim.api.nvim_command('au FileType c,perl let b:delimitMate_eol_marker = ";"');
+  	vim.api.nvim_command('au FileType markdown let b:delimitMate_nesting_quotes = ["`"]')
+	}
 end
 
 function config.nvim_colorizer()
   require 'colorizer'.setup {
     css = { rgb_fn = true; };
+    lua = { rgb_fn = true; };
+    rs = { rgb_fn = true; };
     scss = { rgb_fn = true; };
     sass = { rgb_fn = true; };
     stylus = { rgb_fn = true; };
+    vim = { rgb_fn = true;};
     vim = { names = true; };
     tmux = { names = false; };
     'javascript';

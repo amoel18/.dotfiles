@@ -11,6 +11,37 @@ foreach piece (
 ) {
 	source $ZDOTDIR/config/$piece
 }
+# Plugin manager
+source $HOME/.zsh/zinit/zinit.zsh \
+    || git clone --depth 1 https://github.com/zdharma/zinit.git $HOME/.zsh/zinit
+
+# Options
+setopt \
+    autocd \
+    autopushd \
+    histignorealldups \
+    histignorespace \
+    sharehistory
+
+# Disable right prompt indent
+ZLE_RPROMPT_INDENT=0
+
+# Change cursor shape based on vi mode
+function zle-keymap-select zle-line-init zle-line-finish {
+    if [ "$KEYMAP" = "vicmd" ]; then
+        echo -ne '\033[2 q'
+    else
+        echo -ne '\033[5 q'
+    fi
+}
+zle -N zle-line-init
+zle -N zle-line-finish
+zle -N zle-keymap-select
+
+# History
+HISTFILE=$HOME/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
 
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
@@ -89,7 +120,7 @@ git()
    fi
 }
 
-# if [ "$TMUX" = "" ]; then tmux; fi
+ if [ "$TMUX" = "" ]; then tmux; fi
 
 # source:https://stackoverflow.com/a/65375231/2571881
 function vif() {
@@ -115,3 +146,5 @@ cdf() {
    file=$(fzf +m -q "$1") && dir=$(dirname "$file") && cd "$dir"
 }
 
+# To customize prompt, run `p10k configure` or edit ~/.zsh/.p10k.zsh.
+[[ ! -f ~/.zsh/.p10k.zsh ]] || source ~/.zsh/.p10k.zsh

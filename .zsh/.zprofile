@@ -1,5 +1,9 @@
+#set -g default-command /bin/zsh
 
-set -g default-command /bin/zsh
+#if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+#    systemctl is-active --quiet optimus-manager.service && sudo prime-switch > /dev/null
+#    exec startx &> /dev/null
+#fi
 # if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
 #   exec startx
 # fi
@@ -258,31 +262,31 @@ function _terminal-set-terminal-app-proxy-icon {
 autoload -Uz add-zsh-hook
 
 # Set up the Apple Terminal.
-function term() {
-  if [[ "$TERM_PROGRAM" == 'Apple_Terminal' ]] \
-    && ( ! [[ -n "$STY" || -n "$TMUX" || -n "$DVTM" ]] )
-  then
-    # Sets the Terminal.app current working directory before the prompt is
-    # displayed.
-    add-zsh-hook precmd _terminal-set-terminal-app-proxy-icon
+ #	function term() {
+ #		if [[ "$TERM_PROGRAM" == 'Apple_Terminal' ]] \
+ #			&& ( ! [[ -n "$STY" || -n "$TMUX" || -n "$DVTM" ]] )
+ #		then
+				# Sets the Terminal.app current working directory before the prompt is
+				# displayed.
+				add-zsh-hook precmd _terminal-set-terminal-app-proxy-icon
 
-    # Unsets the Terminal.app current working directory when a terminal
-    # multiplexer or remote connection is started since it can no longer be
-    # updated, and it becomes confusing when the directory displayed in the title
-    # bar is no longer synchronized with real current working directory.
-    function _terminal-unset-terminal-app-proxy-icon {
-      if [[ "${2[(w)1]:t}" == (screen|tmux|dvtm|ssh|mosh) ]]; then
-        _terminal-set-terminal-app-proxy-icon ' '
-      fi
-    }
-    add-zsh-hook preexec _terminal-unset-terminal-app-proxy-icon
+				# Unsets the Terminal.app current working directory when a terminal
+				# multiplexer or remote connection is started since it can no longer be
+				# updated, and it becomes confusing when the directory displayed in the title
+				# bar is no longer synchronized with real current working directory.
+				function _terminal-unset-terminal-app-proxy-icon {
+					if [[ "${2[(w)1]:t}" == (screen|tmux|dvtm|ssh|mosh) ]]; then
+						_terminal-set-terminal-app-proxy-icon ' '
+					fi
+				}
+				add-zsh-hook preexec _terminal-unset-terminal-app-proxy-icon
 
-    # Do not set the tab and window titles in Terminal.app since it sets the tab
-    # title to the currently running process by default and the current working
-    # directory is set separately.
-    return
-  fi
-}
+				# Do not set the tab and window titles in Terminal.app since it sets the tab
+				# title to the currently running process by default and the current working
+				# directory is set separately.
+				return
+			fi
+		}
 
 term
 

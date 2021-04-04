@@ -1,10 +1,10 @@
 local vim,api = vim,vim.api
 local M = {
   go = {'go run ','go test '};
-  lua = {'lua '},
-  vim = {'so '},
-  py = {'python '},
-  sh = {'bash '}
+  lua = {'luafile %'},
+  vim = {'so %'},
+  py = {'python %'},
+  sh = {'bash %'}
 }
 
 function M.run_command()

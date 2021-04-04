@@ -10,12 +10,14 @@ editor['junegunn/vim-peekaboo'] = {
   config = vim_peekaboo
 }
 
+editor['mcchrish/nnn.vim'] = {}
+
 editor['rhysd/accelerated-jk'] = {
   opt = true
 }
 
 editor['norcalli/nvim-colorizer.lua'] = {
-  ft = {'lua','html','css','sass','vim','typescript','typescriptreact','lua','py', 'cpp'},
+  ft = {'rs','html','css','sass','vim','typescript','typescriptreact','lua','py', 'cpp'},
   config = conf.nvim_colorizer
 }
 

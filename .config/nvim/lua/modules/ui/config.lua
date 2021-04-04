@@ -4,21 +4,29 @@ function config.galaxyline()
   require('modules.ui.eviline')
 end
 
+
 function config.nvim_bufferline()
   require('bufferline').setup{
     options = {
       modified_icon = '+',
       buffer_close_icon = '',
       mappings = true,
-      always_show_bufferline = true,
-      --buffer_selected = {
-      --          guifg = '#ec6773',
-      --          guibg = '#0d1217',
-       --         gui = "bold,italic"
-              --}
+      always_show_bufferline = false,
+      diagnostics = "nvim_lsp",
+			diagnostics_indicator = function(_, _, diagnostics_dict)
+				local s = " "
+				for e, n in pairs(diagnostics_dict) do
+					local sym = e == "error" and " "
+						or (e == "warning" and " " or "" )
+					s = s .. n .. sym
+				end
+				return s
+			end
+      }
     }
-  }
 end
+
+   
 
 function config.nvim_tree()
   vim.g.nvim_tree_side = "right"

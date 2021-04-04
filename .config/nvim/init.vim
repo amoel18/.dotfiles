@@ -4,12 +4,36 @@ map <leader>e  :%s/to-replace/target-string/gc<CR>
 let g:fzf_tags_command = 'ctags -R'
 let g:vimtex_toc_config = {"name": "TOC", "resize": "1", "layers": "content,todo,include", "split_width": "50", "todo_sorted": "0", "show_help":"1", "show_numbers": "1", "mode": "2"}
 
+set incsearch
+let ayucolor="dark"
+let g:one_allow_italics = 1 " I love italic for comments
+set hlsearch
+set termguicolors
+set magic
+set mousefocus
+set paste
+set background=dark
+set textwidth=0
+set colorcolumn=0
+set termguicolors
+let &t_8f = "\<Esc>[38:2:%lu:%lu:%lum"
+let &t_8b = "\<Esc>[48:2:%lu:%lu:%lum"
+
 let g:rainbow_active = 1
-map <leader>e  :%s/to-replace/target-string/gc<CR>
 let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'border': 'sharp' } }
 let g:fzf_tags_command = 'ctags -R'
 let g:rainbow_conf = {'guifgs': 'royalblue3, darkorange3, seagreen3, firebrick',  'ctermfgs': 'lightblue, lightyellow, lightcyan, lightmagenta'}
 let g:rainbow_active = 1
+let g:quickrun_known_file_types = {
+        \"cpp": ["!g++ %", "./a.out"],
+        \"c": ["!gcc %", "./a.out"],
+        \"php": ["!php %"],
+        \"vim": ["source %"],
+        \"sh": ["bash %"],
+        \"lua": ["luafile %"],
+        \"py": ["!python %"],
+        \"go": ["!go test"],
+    \}
 
 function! RepeatChar(char, count)
   return repeat(a:char, a:count)
@@ -17,6 +41,31 @@ endfunction
 
 nnoremap q :<C-U>exec "normal i".RepeatChar(nr2char(getchar()), v:count1)<CR>
 nnoremap Q :<C-U>exec "normal a".RepeatChar(nr2char(getchar()), v:count1)<CR>
+nnoremap <C-g> :ProComment<CR>
+nnoremap <leader>g :ProComment<CR>
+xnoremap <C-g> :ProComment<CR>
+xnoremap <leader>g :ProComment<CR>
+inoremap $1 ()<esc>i
+inoremap $2 []<esc>i
+inoremap $3 {}<esc>i
+inoremap $4 {<esc>o}<esc>O
+inoremap $q ''<esc>i
+inoremap $e ""<esc>i
+inoremap $t <><esc>i
+vnoremap $1 <esc>`>a)<esc>`<i(<esc>
+vnoremap $2 <esc>`>a]<esc>`<i[<esc>
+vnoremap $3 <esc>`>a}<esc>`<i{<esc>
+vnoremap $e <esc>`>a"<esc>`<i"<esc>
+
+nnoremap ase g@iw"
+nnoremap asq g@iw'
+nnoremap ast g@iw>
+
+nnoremap as1 g@iw(
+nnoremap as2 g@iw[
+nnoremap as3 g@iw{
+
+nnoremap <silent> <LEADER>' :let col=col('.') <BAR> s/.*\zs\<.\{-}\%#.\{-}\>/'&'/ <BAR> call setpos('.', [0, line('.'), col+1, 0])<CR>
 
 " Substitute
 nnoremap <C-s> :%s//<left>
@@ -30,14 +79,15 @@ let &t_EI .= "\<Esc>[?2004l"
   
 inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
 
-
-nnoremap vv ^vg_
-
 function! XTermPasteBegin()
   set pastetoggle=<Esc>[201~
   set paste
   return ""
 endfunction
+
+nnoremap vv ^vg_
+
+
 
 let g:tmuxify_custom_command = 'tmux split-window -p 20'
 " set slime target (tmux instead of screen)
@@ -77,13 +127,29 @@ endfunction
 
 map <Leader>z :call VimuxZoomRunner()<CR>
 
-nnoremap o o<esc>
-nnoremap O O<esc>
+inoremap <silent><expr> <CR>      compe#confirm({ 'keys': "\<Plug>delimitMateCR", 'mode': '' })
 
-call arpeggio#map('n', '', 0, 'vr', ':VimuxOpenRunner<CR>')
-call arpeggio#map('n', '', 0, 'vh', ':VimuxPromptCommand<CR>')
-call arpeggio#map('n', '', 0, 'vl', ':SlimeSendCurrentLine<CR>')
-call arpeggio#map('n', '', 0, 'vc', ':VimuxCloseRunner<CR>')
-call arpeggio#map('n', '', 0, 've', ':e $MYVIMRC<CR>')
-call arpeggio#map('n', '', 0, 'vu', ':e ~/.config/nvim/snippets/Ultisnips<CR>')
+
+inoremap <silent><expr> <C-e> compe#confirm({ 'keys': "\<Plug>delimitMateCR", 'mode': '' })
+
+imap <expr> <C-d>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
+
+smap <expr> <C-d>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
+
+" Jump forward or backward
+
+" Select or cut text to use as $TM_SELECTED_TEXT in the next snippet.
+" See https://github.com/hrsh7th/vim-vsnip/pull/50
+nmap        s   <Plug>(vsnip-select-text)
+xmap        s   <Plug>(vsnip-select-text)
+nmap        S   <Plug>(vsnip-cut-text)
+xmap        S   <Plug>(vsnip-cut-text)
+
+
+" call arpeggio#map('n', '', 0, '<localleader>p', ':VimuxPromptCommand<CR>')
+" call arpeggio#map('n', '', 0, '<localleader>l', ':SlimeSendCurrentLine<CR>')
+" call arpeggio#map('n', '', 0, '<localleader>c', ':VimuxTogglePane<CR>')
+" call arpeggio#map('n', '', 0, '<localleader>e', ':e $MYVIMRC<CR>')
+" call arpeggio#map('n', '', 0, '<localleader>s', ':e ~/.config/nvim/snippets/Ultisnips<CR>')
+"
 
