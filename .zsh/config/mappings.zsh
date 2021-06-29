@@ -46,9 +46,21 @@ bindkey -M menuselect '^I' down-line-or-history # <Tab> to selection completion 
 bindkey -M menuselect '^[[Z' reverse-menu-complete # <S-Tab> to select completion backward.
 bindkey -r "^D"
 bindkey -r "^E"
+bindkey -r "^F"
+bindkey -r "Ctrl+Space"
+zle -N fzf-bindings 
 
 bindkey "^D" forward-word
 bindkey "^E" autosuggest-execute
+bindkey "^F" vi-end-of-line
+
+
+
+
+o () {
+    tmux send-keys -t1 :tabnew\ $(tmux display -p -F "#{pane_current_path}")/"$@" C-m
+		tmux select-pane -t1
+}
 
 pv () {
     tmux respawn-pane -k -t1 -c "#{pane_current_path}" nvim "$1"
@@ -56,7 +68,7 @@ pv () {
 wv () {
     tmux respawn-window -k -t1 -c "#{pane_current_path}" nvim "$1"
 }
-tv () {
+tw () {
   args=$@
   CDD=$(tmux display -p -F "#{pane_current_path}")
   tmux send-keys -t1 :tabnew\ $CDD/"$args" C-m
@@ -84,6 +96,18 @@ bindkey '^P' p
 #bindkey 'D' zsh-system-clipboard-vicmd-kill-eol
 
 zle -N fzf-file-widget
-bindkey '^F' fzf-file-widget # Go forward char or complete current completion.
+bindkey '^G' fzf-file-widget # Go forward char or complete current completion.
 
 bindkey -rpM viins '^[^['
+
+autoload -Uz history-search-end
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+
+
+bindkey -M vicmd "^P" history-beginning-search-backward-end
+bindkey -M viins "^P" history-beginning-search-backward-end
+
+bindkey -M vicmd "^N" history-beginning-search-forward-end
+bindkey -M viins "^N" history-beginning-search-forward-end
+

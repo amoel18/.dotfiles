@@ -85,3 +85,16 @@ c to copy link
 
 
 penge i: etoro, binance, crypterium, coinbase, celcius $40. # blockcard TERN
+wdisplays
+
+
+2021-04-23
+2021-04-23-3710$
+2021-04-23-3828$
+ethminer -G -P stratum://.0xef982699a7e03f8adbc666f88f85a6349833fce7.worker1@slushpool.com:9999/alllllllllllllklllllllllllllm%40gmail.com
+
+
+Cash flow
+P/s
+Gross margin
+yoy revenue growth

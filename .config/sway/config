@@ -27,7 +27,7 @@ for_window [app_id="^launcherr$"] floating enable, sticky disable, resize set 30
 for_window [app_id="^launcher$"] floating enable, sticky disable, resize set 30 ppt 40 ppt, border pixel 0
 set $menuu exec alacritty --class=launcher -e ~/.scripts/sway-launcher-desktop.sh
 bindsym $mod+space exec $menuu
-bindsym $mod+g exec gammastep
+bindsym $mod+g exec wl-gammactl
 
 #set $menu2u exec $term --class=launcher -e ~/.scripts/pdf.sh &
 set $menu2u exec alacritty -e ~/.scripts/pdf.sh
@@ -58,8 +58,8 @@ input * {
 
 #input <identifier> xkb_model "macintosh79"
 
-input <identifier> repeat_delay 300
-input <identifier> repeat_rate 100
+input <identifier> repeat_delay 200
+input <identifier> repeat_rate 150
 # On start
 #exec_always mako
 #exec_always kanshi
@@ -70,7 +70,8 @@ input <identifier> repeat_rate 100
 #exec wl-paste -p -t text --watch clipman store -P --histpath="~/.local/share/clipman-primary.json"
 #exec wl-paste -w 'wl-paste >> ~/.clipboard'
 #bindsym $mod+y exec tac ~/.clipboard | bemenu | wl-copy -n
-set $term foot tmux
+#set $term foot tmux
+set $term alacritty -e tmux
 #set $spotlight wofi --dmenu
 set $bar waybar
 #set $launcher "wofi --show drun"
@@ -80,12 +81,18 @@ set $menu2 rofi -show run -show-icons
 #set $menu22 rofi -combi-modi window,drun -show combi -modi combi -show-icons
 set $menu22 rofi -show window,run
 
-set $menu9 exec alacritty -e /home/i/.scripts/edit.sh
+set $stockmop exec alacritty -e /home/i/.scripts/mop.sh
+
+
+
+set $menu9 exec alacritty --class=launcher -e /home/i/.scripts/edit.sh
+set $menu69a exec alacritty -e /home/i/.scrips/markedet.sh
 set $menuinfi exec alacritty -e /home/i/.scripts/infi.sh
 set $menu8 exec alacritty --class=launcher -e /home/i/.scripts/focus_window.py
-set $menu7 exec alacritty -e /home/i/skole
+#set $menu7 exec alacritty -e /home/i/skole
 set $mailen exec alacritty -e neomutt
-set $menu5 exec alacritty -e tmux new-session \; split-window -v -p 25\; send-keys ls \ /home/i/skole C-m  \; select-pane -t 2 \;
+#set $menu5 exec alacritty -e tmux new-session \; split-window -v -p 25 \;  send-keys /home/i/skole C-m \; send-keys clear C-m \; send-keys ls C-m select-pane -t 1 \; send-keys v C-m \; select-pane -t 2 \;
+set $menu5 exec alacritty -e tmux new-session \; split-window -v -p 25 \; select-pane -t 1 \; send-keys v C-m \; select-pane -t2 \; send-keys /home/i/skole C-m \; send-keys clear C-m \; send-keys ls C-m
 set $binds exec alacritty --class=launcher -e ~/.scripts/showhelp.sh
 set $nls exec alacritty --class=launcher -e ~/.scripts/nls
 #set $bindss cat ~/.scripts/showhelp
@@ -95,7 +102,7 @@ bindsym $mod+q exec $binds
 bindsym $mod+z exec $nls
 #set $note exec alacritty --class=launcherr -e ~/.scripts/note
 set $note exec alacritty --class=launcher -e ~/.scripts/note
-bindsym $mod+a exec $menu6
+bindsym $mod+u exec $menu6
 bindsym $mod+c exec $menuinfi
 bindsym $mod+r exec $note
 #bindsym $mod+f11 exec $bindss
@@ -104,10 +111,14 @@ bindsym $mod+r exec $note
 #set $pass "~/dotfiles/wofi/passwofi.sh"
 #set $lock "swaylock -c ffffff"
 
-set $menu77 exec alacritty -e tmux new-session \;
+#set $menu77 exec alacritty -e tmux new-session \;
 
-bindsym $mod+w exec $menu22
-bindsym $mod+n exec $menu7
+set $menu77 exec alacritty -e tmux /home/i/.scripts/st.sh
+
+#set $stockmop exec alacritty -e /home/i/.scripts/mop.sh
+
+#bindsym $mod+w exec $menu22
+#bindsym $mod+n exec $menu7
 bindsym $mod+t exec $menu77
 bindsym $mod+b exec $mailen
 bindsym $mod+x exec wlogout
@@ -141,14 +152,18 @@ set $menu exec alacritty --class tofi -d 80 10 -e sh -c '$HOME/.scripts/launcher
 
 set $lock exec $HOME/.scripts/log
 
-bindsym $mod+f1 exec $lock
+#bindsym $mod+f1 exec $lock
 #bindsym $mod+f12 exec ~/.config/sway/lockman.sh
 #bindsym $mod+ctrl+d input * {xkb_layout "dk"}
 
 # Screenshot with grim and swappy
 #bindsym $mod+u exec grim -g "$(slurp)" - | swappy -f -
-bindsym $mod+f2 exec --no-startup-id slurp | grim -g - $(xdg-user-dir PICTURES)/$(date +'screenshot_%Y-%m-%d-%H%M%S.png')
+bindsym $mod+f3 exec --no-startup-id slurp | grim -g - $(xdg-user-dir PICTURES)/$(date +'screenshot_%Y-%m-%d-%H%M%S.png')
+
+bindsym $mod+f2 exec grim -g "$(slurp)" -t png - | wl-copy -t image/png
 bindsym $mod+ctrl+u exec grim - | swappy -f -
+
+ bindsym $mod+escape exec 'grim /tmp/screen.png; corrupter /tmp/screen.png /tmp/screen.png; swaylock -fi /tmp/screen.png --effect-vignette 0.5:0.5 --clock --indicator-radius 100 --indicator-thickness 7  --ring-color ebdbb2 --key-hl-color 282828 --line-color 00000000 --inside-color 00000088 --separator-color 00000000 --fade-in 0.2'
 
 #exec ~/.local/bin/smartfloat tofi
 #exec ~/.config/sway/scripts/wsdnames.py
@@ -156,19 +171,16 @@ bindsym $mod+ctrl+u exec grim - | swappy -f -
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 #output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-#output * bg ~/Downloads/sort1.jpg fill
-output * bg ~/Pictures/arch_dracula.png fill
-smart_gaps on
-gaps inner 0
-gaps outer 0
-
-default_border pixel 0
-default_floating_border normal 0
-hide_edge_borders smart
+output * bg ~/sort1.jpg fill
+#output * bg ~/bg2.jpg fill
+#output * bg ~/Pictures/wallpaper.png fill
+#output * bg ~/Pictures/Wallpaper.jpg fill
+#output * bg ~/Pictures/arch_dracula.png fill
 #
 # Example configuration:
 #
-   output eDP-1 pos 0 0 res 1920x1080
+   output eDP-1 resolution 1920x1080 position 0,200
+  #output eDP-1 pos 0 0 res 1920x1080
    output HDMI-A-3 resolution 2560x1440 pos 2560,0
    output HDMI-A-1 resolution 2560x1440 pos 2560,0
    output HDMI-A-2 resolution 2560x1440 pos 2560,0
@@ -220,7 +232,8 @@ exec amixer sset 'Master' 40%
 # Output configuration:
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
-output eDP-1 resolution 2880x1800 position 0,0
+output eDP-1 resolution 2560x1440 position 0,0
+#output eDP-1 resolution 3840x2160 position 0,0
 #	output HDMI-A-1 resolution 1920x1080 position 1920,0
 
 	# Turn off screen on lid closed
@@ -249,13 +262,23 @@ output eDP-1 resolution 2880x1800 position 0,0
 #   bindsym XF86MonBrightnessUp exec light -A 5 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
 #   bindsym XF86MonBrightnessDown exec light -U 5 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
 #
-bindsym XF86AudioRaiseVolume exec "pactl set-sink-volume @DEFAULT_SINK@ +5% ; zsh -c wob_volume > $SWAYSOCK.wob"
-bindsym XF86AudioLowerVolume exec "pactl set-sink-volume @DEFAULT_SINK@ -5%; zsh -c wob_volume > $SWAYSOCK.wob"
-bindsym XF86AudioMute exec "pactl set-sink-mute @DEFAULT_SINK@ toggle"
-#bindsym XF86MonBrightnessUp exec "brightnessctl set +10%"
-#bindsym XF86MonBrightnessDown exec "brightnessctl set 10%-"
-bindsym --locked XF86MonBrightnessUp exec --no-startup-id light -A 10
-bindsym --locked XF86MonBrightnessDown exec --no-startup-id light -U 10
+# bindsym XF86AudioRaiseVolume exec amixer set Master 5%+
+# bindsym XF86AudioLowerVolume exec amixer set Master 5%-
+# bindsym XF86AudioMute exec amixer set Master toggle
+# bindsym XF86MonBrightnessUp exec brightnessctl set +5%
+# bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+
+bindsym XF86AudioRaiseVolume exec amixer sset Master 5%+ | sed -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > $WOBSOCK
+bindsym XF86AudioLowerVolume exec amixer sset Master 5%- | sed -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > $WOBSOCK
+bindsym XF86AudioMute exec amixer sset Master toggle | sed -En '/\[on\]/ s/.*\[([0-9]+)%\].*/\1/ p; /\[off\]/ s/.*/0/p' | head -1 > $WOBSOCK
+
+bindsym XF86MonBrightnessUp exec light -A 5 && light -G | cut -d'.' -f1 > $WOBSOCK
+bindsym XF86MonBrightnessDown exec light -U 5 && light -G | cut -d'.' -f1 > $WOBSOCK
+
+exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
+
+#bindsym --locked XF86MonBrightnessUp exec --no-startup-id light -A 10
+#bindsym --locked XF86MonBrightnessDown exec --no-startup-id light -U 10
 
 ## Screenshots
 bindsym --release Print exec zsh -c screenshot
@@ -263,7 +286,7 @@ bindsym --release Shift+Print exec zsh -c fullscreenshot
 
 # Split mod
 #bindsym $mod+b splith
-#bindsym $mod+v splitv
+bindsym $mod+v focus mode_toggle
 
 #bindsym f12
 
@@ -295,6 +318,8 @@ bindsym $mod+f fullscreen
 
 # Toggle the current focus between tiling and floating mode
 bindsym $mod+Ctrl+space floating toggle
+
+bindsym $mod+s exec clipd menu
 
 # Swap focus between the tiling area and the floating area
 #bindsym $mod+space focus mode_toggle
@@ -335,6 +360,7 @@ bindsym $mod+Ctrl+space floating toggle
     bindsym $mod+Ctrl+Print exec $screenclip
     # Start a terminal
     bindsym $mod+m exec $term
+    bindsym $mod+w exec gnome-control-center
     bindsym f12 exec $volumeup
     bindsym f11 exec $volumedown
     #bindsym $mod+return exec $spotlight
@@ -343,7 +369,18 @@ bindsym $mod+Ctrl+space floating toggle
     bindsym $mod+o exec $menu2
     bindsym $mod+d exec $pyt
     bindsym $mod+e exec $menu9
-    bindsym $mod+s exec $menu5
+		bindsym $mod+a exec $menu9
+		bindsym $mod+Ctrl+f1 exec $b1
+    bindsym $mod+Ctrl+f2 exec $b2
+    bindsym $mod+Ctrl+f3 exec $b3
+
+
+    set $b1 exec alacritty -e /home/i/.scripts/b1.sh
+    set $b2 exec alacritty -e /home/i/.scripts/b2.sh
+    set $b3 exec alacritty -e /home/i/.scripts/b3.sh
+
+		#bindsym $mod+s exec $stockmop
+    bindsym $mod+n exec $menu5
     #bindsym $mod+space exec $menu
     #bindsym space+return exec $menu22
     #
@@ -390,12 +427,6 @@ bindsym $mod+Ctrl+space floating toggle
     bindsym $mod+Ctrl+$down move down
     bindsym $mod+Ctrl+$up move up
     bindsym $mod+Ctrl+$right move right
-    # Ditto, with arrow keys
-    #bindsym $mod+Ctrl+Left move left
-    #bindsym $mod+Ctrl+Down move down
-    #bindsym $mod+Ctrl+Up move up
-    #bindsym $mod+Ctrl+Right move right
-#
 # Workspaces:
 #
 # Workspace naming
@@ -569,7 +600,7 @@ set $ws_presOwn "notes"
 #
 # smart_gaps on
 # smart_borders on
-# gaps inner 8
+gaps inner 8
 # default_border pixel 2
 focus_follows_mouse yes
 #     # Switch to workspace
@@ -689,9 +720,9 @@ bar {
 seat * hide_cursor 1000
 
 # Hide titlebar, even while in tabbed mode if there is only a single window.
-default_border none
+#default_border none
 #hide_edge_borders --i3 smart
-#border_images.focused ~/.config/sway/borders/all.png
+#border_images.focused ~/.config/sway/borders/focused.png
 #border_images.focused_inactive ~/.config/sway/borders/all.png
 #border_images.unfocused ~/.config/sway/borders/all.png
 #border_images.urgent ~/.config/sway/borders/all.png
@@ -832,6 +863,8 @@ exec autotiling
 #exec_always ~/.scripts/gammastep.sh
 exec_always autotiling
 #exec_always gammastep
+exec clipd &
+exec --no-startup-id clipd
 
 exec_always caps2esc
 #exec clipman restore
@@ -845,4 +878,35 @@ exec_always --no-startup-id ~/.cargo/bin/workstyle &> /tmp/workstyle.log
 #exec sway-session restore && sway-session save-loop
 
 #exec ~/.scripts/sway-session restore && ~/.scripts/sway-session save-loop
-exec_always redshift -l 55.7:12.6 -t 5700:3600 -g 0.8 -m wayland -v
+#exec_always redshift -l 55.7:12.6 -t 5700:3600 -g 0.8 -m wayland -v
+
+set $WOBSOCK $XDG_RUNTIME_DIR/wob.sock
+exec mkfifo $SWAYSOCK.wob && tail -f $WOBSOCK | wob
+
+#exec_always wob
+exec_always blueman-applet
+
+exec dunst &
+exec --no-startup-id pulseaudio --start
+
+default_border pixel 1
+default_floating_border normal
+hide_edge_borders smart
+smart_gaps on
+
+
+
+client.focused #e1dded #e1dded #e1dded #e1dded 
+client.unfocused #453a3a #453a3a #453a3a #453a3a #453a3a
+client.focused_inactive #453a3a #453a3a #453a3a #453a3a #453a3a
+
+
+#border_images.focused ~/.config/sway/shadows.png
+#border_images.focused_inactive /home/i/.config/sway/shadows.png
+#border_images.unfocused /home/i/.config/sway/shadows.png
+#border_images.urgent /home/i/.config/sway/shadows.png
+
+# border_images.focused ~/.config/sway/borders/focused.png
+# border_images.focused_inactive ~/.config/sway/borders/focused_inactive.png
+# border_images.unfocused ~/.config/sway/borders/unfocused.png
+# border_images.urgent ~/.config/sway/borders/urgent.png

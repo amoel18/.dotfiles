@@ -6,7 +6,12 @@ video/mp4=vlc.desktop;
 image/vnd.djvu+multipage=org.pwmt.zathura-djvu.desktop;
 application/vnd.ms-htmlhelp=kchmviewer.desktop;okularApplication_chm.desktop;
 text/x-c++src=termite.desktop;
-text/csv=code-oss.desktop;
+text/csv=libreoffice-calc.desktop;vim.desktop;code-oss.desktop;
+x-scheme-handler/tg=userapp-Telegram Desktop-P4Z500.desktop;
+font/otf=imgur-screenshot.desktop;
+image/jpeg=mirage.desktop;
+image/png=feh.desktop;
+application/pdf=chromium.desktop;org.gnome.Evince.desktop;mupdf.desktop;
 
 [Default Applications]
 application/pdf=org.pwmt.zathura-pdf-poppler.desktop
@@ -18,3 +23,4 @@ x-scheme-handler/unknown=chromium.desktop
 image/png=mirage.desktop
 x-scheme-handler/postman=Postman.desktop
 x-scheme-handler/mailto=google-chrome.desktop
+x-scheme-handler/tg=userapp-Telegram Desktop-P4Z500.desktop

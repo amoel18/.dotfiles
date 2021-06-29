@@ -6,29 +6,31 @@ completion['neovim/nvim-lspconfig'] = {
   config = conf.nvim_lsp,
 }
 
+completion['anott03/nvim-lspinstall'] = {}
+
+--completion['neovim/nvim-lsp'] = {}
+
+completion['glacambre/nvim-lsp'] = {}
+
 completion['glepnir/lspsaga.nvim'] = {
   cmd = 'Lspsaga',
 }
 
 completion['hrsh7th/nvim-compe'] = {
-  event = 'InsertEnter',
-  config = conf.nvim_compe,
+	event = 'InsertEnter',
+	config = conf.nvim_compe,
 }
 
+
 completion['hrsh7th/vim-vsnip'] = {
-  event = 'InsertCharPre',
   config = conf.vim_vsnip
 }
 
-completion['nvim-telescope/telescope.nvim'] = {
-  cmd = 'Telescope',
-  config = conf.telescope,
-  requires = {
-    {'nvim-lua/popup.nvim', opt = true},
-    {'nvim-lua/plenary.nvim',opt = true},
-    {'nvim-telescope/telescope-fzy-native.nvim',opt = true},
-  }
+
+completion['rafamadriz/friendly-snippets'] = {
 }
+
+completion['liuchengxu/vim-clap'] = {}
 
 completion['glepnir/smartinput.nvim'] = {
   ft = 'go',
@@ -37,15 +39,15 @@ completion['glepnir/smartinput.nvim'] = {
 
 completion['mattn/vim-sonictemplate'] = {
   cmd = 'Template',
-  ft = {'go','typescript','lua','javascript','vim','rust','markdown'},
+  ft = {'go','typescript','lua','javascript','vim','rust','markdown', 'python'},
   config = conf.vim_sonictemplate,
 }
 
-completion['mattn/emmet-vim'] = {
-  event = 'InsertEnter',
-  ft = {'html','css','javascript','javascriptreact','vue','typescript','typescriptreact'},
-  config = conf.emmet,
-}
+--	completion['mattn/emmet-vim'] = {
+--		event = 'InsertEnter',
+--		ft = {'html','css','javascript','javascriptreact','vue','typescript','typescriptreact', 'python'},
+--		config = conf.emmet,
+--	}
 
 return completion
 

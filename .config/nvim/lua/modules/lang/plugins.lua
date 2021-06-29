@@ -3,11 +3,18 @@ local conf = require('modules.lang.config')
 
 lang['nvim-treesitter/nvim-treesitter'] = {
   event = 'BufRead',
-  after = 'telescope.nvim',
   config = conf.nvim_treesitter,
 }
 
-lang['lervag/vimtex'] = {}
+lang['lervag/vimtex'] = {
+  config = conf.vimtex
+}
+
+lang['mfussenegger/nvim-dap'] = {
+	config = conf.nvim_dap
+}
+
+lang['jbyuki/one-small-step-for-vimkind'] = {}
 
 lang['nvim-treesitter/nvim-treesitter-textobjects'] = {
   after = 'nvim-treesitter'

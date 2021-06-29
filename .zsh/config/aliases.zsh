@@ -1,11 +1,15 @@
-# Core Shortcuts
+		# Core Shortcuts
 #alias rm='trash' # Use `trash` program instead of built-in irrecoverable way to delete nodes.
 # alias py='python3'
 alias py='tmux new-session \; send-keys v C-m \; split-window -h -p 50\; send-keys python C-m \; split-window -v -p 35 \; send-keys /home/i/python C-m \; select-pane -t 1 \;'
+alias ticker='foot ticker &|'
 alias ma='tmux new-session \; send-keys  cd\ $MATLAB C-m \; split-window -h -p 50\; send-keys matlb C-m \; split-window -v -p 35 \; send-keys ls C-m \; select-pane -t 1 \;'
+alias st='conda activate st && cd ~/GamestonkTerminal/ && python terminal.py'
+alias tk="tickrs -p --show-volumes -x -c candle -t 1D -s 'TWLO,CRWD,NET,SQ,PINS,FTCH,AMAT,AAPL,ETSY,MELI,SHOP,PYPL,ROKU,TDOC,FVRR,FSLY,PLTR,NIO,INRG,AFRM,BYD,CURI,INSG,MRK,OPEN,SE,SKLZ,SMSI,STOR,UPST'"
 alias r="R --quiet"
 alias s='signal-cli -u +4520605757 '
 alias sr='signal-cli receive'
+alias mar='mop'
 alias -g S='send -m " " '
 alias jens='+4525532126'
 alias sk='tmux new-session \; send-keys nnn\ /home/i/skole C-m \; split-window -h -p 50\; send-keys python C-m \; split-window -v -p 35 \; send-keys /home/i/python C-m \; select-pane -t 1 \;'
@@ -51,7 +55,8 @@ alias v='nvim'
 alias g='git'
 alias e='exit'
 # alias tmux='tmux -f "$HOME/.tmux/tmux.conf"'
-alias tmux='tmux -f "$HOME/.tmux/tmux.conf"'
+alias tmux='TERM=screen-256color tmux -f "$HOME/.tmux/tmux.conf"'
+#alias tmux='TERM=screen-256color tmux'
 alias bwlogin='bw login --code "$(auth bitwarden)" "$(< ~/.mutt/accounts/com.gmail/email.txt)" "$(gpg --no-tty --for-your-eyes-only --quiet --decrypt ~/.bitwarden/secret.gpg)"'
 alias bwunlock='export BW_SESSION="$(bw unlock --raw $(gpg --no-tty --for-your-eyes-only --quiet --decrypt ~/.bitwarden/secret.gpg))"'
 alias pacman='sudo pacman'
@@ -67,6 +72,8 @@ alias -g L='| less'
 alias -g G='| grep'
 alias -g O='&|'
 
+alias -g P='&|'
+
 
 alias cd='cd'
 alias ..='cd ..;'
@@ -76,6 +83,7 @@ alias cd..='..'
 alias cd...='...'
 alias cd....='....'
 alias -g G='| grep '
+#alias -g P='&| '
 alias -s PDF="zathura"
 alias -s epub="open"
 alias -s djuv="open"

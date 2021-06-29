@@ -6,8 +6,12 @@ tools['kristijanhusak/vim-dadbod-ui'] = {
   config = conf.vim_dadbod_ui,
   requires = {'tpope/vim-dadbod'}
 }
-tools['christoomey/vim-tmux-navigator'] = {}
 
+
+tools['christoomey/vim-tmux-navigator'] = {}
+tools['sk1418/Join'] = {}
+
+tools['lambdalisue/suda.vim'] = {}
 tools['junegunn/fzf.vim'] = {}
 tools['junegunn/fzf'] = {}
 
@@ -21,7 +25,7 @@ tools['editorconfig/editorconfig-vim'] = {
 tools['farmergreg/vim-lastplace'] = {}
 
 tools['slarwise/vim-tmux-send'] = {}
- 
+
 tools['chrisbra/csv.vim'] = {}
 
 tools['lambdalisue/suda.vim'] = {
@@ -42,12 +46,8 @@ tools['liuchengxu/vista.vim'] = {
   config = conf.vim_vista
 }
 
-tools['brooth/far.vim'] = {
-  cmd = {'Far','Farp'},
-  config = function ()
-    vim.g['far#source'] = 'rg'
-  end
-}
+tools['brooth/far.vim'] = {}
+
 tools['jpalardy/vim-slime'] = {}
 
 tools['preservim/vimux'] = {}
@@ -55,10 +55,6 @@ tools['preservim/vimux'] = {}
 tools['MikeCoder/quickrun.vim'] = {}
 
 tools['iamcco/markdown-preview.nvim'] = {
-  ft = 'markdown',
-  config = function ()
-    vim.g.mkdp_auto_start = 0
-  end
+  ft = 'markdown'
 }
-
 return tools

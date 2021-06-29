@@ -1,7 +1,7 @@
 -- Load Modules:
 require('core')
-local fn = vim.fn    -- to call Vim functions e.g. fn.bufnr()
-local g = vim.g      -- a table to access global variables
+--local fn = vim.fn    -- to call Vim functions e.g. fn.bufnr()
+--local g = vim.g      -- a table to access global variables
 local scopes = {o = vim.o, b = vim.bo, w = vim.wo}
 
 local cmd = vim.cmd  -- to execute Vim commands e.g. cmd('pwd')
@@ -15,6 +15,7 @@ local function map(mode, lhs, rhs, opts)
   vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
+
 --local indent = 2
 
 --g.indentLine_enabled = 1
@@ -27,13 +28,14 @@ end
 --g.indent_blankline_show_first_indent_level = false
 
 opt('o', 'splitright', true)              --  opt('o', 'backspace', 'indent,eol,start')  --local indent = 4
-opt('o', 'splitbelow', true)              --  opt('o', 'conceallevel', 1)                
+opt('o', 'splitbelow', true)              --  opt('o', 'conceallevel', 1)
 opt('o', 'clipboard', 'unnamedplus')
 opt('o', 'completeopt', 'menuone,noselect')
 opt('o', 'hidden', true)
 opt('o', 'mouse', 'a')
 opt('o', 'conceallevel', 1)
-opt('o', 'concealcursor', ' ')
+opt('w', 'spell', true)
+--opt('o', 'concealcursor', ' ')
 opt('o', 'backspace', 'indent,eol,start') --  opt('o', 'completeopt', 'menuone,noselect')
 
 opt('o', 'incsearch', true)               --  opt('o', 'wildmode', 'longest,list')       --opt('o', 'clipboard', unnamedplus)
@@ -75,8 +77,8 @@ map('n', 't', ':tabnew<CR>', {noremap = true, silent = true})
 map('n', '<C-b>', ':Buffers<CR>', {noremap = true, silent = true})
 map('i', '<C-space>', '<C-x><C-o>', {noremap = true, silent = true})
 map('n', '0', '^', {noremap = true, silent = true})
-map('n', 'z', 'x', {noremap = true, silent = true})
-map('n', 'Z', 'X', {noremap = true, silent = true})
+--map('n', 'z', 'x', {noremap = true, silent = true})
+--map('n', 'Z', 'X', {noremap = true, silent = true})
 map('n', '$', 'g_', {noremap = true, silent = true})
 map('n', '$', 'g_', {noremap = true, silent = true})
 map('n', 'j', 'gj', {noremap = true})
@@ -86,6 +88,9 @@ map('n', 'n', 'nzz', {noremap = true})
 map('n', 'N', 'Nzz', {noremap = true})
 map('n', 'vA', 'ggVG', {noremap = true})
 map('n', '<Leader><CR>', ':noh<CR>', {noremap = true})
+
+
+
 --map('n', '<c-f>', ':FZF<cr>', {noremap = true})
 --map('n', '<leader>o', ':Telescope find_files<cr>', {noremap = true})
 --map('n', '<Leader>h', ':History<CR>', {noremap=true})
@@ -126,15 +131,31 @@ map('c', 'Wa', 'wa', {noremap = true})
 --map('i', '<C-d>', '[[pumvisible() ? "\<C-e>" : "\<End>"]]', {noremap = true}, {expr = true})
 --map('i', '<C-e>', '[[<C-R>=expand("%:p:h") . "/" <CR>]]', {noremap = true})
 
-map('i', '<TAB>', 'v:lua.tab_complete()', {expr = true})
+--map('i', '<TAB>', 'v:lua.tab_complete()', {expr = true})
 
 map('i', '<C-p>', '<C-r>1', {noremap = true})
-map('i', '<S-TAB>', 'v:lua.s_tab_complete()', {expr = true})
+--map('i', '<S-TAB>', 'v:lua.s_tab_complete()', {expr = true})
 
-map('n', '<leader>j', '<Plug>(coc-diagnostic-prev)')
-map('n', '<leader>k', '<Plug>(coc-diagnostic-prev)')
---map('n', '<leader>m', ':Clap maps<CR>')
+map('n', '<leader>j', ':Lspsaga diagnostic_jump-next<CR>')
+map('n', '<leader>k', ':Lspsaga diagnostic_jump-prev<CR>')
+map('n', '<leader>m', ':Clap maps<CR>')
 map('n', '<leader>m', ':Telescope keymaps maps<CR>')
+
+require('keymap.config')
+
+map('i' , '<C-space>' , 'compe#complete()', {noremap = true, expr = true, silent = true})
+map('i' , "<CR>"      , "compe#confirm({ 'keys': '<Plug>delimitMateCR', 'mode': '' })" , { noremap = true , expr = true , silent = true })
+--map('i' , "<C-e>"     , "compe#complete()"      , { noremap = true , expr = true , silent = true })
+map('i' , "<Tab>"   , "pumvisible() ? '<C-n>' : '<Tab>'"   , { noremap = true , expr = true })  -- Use Tab to cycle forward through suggestions
+map('i' , "<S-Tab>" , "pumvisible() ? '<C-p>' : '<S-Tab>'" , { noremap = true , expr = true })  -- Use Shift-Tab to cycle backward through suggestions
+map('i' , "<C-e>"     , "vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-e>'" , { noremap = false , expr = true })  -- Ctrl-L to jump on placeholders.
+map('s' , "<C-e>"     , "vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-e>'" , { noremap = false , expr = true })
+
+--imap <c-l> <c-g>u<Esc>[s1z=`]a<c-g>u
+
+
+
+
 --map('n', 'j', 'v:lua.enhance_jk_move("j")', {expr = true}, {noremap = true})
 --map('n', 'k', 'v:lua.enhance_jk_move("k")', {expr = true}, {noremap = true})
 --map('n', 'K', ':Lspsaga hover_doc<CR>', {noremap = true})
@@ -154,6 +175,8 @@ map('c', '<C-d>', '[[<C-R>=expand("%:p:h") . "/" <CR>]]', {noremap = true})
 map('n', '<C-n>', ':NnnPicker %<CR>', {noremap = true})
 map('n', '<C-p>', ':Rg!<CR>',    {noremap = true})
 
+map('i', '(', '()<esc>i', {noremap = true})
+
 map('v', '<leader>(', '<esc>`>a)<esc>`<i(<esc>', {noremap = true})
 map('v', '<leader>[', '<esc>`>a]<esc>`<i[<esc>', {noremap = true})
 map('v', '<leader>{', '<esc>`>a}<esc>`<i{<esc>', {noremap = true})
@@ -164,6 +187,8 @@ map('v', '<leader><', '<esc>`>a><esc>`<i<<esc>', {noremap = true})
 cmd "highlight QuickScopePrimary guifg='#AC8A9C' gui=underline ctermfg=114"
 cmd "highlight QuickScopeSecondary guifg='#c2cedb' gui=underline ctermfg=19 cterm=underline"
 cmd 'set autochdir'
+--cmd 'setlocal spell'
+--cmd 'set spellang=en_US'
 cmd 'set noshowmode'
 cmd 'set showcmd'
 cmd 'set scrolloff=8'
@@ -173,6 +198,7 @@ cmd 'set nohls'
 cmd 'set textwidth =0'
 cmd 'set completeopt=menuone,noselect'
 cmd 'set autowriteall'
+cmd 'set autowrite'
 cmd 'set copyindent'
 cmd 'set completeopt=menuone,noselect'
 cmd 'let g:peekaboo_compact = 1'
@@ -185,6 +211,7 @@ cmd 'let g:sneak#label = 1'
 cmd 'let g:agprg="ag -i --vimgrep"'
 cmd 'let g:afterglow_italic_comments=1'
 cmd 'let g:slime_target="tmux"'
+cmd 'let g:vimtex_compiler_progname="nvr"'
 
 cmd 'let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}'
 cmd 'let g:slime_cell_delimiter = "```"'
@@ -196,6 +223,8 @@ cmd 'set autochdir'
 cmd 'let g:rg_command ="rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow" '
 cmd 'let g:sneak#use_ic_scs = 1'
 cmd 'let g:sneak#s_next = 1'
+cmd 'let g:Tex_MultipleCompileFormats="pdf,biber,pdf"'
+cmd 'let g:vimtex_quickfix_bibtex = {"disable": 1}'
 cmd 'autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE'
 cmd 'map s <Plug>Sneak_s'
 cmd 'map S <Plug>Sneak_S'
@@ -207,11 +236,11 @@ cmd 'map S <Plug>Sneak_S'
 -- cmd 'hi! link BufferLineBufferSelected LineNr'
 --cmd 'let g:nvim_tree_side = "right"'
  vim.api.nvim_command([[
-augroup AutoCompileLatex 
+augroup AutoCompileLatex
 autocmd BufEnter *.tex :set wrap linebreak nolist spell
 autocmd BufWritePost *.tex :silent !bibtex %:t:r > /dev/null
 autocmd BufWritePost *.tex :silent !compiler % > /dev/null
-augroup END 
+augroup END
 ]])
 
 cmd 'let g:NERDTreeHijackNetrw = 1'
@@ -221,10 +250,10 @@ cmd 'let g:NERDTreeHijackNetrw = 1'
 --cmd 'command! -bang -nargs=? -complete=dir Files call fzf#vim#files(~/skole, <bang>0)'
 
 
-vim.cmd [[
-    command! -bang ProjectFiles call fzf#vim#files('~/skole', <bang>0) 
-    command! -bang -nargs=* Rg call fzf#vim#grep(g:rg_command 
-.shellescape(<q-args>), 1, <bang>0)
-    ColorizerToggle
-]]
+--	vim.cmd [[
+--			command! -bang ProjectFiles call fzf#vim#files('~/skole', <bang>0)
+--			command! -bang -nargs=* Rg call fzf#vim#grep(g:rg_command
+--	.shellescape(<q-args>), 1, <bang>0)
+--			ColorizerToggle
+--	]]
 

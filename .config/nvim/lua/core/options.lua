@@ -92,6 +92,7 @@ local function load_options()
   }
 
   local bw_local  = {
+		undofile		   = true;
     synmaxcol      = 2500;
     formatoptions  = "1jcroql";
     textwidth      = 0;
@@ -109,6 +110,7 @@ local function load_options()
     signcolumn     = "yes";
     conceallevel   = 2;
     concealcursor  = "niv";
+
   }
 
   if global.is_mac then

@@ -1,13 +1,10 @@
 local editor = {}
 local conf = require('modules.editor.config')
 
- editor['Raimondi/delimitMate'] = {
-   event = 'InsertEnter',
-   config = conf.delimimate
- }
+editor['Raimondi/delimitMate'] = {}
 
 editor['junegunn/vim-peekaboo'] = {
-  config = vim_peekaboo
+  config = conf.vim_peekaboo
 }
 
 editor['mcchrish/nnn.vim'] = {}
@@ -29,7 +26,7 @@ editor['itchyny/vim-cursorword'] = {
 editor['hrsh7th/vim-eft'] = {
   opt = true,
   config = function()
-    vim.g.eft_ignorecase = true
+    vim.api.eft_ignorecase = true
   end
 }
 

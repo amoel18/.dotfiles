@@ -14,6 +14,11 @@ path=(
 	~/.local/bin
 )
 
+export SWAYSOCK=/run/user/$(id -u)/sway-ipc.1000..sock
+#export PULSE_SERVER={3c1acae23fe04b1697f2b80dd98b1abe}unix:/run/user/1000/pulse/native 
+
+#export PULSE_COOKIE=~/.config/pulse/cookie
+
 # Platform specific variables.
 case $OSTYPE {
 	darwin*)
@@ -61,6 +66,27 @@ export TERM='alacritty'
 export EDITOR='nvim'
 export PAGER='less'
 export BROWSER='xdg-open'
+export SWAYSOCK=/run/user/$(id -u)/sway-ipc.$(id -u).$(pgrep -x sway).sock
+
+
+# GamestonkTerm
+export GT_API_KEY_ALPHAVANTAGE=IQPCPAOM8J15SM81
+export GT_API_KEY_FINANCIALMODELINGPREP=b6ac868f9dcbff2e9806caa88f3cd81a
+export GT_API_KEY_QUANDL=sCM4gu5b_hsLHRiE3nWp
+export GT_API_REDDIT_CLIENT_ID=iOETIVfDeGcghg
+export GT_API_REDDIT_CLIENT_SECRET=_9LZz3BuncrF1xBe1iIrLQsEbpRLuA
+export GT_API_REDDIT_USERNAME=kimlars
+export GT_API_REDDIT_USER_AGENT=linux:redbot:v1.0 #(by /u/kimlars)
+export GT_API_REDDIT_PASSWORD=AKMakm123123
+export GT_API_TWITTER_KEY=qbKgyTR7rtcv0K1GOFAdkIuIX
+export GT_API_TWITTER_SECRET_KEY=UZuOcNjwBhDrgQapFhkgWV7BMxH7t9dGrtwZPcd8Uwx6wveG45
+export GT_API_TWITTER_BEARER_TOKEN=AAAAAAAAAAAAAAAAAAAAANMoOgEAAAAAWCxW%2FtDTNlEwfgIwMOsMV5BCQsI%3Dz3DWYflWcPkmru82mhV5BbNER0Yhd5msUI2HkiZvaspnr0Hmjm
+
+export GT_API_POLYGON_KEY=do2lzINImnfIbApzQDIYXTffVpLS__af
+export GT_FRED_API_KEY=9a5c480466b2ee38a82b532c1a6f028d
+export GT_API_NEWS_TOKEN=cd39cb1dae664a23b43655df06d50340
+
+
 
 # Default Config and Cache Home
 export XDG_DATA_HOME="/home/i/.local/share"

@@ -38,6 +38,7 @@ zle -N zle-line-init
 zle -N zle-line-finish
 zle -N zle-keymap-select
 
+bindkey '\t' end-of-line
 # History
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=10000
@@ -93,6 +94,10 @@ export PATH="/usr/bin/python$PATH"
 export MATLAB="/home/i/matlab"
 #export PYTHON="/home/i/python"
 export SHFM_OPENER="/home/i/.scripts/shfm"
+export GOPATH="$HOME/"
+#export GOROOT="/home/i/go"
+export GO111MODULE=auto
+export PATH=$GOPATH/bin:$PATH
 #export PACKER="cd .local/share/nvim/site/pack/packer"
 note() {
     echo $1 >> $HOME/README.md ; nls
@@ -128,6 +133,8 @@ function vif() {
     fname=$(rg --hidden --files| fzf) || return
     nvim "$fname"
 }
+
+
 #alacritty --config-file ~/.config/alacritty/anvim.yml --title nvim  -e $SHELL -lc "nvim"
 # alternative using ripgrep-all (rga) combined with fzf-tmux preview
 # This requires ripgrep-all (rga) installed: https://github.com/phiresky/ripgrep-all
@@ -148,3 +155,35 @@ cdf() {
 
 # To customize prompt, run `p10k configure` or edit ~/.zsh/.p10k.zsh.
 [[ ! -f ~/.zsh/.p10k.zsh ]] || source ~/.zsh/.p10k.zsh
+
+
+#>>> conda initialize >>>
+#!! Contents within this block are managed by 'conda init' !!
+#__conda_setup="$('/opt/anaconda/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+#if [ $? -eq 0 ]; then
+#		eval "$__conda_setup"
+#else
+if [ -f "/opt/anaconda/etc/profile.d/conda.sh" ]; then
+		source /opt/anaconda/etc/profile.d/conda.sh
+else
+		export PATH="/opt/anaconda/bin:$PATH"
+fi
+#unset __conda_setup
+#<<< conda initialize <<<
+#source /opt/anaconda/bin/activate root
+#conda activate base
+#source /opt/anaconda/bin/activate root
+#export PATH=/opt/anaconda/bin:$PATH
+
+#conda activate root
+
+export PATH=$PATH:/usr/bin/vendor_perl
+
+export PATH=$PATH:/usr/lib/
+
+export WAYLAND_DISPLAY=/run/user/1000/wayland-1
+
+bindkey '\t' forward-word
+
+
+bindkey '^R' fzf-tab-complete

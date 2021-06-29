@@ -1,6 +1,6 @@
-if [[ -z $TMUX ]]; then
-  PATH="$PATH:/home"
-fi
+#if [[ -z $TMUX ]]; then
+#  PATH="$PATH:/home"
+#fi
 
 export PATH="$HOME/.cargo/bin:$HOME/.local/bin:$PATH"
 
