@@ -10,7 +10,7 @@ text/csv=libreoffice-calc.desktop;vim.desktop;code-oss.desktop;
 x-scheme-handler/tg=userapp-Telegram Desktop-P4Z500.desktop;
 font/otf=imgur-screenshot.desktop;
 image/jpeg=mirage.desktop;
-image/png=feh.desktop;
+image/png=deepin-image-viewer.desktop;imgur-screenshot.desktop;chromium.desktop;feh.desktop;
 application/pdf=chromium.desktop;org.gnome.Evince.desktop;mupdf.desktop;
 
 [Default Applications]

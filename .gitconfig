@@ -1,2 +1,5 @@
 [credential]
 	helper = cache
+[user]
+	email = amoel18@student.sdu.dk
+	name = amoel18

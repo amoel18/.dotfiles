@@ -77,7 +77,7 @@ setopt LIST_PACKED # Try to make the completion list smaller by drawing smaller 
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#4b4b4b'
 
-unsetopt MENU_COMPLETE     # Do not autoselect the first completion entry.
+#unsetopt MENU_COMPLETE     # Do not autoselect the first completion entry.
 
 # Expansion and Globbing
 setopt BRACE_CCL # Expand expressions in braces which would not otherwise undergo brace expansion.

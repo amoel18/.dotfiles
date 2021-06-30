@@ -183,7 +183,9 @@ export PATH=$PATH:/usr/lib/
 
 export WAYLAND_DISPLAY=/run/user/1000/wayland-1
 
-bindkey '\t' forward-word
+#bindkey '\t' forward-word
 
 
-bindkey '^R' fzf-tab-complete
+#bindkey '^R' fzf-tab-complete
+
+source .zsh/plugins/fzf-tab/fzf-tab.zsh

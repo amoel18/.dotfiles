@@ -33,7 +33,7 @@ opt('o', 'clipboard', 'unnamedplus')
 opt('o', 'completeopt', 'menuone,noselect')
 opt('o', 'hidden', true)
 opt('o', 'mouse', 'a')
-opt('o', 'conceallevel', 1)
+--opt('o', 'conceallevel', 2)
 opt('w', 'spell', true)
 --opt('o', 'concealcursor', ' ')
 opt('o', 'backspace', 'indent,eol,start') --  opt('o', 'completeopt', 'menuone,noselect')
@@ -184,12 +184,14 @@ map('v', '<leader>"', '<esc>`>a"<esc>`<i"<esc>', {noremap = true})
 --map('v', '$\', '<esc>`>o*/<esc>`<O/*<esc>', {noremap = true})
 map('v', '<leader><', '<esc>`>a><esc>`<i<<esc>', {noremap = true})
 
+cmd "set nolist"
 cmd "highlight QuickScopePrimary guifg='#AC8A9C' gui=underline ctermfg=114"
 cmd "highlight QuickScopeSecondary guifg='#c2cedb' gui=underline ctermfg=19 cterm=underline"
 cmd 'set autochdir'
 --cmd 'setlocal spell'
 --cmd 'set spellang=en_US'
 cmd 'set noshowmode'
+cmd 'set nolist'
 cmd 'set showcmd'
 cmd 'set scrolloff=8'
 cmd 'set noswapfile'
@@ -201,6 +203,7 @@ cmd 'set autowriteall'
 cmd 'set autowrite'
 cmd 'set copyindent'
 cmd 'set completeopt=menuone,noselect'
+cmd 'let g:vimtex_syntax_conceal_default = 0'
 cmd 'let g:peekaboo_compact = 1'
 cmd 'let g:R_assign = 2'
 cmd "let R_source = '/home/i/.config/nvim/plugin/tmux_split.vim'"
@@ -212,6 +215,8 @@ cmd 'let g:agprg="ag -i --vimgrep"'
 cmd 'let g:afterglow_italic_comments=1'
 cmd 'let g:slime_target="tmux"'
 cmd 'let g:vimtex_compiler_progname="nvr"'
+cmd 'set conceallevel=1'
+cmd "let g:tex_conceal='abdmg'"
 
 cmd 'let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}'
 cmd 'let g:slime_cell_delimiter = "```"'
@@ -225,7 +230,9 @@ cmd 'let g:sneak#use_ic_scs = 1'
 cmd 'let g:sneak#s_next = 1'
 cmd 'let g:Tex_MultipleCompileFormats="pdf,biber,pdf"'
 cmd 'let g:vimtex_quickfix_bibtex = {"disable": 1}'
+
 cmd 'autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE'
+
 cmd 'map s <Plug>Sneak_s'
 cmd 'map S <Plug>Sneak_S'
 
@@ -246,11 +253,7 @@ augroup END
 cmd 'let g:NERDTreeHijackNetrw = 1'
 
 
---vim.cmd [[ ColorizerToggle ]]
---cmd 'command! -bang -nargs=? -complete=dir Files call fzf#vim#files(~/skole, <bang>0)'
-
-
---	vim.cmd [[
+ --	vim.cmd [[
 --			command! -bang ProjectFiles call fzf#vim#files('~/skole', <bang>0)
 --			command! -bang -nargs=* Rg call fzf#vim#grep(g:rg_command
 --	.shellescape(<q-args>), 1, <bang>0)

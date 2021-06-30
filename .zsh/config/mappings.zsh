@@ -48,7 +48,6 @@ bindkey -r "^D"
 bindkey -r "^E"
 bindkey -r "^F"
 bindkey -r "Ctrl+Space"
-zle -N fzf-bindings 
 
 bindkey "^D" forward-word
 bindkey "^E" autosuggest-execute
@@ -56,7 +55,7 @@ bindkey "^F" vi-end-of-line
 
 
 
-
+# o for open
 o () {
     tmux send-keys -t1 :tabnew\ $(tmux display -p -F "#{pane_current_path}")/"$@" C-m
 		tmux select-pane -t1

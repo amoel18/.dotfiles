@@ -34,7 +34,10 @@ function config.nvim_tree()
   vim.g.nvim_tree_indent_markers = 1
   vim.g.nvim_tree_width_allow_resize = 1
   vim.g.nvim_tree_width = 20
-  vim.g.nvim_tree_hijack_netrw = 0
+  vim.g.nvim_tree_hijack_netrw = 1
+  vim.g.nvim_tree_group_empty = 1
+  vim.g.nvim_tree_disable_netrw = 0
+
   vim.g.nvim_tree_bindings = {
     ["l"] = ":lua require'nvim-tree'.on_keypress('edit')<CR>",
     ["-"] = ":lua require'nvim-tree'.on_keypress('close')<CR>",

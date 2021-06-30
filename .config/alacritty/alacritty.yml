@@ -1,111 +1,34 @@
-window:
-  # Window dimensions (changes require restart)
-  #
-  # Specified in number of columns/lines, not pixels.
-  # If both are `0`, this setting is ignored.
-  dimensions:
-    columns: 110
-    lines: 40
-
-  # Window padding (changes require restart)
-  #
-  # Blank space added around the window in pixels. This padding is scaled
-  # by DPI and the specified value is always added at both opposing sides.
-  padding:
-    x: 2
-    y: 2
-
-  # Spread additional padding evenly around the terminal content.
-  dynamic_padding: true
-
-  # Window decorations
-  #
-  # Available values:
-  # - `full`: Window with title bar and title bar buttons
-  # - `none`: Window without title bar, rounded corners, or drop shadow
-  # - `transparent`: Window with title bar with transparent background and title
-  #   bar buttons
-  # - `buttonless`: Window with title bar with transparent background and no
-  #   title bar buttons
-  # Window decorations
-  #
-  # Values for `decorations`:
-  #     - full: Borders and title bar
-  #     - none: Neither borders nor title bar
-  #     - buttonless: Title bar, transparent background and title bar buttons
-  #     - transparent: Title bar, transparent background, but no title bar buttons
-  decorations: full
-
-  # When true, alacritty starts maximized.
-  start_maximized: false
-
-
-# Colors (iTerm 3 default theme)
+# Colors (Terminal.app)
 colors:
-  # Default colors
   primary:
-    background: '0x101421'
-    foreground: '0xfffbf6'
-
-  # Normal colors
+    background: '#FFFFFF'
+    foreground: '#000000'
   normal:
-    black:   '0x2e2e2e'
-    red:     '0xeb4129'
-    #green:   '0xabe047'
-    green:   '0xbae67e'
-    yellow:  '0xf6c744'
-    blue:    '0x47a0f3'
-    magenta: '0x7b5cb0'
-    cyan:    '0x64dbed'
-    white:   '0xe5e9f0'
-
-  # Bright colors
+    black: '#000000'
+    red: '#990000'
+    green: '#00A600'
+    yellow: '#999900'
+    blue: '#0000B2'
+    magenta: '#B200B2'
+    cyan: '#00A6B2'
+    white: '#BFBFBF'
   bright:
-    black:   '0x565656'
-    red:     '0xec5357'
-    green:   '0xc0e17d'
-    yellow:  '0xf9da6a'
-    blue:    '0x49a4f8'
-    magenta: '0xa47de9'
-    cyan:    '0x99faf2'
-    white:   '0xffffff'
+    black: '#666666'
+    red: '#E50000'
+    green: '#00D900'
+    yellow: '#E5E500'
+    blue: '#0000FF'
+    magenta: '#E500E5'
+    cyan: '#00E5E5'
+    white: '#E5E5E5'
 
-font:
-  offset:
-    x: 0
-    y: 0
-  size: 20
-  normal:
-    family: Fira Code
-    #family: JetBrains Mono
-    style: Regular
-  bold:
-    family: Fira Code
-    style: Bold
-  italic:
-    family: Fira Code
-    style: LightItalic
-  use_thin_strokes: true
-
-render_timer: false
 env:
-  TERM: xterm-256color
-
-draw_bold_text_with_bright_colors: true
-
+  TERM: alacritty
+font:
+  normal:
+    family: JetBrains Mono NL
+    style: regular
+  size: 16
+  use_thin_strokes: true
+draw_bold_text_with_bright_colors: false
 background_opacity: 1
-
-
-mouse_bindings:
-  - { mouse: Middle, action: PasteSelection }
-
-selection:
-  semantic_escape_chars: ",│`|:\"' ()[]{}<>"
-
-  save_to_clipboard: true
-
-dynamic_title: true
-
-hide_cursor_when_typing: false
-
-live_config_reload: true
