@@ -1,5 +1,7 @@
 Adding dotfiles to a new system:
 
+nv in terminal to edit READ.me
+
 1) git clone --separate-git-dir=$HOME/.dots https://github.com/amoel18/.dotfiles.git tmpdotfiles
 
 2) rsync --recursive --verbose --exclude '.git' tmpdotfiles/ $HOME/
@@ -98,3 +100,25 @@ Cash flow
 P/s
 Gross margin
 yoy revenue growth
+
+
+tmux terminal mappings:
+
+o () {
+    tmux send-keys -t1 :tabnew\ $(tmux display -p -F "#{pane_current_path}")/"$@" C-m
+		tmux select-pane -t1
+}
+
+pv () {
+    tmux respawn-pane -k -t1 -c "#{pane_current_path}" nvim "$1"
+}
+wv () {
+    tmux respawn-window -k -t1 -c "#{pane_current_path}" nvim "$1"
+}
+tw () {
+  args=$@
+  CDD=$(tmux display -p -F "#{pane_current_path}")
+  tmux send-keys -t1 :tabnew\ $CDD/"$args" C-m
+  tmux select-pane -t1
+  # tmux send-keys -t1 :tabnew\ $args C-m
+}
