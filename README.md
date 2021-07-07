@@ -122,3 +122,13 @@ tw () {
   tmux select-pane -t1
   # tmux send-keys -t1 :tabnew\ $args C-m
 }
+
+
+# hiding your ip
+  sudo openvpn --config vpngate_....ovpn
+
+
+# sharing files through terminal
+  $ curl --upload-file ./hello.txt https://transfer.sh/hello.txt 
+  $ transfer hello.txt
+  click or drag

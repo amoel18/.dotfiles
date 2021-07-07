@@ -1,12 +1,12 @@
 local ui = {}
 local conf = require('modules.ui.config')
 ui['schickele/vim-fruchtig'] = {
-		config = [[vim.cmd('colorscheme fruchtig')]]
+		--config = [[vim.cmd('colorscheme fruchtig')]]
 }
 ui['tmsvg/pear-tree'] = {}
 ui['zhaocai/LaTeX-Box'] = {}
 ui['glepnir/zephyr-nvim'] = {
-  --config = [[vim.cmd('colorscheme zephyr')]]
+  config = [[vim.cmd('colorscheme zephyr')]]
 }
 ui['habamax/vim-freyeday'] = {}
 

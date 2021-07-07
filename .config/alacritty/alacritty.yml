@@ -1,34 +1,79 @@
 # Colors (Terminal.app)
+# Space Duck
 colors:
+  name: Material
+  author: ""
   primary:
-    background: '#FFFFFF'
-    foreground: '#000000'
+    background: "#263238"
+    foreground: "#eceff1"
+  cursor:
+    text: "#263238"
+    cursor: "#eceff1"
   normal:
-    black: '#000000'
-    red: '#990000'
-    green: '#00A600'
-    yellow: '#999900'
-    blue: '#0000B2'
-    magenta: '#B200B2'
-    cyan: '#00A6B2'
-    white: '#BFBFBF'
+    black: "#263238"
+    red: "#ff9800"
+    green: "#8bc34a"
+    yellow: "#ffc107"
+    blue: "#03a9f4"
+    magenta: "#e91e63"
+    cyan: "#009688"
+    white: "#cfd8dc"
   bright:
-    black: '#666666'
-    red: '#E50000'
-    green: '#00D900'
-    yellow: '#E5E500'
-    blue: '#0000FF'
-    magenta: '#E500E5'
-    cyan: '#00E5E5'
-    white: '#E5E5E5'
+    black: "#37474f"
+    red: "#ffa74d"
+    green: "#9ccc65"
+    yellow: "#ffa000"
+    blue: "#81d4fa"
+    magenta: "#ad1457"
+    cyan: "#26a69a"
+    white: "#eceff1"
 
 env:
   TERM: alacritty
+
+window:
+  dimensions:
+    columns: 80
+    lines: 24
+
+  padding:
+    x: 10
+    y: 10
+
+  dynamic_padding: false
+
+  decorations: full
+
+  startup_mode: Windowed
+
+  dynamic_title: true
+
 font:
   normal:
-    family: JetBrains Mono NL
-    style: regular
+    #family: JetBrains Mono NL
+    family: Hack
+    style: Regular
+  bold:
+    family: Hack
+    style: Bold
+
+  italic:
+    family: Hack
+    style: Italic
+
+  bold_italic:
+    family: Hack
+    style: Bold Italic
+
   size: 16
+
+  offset:
+    x: 0
+    y: 0
+
+  glyph_offset:
+    x: 0
+    y: 0
   use_thin_strokes: true
-draw_bold_text_with_bright_colors: false
+draw_bold_text_with_bright_colors: true
 background_opacity: 1

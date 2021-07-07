@@ -11,9 +11,10 @@ set scroll-step 30
 
 
 unmap d
+unmap u
 
-map d scroll down
-map u scroll up
+map d scroll half-down
+map u scroll half-up
 
 
 set adjust-open "best-fit"
