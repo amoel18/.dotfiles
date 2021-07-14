@@ -1,0 +1,50 @@
+% #copy the following comment into tex file
+\documentclass[12pt, twoside,a4paper]{article}
+\usepackage{/home/i/preamble}
+% \usepackage{natbib}
+% \bibliographystyle{plain}
+% \usepackage[english]{babel}
+% \begin{filecontents*}{Bibliografyy.bib}
+%\end{filecontents}
+% \begin{filecontents*}{mybib.bib}
+% @article{key,
+% author={},
+% title={}
+% .
+% .
+% .
+% }
+% \end{filecontents*} 
+
+% \usepackage[numbers]{natbib}
+\usepackage{url}
+\title{a}
+\author{Anders Kinch}
+\date {}
+
+\pagestyle{fancy}
+\fancyhead[C]{\rule{.5\textwidth}{4\baselineskip}}% Add something BIG in the header
+\fancyhf{}
+\pdfminorversion=7
+
+
+\begin{document}
+
+
+\maketitle
+
+
+% \cite{latexcompanion,knuthwebsite}. 
+\medskip
+
+\nocite{*}
+\bibliography{/home/i/tex/tt/mybib.bib}
+%\bibliographystyle{plain}
+
+\pdfsuppresswarningpagegroup=1
+
+
+\end{document}
+
+
+
