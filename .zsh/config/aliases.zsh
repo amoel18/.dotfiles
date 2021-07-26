@@ -3,13 +3,17 @@
 # alias py='python3'
 alias py='tmux new-session \; send-keys v C-m \; split-window -h -p 50\; send-keys python C-m \; split-window -v -p 35 \; send-keys /home/i/python C-m \; select-pane -t 1 \;'
 alias ticker='foot ticker &|'
+alias yt='ytfzf'
+# alias vifm='~/.config/vifm/scripts/vifmrun'
 alias ma='tmux new-session \; send-keys  cd\ $MATLAB C-m \; split-window -h -p 50\; send-keys matlb C-m \; split-window -v -p 35 \; send-keys ls C-m \; select-pane -t 1 \;'
-alias st='conda activate st && cd ~/GamestonkTerminal/ && python terminal.py'
+# alias st='conda activate st && cd ~/GamestonkTerminal/ && python terminal.py'
 alias tk="tickrs -p --show-volumes -x -c candle -t 1D -s 'TWLO,CRWD,NET,SQ,PINS,FTCH,AMAT,AAPL,ETSY,MELI,SHOP,PYPL,ROKU,TDOC,FVRR,FSLY,PLTR,NIO,INRG,AFRM,BYD,CURI,INSG,MRK,OPEN,SE,SKLZ,SMSI,STOR,UPST'"
 alias r="R --quiet"
 alias s='signal-cli -u +4520605757 '
 alias sr='signal-cli receive'
 alias mar='mop'
+alias textemp='cp ~/initial.tex .'
+
 alias -g S='send -m " " '
 alias jens='+4525532126'
 alias sk='tmux new-session \; send-keys nnn\ /home/i/skole C-m \; split-window -h -p 50\; send-keys python C-m \; split-window -v -p 35 \; send-keys /home/i/python C-m \; select-pane -t 1 \;'
@@ -69,7 +73,6 @@ alias gen-editorconfig='cp "$HOME/.editorconfig" ".editorconfig"'
 
 # Global Aliases
 alias -g L='| less'
-alias -g G='| grep'
 alias -g O='&|'
 
 alias -g P='&|'
@@ -82,7 +85,7 @@ alias ....='cd ..; cd ..; cd ..;'
 alias cd..='..'
 alias cd...='...'
 alias cd....='....'
-alias -g G='| grep '
+alias -g G='|grep '
 #alias -g P='&| '
 alias -s PDF="zathura"
 alias -s epub="open"

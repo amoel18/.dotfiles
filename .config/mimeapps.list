@@ -12,6 +12,7 @@ font/otf=imgur-screenshot.desktop;
 image/jpeg=mirage.desktop;
 image/png=deepin-image-viewer.desktop;imgur-screenshot.desktop;chromium.desktop;feh.desktop;
 application/pdf=chromium.desktop;org.gnome.Evince.desktop;mupdf.desktop;
+text/x-patch=nvim.desktop;
 
 [Default Applications]
 application/pdf=org.pwmt.zathura-pdf-poppler.desktop

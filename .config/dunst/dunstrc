@@ -39,7 +39,7 @@
     progress_bar_height = 10
 
     # Set the frame width of the progress bar
-    progress_bar_frame_width = 1
+    progress_bar_frame_width = 0
 
     # Set the minimum width for the progress bar
     progress_bar_min_width = 150
@@ -58,7 +58,7 @@
     # The transparency of the window.  Range: [0; 100].
     # This option will only work if a compositing window manager is
     # present (e.g. xcompmgr, compiz, etc.).
-    transparency = 0
+    transparency = 50
 
     # The height of the entire notification.  If the height is smaller
     # than the font height and padding combined, it will be raised
@@ -81,10 +81,10 @@
 
     # Defines width in pixels of frame around the notification window.
     # Set to 0 to disable.
-    frame_width = 3
+    frame_width = 0
 
     # Defines color of the frame around the notification window.
-    frame_color = "#282828"
+    frame_color = "#c2d5d5"
 
     # Define a color for the separator.
     # possible values are:
@@ -92,7 +92,7 @@
     #  * foreground: use the same color as the foreground;
     #  * frame: use the same color as the frame;
     #  * anything else will be interpreted as a X color.
-    separator_color = frame
+    separator_color = auto
 
     # Sort messages by urgency.
     sort = yes
@@ -327,7 +327,7 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#ebdbb2"
+    background = "#eff4f4"
     foreground = "#282828"
     frame_color = "#282828"
     timeout = 10
@@ -337,16 +337,15 @@
 [urgency_normal]
    # background = "#285577"
    # foreground = "#ffffff"
-    background = "#ebdbb2"
+    background = "#eff4f4"
     foreground = "#282828"
     frame_color = "#282828"
-
     timeout = 10
     # Icon for notifications with normal urgency, uncomment to enable
     #icon = /path/to/icon
 
 [urgency_critical]
-    background = "#900000"
+    background = "#eff4f4"
     foreground = "#ffffff"
     frame_color = "#ff0000"
     timeout = 0

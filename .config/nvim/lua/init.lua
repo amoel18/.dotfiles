@@ -1,5 +1,9 @@
 -- Load Modules:
 require('core')
+--require("github-theme").setup({
+ -- themeStyle = "dark",
+  -- ... your github-theme config
+--})
 --local fn = vim.fn    -- to call Vim functions e.g. fn.bufnr()
 --local g = vim.g      -- a table to access global variables
 local scopes = {o = vim.o, b = vim.bo, w = vim.wo}
@@ -84,8 +88,8 @@ map('n', '$', 'g_', {noremap = true, silent = true})
 map('n', 'j', 'gj', {noremap = true})
 map('n', 'k', 'gk', {noremap = true})
 map('n', ';', ':', {noremap = true})
-map('n', 'n', 'nzz', {noremap = true})
-map('n', 'N', 'Nzz', {noremap = true})
+--map('n', 'n', 'nzz', {noremap = true})
+--map('n', 'N', 'Nzz', {noremap = true})
 map('n', 'vA', 'ggVG', {noremap = true})
 map('n', '<Leader><CR>', ':noh<CR>', {noremap = true})
 
@@ -108,7 +112,9 @@ map('n', '<Leader>d', ':lua require"dap".continue()<CR>', { noremap = true})
 --map('n', '<Leader>s', ':lua require"dap".repl.toggle()<CR>', { noremap = true})
 map('n', '<Leader>s', ':ProjectFiles<CR>', { noremap = true})
 map('n', '<C-s>', ':SudaWrite<CR>', { noremap = true })
-map('n', 'q', ':bd!<CR>', {noremap = true, silent = true})
+--map('n', 'q', ':bd!<CR>', {noremap = true, silent = true})
+map('n', 'q', ':call ExitBuffer()<CR>', {noremap = true, silent = true})
+--map('n', 'q', ':q<CR>', {noremap = true, silent = true})
 map('v', '<', '<gv', {noremap = true})
 map('v', '>', '>gv', {noremap = true})
 map('n', '<C-q>', ':wqa!<CR>', {noremap = true})

@@ -129,6 +129,21 @@ tw () {
 
 
 # sharing files through terminal
-  $ curl --upload-file ./hello.txt https://transfer.sh/hello.txt 
   $ transfer hello.txt
-  click or drag
+
+
+sxiv for image in terminal
+
+
+gpg --keyserver keyserver.ubuntu.com --recv-key 'theimportkey'
+
+
+use /home/i/undergradmathlatex.pdf to help with latex syntax
+
+for fzfyt (yt from terminal)
+  $ yt
+
+for fzf mpd user interface
+  $ fmui
+
+use lf or vifm for file managing

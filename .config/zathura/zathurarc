@@ -30,3 +30,56 @@ set show-hidden "true"
 
 # Copy to clipboard instead of primary selection
 set selection-clipboard clipboard
+
+
+set recolor-darkcolor  "#D1CDDA"
+set recolor-lightcolor "#EBEBE3"
+# set default-bg "#A3AAAE"
+# set default-bg "#EBEBE3"
+# set default-bg "#AEE1CD"
+set statusbar-fg "#BA0C2E"
+set statusbar-bg "#F9F6EF"
+set inputbar-fg "#BA0C2E"
+set inputbar-bg "#F9F6EF"
+
+# Switching the keybindings for reload and rotate
+# because I personaly reload my documents more than
+# I rotate them. So having reload binded to r seems
+# more practicle
+map r reload
+map R rotate
+
+map p print
+map i recolor
+
+# Open document in fit-width mode by default
+set adjust-open "best-fit"
+
+# ~/path/to/file
+# instead of 
+# /home/username/path/to/file
+# in the status bar
+set statusbar-home-tilde
+
+# Disables the status bar. CTRL+N to enable it.
+set guioptions ""
+
+# Set the background of zathura (not bg of document)
+# set default-bg "#0F9D58"
+set default-bg "#41b0dc"
+
+# Recolor the PDF
+set recolor-darkcolor "#000000" 
+set recolor-lightcolor "#ffffff"
+# AEE1CD
+# Recolor when document is opened
+set recolor "false"
+
+# Better smoth scrolling
+set scroll-step 50
+
+# Make the document fill the window 
+map f adjust_window width
+
+# Font of the status bar
+set font "Hack 16"

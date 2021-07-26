@@ -61,7 +61,7 @@ input * {
 input <identifier> repeat_delay 200
 input <identifier> repeat_rate 150
 # On start
-#exec_always mako
+# exec_always mako
 #exec_always kanshi
 #set $SWAYSOCK.wob "/tmp/wobpipe"
 #exec_always tail -f $SWAYSOCK.wob | wob -a center -a bottom -H 45 -W 300 -M 50 -o 4
@@ -85,7 +85,10 @@ set $stockmop exec alacritty -e /home/i/.scripts/mop.sh
 
 
 
-set $menu9 exec alacritty -e /home/i/.scripts/edit.sh
+
+set $menu9 exec alacritty -e ~/.scripts/edit.sh
+
+set $menu99 exec alacritty -e ~/.scripts/editt.sh
 set $menu69a exec alacritty -e /home/i/.scrips/markedet.sh
 set $menuinfi exec alacritty -e /home/i/.scripts/infi.sh
 set $menu8 exec alacritty --class=launcher -e /home/i/.scripts/focus_window.py
@@ -104,7 +107,7 @@ bindsym $mod+q exec $binds
 set $note exec alacritty --class=launcher -e ~/.scripts/note
 bindsym $mod+u exec $menu6
 bindsym $mod+c exec $menuinfi
-bindsym $mod+r exec $note
+#bindsym $mod+v exec $note
 #bindsym $mod+f11 exec $bindss
 #new-session \; send-keys vifm\ /home/i/skole C-m \; split-window -h -p 50\; send-keys python C-m \; split-window -v -p 35 \; send-keys /home/i/python C-m \; select-pane -t 1 \;
 #set $menu3 bemenu-run | xargs swaymsg exec --
@@ -172,7 +175,8 @@ bindsym $mod+ctrl+u exec grim - | swappy -f -
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 #output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 #output * bg ~/sort1.jpg fill
-output * bg ~/Pictures/bg5.jpg fill
+#output * bg ~/Pictures/bg5.jpg fill
+output * bg ~/Pictures/bg11.jpeg fit
 #output * bg ~/bg2.jpg fill
 #output * bg ~/Pictures/wallpaper.png fill
 #output * bg ~/Pictures/Wallpaper.jpg fill
@@ -289,7 +293,7 @@ bindsym --release Shift+Print exec zsh -c fullscreenshot
 
 # Split mod
 #bindsym $mod+b splith
-bindsym $mod+v focus mode_toggle
+#bindsym $mod+v focus mode_toggle
 
 #bindsym f12
 
@@ -371,8 +375,14 @@ bindsym $mod+z focus parent
     bindsym $mod+i exec $files
     bindsym $mod+o exec $menu2
     bindsym $mod+d exec $pyt
+    set $pyt2 exec alacritty -e tmuxp load -y .tmuxppy.yaml
+    set $latex exec alacritty -e tmuxp load -y .tmuxtex.yaml
+    bindsym $mod+s exec $latex
+    #bindsym $mod+d exec $pyt2
     bindsym $mod+e exec $menu9
-		bindsym $mod+a exec $menu9
+
+    bindsym $mod+v exec $menu99
+		#bindsym $mod+a exec $menu9
 		bindsym $mod+Ctrl+f1 exec $b1
     bindsym $mod+Ctrl+f2 exec $b2
     bindsym $mod+Ctrl+f3 exec $b3
@@ -384,6 +394,7 @@ bindsym $mod+z focus parent
 
 		#bindsym $mod+s exec $stockmop
     bindsym $mod+n exec $menu5
+
     #bindsym $mod+space exec $menu
     #bindsym space+return exec $menu22
     #
@@ -758,7 +769,6 @@ xwayland enable
 	for_window [title="^.*"] border pixel 1, title_format "%class >> %title"
 
 # Change gaps
-#
 	bindsym $mod+equal gaps inner current plus 5
 	bindsym $mod+minus gaps inner current minus 5
 	bindsym $mod+plus gaps outer current plus 5
@@ -780,7 +790,7 @@ xwayland enable
 # application settings
 #
 for_window [app_id="zathura"] resize set width 40 ppt
-for_window [app_id="Alacritty"] default_border pixel 7
+#for_window [app_id="Alacritty"] default_border pixel 7
 for_window [app_id="okular"] resize set width 90 ppt
 #for_window [app_id=""] resize set width 80 ppt
        #for_window [class="(?i)(?:Steam|pavucontrol)"] floating enable, focus
@@ -905,17 +915,13 @@ exec_always blueman-applet
 exec dunst &
 exec --no-startup-id pulseaudio --start
 
-gaps inner 10
-gaps outer 0
-default_border pixel 2
-
-
 
 
 
 # class                 border  bground text    indicator child_border
 #client.focused #2d2c2f #2d2c2f #2d2c2f #2d2c2f #2d2c2f
 #client.focused #fafafe #fafafe #fafafe #fafafe #fafafe  
+#client.focused #f0eef6 #f0eef6 #f0eef6 #f0eef6
 #client.unfocused  #e1dded #e1dded #e1dded #e1dded #e1dded
 #client.unfocused  #ffffff #ffffff #ffffff #ffffff #ffffff  
 #client.focused_inactive #e6e6fa #e6e6fa #e6e6fa #e6e6fa #e6e6fa
@@ -925,14 +931,21 @@ default_border pixel 2
 # class                 border  bground text    indicator child_border
 client.urgent          #F7347A #F7347A #F7347A #F7347A #F7347A
 client.focused_inactive #000000 #000000 #000000 #000000 #000000      
-# client.focused        #E6E6FA #E6E6FA #E6E6FA #E6E6FA #E6E6FA 
-client.focused #297BDB #297BDB #297BDB #297BDB #297BDB 
+#client.focused        #E6E6FA #E6E6FA #E6E6FA #E6E6FA #E6E6FA 
+client.focused #0070ff #0070ff #0070ff #0070ff #0070ff
+
+#client.focused #f0eef6 #f0eef6 #f0eef6 #f0eef6 #f0eef6
+# client.focused #b7aed4 #b7aed4 #b7aed4 #b7aed4 #b7aed4  
+#client.focused #d62d20 #d62d20 #d62d20 #d62d20 #d62d20
+#client.focused #24812C #24812C #24812C #24812C #24812C 
+#client.focused #d3e5d4 #24812C #24812C #d3e5d4 #d3e5d4   
 client.unfocused #000000 #000000 #000000 #000000 #000000       
 client.placeholder     #047806 #047806 #047806 #047806 #047806 
 client.background       #047806
 
-for_window [app_id=".*"] border pixel 3
+for_window [app_id=".*"] border pixel 2
 
+for_window [class="(?i)(?:google-chrome)"] border pixel 3
 #border_images.focused ~/.config/sway/shadows.png
 #border_images.focused_inactive /home/i/.config/sway/shadows.png
 #border_images.unfocused /home/i/.config/sway/shadows.png
@@ -942,3 +955,11 @@ for_window [app_id=".*"] border pixel 3
 # border_images.focused_inactive ~/.config/sway/borders/focused_inactive.png
 # border_images.unfocused ~/.config/sway/borders/unfocused.png
 # border_images.urgent ~/.config/sway/borders/urgent.png
+
+gaps inner 0
+gaps outer 0
+default_border pixel 2
+
+
+#set $man5 exec alacrity -e ~/.scripts/vifm.sh
+#bindsym $mod+v exec $man5

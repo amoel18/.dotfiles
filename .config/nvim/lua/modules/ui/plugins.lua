@@ -3,6 +3,20 @@ local conf = require('modules.ui.config')
 ui['schickele/vim-fruchtig'] = {
 		--config = [[vim.cmd('colorscheme fruchtig')]]
 }
+ui['tpope/vim-eunuch'] = {}
+ui['haya14busa/incsearch.vim'] = {}
+ui['benknoble/vim-simpl'] = {}
+ui['svermeulen/vim-subversive'] = {}
+ui['thinca/vim-quickrun'] = {}
+ui['dkprice/vim-easygrep'] = {}
+ui['wellle/targets.vim'] = {}
+
+ui['tversteeg/registers.nvim'] = {}
+
+ui['mechatroner/rainbow_csv'] = {}
+
+--ui['projekt0n/github-nvim-theme'] = {}
+--  config = [[vim.cmd('colorscheme github-theme')]]
 ui['tmsvg/pear-tree'] = {}
 ui['zhaocai/LaTeX-Box'] = {}
 ui['glepnir/zephyr-nvim'] = {

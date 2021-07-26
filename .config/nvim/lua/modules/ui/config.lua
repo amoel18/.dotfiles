@@ -5,6 +5,7 @@ function config.galaxyline()
 end
 
 
+
 function config.nvim_bufferline()
   require('bufferline').setup{
     options = {
@@ -38,17 +39,10 @@ function config.nvim_tree()
   vim.g.nvim_tree_group_empty = 1
   vim.g.nvim_tree_disable_netrw = 0
 
-  vim.g.nvim_tree_bindings = {
-    ["l"] = ":lua require'nvim-tree'.on_keypress('edit')<CR>",
-    ["-"] = ":lua require'nvim-tree'.on_keypress('close')<CR>",
-    ["."] = ":lua require'nvim-tree'.on_keypress('vsplit')<CR>",
-    [","] = ":lua require'nvim-tree'.on_keypress('split')<CR>",
-    ["h"] = ":lua require'nvim-tree'.on_keypress('dir_up')<CR>",
-  }
   vim.g.nvim_tree_show_icons = {
     git = 0,
-    folders = 1,
-    icons = 1
+    folders = 0,
+    icons = 0
   }
   vim.g.nvim_tree_icons = {
     --default =  '',

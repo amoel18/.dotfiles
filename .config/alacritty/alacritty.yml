@@ -1,32 +1,35 @@
-# Colors (Terminal.app)
-# Space Duck
+# Colors (iTerm 2 default theme)
 colors:
-  name: Material
-  author: ""
+  # Default colors
   primary:
-    background: "#263238"
-    foreground: "#eceff1"
-  cursor:
-    text: "#263238"
-    cursor: "#eceff1"
+    background: '#161821'
+
+      #background: '#080808'
+      #foreground: '#fffbf6'
+
+    foreground: '#fffbf6'
+
+  # Normal colors
   normal:
-    black: "#263238"
-    red: "#ff9800"
-    green: "#8bc34a"
-    yellow: "#ffc107"
-    blue: "#03a9f4"
-    magenta: "#e91e63"
-    cyan: "#009688"
-    white: "#cfd8dc"
+    black: '#2e2e2e'
+    red: '#eb4129'
+    green: '#abe047'
+    yellow: '#f6c744'
+    blue: '#47a0f3'
+    magenta: '#7b5cb0'
+    cyan: '#64dbed'
+    white: '#e5e9f0'
+
+  # Bright colors
   bright:
-    black: "#37474f"
-    red: "#ffa74d"
-    green: "#9ccc65"
-    yellow: "#ffa000"
-    blue: "#81d4fa"
-    magenta: "#ad1457"
-    cyan: "#26a69a"
-    white: "#eceff1"
+    black: '#565656'
+    red: '#ec5357'
+    green: '#c0e17d'
+    yellow: '#f9da6a'
+    blue: '#49a4f8'
+    magenta: '#a47de9'
+    cyan: '#99faf2'
+    white: '#ffffff'
 
 env:
   TERM: alacritty
@@ -38,7 +41,7 @@ window:
 
   padding:
     x: 10
-    y: 10
+    y: 0
 
   dynamic_padding: false
 
@@ -51,8 +54,9 @@ window:
 font:
   normal:
     #family: JetBrains Mono NL
-    family: Hack
-    style: Regular
+    family: JetbrainsMono Nerd Font
+    #family: Hack
+    style: Medium
   bold:
     family: Hack
     style: Bold

@@ -7,7 +7,7 @@ lang['nvim-treesitter/nvim-treesitter'] = {
 }
 
 lang['lervag/vimtex'] = {
-  config = conf.vimtex
+config = conf.vimtex
 }
 
 lang['mfussenegger/nvim-dap'] = {
