@@ -22,8 +22,6 @@ set $volumeup amixer sset Master 5%+
 set $volumedown amixer sset Master 5%-
 
 for_window [app_id="^launcherr$"] floating enable, sticky disable, resize set 30 ppt 5 ppt, border pixel 10
-
-
 for_window [app_id="^launcher$"] floating enable, sticky disable, resize set 30 ppt 40 ppt, border pixel 2
 set $menuu exec alacritty --class=launcher -e ~/.scripts/sway-launcher-desktop.sh
 bindsym $mod+space exec $menuu
@@ -65,14 +63,7 @@ input <identifier> repeat_rate 150
 #exec_always kanshi
 #set $SWAYSOCK.wob "/tmp/wobpipe"
 #exec_always tail -f $SWAYSOCK.wob | wob -a center -a bottom -H 45 -W 300 -M 50 -o 4
-#exec mkfifo $SWAYSOCK.wob
-#exec wl-paste -t text --watch clipman store
-#exec wl-paste -p -t text --watch clipman store -P --histpath="~/.local/share/clipman-primary.json"
-#exec wl-paste -w 'wl-paste >> ~/.clipboard'
-#bindsym $mod+y exec tac ~/.clipboard | bemenu | wl-copy -n
-#set $term foot tmux
-set $term alacritty -e tmux
-#set $spotlight wofi --dmenu
+set $term foot tmux
 set $bar waybar
 #set $launcher "wofi --show drun"
 #set $menu2 exec alacritty --class tofi -d 80 10 -e sh -c '$HOME/.config/sway/scripts/tofi | sort -u -r | fzf | $HOME/.config/sway/scripts/tofi'
@@ -82,18 +73,19 @@ set $menu2 rofi -show run -show-icons
 set $menu22 rofi -show window,run
 
 set $stockmop exec alacritty -e /home/i/.scripts/mop.sh
+#set $menu9 exec alacritty -e ~/.scripts/edit.sh
+set $menu9 exec foot ~/.scripts/edit.sh
 
-
-
-
-set $menu9 exec alacritty -e ~/.scripts/edit.sh
-
-set $menu99 exec alacritty -e ~/.scripts/editt.sh
+#set $menu99 exec foot ~/.scripts/editt.sh
 set $menu69a exec alacritty -e /home/i/.scrips/markedet.sh
 set $menuinfi exec alacritty -e /home/i/.scripts/infi.sh
 set $menu8 exec alacritty --class=launcher -e /home/i/.scripts/focus_window.py
 #set $menu7 exec alacritty -e /home/i/skole
-set $mailen exec alacritty -e neomutt
+#set $mailen exec alacritty -e neomutt
+set $mailen exec foot tmux new-session \; send-keys NVIM_LISTEN_ADDRESS=/tmp/a\ nvim C-m \; split-window -v -p 35\; send-keys vifm\ ~/ C-m \; select-pane -t 1 \; 
+
+set $menu99 exec foot tmux new-session \; send-keys vifm\ ~/ C-m \; select-pane -t 1 \; 
+#set $mailen exec foot tmux new-session \; send-keys vifm\ ~/ C-m \; select-pane -t 1 \; 
 #set $menu5 exec alacritty -e tmux new-session \; split-window -v -p 25 \;  send-keys /home/i/skole C-m \; send-keys clear C-m \; send-keys ls C-m select-pane -t 1 \; send-keys v C-m \; select-pane -t 2 \;
 set $menu5 exec alacritty -e tmux new-session \; split-window -v -p 25 \; select-pane -t 1 \; send-keys v C-m \; select-pane -t2 \; send-keys /home/i/skole C-m \; send-keys clear C-m \; send-keys ls C-m
 set $binds exec alacritty --class=launcher -e ~/.scripts/showhelp.sh
@@ -124,6 +116,7 @@ set $menu77 exec alacritty -e tmux /home/i/.scripts/st.sh
 #bindsym $mod+n exec $menu7
 bindsym $mod+t exec $menu77
 bindsym $mod+b exec $mailen
+
 bindsym $mod+x exec wlogout
 
 #include workspaces
@@ -239,8 +232,8 @@ exec amixer sset 'Master' 40%
 # Output configuration:
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
-output eDP-1 resolution 2560x1440 position 0,0
-#output eDP-1 resolution 3840x2160 position 0,0
+#output eDP-1 resolution 2560x1440 position 0,0
+output eDP-1 resolution 3840x2160 position 0,0
 #	output HDMI-A-1 resolution 1920x1080 position 1920,0
 
 	# Turn off screen on lid closed
@@ -276,6 +269,7 @@ output eDP-1 resolution 2560x1440 position 0,0
 # bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
 
 bindsym XF86AudioRaiseVolume exec amixer sset Master 5%+ | sed -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > $WOBSOCK
+
 bindsym XF86AudioLowerVolume exec amixer sset Master 5%- | sed -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > $WOBSOCK
 bindsym XF86AudioMute exec amixer sset Master toggle | sed -En '/\[on\]/ s/.*\[([0-9]+)%\].*/\1/ p; /\[off\]/ s/.*/0/p' | head -1 > $WOBSOCK
 
@@ -283,9 +277,6 @@ bindsym XF86MonBrightnessUp exec light -A 5 && light -G | cut -d'.' -f1 > $WOBSO
 bindsym XF86MonBrightnessDown exec light -U 5 && light -G | cut -d'.' -f1 > $WOBSOCK
 
 exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
-
-#bindsym --locked XF86MonBrightnessUp exec --no-startup-id light -A 10
-#bindsym --locked XF86MonBrightnessDown exec --no-startup-id light -U 10
 
 ## Screenshots
 bindsym --release Print exec zsh -c screenshot
@@ -381,7 +372,7 @@ bindsym $mod+z focus parent
     #bindsym $mod+d exec $pyt2
     bindsym $mod+e exec $menu9
 
-    bindsym $mod+v exec $menu99
+    bindsym $mod+n exec $menu99
 		#bindsym $mod+a exec $menu9
 		bindsym $mod+Ctrl+f1 exec $b1
     bindsym $mod+Ctrl+f2 exec $b2
@@ -393,7 +384,7 @@ bindsym $mod+z focus parent
     set $b3 exec alacritty -e /home/i/.scripts/b3.sh
 
 		#bindsym $mod+s exec $stockmop
-    bindsym $mod+n exec $menu5
+    #bindsym $mod+n exec $menu5
 
     #bindsym $mod+space exec $menu
     #bindsym space+return exec $menu22
@@ -419,7 +410,7 @@ bindsym $mod+z focus parent
 	# Borders
     default_border none
     default_floating_border normal
-    hide_edge_borders none
+    hide_edge_borders smart
     popup_during_fullscreen smart
 
 
@@ -718,29 +709,10 @@ bar {
     height 10
     swaybar_command waybar
  }
-# bar {
-#     position top
-#     # When the status_command prints a new line to stdout, swaybar updates.
-#     # The default just shows the current date and time.
-#     status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
-#     colors {
-#         statusline #ffffff
-#         background #323232
-#         inactive_workspace #32323200 #32323200 #5c5c5c
-#     }
-# }
 
 #include /etc/sway/config.d/*
 # Hide cursor after one second of inactivity.
 seat * hide_cursor 1000
-
-# Hide titlebar, even while in tabbed mode if there is only a single window.
-#default_border none
-#hide_edge_borders --i3 smart
-#border_images.focused ~/.config/sway/borders/focused.png
-#border_images.focused_inactive ~/.config/sway/borders/all.png
-#border_images.unfocused ~/.config/sway/borders/all.png
-#border_images.urgent ~/.config/sway/borders/all.png
 
 # Drag modifier
 floating_modifier $mod
@@ -759,10 +731,6 @@ input type:touchpad {
     dwt enabled
 }
 
-
-#include config.d/bindsym-common.conf
-#include config.d/bindsym-normkbd.conf
-
 exec_always xrdb -load ~/.Xresources
 xwayland enable
 
@@ -774,85 +742,12 @@ xwayland enable
 	bindsym $mod+plus gaps outer current plus 5
 	bindsym $mod+underscore gaps outer current minus 5
 
-	#bindsym $mod+ctrl+equal opacity plus 5
-	#bindsym $mod+minus gaps inner current minus 5
-	#bindsym $mod+plus gaps outer current plus 5
-	#bindsym $mod+underscore gaps outer current minus 5
-
-
-
-
-
-
-
 
 #
 # application settings
 #
 for_window [app_id="zathura"] resize set width 40 ppt
-#for_window [app_id="Alacritty"] default_border pixel 7
 for_window [app_id="okular"] resize set width 90 ppt
-#for_window [app_id=""] resize set width 80 ppt
-       #for_window [class="(?i)(?:Steam|pavucontrol)"] floating enable, focus
-       #for_window [class="(?i)(?:tilix|thunar|alacritty)"] focus
-       ## for_window [class="(?i)(?:MellowPlayer)"] move scratchpad
-       #for_window [title="MellowPlayer"] move scratchpad
-       #for_window [class="(?i)(?:mousepad|Chromium|tint2conf)"] focus
-       #for_window [class="(?i)(?:google-chrome)"] border none
-       ## Assign Applications to specific workspace
-       ## get class with xprop
-       #assign [class="(?i)(?:tint2conf)|pamac-manager"] → workspace number 1
-       #assign [class="(?i)(?:$browser)"] → workspace number 3
-       #assign [class="(?i)(?:$editor)"] → workspace number 2
-       #assign [class="(?i)(?:$term)"] → workspace number 1
-       #assign [class="(?i)(?:Steam)"] → workspace number 4
-       #assign [class="(?i)(?:gimp-*|inkscape)"] → workspace number 6
-       #assign [title="gThumb"] → workspace number 6
-       #assign [class="(?i)(?:game.py)"] → workspace number 3
-       #assign [title="squarely"] → workspace number 2
-       #assign [class="(?i)(?:jetbrains*|codeblocks)"] → workspace number 8
-       ## focus, floating, & sticky
-       #for_window [title="(?i)(?:copying|deleting|moving|catfish)"] floating enable, border none
-       #for_window [class="(?i)(?:pavucontrol|termite|game.py|galculator|baobab|gnome-disks)"] floating enable, focus
-       #for_window [window_role="(?i)(?:pop-up|setup|Arch)"] floating enable, focus
-       #for_window [window_role="(?i)(?:browser)"] floating disable
-       #for_window [title="Google Hangouts*"] resize set width 560 px
-       #for_window [title="squarely*"] resize set height 870 px
-       #for_window [class="(?i)(?:codeblocks|tilix|alacritty|jetbrains*)"] focus
-       #for_window [title="Update*|Confirm*|Preferencje*|Sterowanie g*|Calendar*|pamac*"] floating enable
-       #for_window [title="galculator*"] floating enable
-       #for_window [title="Azote~"] floating enable, focus
-       #for_window [title="Cheatsheet*"] floating enable, focus
-       #for_window [title="feh*"] floating enable, focus
-       #for_window [title="gThumb|Arch-update|Wybór daty*"] floating enable, focus
-       #for_window [class="Chromium*"] floating disable, border none
-       ## for_window [title="~sgtk*"] border none
-# Assignment
-
-#  assign [class="Slack"] → $ws4
-#  assign [class="Riot"] → $ws4
-#  assign [class="Postman"] → $ws7
-#
-#  assign [class="illnotes"] → $ws1
-#  assign [instance="Navigator"] → $ws2
-#  assign [class="Thunderbird"] → $ws6
-#  assign [class="KeeWeb"] → $ws10
-#
-#  # IntelliJ
-#
-#  assign [class="jetbrains-idea" title="(.*)IntelliJ IDEA"] → $ws3
-#  assign [class="sun-awt-X11-XFramePeer" class="jetbrains-idea"] → $ws3
-#  assign [class="sun-awt-X11-XWindowPeer" class="java-lang-Thread"] → $ws3
-#  for_window [class="sun-awt-X11-XWindowPeer" class="java-lang-Thread"] floating enable
-#  for_window [class="jetbrains-idea" title="(.*)Default Changelist"] fullscreen enable
-#
-#  # Clion ##TODO##
-#  assign [class="jetbrains-clion"] → $ws3
-#  for_window [class="jetbrains-clion"] border none
-#
-#  for_window [class="Inkscape"] border none
-#  for_window [app_id="org.gnome.Nautilus"] border csd
-
 
 for_window [instance="Godot_Engine"] floating enable
 bindsym $mod+Shift+$left resize grow width 50px
@@ -866,13 +761,6 @@ bindsym $mod+Alt+$up resize shrink height 50px
 bindsym $mod+Alt+$down resize shrink height 50px
 
 
-#include config.d/style.conf
-#include config.d/autostart.conf
-#exec_always ~/.config/waybar/waybar.sh
-#exec light -S 20
-#exec amixer sset 'Master' 40%
-#exec obhud --touchpad off -c sway.conf
-
 set $gnome-schema org.gnome.desktop.interface
 exec_always {
     gsettings set $gnome-schema gtk-theme 'Nordic'
@@ -881,85 +769,26 @@ exec_always {
     gsettings set org.gnome.desktop.wm.preferences theme "Nordic"
 }
 exec autotiling
-#exec_always ~/.scripts/swayinfo/wsdnames.sh
-#exec_always ~/.scripts/swayinfo/scratchpad_indicator.py 500
-#exec_always flashfocus-git
-#exec redshift -m wayland
-#exec_always ~/.config/sway/scripts/compact-workspaces.py
-#exec_always ~/.scripts/gammastep.sh
 exec_always autotiling
-#exec_always gammastep
 exec clipd &
 exec --no-startup-id clipd
-
 exec_always caps2esc
-#exec clipman restore
-
 exec_always --no-startup-id ~/.cargo/bin/workstyle &> /tmp/workstyle.log
-#exec gammastep
-#exec flashfocus
-#exec_always ~/.scripts/gammastep.sh
-#include ~/.config/sway/$(hostname)/*
-#
-#exec sway-session restore && sway-session save-loop
-
-#exec ~/.scripts/sway-session restore && ~/.scripts/sway-session save-loop
-#exec_always redshift -l 55.7:12.6 -t 5700:3600 -g 0.8 -m wayland -v
-
 set $WOBSOCK $XDG_RUNTIME_DIR/wob.sock
 exec mkfifo $SWAYSOCK.wob && tail -f $WOBSOCK | wob
-
-#exec_always wob
 exec_always blueman-applet
-
 exec dunst &
 exec --no-startup-id pulseaudio --start
 
-
-
-
 # class                 border  bground text    indicator child_border
-#client.focused #2d2c2f #2d2c2f #2d2c2f #2d2c2f #2d2c2f
-#client.focused #fafafe #fafafe #fafafe #fafafe #fafafe  
-#client.focused #f0eef6 #f0eef6 #f0eef6 #f0eef6
-#client.unfocused  #e1dded #e1dded #e1dded #e1dded #e1dded
-#client.unfocused  #ffffff #ffffff #ffffff #ffffff #ffffff  
-#client.focused_inactive #e6e6fa #e6e6fa #e6e6fa #e6e6fa #e6e6fa
-#client.focused_inactive #ffffff #ffffff #ffffff #ffffff #ffffff   
-#
-#
-# class                 border  bground text    indicator child_border
-client.urgent          #F7347A #F7347A #F7347A #F7347A #F7347A
+client.urgent           #F7347A #F7347A #F7347A #F7347A #F7347A
 client.focused_inactive #000000 #000000 #000000 #000000 #000000      
-#client.focused        #E6E6FA #E6E6FA #E6E6FA #E6E6FA #E6E6FA 
-client.focused #0070ff #0070ff #0070ff #0070ff #0070ff
-
-#client.focused #f0eef6 #f0eef6 #f0eef6 #f0eef6 #f0eef6
-# client.focused #b7aed4 #b7aed4 #b7aed4 #b7aed4 #b7aed4  
-#client.focused #d62d20 #d62d20 #d62d20 #d62d20 #d62d20
-#client.focused #24812C #24812C #24812C #24812C #24812C 
-#client.focused #d3e5d4 #24812C #24812C #d3e5d4 #d3e5d4   
-client.unfocused #000000 #000000 #000000 #000000 #000000       
-client.placeholder     #047806 #047806 #047806 #047806 #047806 
+client.focused          #ff7373 #ff7373 #ff7373 #ff7373 #ff7373
+client.unfocused        #000000 #000000 #000000 #000000 #000000       
+client.placeholder      #047806 #047806 #047806 #047806 #047806 
 client.background       #047806
 
 for_window [app_id=".*"] border pixel 2
+for_window [class="(?i)(?:google-chrome)"] border pixel 2
+default_border pixel 3
 
-for_window [class="(?i)(?:google-chrome)"] border pixel 3
-#border_images.focused ~/.config/sway/shadows.png
-#border_images.focused_inactive /home/i/.config/sway/shadows.png
-#border_images.unfocused /home/i/.config/sway/shadows.png
-#border_images.urgent /home/i/.config/sway/shadows.png
-
-# border_images.focused ~/.config/sway/borders/focused.png
-# border_images.focused_inactive ~/.config/sway/borders/focused_inactive.png
-# border_images.unfocused ~/.config/sway/borders/unfocused.png
-# border_images.urgent ~/.config/sway/borders/urgent.png
-
-gaps inner 0
-gaps outer 0
-default_border pixel 2
-
-
-#set $man5 exec alacrity -e ~/.scripts/vifm.sh
-#bindsym $mod+v exec $man5

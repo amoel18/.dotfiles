@@ -91,6 +91,7 @@ map('n', ';', ':', {noremap = true})
 --map('n', 'n', 'nzz', {noremap = true})
 --map('n', 'N', 'Nzz', {noremap = true})
 map('n', 'vA', 'ggVG', {noremap = true})
+map('n', '<C-a>', 'ggVG', {noremap = true})
 map('n', '<Leader><CR>', ':noh<CR>', {noremap = true})
 
 
@@ -110,7 +111,7 @@ map('n', '<Leader-y>', 'y^', {noremap = true})
 --map('n', '<Leader>d', ':Defx<CR>', { noremap = true })
 map('n', '<Leader>d', ':lua require"dap".continue()<CR>', { noremap = true})
 --map('n', '<Leader>s', ':lua require"dap".repl.toggle()<CR>', { noremap = true})
-map('n', '<Leader>s', ':ProjectFiles<CR>', { noremap = true})
+--map('n', '<Leader>s', ':ProjectFiles<CR>', { noremap = true})
 map('n', '<C-s>', ':SudaWrite<CR>', { noremap = true })
 --map('n', 'q', ':bd!<CR>', {noremap = true, silent = true})
 map('n', 'q', ':call ExitBuffer()<CR>', {noremap = true, silent = true})
@@ -154,11 +155,11 @@ map('i' , "<CR>"      , "compe#confirm({ 'keys': '<Plug>delimitMateCR', 'mode': 
 --map('i' , "<C-e>"     , "compe#complete()"      , { noremap = true , expr = true , silent = true })
 map('i' , "<Tab>"   , "pumvisible() ? '<C-n>' : '<Tab>'"   , { noremap = true , expr = true })  -- Use Tab to cycle forward through suggestions
 map('i' , "<S-Tab>" , "pumvisible() ? '<C-p>' : '<S-Tab>'" , { noremap = true , expr = true })  -- Use Shift-Tab to cycle backward through suggestions
-map('i' , "<C-e>"     , "vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-e>'" , { noremap = false , expr = true })  -- Ctrl-L to jump on placeholders.
-map('s' , "<C-e>"     , "vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-e>'" , { noremap = false , expr = true })
+map('i' , "<C-m>"     , "vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-e>'" , { noremap = false , expr = true })  -- Ctrl-L to jump on placeholders.
+--map('s' , "<C-e>"     , "vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-e>'" , { noremap = false , expr = true })
+
 
 --imap <c-l> <c-g>u<Esc>[s1z=`]a<c-g>u
-
 
 
 

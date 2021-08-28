@@ -8,6 +8,7 @@ completion['neovim/nvim-lspconfig'] = {
 
 completion['anott03/nvim-lspinstall'] = {}
 
+
 --completion['neovim/nvim-lsp'] = {}
 
 completion['glacambre/nvim-lsp'] = {}
@@ -26,6 +27,10 @@ completion['hrsh7th/vim-vsnip'] = {
   config = conf.vim_vsnip
 }
 
+
+completion['L3MON4D3/LuaSnip'] = {
+		config = conf.LuaSnip
+}
 
 completion['rafamadriz/friendly-snippets'] = {
 }

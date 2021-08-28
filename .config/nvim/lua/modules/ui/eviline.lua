@@ -60,8 +60,8 @@ gls.left[2] = {
         v = 'VISUAL',
         R = 'REPLACE',
       }
-      vim.api.nvim_command('hi GalaxyViMode guifg='..mode_color())
-      return alias[vim.fn.mode()]..' '
+--      vim.api.nvim_command('hi GalaxyViMode guifg='..mode_color())
+ --     return alias[vim.fn.mode()]..' '
     end,
     highlight = { colors.bg, colors.bg },
     separator = "  ",
@@ -211,8 +211,21 @@ gls.right[3] = {
 }
 
 
-
-
+-- gls.right[4] = {
+  -- LineInfo = {
+    -- provider = 'ScrollBar',
+    -- highlight = { colors.fg, colors.section_bg },
+    -- separator = ' | ',
+    -- separator_highlight = { colors.bg, colors.section_bg },
+  -- },
+-- }
+-- 
+gls.right[4] = {
+  ScrollBar = {
+    provider = 'ScrollBar',
+    highlight = {colors.yellow,colors.purple},
+  }
+}
 
 -- gls.right[3] = {
 --   Heart = {

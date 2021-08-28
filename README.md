@@ -112,6 +112,7 @@ o () {
 pv () {
     tmux respawn-pane -k -t1 -c "#{pane_current_path}" nvim "$1"
 }
+
 wv () {
     tmux respawn-window -k -t1 -c "#{pane_current_path}" nvim "$1"
 }
@@ -147,3 +148,41 @@ for fzf mpd user interface
   $ fmui
 
 use lf or vifm for file managing
+
+
+twitch-curses : twitch browsing in terminal
+
+Setting up zram for single session:
+# modprobe zram
+# echo lz4 > /sys/block/zram0/comp_algorithm
+# echo 32G > /sys/block/zram0/disksize
+# mkswap --label zram0 /dev/zram0
+# swapon --priority 100 /dev/zram0
+
+
+ # iotop: tracker hardisk writings
+
+ turn off journal: /etc/systemd/journald.conf 
+  $ sotrage=none
+
+
+test internet connection:
+  $ speedtest-cli
+
+
+try br (broot) for cd browsing
+
+
+textemp to initialize latex file
+
+timeshift on /dev/sda4
+
+
+GPG:
+
+encrypt file: 
+ $ gpg --encrypt --sign --armor -r 'email' 'file'
+
+
+Calculator in terminal:
+  $ c 1+1

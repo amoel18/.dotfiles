@@ -34,7 +34,7 @@ source "$ZDOTDIR/plugins/zsh-z/zsh-z.plugin.zsh"
 
 
 source "$ZDOTDIR/plugins/zsh-thefuck/zsh-thefuck.plugin.zsh"
-source "$ZDOTDIR/plugins/fzf-tab/fzf-tab.zsh"
+source "$ZDOTDIR/plugins/fzf-tab/fzf-tab.plugin.zsh"
 
 # zsh-syntax-highlighting: Syntax highlighting support.
 source "$ZDOTDIR/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"

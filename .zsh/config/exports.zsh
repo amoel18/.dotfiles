@@ -62,7 +62,7 @@ export ZIPLINE_TRADER_CONFIG=./zipline-trader.yaml
 }
 
 # Basics
-export TERM='alacritty'
+export TERM='kitty'
 export EDITOR='nvim'
 export PAGER='less'
 export BROWSER='xdg-open'

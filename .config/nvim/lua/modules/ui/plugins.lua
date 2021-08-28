@@ -3,6 +3,8 @@ local conf = require('modules.ui.config')
 ui['schickele/vim-fruchtig'] = {
 		--config = [[vim.cmd('colorscheme fruchtig')]]
 }
+
+
 ui['tpope/vim-eunuch'] = {}
 ui['haya14busa/incsearch.vim'] = {}
 ui['benknoble/vim-simpl'] = {}
@@ -10,7 +12,8 @@ ui['svermeulen/vim-subversive'] = {}
 ui['thinca/vim-quickrun'] = {}
 ui['dkprice/vim-easygrep'] = {}
 ui['wellle/targets.vim'] = {}
-
+ui['davidhalter/jedi-vim'] = {}
+ui['Vimjas/vim-python-pep8-indent'] = {}
 ui['tversteeg/registers.nvim'] = {}
 
 ui['mechatroner/rainbow_csv'] = {}
@@ -18,7 +21,6 @@ ui['mechatroner/rainbow_csv'] = {}
 --ui['projekt0n/github-nvim-theme'] = {}
 --  config = [[vim.cmd('colorscheme github-theme')]]
 ui['tmsvg/pear-tree'] = {}
-ui['zhaocai/LaTeX-Box'] = {}
 ui['glepnir/zephyr-nvim'] = {
   config = [[vim.cmd('colorscheme zephyr')]]
 }
@@ -108,10 +110,16 @@ ui['kyazdani42/nvim-tree.lua'] = {
   requires = 'kyazdani42/nvim-web-devicons'
 }
 
+--ui['jamessan/vim-gnupg'] = {}
+
 --ui['lewis6991/gitsigns.nvim'] = {
  -- event = {'BufRead','BufNewFile'},
   --config = conf.gitsigns,
   --requires = {'nvim-lua/plenary.nvim',opt=true}
 --}
+ui['jalvesaq/Nvim-R'] = {}
+ui['pappasam/nvim-repl'] = {}
+
+ui['onsails/lspkind-nvim'] = {}
 
 return ui

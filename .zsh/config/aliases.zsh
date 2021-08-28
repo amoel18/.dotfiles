@@ -4,7 +4,9 @@
 alias py='tmux new-session \; send-keys v C-m \; split-window -h -p 50\; send-keys python C-m \; split-window -v -p 35 \; send-keys /home/i/python C-m \; select-pane -t 1 \;'
 alias ticker='foot ticker &|'
 alias yt='ytfzf'
-# alias vifm='~/.config/vifm/scripts/vifmrun'
+alias vifm='~/.scripts/vifmrun'
+#alias vifm='~/.config/vifm/scripts/vifmrun'
+alias lf='~/.scripts/lfrun'
 alias ma='tmux new-session \; send-keys  cd\ $MATLAB C-m \; split-window -h -p 50\; send-keys matlb C-m \; split-window -v -p 35 \; send-keys ls C-m \; select-pane -t 1 \;'
 # alias st='conda activate st && cd ~/GamestonkTerminal/ && python terminal.py'
 alias tk="tickrs -p --show-volumes -x -c candle -t 1D -s 'TWLO,CRWD,NET,SQ,PINS,FTCH,AMAT,AAPL,ETSY,MELI,SHOP,PYPL,ROKU,TDOC,FVRR,FSLY,PLTR,NIO,INRG,AFRM,BYD,CURI,INSG,MRK,OPEN,SE,SKLZ,SMSI,STOR,UPST'"

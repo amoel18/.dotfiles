@@ -55,6 +55,7 @@ font:
   normal:
     #family: JetBrains Mono NL
     family: JetbrainsMono Nerd Font
+    #family:  Source Sans Pro
     #family: Hack
     style: Medium
   bold:

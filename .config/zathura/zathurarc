@@ -6,7 +6,7 @@ set pages-per-row 1
 #stop at page boundries
 set scroll-page-aware "true"
 set scroll-full-overlap 0.01
-set scroll-step 30
+set scroll-step 40
 
 
 
@@ -17,7 +17,6 @@ map d scroll half-down
 map u scroll half-up
 
 
-set adjust-open "best-fit"
 
 set zoom-min 10
 set guioptions v
@@ -38,6 +37,7 @@ set recolor-lightcolor "#EBEBE3"
 # set default-bg "#EBEBE3"
 # set default-bg "#AEE1CD"
 set statusbar-fg "#BA0C2E"
+# set statusbar-bg "#F9F6EF"
 set statusbar-bg "#F9F6EF"
 set inputbar-fg "#BA0C2E"
 set inputbar-bg "#F9F6EF"
@@ -46,14 +46,14 @@ set inputbar-bg "#F9F6EF"
 # because I personaly reload my documents more than
 # I rotate them. So having reload binded to r seems
 # more practicle
-map r reload
-map R rotate
+map R reload
+map r rotate
 
 map p print
 map i recolor
 
 # Open document in fit-width mode by default
-set adjust-open "best-fit"
+set adjust-open "width"
 
 # ~/path/to/file
 # instead of 
@@ -66,8 +66,8 @@ set guioptions ""
 
 # Set the background of zathura (not bg of document)
 # set default-bg "#0F9D58"
-set default-bg "#41b0dc"
-
+# set default-bg "#41b0dc"
+set default-bg "#31363b"
 # Recolor the PDF
 set recolor-darkcolor "#000000" 
 set recolor-lightcolor "#ffffff"
