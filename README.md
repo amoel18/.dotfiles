@@ -186,3 +186,6 @@ encrypt file:
 
 Calculator in terminal:
   $ c 1+1
+
+
+Brug miller, sc-im eller datasette til CSV

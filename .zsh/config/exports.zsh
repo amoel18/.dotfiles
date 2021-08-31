@@ -15,6 +15,9 @@ path=(
 )
 
 export SWAYSOCK=/run/user/$(id -u)/sway-ipc.1000..sock
+export WLR_BACKENDS=headless
+export WLR_RENDERER=pixman
+export WLR_LIBINPUT_NO_DEVICES=1
 #export PULSE_SERVER={3c1acae23fe04b1697f2b80dd98b1abe}unix:/run/user/1000/pulse/native 
 
 #export PULSE_COOKIE=~/.config/pulse/cookie

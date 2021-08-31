@@ -3,8 +3,18 @@ local conf = require('modules.ui.config')
 ui['schickele/vim-fruchtig'] = {
 		--config = [[vim.cmd('colorscheme fruchtig')]]
 }
-
-
+ui['AndrewRadev/sideways.vim'] = {}
+ui['rktjmp/lush.nvim'] = {}
+ui['tpope/vim-vinegar'] = {}
+ui['godlygeek/tabular'] = {}
+ui['wellle/targets.vim'] = {}
+ui['AndrewRadev/splitjoin.vim'] = {}
+ui['zirrostig/vim-schlepp'] = {}
+ui['tpope/vim-sleuth'] = {}
+ui['folke/which-key.nvim'] = {}
+ui['ggandor/lightspeed.nvim'] = {}
+ui['mfussenegger/nvim-ts-hint-textobject'] = {}
+ui['sunaku/vim-shortcut'] = {}
 ui['tpope/vim-eunuch'] = {}
 ui['haya14busa/incsearch.vim'] = {}
 ui['benknoble/vim-simpl'] = {}
