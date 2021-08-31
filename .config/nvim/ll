@@ -1,0 +1,123 @@
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.009  000.009: --- NVIM STARTING ---
+000.374  000.365: locale set
+000.763  000.389: inits 1
+000.782  000.019: window checked
+000.785  000.003: parsing arguments
+000.839  000.054: expanding arguments
+000.894  000.055: inits 2
+001.448  000.553: init highlight
+001.449  000.002: waiting for UI
+002.365  000.916: done waiting for UI
+002.393  000.028: initialized screen early for UI
+002.980  000.215  000.215: sourcing /usr/share/nvim/archlinux.vim
+002.987  000.468  000.252: sourcing /etc/xdg//nvim/sysinit.vim
+034.577  000.423  000.423: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+037.502  005.109  004.685: sourcing /home/i/.local/share/nvim/site/pack/packer/start/zephyr-nvim/colors/zephyr.vim
+042.623  000.158  000.158: sourcing /home/i/.local/share/nvim/site/pack/packer/opt/vim-sonictemplate/ftdetect/stpl.vim
+043.937  040.925  035.657: sourcing /home/i/.config/nvim/init.vim
+043.943  000.158: sourcing vimrc file(s)
+050.773  000.189  000.189: sourcing /usr/share/vim/vimfiles/ftdetect/conkyrc.vim
+050.993  000.202  000.202: sourcing /usr/share/vim/vimfiles/ftdetect/lf.vim
+051.202  000.189  000.189: sourcing /usr/share/vim/vimfiles/ftdetect/meson.vim
+051.412  000.193  000.193: sourcing /usr/share/vim/vimfiles/ftdetect/nginx.vim
+051.624  000.194  000.194: sourcing /usr/share/vim/vimfiles/ftdetect/tex.vim
+051.869  000.227  000.227: sourcing /usr/share/vim/vimfiles/ftdetect/vagrantfile.vim
+053.121  000.283  000.283: sourcing /home/i/.local/share/nvim/site/pack/packer/start/csv.vim/ftdetect/csv.vim
+053.381  000.240  000.240: sourcing /home/i/.local/share/nvim/site/pack/packer/start/ultisnips/ftdetect/snippets.vim
+053.667  000.262  000.262: sourcing /home/i/.local/share/nvim/site/pack/packer/start/vimtex/ftdetect/tex.vim
+053.868  009.852  007.872: sourcing /usr/share/nvim/runtime/filetype.vim
+054.549  000.213  000.213: sourcing /usr/share/nvim/runtime/ftplugin.vim
+055.199  000.196  000.196: sourcing /usr/share/nvim/runtime/indent.vim
+056.661  000.041  000.041: sourcing /home/i/.local/share/nvim/site/pack/packer/start/zephyr-nvim/colors/zephyr.vim
+057.952  001.836  001.795: sourcing /usr/share/nvim/runtime/syntax/synload.vim
+058.026  002.355  000.518: sourcing /usr/share/nvim/runtime/syntax/syntax.vim
+061.737  000.287  000.287: sourcing /home/i/.config/nvim/plugin/cursorhold_nvim.vim
+062.026  000.270  000.270: sourcing /home/i/.config/nvim/plugin/difftools.vim
+062.272  000.228  000.228: sourcing /home/i/.config/nvim/plugin/tmux_split.vim
+062.609  000.318  000.318: sourcing /home/i/.config/nvim/plugin/whitespace.vim
+063.384  000.241  000.241: sourcing /usr/share/nvim/runtime/plugin/gzip.vim
+063.591  000.189  000.189: sourcing /usr/share/nvim/runtime/plugin/health.vim
+063.856  000.247  000.247: sourcing /usr/share/nvim/runtime/plugin/man.vim
+064.062  000.189  000.189: sourcing /usr/share/nvim/runtime/plugin/matchit.vim
+064.309  000.229  000.229: sourcing /usr/share/nvim/runtime/plugin/matchparen.vim
+064.613  000.286  000.286: sourcing /usr/share/nvim/runtime/plugin/netrwPlugin.vim
+072.107  000.393  000.393: sourcing /usr/share/nvim/runtime/autoload/remote/host.vim
+072.870  000.420  000.420: sourcing /usr/share/nvim/runtime/autoload/remote/define.vim
+072.952  007.088  006.274: sourcing /home/i/.local/share/nvim/rplugin.vim
+072.958  008.327  001.239: sourcing /usr/share/nvim/runtime/plugin/rplugin.vim
+073.264  000.289  000.289: sourcing /usr/share/nvim/runtime/plugin/shada.vim
+073.627  000.275  000.275: sourcing /usr/share/nvim/runtime/plugin/spellfile.vim
+073.855  000.204  000.204: sourcing /usr/share/nvim/runtime/plugin/tarPlugin.vim
+074.132  000.243  000.243: sourcing /usr/share/nvim/runtime/plugin/tohtml.vim
+074.356  000.205  000.205: sourcing /usr/share/nvim/runtime/plugin/tutor.vim
+074.605  000.229  000.229: sourcing /usr/share/nvim/runtime/plugin/zipPlugin.vim
+075.165  000.264  000.264: sourcing /usr/share/vim/vimfiles/plugin/devhelp.vim
+076.093  000.906  000.906: sourcing /usr/share/vim/vimfiles/plugin/fzf.vim
+076.098  006.111: loading plugins
+077.443  000.621  000.621: sourcing /home/i/.local/share/nvim/site/pack/packer/start/CamelCaseMotion/plugin/camelcasemotion.vim
+077.912  000.199  000.199: sourcing /home/i/.local/share/nvim/site/pack/packer/start/Join/plugin/Join.vim
+078.588  000.341  000.341: sourcing /home/i/.local/share/nvim/site/pack/packer/start/csv.vim/plugin/csv.vim
+078.659  000.020  000.020: sourcing /home/i/.local/share/nvim/site/pack/packer/start/csv.vim/ftdetect/csv.vim
+079.296  000.393  000.393: sourcing /home/i/.local/share/nvim/site/pack/packer/start/far.vim/plugin/far.vim
+080.753  000.231  000.231: sourcing /home/i/.local/share/nvim/site/pack/packer/start/fzf/plugin/fzf.vim
+081.949  000.950  000.950: sourcing /home/i/.local/share/nvim/site/pack/packer/start/fzf.vim/plugin/fzf.vim
+082.581  000.311  000.311: sourcing /home/i/.local/share/nvim/site/pack/packer/start/galaxyline.nvim/plugin/galaxyline.vim
+083.815  000.189  000.189: sourcing /home/i/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim/autoload/indent_blankline/helper.vim
+084.000  001.147  000.957: sourcing /home/i/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim/plugin/indent_blankline.vim
+084.554  000.259  000.259: sourcing /home/i/.local/share/nvim/site/pack/packer/start/nnn.vim/plugin/nnn.vim
+085.237  000.182  000.182: sourcing /home/i/.local/share/nvim/site/pack/packer/start/nvim-bufferline.lua/plugin/bufferline.vim
+085.718  000.185  000.185: sourcing /home/i/.local/share/nvim/site/pack/packer/start/nvim-dap/plugin/dap.vim
+086.203  000.223  000.223: sourcing /home/i/.local/share/nvim/site/pack/packer/start/nvim-lspinstall/plugin/nvim-lspinstall.vim
+086.687  000.233  000.233: sourcing /home/i/.local/share/nvim/site/pack/packer/start/nvim-web-devicons/plugin/nvim-web-devicons.vim
+087.765  000.654  000.654: sourcing /home/i/.local/share/nvim/site/pack/packer/start/quick-scope/plugin/quick_scope.vim
+090.596  000.271  000.271: sourcing /usr/share/nvim/runtime/autoload/provider/pythonx.vim
+197.135  107.313  107.042: sourcing /usr/share/nvim/runtime/autoload/provider/python.vim
+225.247  027.766  027.766: sourcing /usr/share/nvim/runtime/autoload/provider/python3.vim
+225.335  136.214  001.135: sourcing /home/i/.local/share/nvim/site/pack/packer/start/quickrun.vim/plugin/quickrun.vim
+226.878  000.303  000.303: sourcing /home/i/.local/share/nvim/site/pack/packer/start/ultisnips/autoload/UltiSnips/map_keys.vim
+226.983  001.311  001.008: sourcing /home/i/.local/share/nvim/site/pack/packer/start/ultisnips/plugin/UltiSnips.vim
+227.058  000.020  000.020: sourcing /home/i/.local/share/nvim/site/pack/packer/start/ultisnips/ftdetect/snippets.vim
+227.852  000.451  000.451: sourcing /home/i/.local/share/nvim/site/pack/packer/start/vim-angry/plugin/angry.vim
+228.736  000.580  000.580: sourcing /home/i/.local/share/nvim/site/pack/packer/start/vim-arpeggio/plugin/arpeggio.vim
+229.455  000.416  000.416: sourcing /home/i/.local/share/nvim/site/pack/packer/start/vim-clap/plugin/clap.vim
+230.125  000.387  000.387: sourcing /home/i/.local/share/nvim/site/pack/packer/start/vim-dadbod/plugin/dadbod.vim
+230.880  000.410  000.410: sourcing /home/i/.local/share/nvim/site/pack/packer/start/vim-indent-object/plugin/indent-object.vim
+231.441  000.273  000.273: sourcing /home/i/.local/share/nvim/site/pack/packer/start/vim-lastplace/plugin/vim-lastplace.vim
+233.014  001.193  001.193: sourcing /home/i/.local/share/nvim/site/pack/packer/start/vim-pairs/plugin/pairs.vim
+233.620  000.285  000.285: sourcing /home/i/.local/share/nvim/site/pack/packer/start/vim-pasta/plugin/pasta.vim
+234.274  000.355  000.355: sourcing /home/i/.local/share/nvim/site/pack/packer/start/vim-peekaboo/plugin/peekaboo.vim
+235.037  000.483  000.483: sourcing /home/i/.local/share/nvim/site/pack/packer/start/vim-phoenix/plugin/phoenix.vim
+235.753  000.414  000.414: sourcing /home/i/.local/share/nvim/site/pack/packer/start/vim-slime/plugin/slime.vim
+238.876  002.804  002.804: sourcing /home/i/.local/share/nvim/site/pack/packer/start/vim-sneak/plugin/sneak.vim
+240.141  000.974  000.974: sourcing /home/i/.local/share/nvim/site/pack/packer/start/vim-surround/plugin/surround.vim
+242.512  002.086  002.086: sourcing /home/i/.local/share/nvim/site/pack/packer/start/vim-textmanip/plugin/textmanip.vim
+243.325  000.545  000.545: sourcing /home/i/.local/share/nvim/site/pack/packer/start/vim-tmux-navigator/plugin/tmux_navigator.vim
+243.907  000.231  000.231: sourcing /home/i/.local/share/nvim/site/pack/packer/start/vim-tmux-send/plugin/vim-tmux-send.vim
+244.672  000.413  000.413: sourcing /home/i/.local/share/nvim/site/pack/packer/start/vim-tmuxify/plugin/tmuxify.vim
+245.301  000.308  000.308: sourcing /home/i/.local/share/nvim/site/pack/packer/start/vim-visual-star-search/plugin/visual-star-search.vim
+245.404  000.020  000.020: sourcing /home/i/.local/share/nvim/site/pack/packer/start/vimtex/ftdetect/tex.vim
+246.371  000.728  000.728: sourcing /home/i/.local/share/nvim/site/pack/packer/start/vimux/plugin/vimux.vim
+246.644  013.696: loading packages
+247.343  000.333  000.333: sourcing /home/i/.local/share/nvim/site/pack/packer/start/ultisnips/after/plugin/UltiSnips_after.vim
+247.534  000.557: loading after plugins
+247.558  000.024: inits 3
+247.872  000.315: reading ShaDa
+248.187  000.314: opening buffers
+248.936  000.496  000.496: sourcing /home/i/.local/share/nvim/site/pack/packer/start/quick-scope/autoload/quick_scope.vim
+249.447  000.352  000.352: sourcing /home/i/.local/share/nvim/site/pack/packer/start/vim-peekaboo/autoload/peekaboo.vim
+249.526  000.491: BufEnter autocommands
+249.528  000.003: editing files in windows
+250.563  000.314  000.314: sourcing /home/i/.local/share/nvim/site/pack/packer/start/vim-clap/autoload/clap/provider/yanks.vim
+251.199  000.282  000.282: sourcing /home/i/.local/share/nvim/site/pack/packer/start/vim-phoenix/autoload/phoenix.vim
+251.326  001.201: VimEnter autocommands
+251.329  000.003: UIEnter autocommands
+252.159  000.521  000.521: sourcing /usr/share/nvim/runtime/autoload/provider/clipboard.vim
+252.169  000.319: before starting main loop
+252.711  000.542: first screen update
+252.713  000.003: --- NVIM STARTED ---
