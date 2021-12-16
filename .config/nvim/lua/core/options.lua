@@ -1,140 +1,74 @@
-local global = require('core.global')
+local opt = vim.opt
+local g = vim.g
 
-local function bind_option(options)
-  for k, v in pairs(options) do
-    if v == true or v == false then
-      vim.cmd('set ' .. k)
-    else
-      vim.cmd('set ' .. k .. '=' .. v)
-    end
-  end
+local options = require("core.utils").load_config().options
+opt.background = options.background
+opt.title = true
+opt.clipboard = options.clipboard
+opt.cmdheight = options.cmdheight
+opt.cul = true -- cursor line
+
+-- Indentline
+opt.expandtab = options.expandtab
+opt.shiftwidth = options.shiftwidth
+opt.smartindent = options.smartindent
+
+-- disable tilde on end of buffer: https://github.com/neovim/neovim/pull/8546#issuecomment-643643758
+opt.fillchars =  options.fillchars 
+
+opt.hidden = options.hidden
+opt.ignorecase = options.ignorecase
+opt.smartcase = options.smartcase
+opt.mouse = options.mouse
+
+-- Numbers
+opt.number = options.number
+opt.numberwidth = options.numberwidth
+opt.relativenumber = options.relativenumber
+opt.ruler = options.ruler
+
+-- disable nvim intro
+opt.shortmess:append "sI"
+
+opt.signcolumn = "yes"
+opt.splitbelow = true
+opt.splitright = true
+opt.tabstop = options.tabstop
+opt.termguicolors = true
+opt.timeoutlen = options.timeoutlen
+opt.undofile = options.undofile
+
+-- interval for writing swap file to disk, also used by gitsigns
+opt.updatetime = options.updatetime
+
+-- go to previous/next line with h,l,left arrow and right arrow
+-- when cursor reaches end/beginning of line
+opt.whichwrap:append "<>[]hl"
+
+g.mapleader = options.mapleader
+
+-- disable some builtin vim plugins
+local disabled_built_ins = {
+   "2html_plugin",
+   "getscript",
+   "getscriptPlugin",
+   "gzip",
+   "logipat",
+   "netrw",
+   "netrwPlugin",
+   "netrwSettings",
+   "netrwFileHandlers",
+   "matchit",
+   "tar",
+   "tarPlugin",
+   "rrhelper",
+   "spellfile_plugin",
+   "vimball",
+   "vimballPlugin",
+   "zip",
+   "zipPlugin",
+}
+
+for _, plugin in pairs(disabled_built_ins) do
+   g["loaded_" .. plugin] = 1
 end
-
-local function load_options()
-  local global_local = {
-    termguicolors  = true;
-    mouse          = "nv";
-    errorbells     = true;
-    visualbell     = true;
-    hidden         = true;
-    fileformats    = "unix,mac,dos";
-    magic          = true;
-    virtualedit    = "block";
-    encoding       = "utf-8";
-    viewoptions    = "folds,cursor,curdir,slash,unix";
-    sessionoptions = "curdir,help,tabpages,winsize";
-    clipboard      = "unnamedplus";
-    wildignorecase = true;
-    wildignore     = ".git,.hg,.svn,*.pyc,*.o,*.out,*.jpg,*.jpeg,*.png,*.gif,*.zip,**/tmp/**,*.DS_Store,**/node_modules/**,**/bower_modules/**";
-    backup         = false;
-    writebackup    = false;
-    undofile       = true;
-    swapfile       = false;
-    directory      = global.cache_dir .. "swag/";
-    undodir        = global.cache_dir .. "undo/";
-    backupdir      = global.cache_dir .. "backup/";
-    viewdir        = global.cache_dir .. "view/";
-    spellfile      = global.cache_dir .. "spell/en.uft-8.add";
-    history        = 2000;
-    shada          = "!,'300,<50,@100,s10,h";
-    backupskip     = "/tmp/*,$TMPDIR/*,$TMP/*,$TEMP/*,*/shm/*,/private/var/*,.vault.vim";
-    smarttab       = true;
-    shiftround     = true;
-    timeout        = true;
-    ttimeout       = true;
-    timeoutlen     = 500;
-    ttimeoutlen    = 10;
-    updatetime     = 100;
-    redrawtime     = 1500;
-    ignorecase     = true;
-    smartcase      = true;
-    infercase      = true;
-    incsearch      = true;
-    hlsearch       = true;
-    wrapscan       = true;
-    complete       = ".,w,b,k";
-    inccommand     = "nosplit";
-    grepformat     = "%f:%l:%c:%m";
-    grepprg        = 'rg --hidden --vimgrep --smart-case --';
-    breakat        = [[\ \	;:,!?]];
-    startofline    = false;
-    whichwrap      = "h,l,<,>,[,],~";
-    splitbelow     = true;
-    splitright     = true;
-    switchbuf      = "useopen";
-    backspace      = "indent,eol,start";
-    diffopt        = "filler,iwhite,internal,algorithm:patience";
-    completeopt    = "menuone,noselect";
-    jumpoptions    = "stack";
-    showmode       = false;
-    shortmess      = "aoOTIcF";
-    scrolloff      = 2;
-    sidescrolloff  = 5;
-    foldlevelstart = 99;
-    ruler          = false;
-    list           = true;
-    showtabline    = 2;
-    winwidth       = 30;
-    winminwidth    = 10;
-    pumheight      = 15;
-    helpheight     = 12;
-    previewheight  = 12;
-    showcmd        = false;
-    cmdheight      = 2;
-    cmdwinheight   = 5;
-    equalalways    = false;
-    laststatus     = 2;
-    display        = "lastline";
-    showbreak      = "↳  ";
-    listchars      = "tab:»·,nbsp:+,trail:·,extends:→,precedes:←";
-    pumblend       = 10;
-    winblend       = 10;
-  }
-
-  local bw_local  = {
-		undofile		   = true;
-    synmaxcol      = 2500;
-    formatoptions  = "1jcroql";
-    textwidth      = 0;
-    expandtab      = true;
-    autoindent     = true;
-    tabstop        = 2;
-    shiftwidth     = 2;
-    softtabstop    = -1;
-    breakindentopt = "shift:2,min:20";
-    wrap           = false;
-    linebreak      = true;
-    number         = true;
-    colorcolumn    = 0;
-    foldenable     = true;
-		signcolumn     = "no";
-    conceallevel   = 2;
-    concealcursor  = "niv";
-
-  }
-
-  if global.is_mac then
-    vim.g.clipboard = {
-      name = "macOS-clipboard",
-      copy = {
-        ["+"] = "pbcopy",
-        ["*"] = "pbcopy",
-      },
-      paste = {
-        ["+"] = "pbpaste",
-        ["*"] = "pbpaste",
-      },
-      cache_enabled = 0
-    }
-    vim.g.python_host_prog = '/usr/bin/python'
-    vim.g.python3_host_prog = '/usr/local/bin/python3'
-  end
-
-  for name, value in pairs(global_local) do
-
-    vim.o[name] = value
-  end
-  bind_option(bw_local)
-end
-
-load_options()

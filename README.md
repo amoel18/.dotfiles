@@ -1,191 +1,61 @@
-Adding dotfiles to a new system:
+# dotfile 
 
-nv in terminal to edit READ.me
+My vim config for C++ and Rust.
 
-1) git clone --separate-git-dir=$HOME/.dots https://github.com/amoel18/.dotfiles.git tmpdotfiles
+Clone it to .vim, and put
+```
+source ~/.vim/init/init.vim
+```
+to your .vimrc
 
-2) rsync --recursive --verbose --exclude '.git' tmpdotfiles/ $HOME/
+fork from [skywind3000/vim-init](https://github.com/skywind3000/vim-init)
 
-3) rm -r tmpdotfiles
+# requirment
 
+## [vim-plug](https://github.com/junegunn/vim-plug) for plugs
 
+Do not needs anymore. already included.
 
-matlab -nodisplay -nosplash -nodesktop -r "run('em');exit;" | tail -n +11 #launch m file "
+## [Nerd Font](https://github.com/ryanoasis/nerd-fonts) for icon
 
+## [nodejs](https://nodejs.org/en/download/) for coc.nvim
 
+```
+curl -sL install-node.now.sh/lts | sudo bash
+```
 
-#applications
-wf-recorder     #record desktop
-silentcast      #gif maker
-qrcodegen       #generate qrcode
+## [rust-analyzer](https://github.com/rust-analyzer/rust-analyzer) for rust
 
+```
+rustup update
+git clone https://github.com/rust-analyzer/rust-analyzer && cd rust-analyzer
+cargo xtask install --server
+```
 
-nmap q #insert letter without leaving normal mode
+or download the binary from the release page and change name to `rust-analyzer`
 
-mod+z=cat REAME.md
-mod+r=edit README.md
-mod+q=cat shortcuts
+and add to path
 
-mod+a=latex session
-mod+s=school session
-mod+d=python session
-mod+e=edit file
 
+## [ccls](http://github.com/MaskRay/ccls) for C++
 
-n = zsh function append line to REAdME
+```
+sudo apt install llvm clang libclang-dev clang-tools lldb llvm-dev cmake
+git clone --depth=1 --recursive https://github.com/MaskRay/ccls
+cd ccls
+cmake -H. -BRelease -DCMAKE_BUILD_TYPE=Release \
+          -DCMAKE_PREFIX_PATH=/usr/lib/llvm-10 \
+          -DLLVM_INCLUDE_DIR=/usr/lib/llvm-10/include \
+          -DLLVM_BUILD_INCLUDE_DIR=/usr/include/llvm-10/
+cmake --build Release
 
+```
 
+and add to path
 
 
-#nvim
-leader+"=surrond word with "
+## coc.nvim extension
 
-$+"=surround visual selection with "
-
-
-if the wrong tmux config run the command: tmux source-file .tmux.conf
-
-
-if you want to change default application you have to edit /usr/share/applications/mimeinfo.cache
-
-
-jdownloader2      #Download manager, written in Java, for one-click hosting sites like Rapidshare and Megaupload. Uses its own updater.
-
-
-postman-bin       #api test build document
-
-wlogout           #lougout menu
-mod+b             #mail
-mod+n             #browse school files
-mod+c             #cd
-mod+w             #window browsr
-mod+return        #browser
-mod+o             #run application
-https://www.bankcheckingsavings.com/bitcoin-and-cryptocurrency-bonuses/
-nået
-https://etoro.tw/3dJde1P
-pei referral: o2zlay
-https://github.com/fmfn/BayesianOptimization
-getpei
-bondora invest 10euro 5 bonus (https://p2pinvesting.eu/p2p-bonus-offers/)
-brickstarter
-getpei.com
-debituum.network invest 250euro+
-HeavyFinance # not yet signed up.
-Kviku Finance invest 100euro+ for 20euro
-neofinance +10euro any amount # not yet signed
-nordstreet +15euro for 100  invested amount # not yet signed
-Rendity # not signed up
-Twino# not signed up
-Viainvest #not signed
-binance 10%commision
-celsius network network 30dollar in btc
-
-#zathura :
-c to copy link
-^o ^i Move backward and forward through jump list (use after following link)
-
-
-penge i: etoro, binance, crypterium, coinbase, celcius $40. # blockcard TERN
-wdisplays
-
-
-2021-04-23
-2021-04-23-3710$
-2021-04-23-3828$
-ethminer -G -P stratum://.0xef982699a7e03f8adbc666f88f85a6349833fce7.worker1@slushpool.com:9999/alllllllllllllklllllllllllllm%40gmail.com
-
-
-Cash flow
-P/s
-Gross margin
-yoy revenue growth
-
-
-tmux terminal mappings:
-
-o () {
-    tmux send-keys -t1 :tabnew\ $(tmux display -p -F "#{pane_current_path}")/"$@" C-m
-		tmux select-pane -t1
-}
-
-pv () {
-    tmux respawn-pane -k -t1 -c "#{pane_current_path}" nvim "$1"
-}
-
-wv () {
-    tmux respawn-window -k -t1 -c "#{pane_current_path}" nvim "$1"
-}
-tw () {
-  args=$@
-  CDD=$(tmux display -p -F "#{pane_current_path}")
-  tmux send-keys -t1 :tabnew\ $CDD/"$args" C-m
-  tmux select-pane -t1
-  # tmux send-keys -t1 :tabnew\ $args C-m
-}
-
-
-# hiding your ip
-  sudo openvpn --config vpngate_....ovpn
-
-
-# sharing files through terminal
-  $ transfer hello.txt
-
-
-sxiv for image in terminal
-
-
-gpg --keyserver keyserver.ubuntu.com --recv-key 'theimportkey'
-
-
-use /home/i/undergradmathlatex.pdf to help with latex syntax
-
-for fzfyt (yt from terminal)
-  $ yt
-
-for fzf mpd user interface
-  $ fmui
-
-use lf or vifm for file managing
-
-
-twitch-curses : twitch browsing in terminal
-
-Setting up zram for single session:
-# modprobe zram
-# echo lz4 > /sys/block/zram0/comp_algorithm
-# echo 32G > /sys/block/zram0/disksize
-# mkswap --label zram0 /dev/zram0
-# swapon --priority 100 /dev/zram0
-
-
- # iotop: tracker hardisk writings
-
- turn off journal: /etc/systemd/journald.conf 
-  $ sotrage=none
-
-
-test internet connection:
-  $ speedtest-cli
-
-
-try br (broot) for cd browsing
-
-
-textemp to initialize latex file
-
-timeshift on /dev/sda4
-
-
-GPG:
-
-encrypt file: 
- $ gpg --encrypt --sign --armor -r 'email' 'file'
-
-
-Calculator in terminal:
-  $ c 1+1
-
-
-Brug miller, sc-im eller datasette til CSV
+```
+:CocInstall coc-json coc-snippets
+```

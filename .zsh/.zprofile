@@ -25,6 +25,9 @@
 #
 #
 #
+#
+export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
+export PATH="$PATH:$GEM_HOME/bin"
 PATH="$HOME/.node_modules/bin:$PATH"
 export npm_config_prefix=~/.node_modules
 PATH="$HOME/.cargo/bin:$PATH"

@@ -1,28 +1,34 @@
 [Added Associations]
-text/plain=termite.desktop;gvim.desktop;org.pwmt.zathura-pdf-mupdf.desktop;gcr-prompter.desktop;vim.desktop;
-application/x-shellscript=alacritty.desktop;gcr-prompter.desktop;
-application/vnd.openxmlformats-officedocument.wordprocessingml.document=chromium.desktop;libreoffice-calc.desktop;
-video/mp4=mpv.desktop;vlc.desktop;
-image/vnd.djvu+multipage=org.pwmt.zathura-djvu.desktop;
+application/pdf=chromium.desktop;org.gnome.Evince.desktop;mupdf.desktop;
 application/vnd.ms-htmlhelp=kchmviewer.desktop;okularApplication_chm.desktop;
-text/x-c++src=termite.desktop;
-text/csv=libreoffice-calc.desktop;vim.desktop;code-oss.desktop;
-x-scheme-handler/tg=userapp-Telegram Desktop-P4Z500.desktop;
+application/vnd.openxmlformats-officedocument.wordprocessingml.document=chromium.desktop;libreoffice-calc.desktop;
+application/x-shellscript=alacritty.desktop;gcr-prompter.desktop;
 font/otf=imgur-screenshot.desktop;
 image/jpeg=mirage.desktop;
 image/png=deepin-image-viewer.desktop;imgur-screenshot.desktop;chromium.desktop;feh.desktop;
-application/pdf=chromium.desktop;org.gnome.Evince.desktop;mupdf.desktop;
-text/x-patch=nvim.desktop;
+image/vnd.djvu+multipage=org.pwmt.zathura-djvu.desktop;
+text/csv=libreoffice-calc.desktop;vim.desktop;code-oss.desktop;
+text/plain=termite.desktop;gvim.desktop;org.pwmt.zathura-pdf-mupdf.desktop;gcr-prompter.desktop;vim.desktop;
+text/x-c++src=termite.desktop;
 text/x-matlab=libreoffice-writer.desktop;
-
+text/x-patch=nvim.desktop;
+video/mp4=mpv.desktop;vlc.desktop;
+x-scheme-handler/tg=userapp-Telegram Desktop-P4Z500.desktop;
 [Default Applications]
-application/pdf=org.pwmt.zathura-pdf-poppler.desktop
-x-scheme-handler/http=chromium.desktop
-x-scheme-handler/https=chromium.desktop
-text/html=chromium.desktop
-x-scheme-handler/about=chromium.desktop
-x-scheme-handler/unknown=chromium.desktop
-image/png=mirage.desktop
-x-scheme-handler/postman=Postman.desktop
-x-scheme-handler/mailto=google-chrome.desktop
-x-scheme-handler/tg=userapp-Telegram Desktop-P4Z500.desktop
+application/gzip=tar.desktop;
+application/pdf=org.pwmt.zathura-pdf-poppler.desktop;
+application/x-dosexec=wine.desktop;
+image/png=mirage.desktop;
+inode/directory=Thunar.desktop;
+text/html=chromium.desktop;
+x-scheme-handler/about=chromium.desktop;
+x-scheme-handler/http=chromium.desktop;
+x-scheme-handler/https=chromium.desktop;
+x-scheme-handler/mailto=google-chrome.desktop;
+x-scheme-handler/postman=Postman.desktop;
+x-scheme-handler/tg=userapp-Telegram Desktop-P4Z500.desktop;
+x-scheme-handler/unknown=chromium.desktop;
+x-scheme-handler/web+cardano=google-chrome.desktop;
+
+application/zip=unzip-usercreated-1.desktop;
+application/x-ms-dos-executable=wine.desktop;

@@ -2,6 +2,9 @@
 path=(
   ~/.config/nvim
   ~/.config/nvim/lua
+  ~/.node_modules/bin
+
+  ~/.local/share/gem/ruby/3.0.0/bin
 	/usr/local/sbin
 	~/go/bin
 	/usr/bin
@@ -18,6 +21,14 @@ export SWAYSOCK=/run/user/$(id -u)/sway-ipc.1000..sock
 export WLR_BACKENDS=headless
 export WLR_RENDERER=pixman
 export WLR_LIBINPUT_NO_DEVICES=1
+#export AMD_VULKAN_ICD=RADV
+export DISABLE_LAYER_AMD_SWITCHABLE_GRAPHICS_1=1
+export VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json
+
+export WINEARCH=win32
+export WINEPREFIX=~/.wine32
+#export WINEARCH=win32 
+#export WINEPREFIX=~/.wine32 
 #export PULSE_SERVER={3c1acae23fe04b1697f2b80dd98b1abe}unix:/run/user/1000/pulse/native 
 
 #export PULSE_COOKIE=~/.config/pulse/cookie

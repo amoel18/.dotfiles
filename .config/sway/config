@@ -93,7 +93,7 @@ set $nls exec alacritty --class=launcher -e ~/.scripts/nls
 #set $bindss cat ~/.scripts/showhelp
 set $menu6 exec alacritty -e tmux new-session \; send-keys /home/i/latex C-m \; send-keys clear C-m \;  select-pane -t 1 \; send-keys ls\ $LATEX C-m \;
 set $pyt exec alacritty -e tmux new-session \; send-keys /home/i/python C-m \; send-keys clear C-m \; split-window -h -p 50\; send-keys python C-m \; split-window -v -p 35 \; send-keys /home/i/python C-m \; send-keys clear C-m \; send-keys ipython C-m \; select-pane -t 1 \; send-keys ls C-m \;
-bindsym $mod+q exec $binds
+#bindsym $mod+q exec $binds
 #bindsym $mod+z exec $nls
 #set $note exec alacritty --class=launcherr -e ~/.scripts/note
 set $note exec alacritty --class=launcher -e ~/.scripts/note
@@ -167,9 +167,9 @@ bindsym $mod+ctrl+u exec grim - | swappy -f -
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 #output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-#output * bg ~/sort1.jpg fill
+output * bg ~/sort1.jpg fill
 #output * bg ~/Pictures/bg5.jpg fill
-output * bg ~/Pictures/bg11.jpeg fit
+#output * bg ~/Pictures/bg11.jpeg fit
 #output * bg ~/bg2.jpg fill
 #output * bg ~/Pictures/wallpaper.png fill
 #output * bg ~/Pictures/Wallpaper.jpg fill
@@ -232,8 +232,8 @@ exec amixer sset 'Master' 40%
 # Output configuration:
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
-#output eDP-1 resolution 2560x1440 position 0,0
-output eDP-1 resolution 3840x2160 position 0,0
+output eDP-1 resolution 2560x1440 position 0,0
+#output eDP-1 resolution 3840x2160 position 0,0
 #	output HDMI-A-1 resolution 1920x1080 position 1920,0
 
 	# Turn off screen on lid closed
@@ -359,6 +359,8 @@ bindsym $mod+z focus parent
     # Start a terminal
     bindsym $mod+m exec $term
     bindsym $mod+w exec gnome-control-center
+
+    bindsym $mod+q exec blueman-manager
     bindsym f12 exec $volumeup
     bindsym f11 exec $volumedown
     #bindsym $mod+return exec $spotlight
@@ -368,7 +370,7 @@ bindsym $mod+z focus parent
     bindsym $mod+d exec $pyt
     set $pyt2 exec alacritty -e tmuxp load -y .tmuxppy.yaml
     set $latex exec alacritty -e tmuxp load -y .tmuxtex.yaml
-    bindsym $mod+s exec $latex
+    bindsym $mod+s focus right 
     #bindsym $mod+d exec $pyt2
     bindsym $mod+e exec $menu9
 
@@ -774,8 +776,8 @@ exec clipd &
 exec --no-startup-id clipd
 exec_always caps2esc
 exec_always --no-startup-id ~/.cargo/bin/workstyle &> /tmp/workstyle.log
-set $WOBSOCK $XDG_RUNTIME_DIR/wob.sock
-exec mkfifo $SWAYSOCK.wob && tail -f $WOBSOCK | wob
+#set $WOBSOCK $XDG_RUNTIME_DIR/wob.sock
+#exec mkfifo $SWAYSOCK.wob && tail -f $WOBSOCK | wob
 exec_always blueman-applet
 exec dunst &
 exec --no-startup-id pulseaudio --start
@@ -787,7 +789,6 @@ client.focused          #ff7373 #ff7373 #ff7373 #ff7373 #ff7373
 client.unfocused        #000000 #000000 #000000 #000000 #000000       
 client.placeholder      #047806 #047806 #047806 #047806 #047806 
 client.background       #047806
-
 for_window [app_id=".*"] border pixel 2
 for_window [class="(?i)(?:google-chrome)"] border pixel 2
 default_border pixel 3

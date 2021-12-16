@@ -7,6 +7,8 @@
 
 " ------------------------------------------------------------------------------
 
+
+
 " Command used to edit files in various contexts.  The default is vim.
 " If you would like to use another vi clone such as Elvis or Vile
 " you will need to change this setting.
@@ -204,6 +206,11 @@ fileviewer *.csv sed "s/,,,,/,,-,,/g;s/,,/ /g" %c | column -t | sed "s/ - /  /g"
 fileviewer *.html w3m -dump %c
 filextype *.html,*.htm nvim %f 2>/dev/null &
 
+" lua
+filetype *.lua nvim
+
+" liquid
+filetype *.liquid nvim
 
 " Text based files
 filetype <text/*> nvim
@@ -342,13 +349,16 @@ nnoremap dls :cd ~/downloads<cr>
 nnoremap walls :cd ~/pictures/walls<cr>
 nnoremap vids :cd ~/videos<cr>
 nnoremap dots :cd ~/dotfiles<cr>
-nnoremap shots :cd ~/pictures/screenshots<cr>
+nnoremap pic :cd ~/pictures/screenshots<cr>
 nnoremap music :cd ~/music<cr>
 nnoremap sk :cd ~/skole<cr>
 nnoremap pi :cd ~/Pictures<cr>
 nnoremap py :cd ~/python<cr>
+nnoremap ex :!ex %c<cr> 
 nnoremap vi :cd ~/.config/nvim<cr>
 nnoremap cd :cd<cr>
+nnoremap sho :cd ~/liquid<cr>
+nnoremap mk :touch 
 
 nnoremap gg ggj
 
@@ -418,11 +428,11 @@ nnoremap cc cw<c-u>
 nnoremap rr cw<c-u>
 nnoremap A cw
 
-nnoremap tt :touch 
+nnoremap ad :touch 
 unmap re
 unmap rl
 " Open console in current directory
-nnoremap ,t :!xterm &<cr>
+nnoremap t :!foot&<cr>
 
 " Open editor to edit vifmrc and apply settings after returning to vifm
 nnoremap ,c :write | edit $MYVIFMRC | restart full<cr>
@@ -532,3 +542,4 @@ only
 
 set sort=-atime
 
+set dotfiles

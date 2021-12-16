@@ -3,3 +3,5 @@
 [user]
 	email = amoel18@student.sdu.dk
 	name = amoel18
+[init]
+	defaultBranch = main

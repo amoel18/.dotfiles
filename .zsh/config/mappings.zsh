@@ -6,6 +6,7 @@
 bindkey -M viins '^U' backward-kill-line # Kill line backwards.
 bindkey -M viins '^?' backward-delete-char # Delete left char with backspace key.
 bindkey -M viins '^B' backward-kill-word # Delete a WORD backward.
+bindkey -M viins '^S' backward-kill-word # Delete a WORD backward.
 bindkey -M viins '^[[3~' delete-char # Ensure delete key always delete forward.
 bindkey -M viins ' ' custom-expand-global-alias # Space key to expand global aliases.
 bindkey -M viins '^Y' custom-insert-last-typed-word # Insert last typed word for quick copy-paste.

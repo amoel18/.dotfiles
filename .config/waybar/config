@@ -1,9 +1,9 @@
 {
     "layer": "top",
-    "height": 30,
+    "height": 50,
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["sway/window"],
-    "modules-right": ["idle_inhibitor", "pulseaudio", "network", "backlight", "battery", "clock"],
+    "modules-right": ["pulseaudio", "network", "backlight", "battery", "clock"],
     // Modules configuration
     "sway/workspaces": {
         "disable-scroll": true,
@@ -34,7 +34,7 @@
         }
     },
     "tray": {
-        // "icon-size": 21,
+        // "icon-size": 25,
         "spacing": 0
     },
     "clock": {

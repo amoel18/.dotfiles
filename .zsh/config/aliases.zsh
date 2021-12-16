@@ -1,6 +1,9 @@
-		# Core Shortcuts
-#alias rm='trash' # Use `trash` program instead of built-in irrecoverable way to delete nodes.
+alias DID_I_FUCKING_STUTTER='sudo $(history -p !!)'
+# Core Shortcuts
+alias rm='trash-put' # Use `trash` program instead of built-in irrecoverable way to delete nodes.
+alias google='google-chrome-stable'
 # alias py='python3'
+alias mt5='/home/i/Games/metatrader/drive_c/Program\ Files/MetaTrader\ 5/terminal64.exe'
 alias py='tmux new-session \; send-keys v C-m \; split-window -h -p 50\; send-keys python C-m \; split-window -v -p 35 \; send-keys /home/i/python C-m \; select-pane -t 1 \;'
 alias ticker='foot ticker &|'
 alias yt='ytfzf'
@@ -52,6 +55,8 @@ alias open="xdg-open"
 alias pins="paru -Slq | fzf -m --preview 'cat <(paru -Si {1}) <(paru -Fi {1} | awk \"{print \$2}\")' | xargs -ro paru -S"
 
 alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+
+
 
 alias pa=' ps aux | grep'
 
@@ -180,6 +185,8 @@ foreach aliaskey (a b bl c co d ds dt dts f l r s sm w) {
 	alias g$aliaskey="git $aliaskey"
 }
 unset aliaskey
+
+alias docker=podman
 
 
 alias diff='diff --color=auto'

@@ -40,6 +40,7 @@ zle -N zle-line-finish
 zle -N zle-keymap-select
 
 bindkey '\t' end-of-line
+
 # History
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=10000
@@ -87,13 +88,14 @@ export FZF_DEFAULT_OPTS="$FZF_DEFAULT_COLORS \
 
 #eval `dircolors ~/color/bliss-dircolors/bliss.dircolors/bliss-test/+t-o+w-directory-1`
 export _JAVA_AWT_WM_NONREPARENTING=1
-export WINEPREFIX=~/Games-Wine/LoL
-export WINEARCH=win32
+#export WINEPREFIX=~/Games-Wine/LoL
+#export WINEARCH=win64
 export MYVIMRC=~/.config/nvim/init.vim
 export PACKPATH=~/.local/share/nvim/site/pack/
 #export PYTHONPATH="/usr/bin/python"
 export PATH="/usr/bin/python$PATH"
 export MATLAB="/home/i/matlab"
+
 #export PYTHON="/home/i/python"
 export SHFM_OPENER="/home/i/.scripts/shfm"
 export GOPATH="$HOME/"
@@ -396,3 +398,4 @@ c() { printf "%s\n" "$@" | bc -l }
 source /home/i/.config/broot/launcher/bash/br
 GPG_TTY='tty'
 export GPG_TTY
+
