@@ -84,6 +84,10 @@ hooks.add("install_plugins", function(use)
    }
 
    use {
+     "lervag/vimtex",
+   }
+
+   use {
     "luukvbaal/stabilize.nvim",
     config = function() require("stabilize").setup() end
    }

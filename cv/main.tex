@@ -1,0 +1,259 @@
+
+
+%\PassOptionsToPackage{dvipsnames}{xcolor}
+\documentclass[10pt,a4paper]{altacv}
+
+%Layout
+\geometry{left=1cm,right=9cm,marginparwidth=6.8cm,marginparsep=1.2cm,top=1.25cm,bottom=1.25cm,footskip=2\baselineskip}
+
+%Packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[default]{lato}
+\usepackage[hidelinks]{hyperref}
+\usepackage[english, danish]{babel}
+\usepackage[autostyle=true]{csquotes}
+\usepackage{fancyhdr}
+ 
+\pagestyle{fancy}
+\fancyhf{}
+
+
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
+\SetProtrusion{encoding={*},family={bch},series={*},size={6,7}}
+              {1={ ,750},2={ ,500},3={ ,500},4={ ,500},5={ ,500},
+               6={ ,500},7={ ,600},8={ ,500},9={ ,500},0={ ,500}}
+             
+\SetExtraKerning[unit=space]
+    {encoding={*}, family={bch}, series={*}, size={footnotesize,small,normalsize}}
+    {\textendash={400,400}, % en-dash, add more space around it
+     "28={ ,150}, % left bracket, add space from right
+     "29={150, }, % right bracket, add space from left
+     \textquotedblleft={ ,150}, % left quotation mark, space from right
+     \textquotedblright={150, }} % right quotation mark, space from left
+
+%Colors
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=magenta,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
+
+%\definecolor{accent}{HTML}{000e17}
+%\definecolor{heading}{HTML}{ba1d1d}
+\definecolor{emphasis}{HTML}{1d1720}
+%\definecolor{body}{HTML}{02141c}
+
+%\usepackage[usenames,dvipsnames]{xcolor} 
+\definecolor{date}{HTML}{c6bbde} 
+\definecolor{body}{HTML}{2b2b2b} 
+\definecolor{headings}{HTML}{c6bbde}
+\definecolor{subheadings}{HTML}{e5e5e5}
+
+\colorlet{heading}{heading}
+\colorlet{accent}{accent}
+\colorlet{emphasis}{emphasis}
+\colorlet{body}{body}
+
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+\usepackage[absolute]{textpos}
+\usepackage[UKenglish]{isodate}
+\setlength{\TPHorizModule}{1mm}
+\setlength{\TPVertModule}{1mm}
+\newcommand{\lastupdated}{\begin{textblock}{60}(155,5)
+\color{date}\fontspec[Path = fonts/raleway/]{Raleway-ExtraLight}\fontsize{8pt}{10pt}\selectfont 
+Last Updated on \today
+\end{textblock}}
+
+
+\newcommand{\namesection}[3]{
+\centering{
+\fontsize{40pt}{60pt}
+\fontspec[Path = fonts/lato/]{Lato-Hai}\selectfont #1 
+\fontspec[Path = fonts/lato/]{Lato-Lig}\selectfont #2
+} \\[5pt]
+\centering{
+\color{headings}
+\fontspec[Path = fonts/raleway/]{Raleway-Medium}\fontsize{11pt}{14pt}\selectfont #3}
+\noindent\makebox[\linewidth]{\color{headings}\rule{\paperwidth}{0.4pt}}
+\vspace{-15pt}
+}
+
+%
+
+% Section seperators 
+\usepackage{titlesec}
+\titlespacing{\section}{0pt}{0pt}{0pt} 
+\titlespacing{\subsection}{0pt}{0pt}{0pt}
+\newcommand{\sectionsep}{\vspace{8pt}}
+
+% Headings command
+\titleformat{\section}{\color{headings}
+\scshape\fontspec[Path = fonts/lato/]{Lato-Lig}\fontsize{16pt}{24pt}\selectfont \raggedright\uppercase}{}{0em}{}
+
+% Subeadings command
+\titleformat{\subsection}{
+\color{subheadings}\fontspec[Path = fonts/lato/]{Lato-Bol}\fontsize{12pt}{12pt}\selectfont\bfseries\uppercase}{}{0em}{}
+
+\newcommand{\runsubsection}[1]{
+\color{subheadings}\fontspec[Path = fonts/lato/]{Lato-Bol}\fontsize{12pt}{12pt}\selectfont\bfseries\uppercase {#1} \normalfont}
+
+% Descriptors command
+\newcommand{\descript}[1]{
+\color{subheadings}\raggedright\scshape\fontspec[Path = fonts/raleway/]{Raleway-Medium}\fontsize{11pt}{13pt}\selectfont {#1 \\} \normalfont}
+
+% Location command
+\newcommand{\llocation}[1]{
+\color{headings}\raggedright\fontspec[Path = fonts/raleway/]{Raleway-Medium}\fontsize{10pt}{12pt}\selectfont {#1\\} \normalfont}
+
+% Bullet Lists with fewer gaps command
+\newenvironment{tightemize}{
+\vspace{-\topsep}\begin{itemize}\itemsep1pt \parskip0pt \parsep0pt}
+{\end{itemize}\vspace{-\topsep}}
+
+\titleformat{\section}{ % Customize the large section titles
+\color{headings}\scshape\fontspec[Path = fonts/lato/]{Lato-Lig}\fontsize{16pt}{24pt}\selectfont \raggedright\uppercase}{}{0em}{}
+
+\begin{document}
+
+
+\name{Anders Kinch Møller}
+\tagline{}
+%\photo{2.5cm}{BrunoAlves}
+\personalinfo{
+    \printinfo{\faBirthdayCake}{30. Dec 1995}
+    \location{Aarhus, Denmark}
+    \email{ \href{mailto:alllllllllllllklllllllllllllm@gmail.com}{\nolinkurl{alllllllllllllklllllllllllllm@gmail.com}}}
+    \phone{+45 20605757}
+%    \mailaddress{SR Njemačke 6, 10000}
+    \github{\urlstyle{same}\href{http://github.com/amoel18}{github.com/amoel18}}
+    %\linkedin{linkedin.com/in/jaksatomovic}
+    %\homepage{jaksatomovic.github.io}
+}
+
+%
+
+\begin{fullwidth}
+\makecvheader
+\end{fullwidth}
+
+%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Experience %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\cvsection[page1sidebar]{Experience}
+
+%%%%%%%%%%%%%
+%Experience 1
+%%%%%%%%%%%%%
+ 
+\cvevent{}{Web developer @ La Cabra}{December 2021 -- Ongoing}{Aarhus, Denmark}
+\begin{itemize}
+    \setlength{\itemindent}{0.1ex}
+    \item[--]   \small{Setting up online stores in shopify(liquid) }
+    \item[--]   \small{Gathering and analyzing data obtained from our customers }
+    \item[--]   \small{Countinuosily apply ML/DL to optimize the store}
+    \item[--]   \small{Version Control using Git}
+    \item[--]   \small{Tasks management using Jira}
+\end{itemize}
+
+%%%%%%%%%%%%%
+%Experience 2
+%%%%%%%%%%%%%
+% \cvevent{}{King ICT  wd.o.o.}{July 2018 -- August 2019}{Zagreb, Croatia}
+% 
+% %\begin{itemize}
+% %    \item Fullstack JAVA developer
+% %\end{itemize}
+% 
+% \begin{itemize}
+%     \setlength{\itemindent}{0.5em}
+%     \item[--]   \small{Developing microservices using .NET Core Framework}
+%     \item[--]   \small{Developing and maintaining software using .NET Framework and SQL Server}
+%     \item[--]   \small{Developing and maintaining frontend using React.js}
+%     \item[--]   \small{Developing mobile apps using React Native}
+%     \item[--]   \small{Designing and coding database tables to store the application’s data}
+%     \item[--]   \small{Working by Scrum framework}
+%     \item[--]   \small{Tracking issues and version control using Git and TFS}
+% \end{itemize}
+
+\medskip
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Projects %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\cvsection[page2sidebar]{Projects}
+
+%%%%%%%%%%%%%
+%Project 1
+%%%%%%%%%%%%%
+
+\cvevent{}{Forex EA trading bot}{September 2020 -- Ongoing}{Aarhus, Denmark}
+
+\begin{itemize}
+  \item \small{A hedging strategy written in mt4 }
+\end{itemize}
+
+\divider
+
+%
+
+%%%%%%%%%%%%%
+%Project 2
+%%%%%%%%%%%%%
+
+\cvevent{}{Tutor online in Matlab/r }{March 2019 -- August 2019}{Aarhus, Denmark}
+
+ 
+ \begin{itemize}
+   \item Freelance tutoring in matlab/r-studio with more computational hard programming.
+%   \item Techs: Microservice architecture with .NET Core 2, Entity Framework, RabbitMQ and MassTransit, React Native and SQL Server 
+ \end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Certificates %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\cvsection{Education}
+
+%%%%%%%%%%%%%
+%Certificate 1
+%%%%%%%%%%%%%
+
+\cvevent{Sølystskolen}{}{Jan 2002 -- 2012}{}
+\divider
+
+\cvevent{ VUC Aarhus(HF)}{}{Jan 2016 -- 2017}{}
+\divider
+
+\cvevent{ Syddansk Universitet}{}{  { \color{red}OBS}: only 130/180 ECTS completed}{Jan 2018 -- 2020}{} 
+%%%%%%%%%%%%%
+%Certificate 2
+%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Interests %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \cvsection{Interests}
+
+% \wheelchart{1.5cm}{0.5cm}{%
+%   10/10em/accent!30/Electronics,
+%   25/9em/accent!60/Science,
+%   5/13em/accent!10/Movies,
+%   20/15em/accent!40/Sport,
+%   30/9em/accent/Technology,
+%   5/8em/accent!20/Literature
+% }
+
+
+%%New Page
+% \clearpage
+
+
+
+
+\end{document}
