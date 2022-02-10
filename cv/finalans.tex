@@ -1,0 +1,232 @@
+\documentclass[10pt,a4paper]{altacv}
+
+
+
+%Layout
+\geometry{left=0.5cm,right=9cm,marginparwidth=6.8cm,marginparsep=1cm,top=1.25cm,bottom=1.25cm,footskip=2\baselineskip}
+
+%Packages
+% \usepackage[utf8]{inputenc}
+ \usepackage[T1]{fontenc}
+%\usepackage{fontspec}
+\usepackage{ebgaramond}
+\usepackage[hidelinks]{hyperref}
+\usepackage[english, danish]{babel}
+\usepackage[autostyle=true]{csquotes}
+\usepackage{fancyhdr}
+ \usepackage{graphicx}
+\usepackage{marginnote}
+\usepackage{tablefootnote}
+\usepackage[bottom]{footmisc}
+\usepackage[log-declarations=false]{xparse}
+% \usepackage[strict]{changepage}
+%\usepackage[skins]{tcolorbox}
+\usepackage{lastpage}
+\pagestyle{fancy}
+\fancyhf{}
+
+
+
+
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
+\SetProtrusion{encoding={*},family={bch},series={*},size={6,7}}
+              {1={ ,750},2={ ,500},3={ ,500},4={ ,500},5={ ,500},
+               6={ ,500},7={ ,600},8={ ,500},9={ ,500},0={ ,500}}
+             
+\SetExtraKerning[unit=space]
+    {encoding={*}, family={bch}, series={*}, size={footnotesize,small,normalsize}}
+    {\textendash={400,400}, % en-dash, add more space around it
+     "28={ ,150}, % left bracket, add space from right
+     "29={150, }, % right bracket, add space from left
+     \textquotedblleft={ ,150}, % left quotation mark, space from right
+     \textquotedblright={150, }} % right quotation mark, space from left
+
+%Colors
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=magenta,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
+
+%\definecolor{accent}{HTML}{000e17}
+%\definecolor{heading}{HT\rotatebox{90}{M} \rotatebox{90}{o}\rotatebox{90}{t}\rotatebox{90}{V}\rotatebox{90}{A}\rotatebox{90}{T}\rotatebox{90}{I}\rotatebox{90}{O}\rotatebox{90}{N}ML}{ba1d1d}
+\definecolor{emphasis}{HTML}{1d1720}
+\definecolor{body}{HTML}{02141c}
+
+%\usepackage[usenames,dvipsnames]{xcolor} 
+\definecolor{date}{HTML}{c6bbde} 
+% \definecolor{body}{HTML}{2b2b2b} 
+\definecolor{headings}{HTML}{c6bbde}
+\definecolor{subheadings}{HTML}{e5e5e5}
+
+\definecolor{Grn}{HTML}{186218}
+
+\colorlet{Grn}{Grn}
+\colorlet{heading}{heading}
+\colorlet{accent}{accent}
+\colorlet{emphasis}{emphasis}
+\colorlet{body}{body}
+
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+\usepackage{xspace}
+
+\newcommand{\MATLAB}{\textsc{Matlab}\xspace}
+\usepackage[absolute]{textpos}
+\usepackage[UKenglish]{isodate}
+\setlength{\TPHorizModule}{1mm}
+\setlength{\TPVertModule}{1mm}
+\newcommand{\lastupdated}{\begin{textblock}{60}(155,5)
+  % \color{date}\fontspec[Path = fonts/garamond/]{garamond-ExtraLight}\fontsize{8pt}{10pt}\selectfont 
+
+\color{date}\fontspec[Path = fonts/garamond/]{AGaramondPro-Regular}\fontsize{8pt}{10pt}\selectfont
+Last Updated on \today
+\end{textblock}}
+
+
+\newcommand{\namesection}[3]{
+\centering{
+\fontsize{40pt}{60pt}
+\fontspec[Path = fonts/garamond/]{AGaramondPro-Regular}\selectfont #1 
+\fontspec[Path = fonts/garamond/]{AGaramondPro-BoldItalic}\selectfont #2
+} \\[5pt]
+\centering{
+\color{headings}
+\fontspec[Path = fonts/garamond/]{AGaramondPro-Bold}\fontsize{11pt}{14pt}\selectfont #3}
+\noindent\makebox[\linewidth]{\color{headings}\rule{\paperwidth}{0.4pt}}
+\vspace{-15pt}
+}
+
+%
+
+% Section seperators 
+\usepackage{titlesec}
+\titlespacing{\section}{0pt}{0pt}{0pt} 
+\titlespacing{\subsection}{0pt}{0pt}{0pt}
+\newcommand{\sectionsep}{\vspace{8pt}}
+
+
+% Headings command
+\titleformat{\section}{\color{headings}
+\scshape\fontspec[Path = fonts/garamond/]{AGaramondPro-Regular}\fontsize{24pt}{14pt}\selectfont \raggedright\uppercase}{}{0em}{}
+
+% Subeadings command
+\titleformat{\subsection}{
+\color{subheadings}\fontspec[Path = fonts/garamond/]{AGaramondPro-Italic}\fontsize{12pt}{12pt}\selectfont\bfseries\uppercase}{}{0em}{}
+
+\newcommand{\runsubsection}[1]{
+\color{subheadings}\fontspec[Path = fonts/garamond/]{AGaramondPro-BoldItalic}\fontsize{12pt}{12pt}\selectfont\bfseries\uppercase {#1} \normalfont}
+
+% Descriptors command
+\newcommand{\descript}[1]{
+\color{subheadings}\raggedright\scshape\fontspec[Path = fonts/garamond/]{AGaramondPro-Regular}\fontsize{11pt}{13pt}\selectfont {#1 \\} \normalfont}
+
+% Location command
+\newcommand{\llocation}[1]{
+\color{headings}\fontspec[Path = home/i/cv/fonts/garamond/]{AGaramondPro-Italic}\fontsize{10pt}{12pt}\selectfont { #1 \\} \normalfont}
+
+\newcommand{\LEGO}[1]{
+  \color{subheadings}\fontspec[Path = fonts/lego/]{Legothick}\fontsize{12pt}{12pt}\selectfont\bfseries\uppercase {#1} \normalfont}
+
+
+% Bullet Lists with fewer gaps command
+\newenvironment{tightemize}{
+\vspace{-\topsep}\begin{itemize}\itemsep1pt \parskip0pt \parsep0pt}
+{\end{itemize}\vspace{-\topsep}}
+
+\titleformat{\section}{ % Customize the large section titles
+\color{headings}\scshape\fontspec[Path = fonts/garamond/]{AGaramondPro-Bold}\fontsize{16pt}{24pt}\selectfont \raggedright\uppercase}{}{0em}{}
+
+
+% Headings command
+% \titleformat{\section}{\color{headings}
+% \scshape\fontspec[Path = fonts/garamond/]{AGaramondPro-Regular}\fontsize{24pt}{14pt}\selectfont \raggedright\uppercase}{}{0em}{}
+
+\titleformat{\section}{\color{headings}
+\scshape\fontspec[Path = fonts/lato/]{Lato-Lig}\fontsize{12pt}{12pt}\selectfont \raggedright\uppercase}{}{0em}{}
+
+\begin{document}
+
+% \setmainfont[Path=\string~/cv/fonts/garamond/]{AGaramondPro-Regular.otf}
+\name{Anders Kinch Møller}
+\tagline{}
+%\photo{2.5cm}{BrunoAlves}
+\personalinfo{
+    \printinfo{\faBirthdayCake}{30. Dec. 1995}
+    \location{Aarhus, Denmark}
+    \email{ \href{mailto:alllllllllllllklllllllllllllm@gmail.com}{\nolinkurl{alllllllllllllklllllllllllllm@gmail.com}}}
+    \phone{$+$45 20605757}
+%    \mailaddress{SR Njemačke 6, 10000}
+    %\github{\urlstyle{same}\href{http://github.com/amoel18}{github.com/amoel18}}
+    %\linkedin{linkedin.com/in/anderskinch}
+    %\twitter{twitter.com/sidecut}
+    %\homepage{jaksatomovic.github.io}
+}
+
+%
+\begin{fullwidth}
+\makecvheader
+\end{fullwidth}
+
+\cvsection[page1moti]{FLAIR FOR TAL OG IT}
+
+%%%%%%%%%%%%%
+%Experience 1
+%%%%%%%%%%%%%
+
+%\rotatebox{90}{M} \rotatebox{90}{o}\rotatebox{90}{t}\rotatebox{90}{V}\rotatebox{90}{A}\rotatebox{90}{T}\rotatebox{90}{I}\rotatebox{90}{O}\rotatebox{90}{N}
+\cvsubsubsection{Motivation }{  I mit seneste job som bogholder nød jeg at behandle og indsamle data, for at få regnskabet og banken til at passe. Der var dog ikke nok at lave uden for sæson, til at have mig 
+ansat. Derfor er jeg på udkig efter noget mere fast. 
+}
+
+
+
+\cvsubsubsection{ Faglige kompetencer}{Som bogholder er jeg vant til at bruge LibreOffice Excel (Linux pendant til Microsoft Excel), Visma e-conomic og shell scripting for at samle data og finde fejl i regnskabet. \\
+Til daglig bruger jeg Linux styresystem, men kan sagtens skifte/bruge Windows/macOS. \\ 
+Fra mine år som matematik studerende og mine hobbyprojekter ville jeg ude i fremtiden kunne gøre brug af min ekspertise inden for kodning. F.eks. hvis der skulle automatiseres Excel operationer, ville jeg med Python/sh kunne implementere en løsning. 
+}
+
+ooo
+\LEGO{lego}
+
+\cvsubsubsection{Sociale kompetencer \marginnote{}[0cm]}{ Jeg er en stille og
+rolig gut fra Egå, hvor jeg er vokset op på en gård sammen med mine søskende,
+\href{https://dk.linkedin.com/in/jens-kinch-møller}{\textcolor{Grn}{\emph{ Jens}
+}} og
+\href{https://dk.linkedin.com/in/trine-møller-070594141}{\textcolor{Grn}{\emph{Trine}}},
+samt voes forældre
+\href{https://dk.linkedin.com/in/lene-kinch-hansen-682391166}{\textcolor{Grn}{\emph{
+  Lene}  }} og \emph{Preben}. \\ 
+Preben dyrker korn og Lene har også været landmand, da vi førhen også avlede
+grøntsager, men har de seneste år, ($\sim$ 10), beskæftigede sig med bogholderi.
+Jens arbejder for Bankdata og er uddannet cand.oecon. Trine er pt. i gang 
+med at færdiggøre sin kandidat (cand.mag.), hvor hun skriver sit speciale hos
+LEGO.
+% Når høsten skal i hus om sommeren (i sommerferien), samles hele familien og
+hjælper til. Vores mor, Lene, er også tidligere landmand, da vi førhen også avlede grøntsager, men har de seneste år ($\sim$10) beskæftigede sig med bogholderi Jens arbejder for Bankdata og er uddannet cand.oecon. Trine er pt. i gang 
+med at færdiggøre sin kandidat (cand.mag.), hvor hun skriver sit speciale hos LEGO.
+\medskip
+
+I min fritid spiller jeg tennis og er i de fleste weekender ude og banke nogen venner eller min familie i en ketchersport hvis vejret tillader det. Udover det har jeg altid et fritids \href{http://www.github.com/amoel18}{\textbf{kodeprojekt} \githubsymbol} kørende, senest har det været at 
+sætte en online store op, ellers har det f.eks. været at lave en bot der handler på valutamarkedet eller noget Linux relateret. 
+
+I mit seneste job som bogholder arbejdede jeg hjemmefra, så er vant til at arbejde individuelt og finde løsninger på egen hånd. Er dog også altid klar på at drikke et par øl i fredagsbaren eller deltage i andre sociale arrangementer.}
+
+
+{\footnotemark[17]} \footnotetext[17]{This is my footnote!}
+\divider
+
+  \begin{addmargin}[1em]{1em}
+Håber I vil tage mig i betragtning, da jeg tror det ville gavne begge parter.\\
+\vspace{1em}
+Mvh,\\
+    \emph{Anders Kinch Møller}
+  \end{addmargin}
+
+  % \cvref{dsa}{dsa}
+\end{document}

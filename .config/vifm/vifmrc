@@ -209,8 +209,14 @@ filextype *.html,*.htm nvim %f 2>/dev/null &
 " lua
 filetype *.lua nvim
 
+" vim
+filetype *.vim nvim
+
 " liquid
 filetype *.liquid nvim
+
+" json
+filetype *.json nvim
 
 " Text based files
 filetype <text/*> nvim
@@ -349,7 +355,7 @@ nnoremap dls :cd ~/downloads<cr>
 nnoremap walls :cd ~/pictures/walls<cr>
 nnoremap vids :cd ~/videos<cr>
 nnoremap dots :cd ~/dotfiles<cr>
-nnoremap pic :cd ~/pictures/screenshots<cr>
+nnoremap pic :cd ~/Pictures<cr>
 nnoremap music :cd ~/music<cr>
 nnoremap sk :cd ~/skole<cr>
 nnoremap pi :cd ~/Pictures<cr>
@@ -358,7 +364,9 @@ nnoremap ex :!ex %c<cr>
 nnoremap vi :cd ~/.config/nvim<cr>
 nnoremap cd :cd<cr>
 nnoremap sho :cd ~/liquid<cr>
+nnoremap con : cd ~/.config<cr>
 nnoremap mk :touch 
+
 
 nnoremap gg ggj
 
@@ -468,7 +476,6 @@ nnoremap <a-i> :sync<cr>
 " Open directory under cursor in the other pane
 nnoremap <a-o> :sync %c<cr>
 " Swap panes
-nnoremap <c-u> <c-w>x
 
 " ------------------------------------------------------------------------------
 

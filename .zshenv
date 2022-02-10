@@ -12,5 +12,3 @@ export EDITOR=nvim
 export VISUAL=nvim
 export ZDOTDIR="$HOME/.zsh"
 # Secret
-#[ -f ~/.secrets ] && source ~/.secrets
-if [ -e /home/i/.nix-profile/etc/profile.d/nix.sh ]; then . /home/i/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

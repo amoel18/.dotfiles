@@ -390,7 +390,7 @@ export OPENER=opn
 
 # precmd_functions+=(_fix_cursor)
 export PYTHON_KEYRING_BACKEND=keyring.backends.null.Keyring
-source .zsh/plugins/fzf-tab/fzf-tab.zsh
+source "$ZDOTDIR/plugins/fzf-tab/fzf-tab.zsh"
 
 #export NVIM_LISTEN_ADDRESS=/tmp/aa nvim
 c() { printf "%s\n" "$@" | bc -l }

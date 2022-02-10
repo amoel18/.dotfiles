@@ -14,6 +14,8 @@ text/x-matlab=libreoffice-writer.desktop;
 text/x-patch=nvim.desktop;
 video/mp4=mpv.desktop;vlc.desktop;
 x-scheme-handler/tg=userapp-Telegram Desktop-P4Z500.desktop;
+text/x-lua=gvim.desktop;
+
 [Default Applications]
 application/gzip=tar.desktop;
 application/pdf=org.pwmt.zathura-pdf-poppler.desktop;
@@ -29,6 +31,5 @@ x-scheme-handler/postman=Postman.desktop;
 x-scheme-handler/tg=userapp-Telegram Desktop-P4Z500.desktop;
 x-scheme-handler/unknown=chromium.desktop;
 x-scheme-handler/web+cardano=google-chrome.desktop;
-
 application/zip=unzip-usercreated-1.desktop;
 application/x-ms-dos-executable=wine.desktop;
