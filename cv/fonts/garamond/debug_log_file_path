@@ -1,0 +1,31 @@
+שׁ  |1: {
+  always_trigger = true,
+  bind = true,
+  close_timeout = 4000,
+  debug = true,
+  doc_lines = 10,
+  extra_trigger_chars = {},
+  fix_pos = false,
+  floating_window = true,
+  floating_window_above_cur_line = true,
+  floating_window_off_y = 1,
+  handler_opts = {
+    border = "rounded"
+  },
+  hi_parameter = "LspSignatureActiveParameter",
+  hint_enable = true,
+  hint_prefix = "  ",
+  hint_scheme = "Comment",
+  log_path = "debug_log_file_path",
+  max_height = 12,
+  max_width = 120,
+  padding = "",
+  shadow_blend = 36,
+  shadow_guibg = "Black",
+  timer_interval = 200,
+  toggle_key = "<leader>s",
+  use_lspsaga = false,
+  verbose = false,
+  zindex = 200
+}
+
